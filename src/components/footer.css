@@ -35,8 +35,17 @@ footer {
   gap: 15px;
 }
 
+.footer-header > a > img {
+  transform: scale(0.35);  
+}
+
+.footer-socials img {
+  width: 24px;
+  height: 24px;
+}
+
 .footer-socials a {
-  font-size: 24px; /* Adjust based on your preference */
+  font-size: 24px; 
   color: #FFF;
   text-decoration: none;
 }
