@@ -1,19 +1,35 @@
 import React from "react"
 import "./footer.css" // Importing the CSS file
+import gatsbyImage from "../images/gatsby-icon.png"
+import fbLogo from "../images/facebook-logo.webp"
+import linkedInlogo from "../images/linkedin-logo.webp"
+import xLogo from "../images/twitter-logo-change-x-elon-musk-designboom-500.webp"
+import fyncomLogoWhite from "../images/fyncom-logo-white.png"
 
 const Footer = () => {
   return (
     <footer>
       <div className="footer-header">
-        <h2>FynCom</h2>
+        <a href="https://www.linkedin.com/company/fyncom">
+          <img src={fyncomLogoWhite} alt="FynCom Logo" />
+        </a>
         <p>
           <a href="mailto:info@fyncom.com">info@fyncom.com</a> | We are located
           in Irvine, CA, focused in the USA & operate globally.
         </p>
         <div className="footer-socials">
-          <a href="https://www.linkedin.com/company/fyncom">LinkedIn Pic</a>
-          <a href="https://twitter.com/Fyn_Com">Twitter Pic</a>
-          <a href="https://www.facebook.com/FynCom/">FB PIc</a>
+          <a href="https://www.linkedin.com/company/fyncom">
+            <img src={linkedInlogo} alt="FynCom's Linkedin Page" />
+          </a>
+          <a href="https://twitter.com/Fyn_Com">
+            <img
+              src={xLogo}
+              alt="FynCom's X (formally known as Twitter) logo"
+            />
+          </a>
+          <a href="https://www.facebook.com/FynCom/">
+            <img src={fbLogo} alt="FynCom's Facebook page" />
+          </a>
         </div>
       </div>
       <div className="footer-links-container">
