@@ -17,6 +17,8 @@ const Footer = () => {
           <a href="mailto:info@fyncom.com">info@fyncom.com</a> | We are located
           in Irvine, CA, focused in the USA & operate globally.
         </p>
+      </div>
+      <div className="footer-links-container">
         <div className="footer-socials">
           <a href="https://www.linkedin.com/company/fyncom">
             <img src={linkedInlogo} alt="FynCom's Linkedin Page" />
@@ -31,8 +33,6 @@ const Footer = () => {
             <img src={fbLogo} alt="FynCom's Facebook page" />
           </a>
         </div>
-      </div>
-      <div className="footer-links-container">
         <ul className="footer-links">
           <li>
             <a href="https://www.fyncom.com/use-cases">Product</a>
