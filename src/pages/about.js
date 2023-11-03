@@ -2,8 +2,8 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/about.css"
-import teamMeeting from "../images/team-meeting.webp"; // You'll need to add this image to your project
-import innovation from "../images/innovation.webp"; // Assuming you have images for the values section
+import teamMeeting from "../images/team-meeting.webp";
+import innovation from "../images/innovation.webp";
 import collaboration from "../images/collaboration.webp";
 import transparency from "../images/transparency.webp";
 import customerFocus from "../images/customer-focus.webp";
@@ -13,61 +13,59 @@ const About = () => {
   return (
     <div>
       <Header />
-        <section className="mission-section">
-          <h1>About Us</h1>
-          <sub>
-            At FynCom, our mission is to revolutionize the way organizations communicate and motivate their customers and partners. We believe that interactive rewards can drive engagement and improve performance in any type of organization. We are committed to delivering innovative solutions that help our clients succeed.
-          </sub>
-        </section>
-
-        <section className="story-section">
-          <div className="story-image">
-            <img src={teamMeeting} alt="Our Story" />
-          </div>
-          <div className="story-text">
-            <h3>Our Story</h3>
-            <p>
-              FynCom's Rewards technology was invented to disrupt scam economics over phone calls with refundable cash deposits (<a href="#">Read more here</a>). As we spoke to businesses about our solution, we learned that getting responses to business communications is tough!
-            </p>
-            <p>
-              So we modified our tech to create response generation technology that rewards prospects & customers when they respond to emails, calls, texts, surveys, and more. We saw incredible results from offering these immediate incentivized rewards, with tests showing a 200% increase in cold-call pick ups and 500% increase in email response rates.
-            </p>
-            <p>
-              That was enough to let us know there was value here. FynCom works over the top of any existing service and aims to be the Rewards layer of the internet. We are here to be the best way of transferring financial value in response to communications, hence the name "Financial(Fyn)Communications(Com)".
-            </p>
-          </div>
-        </section>
-
+      <section className="mission-section">
+        <h1>About Us</h1>
+        <sub>
+          At FynCom, our mission is to revolutionize the way organizations communicate and motivate their customers and partners. We believe that interactive rewards can drive engagement and improve performance in any type of organization. We are committed to delivering innovative solutions that help our clients succeed.
+        </sub>
+      </section>
+      <section className="story-section">
+        <div className="story-image">
+          <img src={teamMeeting} alt="Our Story" />
+        </div>
+        <div className="story-text">
+          <h3>Our Story</h3>
+          <p>
+            FynCom's Rewards technology was invented to disrupt scam economics over phone calls with refundable cash deposits (<a href="/white-paper-original-scam-calls">Read more here</a>). As we spoke to businesses about our solution, we learned that getting responses to business communications is tough!
+          </p>
+          <p>
+            So we modified our tech to create response generation technology that rewards prospects & customers when they respond to emails, calls, texts, surveys, and more. We saw incredible results from offering these immediate incentivized rewards, with tests showing a 200% increase in cold-call pick ups and 500% increase in email response rates.
+          </p>
+          <p>
+            That was enough to let us know there was value here. FynCom works over the top of any existing service and aims to be the Rewards layer of the internet. We are here to be the best way of transferring financial value in response to communications, hence the name "Financial(Fyn)Communications(Com)".
+          </p>
+        </div>
+      </section>
       <section className="values-header">
       <h2>Values</h2>
       </section>
       <section className="values-section">
-          <div className="value">
-            <img src={innovation} alt="Innovation" />
-            <p>Innovation</p>
-            <p>We are always looking for new ways to push the boundaries and deliver value to our clients.</p>
-          </div>
-          <div className="value">
-            <img src={collaboration} alt="Collaboration" />
-            <p>Collaboration</p>
-            <p>We believe that great things can be achieved when we work together as a team.</p>
-          </div>
-          <div className="value">
-            <img src={transparency} alt="Transparency" />
-            <p>Transparency</p>
-            <p>We are committed to open, honest communication and straightforward transparency.</p>
-          </div>
-          <div className="value">
-            <img src={customerFocus} alt="Customer Focus" />
-            <p>Customer focus</p>
-            <p>Our customers are at the heart of everything we do. We are dedicated to delivering the best possible experience for them. Focus is key.</p>
-          </div>
-          <div className="value">
-            <img src={continuousImprovement} alt="Continuous Improvement" />
-            <p>Continuous improvement</p>
-            <p>We believe that there is always room for growth and improvement. We are committed to continuous learning and development.</p>
-          </div>
-        </section>
+        <div className="value">
+          <img src={innovation} alt="Innovation" />
+          <p>Innovation</p>
+          <p>We are always looking for new ways to push the boundaries and deliver value to our clients.</p>
+        </div>
+        <div className="value">
+          <img src={collaboration} alt="Collaboration" />
+          <p>Collaboration</p>
+          <p>We believe that great things can be achieved when we work together as a team.</p>
+        </div>
+        <div className="value">
+          <img src={transparency} alt="Transparency" />
+          <p>Transparency</p>
+          <p>We are committed to open, honest communication and straightforward transparency.</p>
+        </div>
+        <div className="value">
+          <img src={customerFocus} alt="Customer Focus" />
+          <p>Customer focus</p>
+          <p>Our customers are at the heart of everything we do. We are dedicated to delivering the best possible experience for them. Focus is key.</p>
+        </div>
+        <div className="value">
+          <img src={continuousImprovement} alt="Continuous Improvement" />
+          <p>Continuous improvement</p>
+          <p>We believe that there is always room for growth and improvement. We are committed to continuous learning and development.</p>
+        </div>
+      </section>
       <Footer />
     </div>
   )
