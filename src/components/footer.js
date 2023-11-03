@@ -10,13 +10,15 @@ const Footer = () => {
   return (
     <footer>
       <div className="footer-header">
+        <a href="https://www.linkedin.com/company/fyncom">
+          <img src={fyncomLogoWhite} alt="FynCom Logo" />
+        </a>
         <div className="info-container">
-          <a href="https://www.linkedin.com/company/fyncom">
-            <img src={fyncomLogoWhite} alt="FynCom Logo" />
-          </a>
           <p>
-            <a href="mailto:info@fyncom.com">info@fyncom.com</a> | We are located
-            in Irvine, CA, focused in the USA & operate globally.
+            <a href="mailto:info@fyncom.com">info@fyncom.com</a>
+          </p>
+          <p>
+            We are located in Irvine, CA, focused in the USA & operate globally.
           </p>
         </div>
       </div>

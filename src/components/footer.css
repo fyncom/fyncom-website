@@ -10,49 +10,38 @@ footer {
 
 .footer-header {
     display: flex;
-    justify-content: space-between; /* Distribute space between logo and text */
+    justify-content: center;
     align-items: center; /* Vertically center-align children */
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    width: 100%; /* Take full width */
-    max-width: 1200px; /* You can adjust this value based on your design preference */
-    margin: 0 auto; /* Center the container */
-    padding: 0 15px; /* Some padding on both sides for responsiveness */
+    margin: 0px 0; /* Reduce margin top and bottom */
 }
-
-.footer-header a {
-    flex-shrink: 0; /* Prevent shrinking of the logo */
-}
-
 .footer-header p {
     flex: 1; /* Allow the text to take up remaining space */
-    text-align: right; /* Align text to the right */
+    text-align: center; /* Align text to the right */
 }
-
-.footer-header h2 {
-  font-size: 24px;
-  margin-bottom: 1rem;
+.footer-header > a > img {
+    transform: scale(0.35);
 }
 
 .info-container {
     display: flex;
     align-items: center; /* Vertically align the logo and text */
-    gap: 10px; /* Gap between logo and text */
+    gap: 1rem;
+    flex-direction: column; /* Stack items vertically */
+    margin: 0; /* Reset default margin */
+}
+.info-container p {
+    font-size: 12px;
+    margin: 0px 0; /* Reduce margin top and bottom */
 }
 
 .footer-socials {
   display: flex;
   gap: 15px;
 }
-
-.footer-header > div > a > img {
-  transform: scale(0.35);
-}
-
 .footer-socials img {
   width: 24px;
   height: 24px;
 }
-
 .footer-socials a {
   font-size: 24px; 
   color: #FFF;
@@ -62,24 +51,20 @@ footer {
 .footer-links-container {
   display: flex;
   justify-content: center;
-  gap: 4rem; /* Adjust the gap between the two link lists */
+  gap: 3rem; /* Adjust the gap between the two link lists */
 }
-
 .footer-links {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-
 .footer-links li {
   margin-bottom: 0.5rem; /* Spacing between links */
 }
-
 .footer-links a {
   color: #FFF;
   text-decoration: none;
 }
-
 .footer-links a:hover {
   text-decoration: underline;
 }
