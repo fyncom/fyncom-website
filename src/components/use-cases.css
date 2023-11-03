@@ -1,0 +1,109 @@
+/* Container styling */
+.use-cases-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    padding: 40px 0;
+}
+
+/* Main Title and Subtitle */
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Each Use Case Section */
+.use-case-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.use-case-image img {
+    max-width: 300px; /* You can adjust based on your preference */
+    margin-right: 20px;
+}
+
+.use-case-description {
+    width: 50%;
+}
+
+.use-case-description h2 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.use-case-description h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Learn More Button */
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.learn-more-btn:hover {
+    background-color: #333;
+}
+
+/* Request a Demo Section */
+.demo-form {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+    text-align: center;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.demo-form h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.demo-form input,
+.demo-form textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.demo-form button {
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.demo-form button:hover {
+    background-color: #333;
+}
+
+.fyncom-logo img {
+    display: block;
+    margin: 40px auto;
+    max-width: 300px; /* Adjust as per your logo size */
+}

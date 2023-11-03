@@ -7,14 +7,15 @@ const Header = () => {
   return (
     <header className="header-top">
       <div className="header-container">
-        <a href="">
+        <a href="/">
           <img src={fyncomLogo} alt="FynCom Logo" />
         </a>
         <ul className="nav-links">
           <li className="dropdown">
             <a href="/use-cases" className="dropbtn">Use Cases</a>
             <div className="dropdown-content">
-              <a href="/usecase-marketing">Marketing</a>
+              <a href="/marketing-use-cases">Marketing</a>
+              {/*<a href="/usecase-marketing">Marketing</a>*/}
               <a href="/usecase-sales">Sales</a>
               <a href="/usecase-understanding-customers">Understanding Customers</a>
             </div>
