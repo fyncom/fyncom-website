@@ -13,6 +13,7 @@ footer {
     justify-content: center;
     align-items: center; /* Vertically center-align children */
     margin: 0px 0; /* Reduce margin top and bottom */
+    margin-bottom: -3rem;  /* Adjust this value as needed */
 }
 .footer-header p {
     flex: 1; /* Allow the text to take up remaining space */
@@ -30,7 +31,7 @@ footer {
     margin: 0; /* Reset default margin */
 }
 .info-container p {
-    font-size: 12px;
+    font-size: 14px;
     margin: 0px 0; /* Reduce margin top and bottom */
 }
 
