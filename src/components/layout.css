@@ -43,6 +43,7 @@
     --color-background: #121212;
     --color-primary: #bb86fc;
     --sub-color: #88C0D0;
+    --color-bar: #000; /* Adjust to your light mode color */
 }
 
 /* Use the user's preference */
@@ -52,6 +53,7 @@
         --color-background: #121212;
         --color-primary: #bb86fc;
         --sub-color: #88C0D0;
+        --color-bar: #fff;
     }
 }
 
