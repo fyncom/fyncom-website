@@ -1,30 +1,9 @@
 /* Container styling */
 .use-cases-container {
-    /*font-family: 'Barlow', sans-serif;  !* <-- This line ensures Barlow is used *!*/
-    /*font-family: 'Arial', sans-serif;*/
     margin: 0 auto;
     width: 80%;
     max-width: 1200px;
     padding: 40px 0;
-}
-
-/* Main Title and Subtitle */
-/*h1 {*/
-/*    font-size: 36px;*/
-/*    font-weight: bold;*/
-/*    text-align: center;*/
-/*    margin-bottom: 20px;*/
-/*}*/
-p {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-sub {
-    font-size: 18px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #2B5C65;
 }
 
 /* Each Use Case Section */
@@ -40,17 +19,6 @@ sub {
 }
 .use-case-description {
     width: 50%;
-}
-.use-case-description h2 {
-    font-size: 48px;
-    color: #333;
-    margin-bottom: 10px;
-}
-.use-case-description h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-left: 0;
 }
 
 /* Learn More Button */
@@ -74,11 +42,6 @@ sub {
     text-align: center;
     margin-top: 40px;
     border-radius: 10px;
-}
-.demo-form h2 {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 30px;
 }
 .demo-form input,
 .demo-form textarea {
