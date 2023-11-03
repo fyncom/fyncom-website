@@ -6,7 +6,7 @@ import mobileMarketing from "../images/marketing-mobile-survey.webp"
 import phoneCalls from "../images/sales-phone-calls.webp"
 // import phoneCalls from "../images/sales-phone-calls.png"
 import closingDeals from "../images/close-deals-customers-engagement.webp"
-// import closingDeals from "../images/close-deals-customers-engagement.png"
+// import closingDeals from "../images/close-deals-customers-engagement.pnsgithub desktopg"
 import "../components/use-cases.css"
 
 const UseCases = () => {
@@ -16,7 +16,8 @@ const UseCases = () => {
         <div className="use-cases-container">
           <h1>Drive the behavior you want</h1>
           <sub>Enhance your sales, marketing & customer feedback tools</sub>
-          <p>Enhance your sales, marketing & customer feedback tools</p>
+          <br/>
+          <br/>
           <p>Today's Attention Economy makes time spent with your brand increasingly valuable, yet people's attention span gets progressively worse!</p>
           <p>Use FynCom's interactive rewards to grow the attention span of their target audiences, creating engagement that would otherwise be lost.</p>
 

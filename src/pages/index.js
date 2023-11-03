@@ -10,11 +10,12 @@ const BlockSpamEarnCash = () => {
       {/* Main Content */}
       <section>
         <h1>Profit from Scam Blocking</h1>
+        <br/>
         <h2>Cash in effortlessly</h2>
         <p>Emails, direct messages, calls - we do it all!</p>
 
         <section>
-          <h2>Are your customers getting phished?</h2>
+          <h3>Are your customers getting phished?</h3>
           <p>
             Stop scams with refundable deposits. Our tech asks unknown senders
             to risk losing money to your audience before they can reach them.
@@ -23,7 +24,7 @@ const BlockSpamEarnCash = () => {
         </section>
 
         <section>
-          <h2>Too many scam DMs in chats?</h2>
+          <h3>Too many scam DMs in chats?</h3>
           <div>
             <img src="path_to_discord_logo.png" alt="Discord Logo" />
             <img src="path_to_tinder_logo.png" alt="Tinder Logo" />
@@ -38,7 +39,7 @@ const BlockSpamEarnCash = () => {
         </section>
 
         <section>
-          <h2>Why FynCom?</h2>
+          <h3>Why FynCom?</h3>
           <p>
             Our company is built around refundable deposits as a tool to create
             trust between unknown parties in digital communications. Protect
@@ -49,7 +50,7 @@ const BlockSpamEarnCash = () => {
         </section>
 
         <section>
-          <h2>A scam blocking tool for some...</h2>
+          <h3>A scam blocking tool for some...</h3>
           <p>
             ...and a rewards engine for all. FynCom creates trust in online
             communications with its Refundable Deposits API. Any platform with
@@ -60,7 +61,7 @@ const BlockSpamEarnCash = () => {
         </section>
 
         <section>
-          <h2>Give the Gift of Cash-Back for Scam Blocking</h2>
+          <h3>Give the Gift of Cash-Back for Scam Blocking</h3>
           <button>REQUEST A DEMO</button>
         </section>
       </section>
