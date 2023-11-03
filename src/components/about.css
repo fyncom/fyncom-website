@@ -15,8 +15,6 @@
 }
 
 
-
-
 /* Values Section */
 .values-section {
     padding-left: 40px;
@@ -24,7 +22,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin: 40px 0;
+    margin: 40px 40px;
 }
 .values-header > h2 {
     text-align: center;

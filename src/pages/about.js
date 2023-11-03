@@ -27,7 +27,7 @@ const About = () => {
           <div className="story-text">
             <h3>Our Story</h3>
             <p>
-              FynCom's Rewards technology was invented to disrupt scam economics over phone calls with refundable cash deposits(<a href="#">Read more here</a>). As we spoke to businesses about our solution, we learned that getting responses to business communications is tough!
+              FynCom's Rewards technology was invented to disrupt scam economics over phone calls with refundable cash deposits (<a href="#">Read more here</a>). As we spoke to businesses about our solution, we learned that getting responses to business communications is tough!
             </p>
             <p>
               So we modified our tech to create response generation technology that rewards prospects & customers when they respond to emails, calls, texts, surveys, and more. We saw incredible results from offering these immediate incentivized rewards, with tests showing a 200% increase in cold-call pick ups and 500% increase in email response rates.
