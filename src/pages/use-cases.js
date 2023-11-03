@@ -18,8 +18,8 @@ const UseCases = () => {
           <sub>Enhance your sales, marketing & customer feedback tools</sub>
           <br/>
           <br/>
-          <p>Today's Attention Economy makes time spent with your brand increasingly valuable, yet people's attention span gets progressively worse!</p>
-          <p>Use FynCom's interactive rewards to grow the attention span of their target audiences, creating engagement that would otherwise be lost.</p>
+          <p>Today's Attention Economy makes time spent with your brand increasingly valuable, yet people's attention span gets progressively worse!
+            Use FynCom's interactive rewards to grow the attention span of their target audiences, creating engagement that would otherwise be lost.</p>
 
           <div className="use-case-section">
             <div className="use-case-image">
