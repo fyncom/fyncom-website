@@ -7,24 +7,39 @@ const Header = () => {
   return (
     <header className="header-top">
       <div className="header-container">
-        <a href="https://www.fyncom.com">
+        <a href="">
           <img src={fyncomLogo} alt="FynCom Logo" />
         </a>
         <ul className="nav-links">
-          <li>
-            <a href="https://www.fyncom.com/use-cases">Use Cases</a>
+          <li className="dropdown">
+            <a href="/use-cases" className="dropbtn">Use Cases</a>
+            <div className="dropdown-content">
+              <a href="/usecase-marketing">Marketing</a>
+              <a href="/usecase-sales">Sales</a>
+              <a href="/usecase-understanding-customers">Understanding Customers</a>
+            </div>
           </li>
           <li>
-            <a href="https://www.fyncom.com/about">About</a>
+            <a href="/about">About</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/pricing">Pricing</a>
+            <a href="/pricing">Pricing</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/blog">Blog</a>
+            <a href="/blog">Blog</a>
           </li>
-          <li>
-            <a href="https://www.fyncom.com/help-center">Help</a>
+          <li className="dropdown">
+            <a href="/help-center" className="dropbtn">Help</a>
+            <div className="dropdown-content">
+              <a href="/rewards-for-emails-texts-and-more">Overview of Rewards Tools</a>
+              <a href="/zapier-rewards">Zapier API Key Setup</a>
+              <a href="/simple-email-rewards-setup">Simple Email Setup</a>
+              <a href="/email-forwarding-setup-for-instant-rewards-delivery">Email Setup - Marketing/Basic</a>
+              <a href="/sendgrid-integration-api-key">Sendgrid API Key</a>
+              <a href="/add-fyncom-rewards-to-sendgrid-marketing-email">Sendgrid Rewards Emails</a>
+              <a href="/sendgrid-drafts-preparation">Sendgrid Drafts - Setup</a>
+              <a href="/help-article-content">Account Balance</a>
+            </div>
           </li>
         </ul>
         <div className="login-buttons">

@@ -1,6 +1,5 @@
 import React from "react"
 import "./footer.css" // Importing the CSS file
-import gatsbyImage from "../images/gatsby-icon.png"
 import fbLogo from "../images/facebook-logo.webp"
 import linkedInlogo from "../images/linkedin-logo.webp"
 import xLogo from "../images/twitter-logo-change-x-elon-musk-designboom-500.webp"
@@ -40,36 +39,36 @@ const Footer = () => {
         </div>
         <ul className="footer-links">
           <li>
-            <a href="https://www.fyncom.com/use-cases">Product</a>
+            <a href="/use-cases">Product</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/use-cases">Reward Campaigns</a>
+            <a href="/use-cases">Reward Campaigns</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/about">About</a>
+            <a href="/about">About</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/pricing">Pricing</a>
+            <a href="/pricing">Pricing</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/help-center">Help</a>
+            <a href="/help-center">Help</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/blog">Blog</a>
+            <a href="/blog">Blog</a>
           </li>
         </ul>
         <ul className="footer-links">
           <li>
-            <a href="https://www.fyncom.com/contact">Contact Us</a>
+            <a href="/contact">Contact Us</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/terms-of-service">Terms of Use</a>
+            <a href="/terms-of-service">Terms of Use</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/sitemap">Sitemap</a>
+            <a href="/sitemap">Sitemap</a>
           </li>
           <li>
-            <a href="https://www.fyncom.com/privacy-policy">Privacy Policy</a>
+            <a href="/privacy-policy">Privacy Policy</a>
           </li>
         </ul>
       </div>
