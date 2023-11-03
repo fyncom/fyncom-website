@@ -24,7 +24,26 @@
   --size-content: 54rem;
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
+  --sub-color-light: #2B5C65;
 }
+/* Define the "dark" theme */
+:root[data-theme='dark'] {
+    --color-text: #eaeaea;
+    --color-background: #121212;
+    --color-primary: #bb86fc;
+    --sub-color: #88C0D0;
+}
+
+/* Use the user's preference */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-text: #eaeaea;
+        --color-background: #121212;
+        --color-primary: #bb86fc;
+        --sub-color: #88C0D0;
+    }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
@@ -34,6 +53,7 @@ html {
   overflow-y: scroll;
 }
 body {
+  background-color: var(--color-background, var(--color-background-light));
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
@@ -119,7 +139,7 @@ sub {
     font-size: 22px;
     text-align: left;
     font-weight: 300; /* Light */
-    color: #2B5C65;
+    color: var(--sub-color, var(--sub-color-light));
 }
 img {
   border-style: none;
