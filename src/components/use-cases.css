@@ -55,7 +55,7 @@
 
 /* Request a Demo Section */
 .demo-form {
-    background-color: #f4f4f4;
+    background-color: var(--fyncom-blue);
     padding: 40px 20px;
     text-align: center;
     margin-top: 40px;
