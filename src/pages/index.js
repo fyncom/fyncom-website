@@ -1,14 +1,12 @@
-// 1. Importing Components and Dependencies
 import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
 
-// 2. Main Component
 const BlockSpamEarnCash = () => {
   return (
     <div>
-      <Header /> {/* Using the Header component */}
+      <Header />
       {/* Main Content */}
       <section>
         <h1>Profit from Scam Blocking</h1>
@@ -66,10 +64,9 @@ const BlockSpamEarnCash = () => {
           <button>REQUEST A DEMO</button>
         </section>
       </section>
-      <Footer /> {/* Using the Footer component */}
+      <Footer />
     </div>
   )
 }
 
-// 3. Exporting the Main Component
 export default BlockSpamEarnCash
