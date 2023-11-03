@@ -38,6 +38,7 @@ const Footer = () => {
           </a>
         </div>
         <ul className="footer-links">
+          {/*todo set this up so that only 1 is visble*/}
           <li>
             <a href="/use-cases">Product</a>
           </li>
