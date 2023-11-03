@@ -1,6 +1,7 @@
 /* Container styling */
 .use-cases-container {
-    font-family: 'Arial', sans-serif;
+    /*font-family: 'Barlow', sans-serif;  !* <-- This line ensures Barlow is used *!*/
+    /*font-family: 'Arial', sans-serif;*/
     margin: 0 auto;
     width: 80%;
     max-width: 1200px;
@@ -8,17 +9,22 @@
 }
 
 /* Main Title and Subtitle */
-h1 {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/*h1 {*/
+/*    font-size: 36px;*/
+/*    font-weight: bold;*/
+/*    text-align: center;*/
+/*    margin-bottom: 20px;*/
+/*}*/
 p {
     font-size: 18px;
     text-align: center;
     margin-bottom: 20px;
+}
+sub {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2B5C65;
 }
 
 /* Each Use Case Section */
@@ -28,26 +34,23 @@ p {
     justify-content: space-between;
     margin: 40px 0;
 }
-
 .use-case-image img {
     max-width: 300px; /* You can adjust based on your preference */
     margin-right: 20px;
 }
-
 .use-case-description {
     width: 50%;
 }
-
 .use-case-description h2 {
     font-size: 48px;
     color: #333;
     margin-bottom: 10px;
 }
-
 .use-case-description h3 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-left: 0;
 }
 
 /* Learn More Button */
@@ -60,7 +63,6 @@ p {
     border-radius: 5px;
     margin-top: 20px;
 }
-
 .learn-more-btn:hover {
     background-color: #333;
 }
@@ -73,13 +75,11 @@ p {
     margin-top: 40px;
     border-radius: 10px;
 }
-
 .demo-form h2 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 30px;
 }
-
 .demo-form input,
 .demo-form textarea {
     width: 80%;
@@ -88,7 +88,6 @@ p {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-
 .demo-form button {
     padding: 10px 20px;
     background-color: #000;
@@ -97,7 +96,6 @@ p {
     border-radius: 5px;
     cursor: pointer;
 }
-
 .demo-form button:hover {
     background-color: #333;
 }

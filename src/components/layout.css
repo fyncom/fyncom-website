@@ -37,8 +37,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
-  font-family: sans-serif;
-  font-family: var(--font-sans);
+  font-family: 'Barlow', sans-serif;
   font-weight: normal;
   margin: 0;
   word-wrap: break-word;
@@ -71,8 +70,19 @@ dfn {
   font-style: italic;
 }
 h1 {
+    font-size: 48px;
+    /*font-weight: 900; !* Black/ Heavy *!*/
+    /*font-weight: 800; !* Extra Bold / Ultra Bold *!*/
+    /*font-weight: 700; !* Bold *!*/
+    font-weight: 600; /* Semi Bold / Demi Bold */
+    /*font-weight: 500; !* Medium *!*/
+    /*font-weight: 400; !* Normal / Regular *!*/
+    /*font-weight: 300; !* Light *!*/
+    /*font-weight: 200; !* Extra Light / Ultra Light *!*/
+    /*font-weight: 100; !* Thin *!*/
+    text-align: left;
   margin: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 0;
   line-height: var(--line-height-dense);
   letter-spacing: -0.01em;
