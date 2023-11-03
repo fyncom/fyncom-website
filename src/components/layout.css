@@ -25,6 +25,17 @@
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
   --sub-color-light: #2B5C65;
+  --fyncom-blue: #4A90E2;
+  --fyncom-light-blue: #13DCEC;
+  --fyncom-lightest-blue: #80DED9;
+  --fyncom-red: #FF5A5F;
+  --fyncom-cyan: #408A97;
+  --fyncom-light-cyan: #206076;
+  --fyncom-lightest-cyan: #003554;
+  --fyncom-yellow: #EEE539;
+  --karmacall-gold: #ff8c00;
+  --karmacall-green: #008080;
+  --robocash-green: #3fa060;
 }
 /* Define the "dark" theme */
 :root[data-theme='dark'] {
