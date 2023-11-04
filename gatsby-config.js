@@ -13,15 +13,16 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        fonts: [
-          {
-            family: `Barlow`,
-            variants: [`100`,`200`,`300`,`400`,`500`,'600',`700`,`800`,`900`]
-          },
-        ],
-      },
+        custom: {
+          families: [
+            `Barlow: 100,200,300,400,500,600,700,800,900,italic,bold,bolditalic`,
+            `Barlow SemiCondensed: 100,200,300,400,500,600,700,800,900,italic,bold,bolditalic`
+          ],
+          urls: [`/Barlow-AllFonts_Includes_SemiCondensed.css`]
+        }
+      }
     },
     `gatsby-plugin-image`,
     {
