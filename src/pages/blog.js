@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import BlogPost from '../components/BlogPost';
+import BlogPost from '../components/blog-post';
 import '../components/help-center.css';
 
 const blogPostsData = [
