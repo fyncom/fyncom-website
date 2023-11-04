@@ -48,5 +48,37 @@ module.exports = {
         icon: `src/images/FynCom_Logo_Circle-CanvasLargest.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: [
+          "G-6NQD4VERN7",
+        ],
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: true, // optional parameter to include script in development
+        id: 2041826,
+        sv: 6,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-clearbit',
+      options: {
+        publishableKey: 'pk_1c6563c0c3c248f3146ef3b8ce190a18',
+        enableOnDevMode: true // if 'false', clearbit will be fired on NODE_ENV=production only
+      },
+    },
+    {
+      resolve: `gatsby-plugin-facebook-pixel`,
+      options: {
+        pixelId: "1012644859252950",
+      },
+    },
   ],
 }
