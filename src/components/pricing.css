@@ -68,6 +68,20 @@ p, table {
     /*max-height: au; !* Adjust the maximum height as needed *!*/
     /*max-height: 100vh; !* Adjust the maximum height as needed *!*/
     overflow: auto;    /* Adds scrollbars if content is larger than the element */
+    margin-bottom: 3rem;
+}
+
+.html-content-dropdown {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-content: center;*/
+    width: 80%;        /* Adjust the width as needed */
+    /*max-width: 500px;  !* Adjust the maximum width as needed *!*/
+    margin: auto;      /* Centers the content horizontally */
+    height: auto;     /* Adjust the height as needed */
+    /*max-height: au; !* Adjust the maximum height as needed *!*/
+    /*max-height: 100vh; !* Adjust the maximum height as needed *!*/
+    overflow: auto;    /* Adds scrollbars if content is larger than the element */
 }
 
 

@@ -252,11 +252,162 @@ const Pricing = () => {
   </body>
 </html>`;
 
+  // The drop down HTML
+  const infoDropDown = `<!doctype html>
+<html>
+  <body>
+    <div>
+      <details open>
+        <summary>
+          <h2 id="fyncom-faqs">FynCom FAQs</h2>
+        </summary>
+        <blockquote>
+          <details open>
+            <summary>
+              <h3 id="is-there-a-free-version">Is there a free version?</h3>
+            </summary>
+            <blockquote>
+              <p>No. The closest we have is the Standard plan, which charges you $50 per month, but give you $20 in rewards to spend each month. <br> We're in the business of helping you get more responses, feedback, &amp; engagement by adding Interactive Rewards into your workflow. <br> The hardest part of using Interactive Rewards, is getting started. Once you do this on a regular basis, you'll wish you had done it earlier.</p>
+              <details>
+                <summary>
+                  <h4 id="so-i-lose-20-if-i-don--t-use-my-use-it-or-lose-it-credits">So I lose $20 if I don't use my Use it or Lose it Credits?</h4>
+                </summary>
+                <blockquote>
+                  <p>No. We help you automate the spending of your Use it or Lose it Credits each month before it expires. <br> Even if it does not go to a customer, it should be used to give you a little treat 😉 <br> Here's how we help.</p>
+                  <ol>
+                    <li>
+                      In your settings, select how you would like the remaining balance of your monthly rewards to be spent in case you have not used it.
+                      <ul>
+                        <li>
+                          Directly send the remaining balance (minus commission), at random, to...
+                          <ul>
+                            <li>One of the emails who have interacted with your campaigns this month</li>
+                            <li>Anyone who has a FynCom account under your plan (typically employees, or marketing team)</li>
+                            <li>A list of emails you upload into your settings</li>
+                          </ul>
+                        </li>
+                        <li>
+                          Send an Interactive Rewards email that offers the remaining balance (minus commission) in exchange for a survey response
+                          <ul>
+                            <li>Can be sent to one of the same set of 3 categories above</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ol>
+                  <p>If neither of these options are chosen, we default to sending the remaining balance (minus commission) to the primary admin who created the account. <br> Our commission is deducted from the remaining balance - the same commission would be deducted if you use these credits in a campaign. <br></p>
+                </blockquote>
+              </details>
+            </blockquote>
+          </details>
+          <br>
+          <details open>
+            <summary>
+              <h3 id="what-is-the-best-way-to-use-rewards">What is the best way to use rewards?</h3>
+            </summary>
+            <blockquote>
+              We'll give you a framework to answer this for yourself. This is how customers find success with FynCom and how they start to min/max value/engagment. <br> <br>
+              <details>
+                <summary>
+                  <h4 id="framework-for-rewards-success">Framework for rewards success</h4>
+                </summary>
+                <blockquote>
+                  <p>Run A/B tests until you get to the smallest value you can offer, while still have a substantial increase in your responses.</p>
+                  <ol>
+                    <li>
+                      Run an A/B test #1 to test your outreach campaign with and without a FynCom Reward.
+                      <ul>
+                        <li>Ensure that you make it clear throughout the Rewards sequence that there is an IMMEDIATE incentive available.</li>
+                      </ul>
+                    </li>
+                    <li>If you see greater response rates with the test that has a reward (it never fails), then you'll want to run your next A/B Test</li>
+                    <li>
+                      Run A/B test #2 to compare an outreach campaign with the same Reward from A/B test #1 versus a campaign with 25% of that reward.
+                      <ul>
+                        <li>How do the tests compare with what you're used to? You may find that just the smallest incentive possible makes a substantial difference in your response rates.</li>
+                      </ul>
+                    </li>
+                  </ol>
+                </blockquote>
+              </details>
+              <br>
+              <details>
+                <summary>
+                  <h4 id="can-you-just-tell-me-the-answer">Can you just tell me the answer?</h4>
+                </summary>
+                <blockquote>
+                  <p>
+                    <span>
+                      Someday, we will. We run tests daily, but need pioneers like you, testing this in their workflows. It is our goal to be the place you go to, 
+                      when you need to know how much it costs on average to get a Director of Marketing at a Series B Software Startup. That comes with scale. The 
+                      people who come on this journey with us will be the first to know and will reap benefits throughout the entire journey.
+                    </span>
+                  </p>
+                  <p><span>Below are a few of the variables that influence the answer to the question above.</span></p>
+                  <ul>
+                    <li>
+                      Industry
+                      <ul>
+                        <li>Who do you sell to?</li>
+                      </ul>
+                    </li>
+                    <li>
+                      Reputation of your company
+                      <ul>
+                        <li>Does your company have enough brand recognition?</li>
+                        <li>Are your ideal customers eager to respond to you when you reach out?</li>
+                      </ul>
+                    </li>
+                    <li>
+                      Maturity of your product / service / feature
+                      <ul>
+                        <li>Is it at product market fit?</li>
+                        <li>Is it before product market fit?</li>
+                      </ul>
+                    </li>
+                    <li>
+                      Financial health of your business
+                      <ul>
+                        <li>
+                          Does your company print money?
+                          <ul>
+                            <li>Maybe you can afford to be a little more extravagant in the Interactive rewards you offer</li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </blockquote>
+              </details>
+              <br>
+              <details open>
+                <summary>
+                  <h3 id="how-do-i-get-started">How do I get started?</h3>
+                </summary>
+                <blockquote>
+                  <p>
+                    <span> Most people who start with us, begin with rewarding someone to take a meeting. If you have other things you'd like to try, explore 
+                      our Help page to see what is right for you. If you need a little extra help, we are happy to help you figure out what works best for you. 
+                      Just shoot us an email here.
+                    </span>
+                  </p>
+                </blockquote>
+              </details>
+     <style>
+        details summary { cursor: pointer; }
+        details summary > * { display: inline; }
+      </style>
+    </div>
+  </body>
+</html>
+`;
+
   return (
     // <ReactMarkdown skipHtml={false}>{markdownContent}</ReactMarkdown>
     <div>
       <Header />
       <div className="html-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+      <div className="html-content-dropdown" dangerouslySetInnerHTML={{ __html: infoDropDown }} />
       <Footer />
     </div>
 
