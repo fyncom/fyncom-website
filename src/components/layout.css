@@ -1,3 +1,4 @@
+/* LIGHT MODE COLORS */
 :root {
   --border-radius: 4px;
   --color-text: #333;
@@ -36,17 +37,11 @@
   --karmacall-gold: #ff8c00;
   --karmacall-green: #008080;
   --robocash-green: #3fa060;
-}
-/* Define the "dark" theme */
-:root[data-theme='dark'] {
-    --color-text: #eaeaea;
-    --color-background: #121212;
-    --color-primary: #bb86fc;
-    --sub-color: #88C0D0;
-    --color-bar: #000; /* Adjust to your light mode color */
+    --color-bar: #000;
+    --help-box: #fff;
 }
 
-/* Use the user's preference */
+/* Automatically switch to dark mode based on user's system preference */
 @media (prefers-color-scheme: dark) {
     :root {
         --color-text: #eaeaea;
@@ -54,7 +49,18 @@
         --color-primary: #bb86fc;
         --sub-color: #88C0D0;
         --color-bar: #fff;
+        --help-box: #000;
     }
+}
+
+/* Manually switch to dark mode via class or data attribute */
+:root[data-theme='dark'] {
+    --color-text: #eaeaea;
+    --color-background: #121212;
+    --color-primary: #bb86fc;
+    --sub-color: #88C0D0;
+    --color-bar: #fff;
+    --help-box: #000;
 }
 
 html {
@@ -118,6 +124,9 @@ h1 {
   /*margin-bottom: 0.5rem;*/
   padding: 0;
   line-height: var(--line-height-dense);
+}
+.centered {
+    text-align: center;
 }
 h1 > b {
   color: var(--color-primary);
