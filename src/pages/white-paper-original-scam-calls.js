@@ -1,9 +1,7 @@
-import React from "react"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import { Document, Page, pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
+import React from "react";
+import Header from "../components/header";
+import Footer from "../components/footer";
+import "../components/white-paper.css";
 
 const WhitePaperOriginalScamCalls = () => {
   return (
@@ -12,14 +10,15 @@ const WhitePaperOriginalScamCalls = () => {
       <div className="content-container">
         <h2>Why Do Spam Calls Still Exist?</h2>
         <p>...and how can I stop scams, but let good callers reach me?</p>
-        <Document file="/FynCom-Original-White-Paper-For-KarmaCall-Update.pdf" loading={<span>Loading...</span>}>
-          <Page pageNumber={1} />
-        </Document>
+        <iframe
+          src="https://drive.google.com/file/d/1nHVoFPQMUuin5MOU7nGEWt6nseNzI_Kf/preview"
+          allow="autoplay"
+        ></iframe>
         <p>Thanks for reading the whitepaper on stopping spam calls!</p>
       </div>
       <Footer />
     </div>
-  )
+  );
 }
 
-export default WhitePaperOriginalScamCalls
+export default WhitePaperOriginalScamCalls;
