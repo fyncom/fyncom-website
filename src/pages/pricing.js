@@ -195,9 +195,18 @@ const Pricing = () => {
         </tr>
        </tbody>
     </table>
-    <p><sup>*</sup><strong>Use It or Lose It for Standard & Pro Plans</strong> <br> <span>Your subscription gives you</span> <span>FynCom credit to use as Rewards each month, inclusive of commission. No roll overs.</span> </p>
-    <p><sup>1</sup><strong>Rewards Campaigns</strong> <br> <span>The number of active Rewards Campaigns your plan can have at a time.</span></p>
-    <p><sup>2</sup><strong>Commission</strong> <br> <span>The commission is based on reward size and is only paid to FynCom when a response is received or desired action completed.</span> <br> <span>Here is an example for Standard plans.</span> <br> <span>You create a Rewards Campaign of</span> <span>$1.00 and attach it to a Calendly booking so that anyone who books get rewarded.</span> <br></p>
+      <p><sup>*</sup><strong>Use It or Lose It for Standard & Pro Plans</strong> <br>
+        <span>Your subscription gives you FynCom credit to use as Rewards each month, inclusive of commission. No roll overs.</span>
+      </p>
+      <p><sup>1</sup><strong>Rewards Campaigns</strong> <br>
+        <span>The number of active Rewards Campaigns your plan can have at a time.</span>
+      </p>
+      <p><sup>2</sup><strong>Commission</strong> <br>
+        <span>The commission is based on reward size and is only paid to FynCom when a response is received or desired action completed.</span> <br>
+        <span>Here is an example for Standard plans.</span> <br>
+        <span>You create a Rewards Campaign of $1.00 and attach it to a Calendly booking so that anyone who books get rewarded.</span> <br>
+      </p>
+      <!-- The rest of your content goes here -->
     <ul>
       <li>jamie@bestFakeCompany.com books an event.</li>
       <li>$1.15 total is deducted from your Account Balance.</li>
