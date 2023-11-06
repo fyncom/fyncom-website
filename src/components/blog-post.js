@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from './Image'; // Component for handling images if necessary
+import Image from './image'; // Component for handling images if necessary
 
 const BlogPost = ({ title, content, image, date, views, comments }) => {
   return (
