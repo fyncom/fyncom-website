@@ -48,11 +48,16 @@
     --logo-dark-mode: url('../images/FynCom_Logo_New-LARGEST-White.png');
     --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
     .fyncom-logo {
-        content: var(--logo-light-mode); /* Path to light mode logo */
+        content: var(--logo-light-mode);
         display: block;
         margin: 40px auto;
-        max-width: 300px; /* Adjust as per your logo size */
-
+        max-width: 300px;
+    }
+    .fyncom-logo-header {
+        content: var(--logo-light-mode);
+        display: block;
+        margin: 0px 10px;
+        max-width: 100px;
     }
 }
 
@@ -71,10 +76,16 @@
         --button-learn-more: var(--fyncom-blue);
         --button-learn-more-hover: var(--fyncom-cyan);
         .fyncom-logo {
-            content: var(--logo-dark-mode); /* Path to light mode logo */
+            content: var(--logo-dark-mode);
             display: block;
             margin: 40px auto;
-            max-width: 300px; /* Adjust as per your logo size */
+            max-width: 300px;
+        }
+        .fyncom-logo-header {
+            content: var(--logo-dark-mode);
+            display: block;
+            margin: 0px 10px;
+            max-width: 100px;
         }
     }
 }
@@ -93,11 +104,18 @@
     --button-learn-more: var(--fyncom-blue);
     --button-learn-more-hover: var(--fyncom-cyan);
     .fyncom-logo {
-        content: var(--logo-dark-mode); /* Path to light mode logo */
+        content: var(--logo-dark-mode);
         display: block;
         margin: 40px auto;
-        max-width: 300px; /* Adjust as per your logo size */
-    }}
+        max-width: 300px;
+    }
+    .fyncom-logo-header {
+        content: var(--logo-dark-mode);
+        display: block;
+        margin: 0px 10px;
+        max-width: 100px;
+    }
+}
 
 /****** *Setting mobile device css ******/
 /* Styles for tablets and above */
@@ -149,10 +167,6 @@
     .use-case-image img {
         max-width: 100%; /* Full width on mobile */
         margin-right: 0; /* Reset margin since it's now a column layout */
-    }
-    .login-buttons {
-        display: grid;           /* top by top buttons */
-        gap: 10px;               /* Space between buttons */
     }
 }
 
