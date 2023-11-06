@@ -9,11 +9,6 @@
     flex: 1;
     text-align: center;
 }
-.header-top > div > a > img {
-    width: 100px;
-    height: auto;
-    margin-left: 0;
-}
 
 .header-container {
     display: flex;
@@ -42,16 +37,19 @@
 }
 
 .login-buttons {
-    display: flex;           /* Side by side buttons */
-    gap: 10px;               /* Space between buttons */
+    display: grid;  /* Side by side buttons */
+    gap: 10px;      /* Space between buttons */
 }
 button {
     border-radius: 10px;
     color: white;
-    padding: 10px 15px;
+    padding: 6px 1px;
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    text-align: center;
+    width: 7rem;
+    margin-right: 10px;
 }
 /* Business button specific styling */
 button.business {

@@ -80,9 +80,3 @@
 .demo-form button:hover {
     background-color: #333;
 }
-
-.fyncom-logo img {
-    display: block;
-    margin: 40px auto;
-    max-width: 300px; /* Adjust as per your logo size */
-}

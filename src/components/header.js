@@ -8,7 +8,10 @@ const Header = () => {
     <header className="header-top">
       <div className="header-container">
         <a href="/">
-          <img src={fyncomLogo} alt="FynCom Logo" />
+          {/*<img src={fyncomLogo} alt="FynCom Logo" />*/}
+          <div className="fyncom-logo-header">
+            <img src={fyncomLogo} alt="FynCom Logo" />
+          </div>
         </a>
         <ul className="nav-links">
           <li className="dropdown">
