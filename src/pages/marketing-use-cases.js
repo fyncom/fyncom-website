@@ -11,10 +11,8 @@ const MarketingUseCases = () => {
   return (
     <div className="marketing-use-cases">
       <Header />
-      <div className="image-section">
-      </div>
-      {/* Main Content */}
       <div className="hero-section">
+        <img className="story-image" src={pageImage} alt="FynCom Logo" />
         <div className="hero-content">
           <h1>INCREASE CUSTOMER ENGAGEMENT</h1>
           <p>Guide your customers along the customer journey and support the sales team by finding qualified leads</p>
@@ -40,7 +38,6 @@ const MarketingUseCases = () => {
       <div className="integrations-section">
         <h2>INTEGRATIONS</h2>
         <div className="logos-container">
-          {/* Logos can be <img> elements with src set to the logo images */}
           <img src={sendgrid} alt="Twilio" className="logo" />
           <img src={slicktext} alt="SlickText" className="logo" />
           <img src={zapier} alt="Zapier" className="logo" />
