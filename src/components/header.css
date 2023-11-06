@@ -32,7 +32,7 @@
 }
 .nav-links li a {
     text-decoration: none;
-    color: white;
+    color: var(--dropdown-text-color) !important;
     padding: 5px 10px;
     transition: background-color 0.3s;
 }
@@ -75,7 +75,9 @@ button.user:hover {
 }
 /* Style for dropdown button */
 .dropbtn {
-    background-color: #4CAF50;
+    /*highlighting the drop down seems odd*/
+    /*todo - figure out how to handle this on mobile*/
+    /*background-color: darkgray;*/
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -86,14 +88,14 @@ button.user:hover {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f9f9f9;
+    background-color: var(--dropdown-container-color) !important;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-/* Style for dropdown links */
+/* Style for dropdown links and text color*/
 .dropdown-content a {
-    color: black;
+    color: var(--dropdown-text-color) !important;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -104,5 +106,5 @@ button.user:hover {
 }
 /* Change background color of dropdown links on hover */
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: var(--dropdown-hover-color);
 }
