@@ -1,8 +1,8 @@
 import React from "react"
 import "./footer.css" // Importing the CSS file
-import fbLogo from "../images/facebook-logo.webp"
-import linkedInlogo from "../images/linkedin-logo.webp"
-import xLogo from "../images/twitter-logo-change-x-elon-musk-designboom-500.webp"
+import fbLogo from "../images/logos/facebook-logo.webp"
+import linkedInlogo from "../images/logos/linkedin-logo.webp"
+import xLogo from "../images/logos/twitter-logo-change-x-elon-musk-designboom-500.webp"
 import fyncomLogoWhite from "../images/fyncom-logo-white.png"
 
 const Footer = () => {
