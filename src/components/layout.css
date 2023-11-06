@@ -150,6 +150,10 @@
         max-width: 100%; /* Full width on mobile */
         margin-right: 0; /* Reset margin since it's now a column layout */
     }
+    .login-buttons {
+        display: grid;           /* top by top buttons */
+        gap: 10px;               /* Space between buttons */
+    }
 }
 
 

@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: start;
     padding: 10px 10px 10px 10px;
-    background-color: lightslategray;
+    background-color: var(--color-background);
 }
 .header-top p {
     flex: 1;
@@ -38,15 +38,15 @@
 }
 .nav-links a:hover {
     text-decoration: underline;
-    background-color: #444; /* Add a hover effect for better UX */
+    background-color: var(--dropdown-container-color); /* Add a hover effect for better UX */
 }
 
 .login-buttons {
-    /*display: grid;           !* top by top buttons *!*/
     display: flex;           /* Side by side buttons */
     gap: 10px;               /* Space between buttons */
 }
 button {
+    border-radius: 10px;
     color: white;
     padding: 10px 15px;
     border: none;
