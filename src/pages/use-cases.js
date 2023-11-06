@@ -5,7 +5,6 @@ import mobileMarketing from "../images/marketing-mobile-survey.webp"
 import phoneCalls from "../images/sales-phone-calls.webp"
 import closingDeals from "../images/close-deals-customers-engagement.webp"
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
-import fyncomLogoDark from "../images/FynCom_Logo_New-LARGEST-White.png"
 import "../components/use-cases.css"
 
 const UseCases = () => {
@@ -64,7 +63,10 @@ const UseCases = () => {
               <button type="submit">Submit</button>
             </form>
           </div>
+
+          {/*Div holds the dark/light - src for fallback*/}
           <div className="fyncom-logo">
+            <img src={fyncomLogo} alt="FynCom Logo" />
           </div>
         </div>
       <Footer />
