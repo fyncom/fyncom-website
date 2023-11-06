@@ -17,16 +17,13 @@
     max-width: 300px; /* You can adjust based on your preference */
     margin-right: 20px;
 }
-.use-case-description {
-    width: 50%;
-}
 
 /* Learn More Button */
 .learn-more-btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #000;
-    color: #fff;
+    background-color: var(--button-learn-more);
+    color: var(--dropdown-text-color) !important;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
@@ -36,7 +33,7 @@
 }
 .learn-more-btn:hover {
     transform: scale(1.1);  /* Increase the size of the letters by 10% */
-    background-color: #333;
+    background-color: var(--button-learn-more-hover);
 }
 /* Adding the underline effect */
 .learn-more-btn::after {
@@ -79,10 +76,4 @@
 }
 .demo-form button:hover {
     background-color: #333;
-}
-
-.fyncom-logo img {
-    display: block;
-    margin: 40px auto;
-    max-width: 300px; /* Adjust as per your logo size */
 }
