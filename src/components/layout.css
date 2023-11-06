@@ -43,6 +43,17 @@
     --dropdown-container-color: var(--fyncom-lightest-blue);
     --dropdown-text-color: #000;
     --dropdown-hover-color: white;
+    --button-learn-more: var(--fyncom-yellow);
+    --button-learn-more-hover: var(--karmacall-gold);
+    --logo-dark-mode: url('../images/FynCom_Logo_New-LARGEST-White.png');
+    --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
+    .fyncom-logo {
+        content: var(--logo-light-mode); /* Path to light mode logo */
+        display: block;
+        margin: 40px auto;
+        max-width: 300px; /* Adjust as per your logo size */
+
+    }
 }
 
 /* Automatically switch to dark mode based on user's system preference */
@@ -57,6 +68,14 @@
         --dropdown-container-color: var(--fyncom-darkest-cyan);
         --dropdown-text-color: #fff;
         --dropdown-hover-color: #000;
+        --button-learn-more: var(--fyncom-blue);
+        --button-learn-more-hover: var(--fyncom-cyan);
+        .fyncom-logo {
+            content: var(--logo-dark-mode); /* Path to light mode logo */
+            display: block;
+            margin: 40px auto;
+            max-width: 300px; /* Adjust as per your logo size */
+        }
     }
 }
 
@@ -71,7 +90,68 @@
     --dropdown-container-color: var(--fyncom-darkest-cyan);
     --dropdown-text-color: #fff;
     --dropdown-hover-color: #000;
+    --button-learn-more: var(--fyncom-blue);
+    --button-learn-more-hover: var(--fyncom-cyan);
+    .fyncom-logo {
+        content: var(--logo-dark-mode); /* Path to light mode logo */
+        display: block;
+        margin: 40px auto;
+        max-width: 300px; /* Adjust as per your logo size */
+    }}
+
+/****** *Setting mobile device css ******/
+/* Styles for tablets and above */
+@media (min-width: 768px) {
+    .use-case-section {
+        flex-direction: row;
+    }
+    .use-case-description {
+        width: 50%; /* Set to original width on larger screens */
+    }
 }
+
+/* Styles for mobile devices phones*/
+/* Styles for mobile devices phones*/
+@media (max-width: 767px) {
+    h1, h2, h3, p, sub {
+        text-align: center !important;
+    }
+    h1 {
+        font-size: xx-large !important;
+    }
+    h2 {
+        font-size: x-large !important;
+    }
+    h3 {
+        font-size: large !important;
+    }
+    p {
+        font-size: medium !important;
+    }
+    .use-case-section {
+        flex-direction: column;
+    }
+    .use-case-image,
+    .use-case-description {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    /*sets the images / description in order for columns*/
+    .use-case-section:nth-child(odd) .use-case-description {
+        order: 2; /* Put the description second */
+    }
+    .use-case-section:nth-child(odd) .use-case-image {
+        order: 1; /* Put the image first */
+        margin-bottom: 20px; /* Add some spacing between the image and description */
+    }
+    .use-case-image img {
+        max-width: 100%; /* Full width on mobile */
+        margin-right: 0; /* Reset margin since it's now a column layout */
+    }
+}
+
 
 html {
   -webkit-text-size-adjust: 100%;

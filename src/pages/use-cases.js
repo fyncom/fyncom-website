@@ -2,11 +2,10 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import mobileMarketing from "../images/marketing-mobile-survey.webp"
-// import mobileMarketing from "../images/marketing-mobile-survey.png"
 import phoneCalls from "../images/sales-phone-calls.webp"
-// import phoneCalls from "../images/sales-phone-calls.png"
 import closingDeals from "../images/close-deals-customers-engagement.webp"
-// import closingDeals from "../images/close-deals-customers-engagement.pnsgithub desktopg"
+import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
+import fyncomLogoDark from "../images/FynCom_Logo_New-LARGEST-White.png"
 import "../components/use-cases.css"
 
 const UseCases = () => {
@@ -65,10 +64,7 @@ const UseCases = () => {
               <button type="submit">Submit</button>
             </form>
           </div>
-
           <div className="fyncom-logo">
-            {/* Placeholder Logo */}
-            <img src="/path/to/fyncom-logo.png" alt="FynCom" />
           </div>
         </div>
       <Footer />
