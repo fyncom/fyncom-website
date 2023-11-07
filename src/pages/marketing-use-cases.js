@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import "../components/marketing-use-cases.css"
+import "../components/sales-and-marketing-use-cases.css"
 import sendgrid from "../images/logos/SG_Twilio_Lockup_RGBx1.png"
 import slicktext from "../images/logos/SlickText_Logo-Transparent.png"
 import zapier from "../images/logos/2560px-Zapier_logo.png"
@@ -54,7 +54,7 @@ const MarketingUseCases = () => {
 
       <div className="use-cases-container">
         <div className="call-to-action">
-          <h2 >Start engaging your customers with action-oriented rewards</h2>
+          <h2>Drive engagement and convert MQLs into SQLs by nudging leads to respond to emails, book meetings, & express intent with FynCom's action-oriented rewards</h2>
           <a href="https://calendly.com/adrian-fyncom/30min" className="cta-button">
             Request Demo
           </a>

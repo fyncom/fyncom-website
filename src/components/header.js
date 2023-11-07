@@ -19,7 +19,7 @@ const Header = () => {
             <div className="dropdown-content">
               <a href="/marketing-use-cases">Marketing</a>
               {/*<a href="/usecase-marketing">Marketing</a>*/}
-              <a href="/usecase-sales">Sales</a>
+              <a href="/sales-use-cases">Sales</a>
               <a href="/usecase-understanding-customers">Understanding Customers</a>
             </div>
           </li>
