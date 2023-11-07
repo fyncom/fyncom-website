@@ -45,6 +45,7 @@
     --dropdown-hover-color: white;
     --button-learn-more: var(--fyncom-yellow);
     --button-learn-more-hover: var(--karmacall-gold);
+    --container-color: var(--fyncom-cyan);
     --logo-dark-mode: url('../images/FynCom_Logo_New-LARGEST-White.png');
     --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
     .fyncom-logo {
@@ -75,6 +76,7 @@
         --dropdown-hover-color: #000;
         --button-learn-more: var(--fyncom-blue);
         --button-learn-more-hover: var(--fyncom-cyan);
+        --container-color: var(--fyncom-darkest-cyan);
         .fyncom-logo {
             content: var(--logo-dark-mode);
             display: block;
@@ -103,6 +105,7 @@
     --dropdown-hover-color: #000;
     --button-learn-more: var(--fyncom-blue);
     --button-learn-more-hover: var(--fyncom-cyan);
+    --container-color: var(--fyncom-dark-cyan);
     .fyncom-logo {
         content: var(--logo-dark-mode);
         display: block;
@@ -170,6 +173,33 @@
     }
 }
 
+/* call to action button */
+.call-to-action {
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+
+}
+.cta-button {
+    display: block; /* Allows the element to take padding and margin properly */
+    background-color: var(--fyncom-red);
+    color: white;
+    padding: 20px 40px; /* Increase padding for a larger button */
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 3rem; /* Adjust font-size for larger text */
+    transition: background-color 0.3s;
+    text-decoration: none; /* Remove underline from the link */
+    margin: auto; /* Centers the button */
+    max-width: 600px; /* Maximum width for the button */
+}
+
+.cta-button:hover {
+    background-color: #e55055;
+}
 
 html {
   -webkit-text-size-adjust: 100%;
