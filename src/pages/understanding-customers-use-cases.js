@@ -5,20 +5,20 @@ import "../components/sales-and-marketing-use-cases.css";
 import sendgrid from "../images/logos/SG_Twilio_Lockup_RGBx1.png";
 import slicktext from "../images/logos/SlickText_Logo-Transparent.png";
 import zapier from "../images/logos/2560px-Zapier_logo.png";
-import salesHeroImage from "../images/illustrations/telemarketing-ladies-happy.png";
-import increaseBookings from "../images/illustrations/increase-bookings.png";
-import accelerateDeals from "../images/illustrations/deal-acceleration-charts.png";
-import minMax from "../images/illustrations/min-max-gift-rewards-value-mobile.png";
+import customerHeroImage from "../images/illustrations/marketing-mobile-survey.png";
+import seamlessIntegrations from "../images/illustrations/seamless-integrations-comfy.png";
+import loyalCustomers from "../images/illustrations/identifying-loyal-customers.png";
+import driveAdoption from "../images/illustrations/customer-journey-optimization.png";
 
 const UnderstandingCustomersUseCase = () => {
   return (
     <div className="understanding-customers-use-cases">
       <Header />
       <div className="hero-section">
-        <img className="story-image" src={salesHeroImage} alt="use micro-rewards at each touchpoint to keep leads moving down through the customer journey" />
+        <img className="story-image" src={customerHeroImage} alt="use micro-rewards to keep customers moving down through their journey" />
         <div className="hero-content">
-          <h1>Accelerate Sales</h1>
-          <p>Close more deals with customers by using interactive rewards at key stages of your sales process</p>
+          <h1>Get to know your customers</h1>
+          <p>Incentivize customers to complete their onboarding journey in order to understand product barriers </p>
           <a href="https://calendly.com/adrian-fyncom/30min">
             <button className="demo-button">Request Demo</button>
           </a>
@@ -27,19 +27,19 @@ const UnderstandingCustomersUseCase = () => {
 
       <div className="use-cases-container">
         <div className="use-case">
-          <img className="use-case-image" src={increaseBookings} alt="Increase bookings with rewards before and after a meeting" />
-          <h2>Increase Bookings</h2>
-          <p>Incentivize your prospective buyers to book time with you by offering rewards for scheduling meetings</p>
+          <img className="use-case-image" src={seamlessIntegrations} alt="integrate rewards into the hardest parts of your customer journey" />
+          <h2>Seamless Integration</h2>
+          <p>We work with you to provide rewards for customers completing type form surveys</p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={accelerateDeals} alt="Accelerate Deals with customer journey rewards" />
-          <h2>Accelerate Deals</h2>
-          <p>Move prospective clients through your sales journey by providing rewards for reaching the next stage</p>
+          <img className="use-case-image" src={loyalCustomers} alt="find the traits of your most loyal customers more quickly" />
+          <h2>Identify Loyal Customers</h2>
+          <p>Reward your loyal customers and drive referrals </p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={minMax} alt="Min / max the value you give based on the revenue you generate" />
-          <h2>Min/Max Gifts/Value</h2>
-          <p>Only pay for rewards when your sales target moves along to the next stage of your sales journey</p>
+          <img className="use-case-image" src={driveAdoption} alt="using rewards at the hardest part of your product onboarding is key" />
+          <h2>Drive Adoption & Onboarding</h2>
+          <p>Properly timed incentives guide your customers' journeys and encourage long-term usage</p>
         </div>
       </div>
 
