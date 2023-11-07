@@ -1,8 +1,8 @@
 import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import mobileMarketing from "../images/marketing-mobile-survey.webp"
-import phoneCalls from "../images/sales-phone-calls.webp"
+import mobileMarketing from "../images/illustrations/marketing-mobile-survey.webp"
+import phoneCalls from "../images/illustrations/sales-phone-calls.webp"
 import closingDeals from "../images/close-deals-customers-engagement.webp"
 import "../components/use-cases.css"
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";

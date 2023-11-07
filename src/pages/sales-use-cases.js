@@ -5,7 +5,7 @@ import "../components/sales-and-marketing-use-cases.css";
 import sendgrid from "../images/logos/SG_Twilio_Lockup_RGBx1.png";
 import slicktext from "../images/logos/SlickText_Logo-Transparent.png";
 import zapier from "../images/logos/2560px-Zapier_logo.png";
-import salesHeroImage from "../images/illustrations/telemarketing-ladies-happy.png";
+import salesHeroImage from "../images/illustrations/sales-phone-calls.png";
 import increaseBookings from "../images/illustrations/increase-bookings.png";
 import accelerateDeals from "../images/illustrations/deal-acceleration-charts.png";
 import minMax from "../images/illustrations/min-max-gift-rewards-value-mobile.png";
@@ -15,7 +15,7 @@ const SalesUseCases = () => {
     <div className="sales-use-cases">
       <Header />
       <div className="hero-section">
-        <img className="story-image" src={salesHeroImage} alt="use micro-rewards at each touchpoint to keep leads moving down through the customer journey" />
+        <img className="story-image" src={salesHeroImage} alt="use rewards at each touchpoint to keep leads moving down through the customer journey" />
         <div className="hero-content">
           <h1>Accelerate Sales</h1>
           <p>Close more deals with customers by using interactive rewards at key stages of your sales process</p>
