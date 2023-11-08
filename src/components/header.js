@@ -18,7 +18,6 @@ const Header = () => {
             <a href="/use-cases" className="dropbtn">Use Cases</a>
             <div className="dropdown-content">
               <a href="/marketing-use-cases">Marketing</a>
-              {/*<a href="/usecase-marketing">Marketing</a>*/}
               <a href="/sales-use-cases">Sales</a>
               <a href="/understanding-customers-use-cases">Understanding Customers</a>
             </div>
