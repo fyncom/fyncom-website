@@ -26,7 +26,7 @@ const UseCases = () => {
             <div className="use-case-description">
               <h3>Understand your customers better</h3>
               <p>Treat each customer feedback survey as a reward campaign, reduce admin time, and generate trust with your contacts</p>
-              <a href="/use-cases/understand-customers" className="learn-more-btn">LEARN MORE</a>
+              <a href="/understanding-customers-use-cases" className="learn-more-btn">LEARN MORE</a>
             </div>
           </div>
 
@@ -34,7 +34,7 @@ const UseCases = () => {
             <div className="use-case-description">
               <h3>Close more deals</h3>
               <p>Break large gift into strategic points on your customer journey to reduce your Cost Per Lead</p>
-              <a href="/use-cases/close-deals" className="learn-more-btn">LEARN MORE</a>
+              <a href="/sales-use-cases" className="learn-more-btn">LEARN MORE</a>
             </div>
             <div className="use-case-image">
               <img src={phoneCalls} alt="Close more deals" />
@@ -48,10 +48,9 @@ const UseCases = () => {
             <div className="use-case-description">
               <h3>Increase Customer Engagement</h3>
               <p>Increase customer engagement and increase customer loyalty by offering incentivized rewards along the sales funnel to encourage your audience to learn more about your products and offerings</p>
-              <a href="/use-cases/customer-engagement" className="learn-more-btn">LEARN MORE</a>
+              <a href="/marketing-use-cases" className="learn-more-btn">LEARN MORE</a>
             </div>
           </div>
-
           <div className="demo-form">
             <h2>REQUEST A DEMO</h2>
             <p>Get in contact with us!</p>
