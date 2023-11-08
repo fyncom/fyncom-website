@@ -1,6 +1,6 @@
-import React from "react"
-import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
-import "./header.css" // Importing the CSS file
+import React from "react";
+import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";
+import "./header.css";
 import {Link} from "gatsby";
 import helpItems from "../../static/help-items";
 

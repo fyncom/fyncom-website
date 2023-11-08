@@ -27,7 +27,8 @@
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
   --color-background-light: #fff;
-  --sub-color-light: #2B5C65;
+    --color-background: #fff;
+    --sub-color-light: #2B5C65;
   --fyncom-blue: #4A90E2;
   --fyncom-light-blue: #13DCEC;
   --fyncom-lightest-blue: #80DED9;

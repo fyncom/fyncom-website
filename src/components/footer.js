@@ -1,5 +1,5 @@
 import React from "react"
-import "./footer.css" // Importing the CSS file
+import "./footer.css"
 import fbLogo from "../images/logos/facebook-logo.webp"
 import linkedInlogo from "../images/logos/linkedin-logo.webp"
 import xLogo from "../images/logos/twitter-logo-change-x-elon-musk-designboom-500.webp"
