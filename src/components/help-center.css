@@ -2,6 +2,12 @@
     text-align: center; /* Centers the text of the titles and descriptions */
     padding: 20px; /* Adds padding around the help center content */
 }
+/* todo center the "What do you need help with?" later - be wary here - it affects all p */
+/*.help-center p {*/
+/*    color: var(--color-text);*/
+/*    !*text-align: center; !* Centers the text of the titles and descriptions *!*!*/
+/*    !*padding: 20px; !* Adds padding around the help center content *!*!*/
+/*}*/
 .help-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates a responsive grid layout */
