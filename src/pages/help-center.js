@@ -2,6 +2,8 @@ import React, { useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/help-center.css"
+import { navigate } from 'gatsby';
+import slugify from 'slugify';
 import MarkdownContent from "../components/MarkdownContent"
 
 const HelpCenter = () => {
@@ -35,6 +37,7 @@ const HelpCenter = () => {
       title: "Sendgrid Email Rewards",
       description: "Attach Rewards To Emails",
       icon: "mail-bulk",
+      topicUrl: "add-fyncom-rewards-to-sendgrid-marketing-email",
       url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Attaching-FynCom-Rewards-To-Sendgrid-Emails.md",
     },
     {
