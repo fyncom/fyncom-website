@@ -14,7 +14,6 @@ const Header = () => {
     <header className="header-top">
       <div className="header-container">
         <a href="/">
-          {/*<img src={fyncomLogo} alt="FynCom Logo" />*/}
           <div className="fyncom-logo-header">
             <img src={fyncomLogo} alt="FynCom Logo" />
           </div>
@@ -40,11 +39,11 @@ const Header = () => {
           <li className="dropdown">
             <a href="/help-center" className="dropbtn">Help</a>
             <div className="dropdown-content">
-                {helpItems.map((item) => (
-                    <Link to={`/help-center/${item.topicUrl}`} key={item.title}>
-                        {item.title}
-                    </Link>
-                ))}
+              {helpItems.map((item) => (
+                <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`} key={item.title}>
+                  {item.title}
+                </Link>
+              ))}
             </div>
           </li>
         </ul>
