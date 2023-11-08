@@ -2,20 +2,44 @@ import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import nanoQrCode from "../images/DepositNanoQRCode.jpg"
 import "../components/white-paper.css";
 import "../components/blocked-email.css";
 import { useLocation } from "@reach/router";
 
 const MakeADeposit = () => {
     const [blockedEmailDetails, setBlockedEmailDetails] = useState(null);
-    const location = useLocation(); // This is to access the query parameters
+    const location = useLocation();
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    // Function to toggle the modal visibility
+    const toggleModal = () => {
+        setModalOpen(!isModalOpen);
+    };
+    // Modal component
+    const Modal = ({ onClose }) => {
+        return (
+            <div className="modal">
+                <div className="modal-content">
+                    <span className="close" onClick={onClose}>&times;</span>
+                    <h2>Got nano?</h2>
+                    <p>Use "nano"-transactions!</p>
+                    <p>Deposit 0.1 nano to</p>
+                    <p className="nano-address">nano_1bf3r8pqfsutekxunazj895an8h84ai3ao1ftqyejqiul65p3xsb9k99kc1</p>
+                    <div className="qr-code-container">
+                        <img src={nanoQrCode} alt="QR Code of the nano address you should send your deposit to" />
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const blockedEmailId = searchParams.get("depositId");
         console.log("deposit ID is %s", blockedEmailId);
         if (blockedEmailId) {
-            console.log("bluuuuuuuuuuuuu ID is %s", blockedEmailId);
             getBlockedEmailDetails(blockedEmailId);
         }
     }, [location]);
@@ -59,8 +83,8 @@ const MakeADeposit = () => {
             return (
                 <>
                     <a href={stripeUrl} className="button button1" role="button" target="_blank" rel="noopener noreferrer">Deposit cash</a>
-                    {/*update nano links*/}
-                    <button className="button button2">Deposit nano</button>
+                    <button className="button button2" onClick={toggleModal}>Deposit nano</button>
+                    {isModalOpen && <Modal onClose={toggleModal} />}
                 </>
             );
         } else {
