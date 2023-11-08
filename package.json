@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@react-pdf/renderer": "^3.1.14",
+    "dompurify": "^3.0.6",
     "gatsby": "^5.12.9",
     "gatsby-plugin-clearbit": "^1.1.0",
     "gatsby-plugin-facebook-pixel": "^1.0.8",
