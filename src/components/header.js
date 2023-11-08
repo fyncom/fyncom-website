@@ -6,10 +6,6 @@ import helpItems from "../../static/help-items";
 
 
 const Header = () => {
-    React.useEffect(() => {
-        console.log('Help Items:', helpItems);
-    }, []);
-
     return (
     <header className="header-top">
       <div className="header-container">
