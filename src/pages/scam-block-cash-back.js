@@ -11,7 +11,7 @@ const ScamBlockCashBlock = () => {
   return (
     <div>
       <Header />
-        <div className="use-cases-container">
+        <div className="use-cases-sales-marketing-container">
           <h1>Profit from Scam Blocking</h1>
           <br/>
           <h2>Cash in effortlessly</h2>
