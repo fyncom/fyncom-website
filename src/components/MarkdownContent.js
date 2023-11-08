@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 
 const MarkdownContent = ({ url }) => {
   const [content, setContent] = useState('');
@@ -9,7 +10,8 @@ const MarkdownContent = ({ url }) => {
     fetch(url)
       .then((response) => response.text())
       .then((text) => {
-        setContent(marked(text));
+        const sanitizedContent = DOMPurify.sanitize(marked(text));
+        setContent(sanitizedContent);
         setLoading(false);
       })
       .catch((error) => {
@@ -22,7 +24,7 @@ const MarkdownContent = ({ url }) => {
     return <div>Loading...</div>;
   }
 
-  // This will sanitize the HTML before setting it, Ensure a safe method to prevent XSS. use a library like DOMPurify to sanitize your HTML
+  // Safe to set HTML after sanitizing
   return <div dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
