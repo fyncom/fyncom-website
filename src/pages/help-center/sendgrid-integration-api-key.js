@@ -6,7 +6,7 @@ import Footer from "../../components/footer";
 import "../../components/help-center.css";
 import MarkdownContent from "../../components/MarkdownContent";
 
-const RewardsOverview = () => {
+const SendgridIntegrationApiKey = () => {
   const { search } = useLocation();
   const { contentUrl } = queryString.parse(search);
 
@@ -19,4 +19,4 @@ const RewardsOverview = () => {
   );
 };
 
-export default RewardsOverview;
+export default SendgridIntegrationApiKey;

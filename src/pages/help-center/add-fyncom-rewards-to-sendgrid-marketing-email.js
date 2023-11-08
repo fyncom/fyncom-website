@@ -9,7 +9,6 @@ import MarkdownContent from "../../components/MarkdownContent";
 const SendgridEmailRewardsHelp = () => {
   const { search } = useLocation();
   const { contentUrl } = queryString.parse(search);
-  console.log('URL Loaded:', contentUrl); // This will print the URL to the console
 
   return (
     <div>
