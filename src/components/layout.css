@@ -49,6 +49,8 @@
     --container-color: var(--fyncom-cyan);
     --logo-dark-mode: url('../images/FynCom_Logo_New-LARGEST-White.png');
     --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
+    --filters-dark-mode: url('../images/fyncom-filters-white.png');
+    --filters-light-mode: url('../images/fyncom-filters.png');
     --img-brightness: brightness(1);
     .fyncom-logo {
         content: var(--logo-light-mode);
@@ -61,6 +63,11 @@
         display: block;
         margin: 0px 10px;
         max-width: 100px;
+    }
+    .fyncom-filters-words {
+        content: var(--filters-light-mode);
+        margin: 1.5rem auto;
+        max-width: 500px;
     }
 }
 
@@ -92,6 +99,9 @@
             margin: 0px 10px;
             max-width: 100px;
         }
+        .fyncom-filters-words {
+            content: var(--filters-dark-mode);
+        }
     }
 }
 
@@ -121,6 +131,9 @@
         display: block;
         margin: 0px 10px;
         max-width: 100px;
+    }
+    .fyncom-filters-words {
+        content: var(--filters-dark-mode);
     }
 }
 

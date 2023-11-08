@@ -1,0 +1,35 @@
+/* Container styling */
+.unicorner-container {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    padding: 40px 0;
+}
+
+.unicorner-container h1, h2 {
+    text-align: center;
+    color: var(--fyncom-blue);
+    margin: 0 auto;
+}
+
+.info-section {
+    /* Styles for your info section */
+}
+
+.store-badges img {
+    height: 40px;
+    margin: 0 10px 0 100px;
+    vertical-align: middle;
+    padding-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.app-img:hover {
+    transform: scale(1.2);
+}
+
+.footer-section {
+    font-size: 0.9em; /* Just an example size */
+}
+
+
