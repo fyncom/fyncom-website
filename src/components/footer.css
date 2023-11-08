@@ -64,7 +64,7 @@ footer {
 .footer-links li {
   margin-bottom: 0.5rem; /* Spacing between links */
 }
-.footer-links a {
+.footer-links a, .info-container a {
   color: #FFF;
   text-decoration: none;
 }

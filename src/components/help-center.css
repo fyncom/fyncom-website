@@ -50,14 +50,10 @@
 .file-alt:before { content: "\f15c"; }
 .wallet:before { content: "\f555"; }
 
-/* Adds style to the link for non-business users */
-.help-center a {
-    display: block;
-    margin: 20px 0;
-    color: #007bff;
-    text-decoration: none;
-}
-
 .help-center a:hover {
     text-decoration: underline;
+}
+
+.markdown-content p {
+    color: var(--color-text);
 }

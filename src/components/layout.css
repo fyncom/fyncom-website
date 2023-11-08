@@ -3,6 +3,7 @@
   --border-radius: 4px;
   --color-text: #333;
   --color-primary: #7026b9;
+  --color-link: #007bff;
   --color-code-bg: #fff4db;
   --color-code: #8a6534;
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
@@ -222,9 +223,9 @@ body {
 }
 a {
   background-color: transparent;
-  color: var(--color-primary);
+  color: var(--color-link);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
