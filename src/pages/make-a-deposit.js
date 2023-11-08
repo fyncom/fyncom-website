@@ -3,33 +3,69 @@ import { Link } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "../components/white-paper.css";
+import "../components/blocked-email.css";
 import { useLocation } from "@reach/router";
 
 const MakeADeposit = () => {
-    let newUrl = `${process.env.GATSBY_API_URL}email/blocked/${blockedEmailId}`;
     const [blockedEmailDetails, setBlockedEmailDetails] = useState(null);
     const location = useLocation(); // This is to access the query parameters
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const blockedEmailId = searchParams.get("depositId");
+        console.log("deposit ID is %s", blockedEmailId);
         if (blockedEmailId) {
+            console.log("bluuuuuuuuuuuuu ID is %s", blockedEmailId);
             getBlockedEmailDetails(blockedEmailId);
         }
     }, [location]);
 
-    function getBlockedEmailDetails(blockedEmailId) {
-        let newUrl = `https://server.fyncom.com/v2/email/blocked/${blockedEmailId}`;
-        // Headers and fetch logic as you had in your Wix code
-        // Remember to use the useState hook to set the response data
+    const getBlockedEmailDetails = async (blockedEmailId) => {
+        let newUrl = `${process.env.GATSBY_API_URL}email/blocked/${blockedEmailId}`;
+        try {
+            const response = await fetch(newUrl, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                const depositPaid = data.depositPaid;
+                console.log("deposit paid status: " + depositPaid);
+                if (depositPaid) {
+                    // provide extra info - we'll handle this later as it's an edge case for now
+                }
+                setBlockedEmailDetails(data); // Update the state, which will re-render the component
+                // Handle other logic with the data here
+            } else {
+                throw new Error('Failed to fetch email details');
+            }
+        } catch (error) {
+            console.error('ERROR', error);
+        }
     }
 
     // Function to render the payment button or any other elements based on the blocked email details
     function renderPaymentButton() {
         if (blockedEmailDetails) {
+            console.log("data is here from {}", blockedEmailDetails);
             // Render your button and use the details from blockedEmailDetails
+            const stripeUrl = `https://buy.stripe.com/fZe5obgilbJa5lm001?prefilled_email=${blockedEmailDetails.senderEmailRaw}&client_reference_id=${blockedEmailDetails.blockedEmailLogId}`;
+            const stripeUrlDefault = `https://buy.stripe.com/fZe5obgilbJa5lm001`;
+
+            return (
+                <>
+                    <a href={stripeUrl} className="button button1" role="button" target="_blank" rel="noopener noreferrer">Deposit cash</a>
+                    {/*update nano links*/}
+                    <button className="button button2">Deposit nano</button>
+                </>
+            );
+        } else {
+            console.log("no data present")
         }
-        // else, render default content or loading state
     }
   return (
     <div>
@@ -38,7 +74,8 @@ const MakeADeposit = () => {
         <h1>Get Your Email Noticed. Make a Deposit. </h1>
         <sub>Pay a small, refundable deposit to get your email to my main inbox & get my immediate attention. If I respond, you get your deposit back. Simple!</sub>
         <p className="html5"> You're seeing this because you've gotten a "PayCation" email. </p>
-        {/*  some text / image manipulation has to happen here*/}
+          {renderPaymentButton()}
+          {/*  some text / image manipulation has to happen here*/}
         <p>Still here? Why not read something interesting? Ever get annoying calls? Emails? DMs? Read below to find out how we're helping fix that problem by
             getting people paid to block scam / spam and respond to good messages.</p>
         <h2>Why Do Spam Calls Still Exist?</h2>
