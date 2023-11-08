@@ -25,7 +25,7 @@ const UnderstandingCustomersUseCase = () => {
         </div>
       </div>
 
-      <div className="use-cases-container">
+      <div className="use-cases-sales-marketing-container">
         <div className="use-case">
           <img className="use-case-image" src={seamlessIntegrations} alt="integrate rewards into the hardest parts of your customer journey" />
           <h2>Seamless Integration</h2>
