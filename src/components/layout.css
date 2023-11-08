@@ -49,6 +49,7 @@
     --container-color: var(--fyncom-cyan);
     --logo-dark-mode: url('../images/FynCom_Logo_New-LARGEST-White.png');
     --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
+    --img-brightness: brightness(1);
     .fyncom-logo {
         content: var(--logo-light-mode);
         display: block;
@@ -78,6 +79,7 @@
         --button-learn-more: var(--fyncom-blue);
         --button-learn-more-hover: var(--fyncom-cyan);
         --container-color: var(--fyncom-darkest-cyan);
+        --img-brightness: brightness(0.7);
         .fyncom-logo {
             content: var(--logo-dark-mode);
             display: block;
@@ -107,6 +109,7 @@
     --button-learn-more: var(--fyncom-blue);
     --button-learn-more-hover: var(--fyncom-cyan);
     --container-color: var(--fyncom-dark-cyan);
+    --img-brightness: brightness(0.7);
     .fyncom-logo {
         content: var(--logo-dark-mode);
         display: block;
