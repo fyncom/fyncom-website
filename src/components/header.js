@@ -39,7 +39,7 @@ const Header = () => {
               <a href="/simple-email-rewards-setup">Simple Email Setup</a>
               <a href="/email-forwarding-setup-for-instant-rewards-delivery">Email Setup - Marketing/Basic</a>
               <a href="/sendgrid-integration-api-key">Sendgrid API Key</a>
-              <a href="/add-fyncom-rewards-to-sendgrid-marketing-email">Sendgrid Rewards Emails</a>
+              <a href="/help-center/add-fyncom-rewards-to-sendgrid-marketing-email">Sendgrid Rewards Emails</a>
               <a href="/sendgrid-drafts-preparation">Sendgrid Drafts - Setup</a>
               <a href="/help-article-content">Account Balance</a>
             </div>

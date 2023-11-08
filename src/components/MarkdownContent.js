@@ -24,7 +24,6 @@ const MarkdownContent = ({ url }) => {
     return <div>Loading...</div>;
   }
 
-  // Safe to set HTML after sanitizing
   return <div className="markdown-content" dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
