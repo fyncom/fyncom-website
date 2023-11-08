@@ -25,7 +25,7 @@ const SalesUseCases = () => {
         </div>
       </div>
 
-      <div className="use-cases-container">
+      <div className="use-cases-sales-marketing-container">
         <div className="use-case">
           <img className="use-case-image" src={increaseBookings} alt="Increase bookings with rewards before and after a meeting" />
           <h2>Increase Bookings</h2>

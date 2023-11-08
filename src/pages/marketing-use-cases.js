@@ -52,7 +52,7 @@ const MarketingUseCases = () => {
         </div>
       </div>
 
-      <div className="use-cases-container">
+      <div className="use-cases-sales-marketing-container">
         <div className="call-to-action">
           <h2>Drive engagement and convert MQLs into SQLs by nudging leads to respond to emails, book meetings, & express intent with FynCom's action-oriented rewards</h2>
           <a href="https://calendly.com/adrian-fyncom/30min" className="cta-button">
