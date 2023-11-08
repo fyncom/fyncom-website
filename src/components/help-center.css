@@ -2,7 +2,12 @@
     text-align: center; /* Centers the text of the titles and descriptions */
     padding: 20px; /* Adds padding around the help center content */
 }
-
+/* todo center the "What do you need help with?" later - be wary here - it affects all p */
+/*.help-center p {*/
+/*    color: var(--color-text);*/
+/*    !*text-align: center; !* Centers the text of the titles and descriptions *!*!*/
+/*    !*padding: 20px; !* Adds padding around the help center content *!*!*/
+/*}*/
 .help-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates a responsive grid layout */
@@ -11,8 +16,8 @@
     max-width: 1200px; /* Maximum width of the grid */
     margin: 0 auto; /* Centers the grid in the page */
 }
-/*set colors for dark mode too.*/
 .help-item {
+    cursor: default; /* Default cursor for items without a URL */
     background: var(--help-box); /* Sets the background color of each help item */
     border: 1px solid #eaeaea; /* Sets a border for each help item */
     border-radius: 8px; /* Rounds the corners of the border */
@@ -20,20 +25,22 @@
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to each help item */
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
+.help-item[data-has-url] {
+    cursor: pointer; /* Changes the cursor to a pointer for items with a URL */
+}
 
 .help-item:hover {
     transform: translateY(-5px); /* existing effect */
     background-color: #f0f8ff; /* New background color on hover */
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
-
 .help-item h2:hover, .help-item p:hover {
     text-decoration: underline; /* Underlines the text on hover */
 }
-
 .help-item:hover h2, .help-item:hover p {
     color: #007bff; /* Changes text color on hover */
 }
+
 .icon {
     font-size: 50px; /* Sets the size of the icons */
     margin-bottom: 20px; /* Adds space between icon and title */
@@ -49,14 +56,33 @@
 .file-alt:before { content: "\f15c"; }
 .wallet:before { content: "\f555"; }
 
-/* Adds style to the link for non-business users */
-.help-center a {
-    display: block;
-    margin: 20px 0;
-    color: #007bff;
-    text-decoration: none;
-}
-
 .help-center a:hover {
     text-decoration: underline;
+}
+
+.markdown-content p {
+    color: var(--color-text);
+    max-width: fit-content;
+}
+
+.markdown-content li {
+    margin-bottom: auto;
+    text-align: left;
+}
+
+.markdown-content img {
+    filter: var(--img-brightness);
+    max-width: 600px;
+}
+
+.markdown-content table {
+    border-collapse: separate; /* Allows for border-radius to work, but may not have the desired effect */
+    border-spacing: 0; /* Removes spacing between cells */
+    border: 2px solid var(--color-bar); /* Sets the border for the entire table */
+    border-radius: 8px; /* Rounded corners for the table */
+
+}
+.markdown-content th, .markdown-content td {
+    border: 1px solid var(--color-bar);
+    padding: 4px;
 }

@@ -1,14 +1,19 @@
 import React from "react"
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
 import "./header.css" // Importing the CSS file
+import {Link} from "gatsby";
+import helpItems from "../../static/help-items";
 
 
 const Header = () => {
-  return (
+    React.useEffect(() => {
+        console.log('Help Items:', helpItems);
+    }, []);
+
+    return (
     <header className="header-top">
       <div className="header-container">
         <a href="/">
-          {/*<img src={fyncomLogo} alt="FynCom Logo" />*/}
           <div className="fyncom-logo-header">
             <img src={fyncomLogo} alt="FynCom Logo" />
           </div>
@@ -34,14 +39,11 @@ const Header = () => {
           <li className="dropdown">
             <a href="/help-center" className="dropbtn">Help</a>
             <div className="dropdown-content">
-              <a href="/rewards-for-emails-texts-and-more">Overview of Rewards Tools</a>
-              <a href="/zapier-rewards">Zapier API Key Setup</a>
-              <a href="/simple-email-rewards-setup">Simple Email Setup</a>
-              <a href="/email-forwarding-setup-for-instant-rewards-delivery">Email Setup - Marketing/Basic</a>
-              <a href="/sendgrid-integration-api-key">Sendgrid API Key</a>
-              <a href="/add-fyncom-rewards-to-sendgrid-marketing-email">Sendgrid Rewards Emails</a>
-              <a href="/sendgrid-drafts-preparation">Sendgrid Drafts - Setup</a>
-              <a href="/help-article-content">Account Balance</a>
+              {helpItems.map((item) => (
+                <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`} key={item.title}>
+                  {item.title}
+                </Link>
+              ))}
             </div>
           </li>
         </ul>
