@@ -25,7 +25,7 @@ const MarketingUseCases = () => {
         </div>
       </div>
 
-      <div className="use-cases-container">
+      <div className="use-cases-sales-marketing-container">
         <div className="use-case">
           <img className="use-case-image" src={integrations} alt="integrate into your basis digital tools" />
           <h2>Seamless Integration</h2>
