@@ -6,6 +6,7 @@ import phoneCalls from "../images/illustrations/sales-phone-calls.webp"
 import closingDeals from "../images/close-deals-customers-engagement.webp"
 import "../components/use-cases.css"
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";
+import { Link } from "gatsby";
 
 const ScamBlockCashBlock = () => {
   return (
@@ -34,7 +35,7 @@ const ScamBlockCashBlock = () => {
                 to risk losing money to your audience before they can reach them.
                 Learn more.
               </p>
-              <a href="/use-cases/understand-customers" className="learn-more-btn">LEARN MORE</a>
+              <Link to="/use-cases/understand-customers" className="learn-more-btn">LEARN MORE</Link>
             </div>
           </div>
 
@@ -46,7 +47,7 @@ const ScamBlockCashBlock = () => {
                 imposters. Help mods by adding FynCom's Direct Message tech into
                 your Discord, Telegram, or other chat-based community. Bonus -
                 your users make $$ for every blocked spam DM!{" "}
-                <a href="path_to_contact_page">Contact us</a>
+                <Link to="path_to_contact_page">Contact us</Link>
               </p>
               {/*<a href="/use-cases/close-deals" className="learn-more-btn">LEARN MORE</a>*/}
             </div>
@@ -62,7 +63,7 @@ const ScamBlockCashBlock = () => {
             <div className="use-case-description">
               <h3>Increase Customer Engagement</h3>
               <p>Increase customer engagement and increase customer loyalty by offering incentivized rewards along the sales funnel to encourage your audience to learn more about your products and offerings</p>
-              <a href="/use-cases/customer-engagement" className="learn-more-btn">LEARN MORE</a>
+              <Link to="/use-cases/customer-engagement" className="learn-more-btn">LEARN MORE</Link>
             </div>
           </div>
 

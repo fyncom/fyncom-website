@@ -6,6 +6,7 @@ import { navigate } from 'gatsby';
 import slugify from 'slugify';
 import MarkdownContent from "../components/MarkdownContent"
 import helpItems from "../../static/help-items";
+import { Link } from "gatsby";
 
 const HelpCenter = () => {
   const [selectedItemUrl, setSelectedItemUrl] = useState(null)
@@ -23,9 +24,9 @@ const HelpCenter = () => {
       <div className="help-center">
         <h1 className="centered">Help Center</h1>
         <p className="centered-p">What do you need help with?</p>
-        <a href="/user-help-center">
+        <Link to="/user-help-center">
           Not a business? Click here for our User Help Center.
-        </a>
+        </Link>
         <div className="help-items">
             {helpItems.map((item) => (
                 <div
