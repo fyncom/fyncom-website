@@ -63,7 +63,7 @@ const MakeADeposit = () => {
                     // provide extra info - we'll handle this later as it's an edge case for now
                 }
                 setBlockedEmailDetails(data); // Update the state, which will re-render the component
-                // Handle other logic with the data here
+                // todo Handle other logic with the data here
             } else {
                 throw new Error('Failed to fetch email details');
             }
@@ -79,7 +79,6 @@ const MakeADeposit = () => {
             // Render your button and use the details from blockedEmailDetails
             const stripeUrl = `https://buy.stripe.com/fZe5obgilbJa5lm001?prefilled_email=${blockedEmailDetails.senderEmailRaw}&client_reference_id=${blockedEmailDetails.blockedEmailLogId}`;
             const stripeUrlDefault = `https://buy.stripe.com/fZe5obgilbJa5lm001`;
-
             return (
                 <>
                     <a href={stripeUrl} className="button button1" role="button" target="_blank" rel="noopener noreferrer">Deposit cash</a>
