@@ -5,15 +5,10 @@
     max-width: 1200px;
     padding: 40px 0;
 }
-
-.unicorner-container h1, h2 {
+.unicorner-container h1, .unicorner-container h2 {
     text-align: center;
     color: var(--fyncom-blue);
     margin: 0 auto;
-}
-
-.info-section {
-    /* Styles for your info section */
 }
 
 .store-badges img {
