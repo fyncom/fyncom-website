@@ -27,9 +27,11 @@
   --size-gutter: var(--space-5);
   --size-gap: var(--space-6);
   --color-background-light: #fff;
-  --sub-color-light: #2B5C65;
-  --fyncom-blue: #4A90E2;
-  --fyncom-light-blue: #13DCEC;
+    --color-background: #fff;
+
+    --fyncom-blue: #4A90E2;
+    --fyncom-blue-rgb: 74, 144, 226; /* The RGB equivalent of #4A90E2 */
+    --fyncom-light-blue: #13DCEC;
   --fyncom-lightest-blue: #80DED9;
   --fyncom-red: #FF5A5F;
   --fyncom-cyan: #408A97;
@@ -39,6 +41,7 @@
   --karmacall-gold: #ff8c00;
   --karmacall-green: #008080;
   --robocash-green: #3fa060;
+    --sub-color: var(--fyncom-cyan);
     --color-bar: #000;
     --help-box: #fff;
     --dropdown-container-color: var(--fyncom-lightest-blue);
@@ -77,7 +80,7 @@
         --color-text: #eaeaea;
         --color-background: #121212;
         --color-primary: #bb86fc;
-        --sub-color: #88C0D0;
+        --sub-color: var(--fyncom-light-blue);
         --color-bar: #fff;
         --help-box: #000;
         --dropdown-container-color: var(--fyncom-darkest-cyan);
@@ -110,7 +113,7 @@
     --color-text: #eaeaea;
     --color-background: #121212;
     --color-primary: #bb86fc;
-    --sub-color: #88C0D0;
+    --sub-color: var(--fyncom-red);
     --color-bar: #fff;
     --help-box: #000;
     --dropdown-container-color: var(--fyncom-darkest-cyan);
@@ -246,8 +249,7 @@ a {
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
 }
-a:active,
-a:hover {
+a:active, a:hover {
   outline-width: 0;
   text-decoration: none;
 }
@@ -256,8 +258,7 @@ abbr[title] {
   cursor: help;
   text-decoration: none;
 }
-b,
-strong {
+b, strong {
   font-weight: inherit;
   font-weight: bolder;
 }
@@ -317,16 +318,16 @@ sub {
     font-size: 22px;
     text-align: left;
     font-weight: 300; /* Light */
-    color: var(--sub-color, var(--sub-color-light));
+    /*background-color: var(--color-background, var(--color-background-light));*/
+    /* DO NOT FOLLOW THE 2 VAR model below - it does not work - use the single var*/
+    /*color: var(--sub-color, var(--sub-color-light)); !*this seems backwards*!*/
+    color: var(--sub-color);
 }
 img {
   border-style: none;
   max-width: 100%;
 }
-code,
-kbd,
-pre,
-samp {
+code, kbd, pre, samp {
   font-family: var(--font-mono);
   font-size: 1em;
   line-height: inherit;
@@ -352,16 +353,9 @@ hr {
 *:after {
   box-sizing: inherit;
 }
-hgroup,
-img,
-figure,
-fieldset,
-ul,
-ol,
-dl,
-dd,
-ul,
-ol {
+
+/*NOTE: the img here, can sometimes disrupt certain images... but it does more good than bad*/
+hgroup, img, figure, fieldset, ul, ol, dl, dd, ul, ol {
   margin-left: var(--space-4);
   list-style-position: outside;
   list-style-image: none;
@@ -379,10 +373,7 @@ pre {
   word-wrap: normal;
   padding: var(--space-4);
 }
-b,
-strong,
-dt,
-th {
+b, strong, dt, th {
   font-weight: bold;
 }
 li {
@@ -410,6 +401,7 @@ p *:last-child {
 li > p {
   margin-bottom: calc(var(--space-4) / 2);
 }
+/*This one also causes issues, but does more good than bad.*/
 p {
   max-width: 680px;
 }
@@ -443,16 +435,10 @@ code {
 pre code {
   background: none;
 }
-code:before,
-code:after,
-tt:before,
-tt:after {
+code:before, code:after, tt:before, tt:after {
   content: "\00a0";
   letter-spacing: -0.2em;
 }
-pre code:before,
-pre code:after,
-pre tt:before,
-pre tt:after {
+pre code:before, pre code:after, pre tt:before, pre tt:after {
   content: none;
 }

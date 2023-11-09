@@ -16,7 +16,8 @@
     flex: 1  1 auto;
     max-width: 1000px;
 }
-.hero-content h1, p{
+.hero-content h1,
+.hero-content p {
     color: #fff;
 }
 .demo-button {
