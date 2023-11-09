@@ -4,6 +4,7 @@ import fbLogo from "../images/logos/facebook-logo.webp"
 import linkedInlogo from "../images/logos/linkedin-logo.webp"
 import xLogo from "../images/logos/twitter-logo-change-x-elon-musk-designboom-500.webp"
 import fyncomLogoWhite from "../images/fyncom-logo-white.png"
+import { Link } from "gatsby";
 
 const Footer = () => {
   return (
@@ -40,36 +41,36 @@ const Footer = () => {
         <ul className="footer-links">
           {/*todo set this up so that only 1 is visble*/}
           <li>
-            <a href="/use-cases">Product</a>
+            <Link to="/use-cases">Product</Link>
           </li>
           <li>
-            <a href="/use-cases">Reward Campaigns</a>
+            <Link to="/use-cases">Reward Campaigns</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/pricing">Pricing</a>
+            <Link to="/pricing">Pricing</Link>
           </li>
           <li>
-            <a href="/help-center">Help</a>
+            <Link to="/help-center">Help</Link>
           </li>
           <li>
-            <a href="/blog">Blog</a>
+            <Link to="/blog">Blog</Link>
           </li>
         </ul>
         <ul className="footer-links">
           <li>
-            <a href="/contact">Contact Us</a>
+            <Link to="/contact">Contact Us</Link>
           </li>
           <li>
-            <a href="/terms-of-service">Terms of Use</a>
+            <Link to="/terms-of-service">Terms of Use</Link>
           </li>
           <li>
-            <a href="/sitemap">Sitemap</a>
+            <Link to="/sitemap">Sitemap</Link>
           </li>
           <li>
-            <a href="/privacy-policy">Privacy Policy</a>
+            <Link to="/privacy-policy">Privacy Policy</Link>
           </li>
         </ul>
       </div>

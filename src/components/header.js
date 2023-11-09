@@ -4,36 +4,35 @@ import "./header.css";
 import {Link} from "gatsby";
 import helpItems from "../../static/help-items";
 
-
 const Header = () => {
     return (
     <header className="header-top">
       <div className="header-container">
-        <a href="/">
+        <Link to="/">
           <div className="fyncom-logo-header">
             <img src={fyncomLogo} alt="FynCom Logo" />
           </div>
-        </a>
+        </Link>
         <ul className="nav-links">
           <li className="dropdown">
-            <a href="/use-cases" className="dropbtn">Use Cases</a>
+            <Link to="/use-cases" className="dropbtn">Use Cases</Link>
             <div className="dropdown-content">
-              <a href="/marketing-use-cases">Marketing</a>
-              <a href="/sales-use-cases">Sales</a>
-              <a href="/understanding-customers-use-cases">Understanding Customers</a>
+              <Link to="/marketing-use-cases">Marketing</Link>
+              <Link to="/sales-use-cases">Sales</Link>
+              <Link to="/understanding-customers-use-cases">Understanding Customers</Link>
             </div>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/pricing">Pricing</a>
+            <Link to="/pricing">Pricing</Link>
           </li>
           <li>
-            <a href="/blog">Blog</a>
+            <Link to="/blog">Blog</Link>
           </li>
           <li className="dropdown">
-            <a href="/help-center" className="dropbtn">Help</a>
+            <Link to="/help-center" className="dropbtn">Help</Link>
             <div className="dropdown-content">
               {helpItems.map((item) => (
                 <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`} key={item.title}>
