@@ -2,73 +2,88 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import { Link } from "gatsby"
-import "../components/use-cases.css"
+import "../components/index.css"
 import tinderLogo from "../images/logos/tinder-logo.png"
 import discordLogo from "../images/logos/Discord-logo.png"
 import telegramLogo from "../images/logos/telegram-logo.png"
 import fyncomFilterGmail from "../images/fyncom_filters_gmail_edition_no_logo.png"
 import karmaCall from "../images/karmacall-logo.png"
 import increaseResponseRates from "../images/increase-response=rates-across-any platform-and-channel.png"
-import fyncomGif from "../images/fyncom-GIF-expanding-logo-enlarged.gif"
+import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
 
 const BlockSpamEarnCash = () => {
   return (
     <div>
       <Header />
       <section>
-        <div className="hero-section">
-          <img
-            className="story-image"
-            src={fyncomGif}
-            alt="Financial Communications cuts out noise and bring in trust"
-          />
-          <div className="hero-content">
-            <h1>Profit from Scam Blocking</h1>
-            <h2>Cash in effortlessly</h2>
-            <p>Emails, direct messages, calls - we do it all!</p>
+        <div className="AppText">
+          <div className="social-media-container">
+            <div className="logo-container">
+              <div className="bottom-logo">
+                <img src={fyncomGif} className="story-image" alt="Financial Communications cuts out noise and bring in trust"/>
+              </div>
+            </div>
+            <div className="text-block">
+              <h1>Profit from Scam Blocking</h1>
+              <h2>Cash in effortlessly</h2>
+              <p>Emails, direct messages, calls - we do it all!</p>
+            </div>
           </div>
         </div>
         <br />
 
-        <div className="use-case-section">
-          <div className="use-case-description">
-            <h3>Are your customers getting phished?</h3>
-            <p>
-              Stop scams with refundable deposits. Our tech asks unknown senders
-              to risk losing money to your audience before they can reach them.
-              Click the images learn more.
-            </p>
-          </div>
-          <div className="use-case-image">
-            <Link to="/fyncom-filters-email-edition" className="learn-more-btn">
-              <img
-                src={fyncomFilterGmail}
-                alt="block bad emails automatically & get paid."
-              />
-            </Link>
-            <a href="https://www.karmacall.com/" className="learn-more-btn">
-              <img src={karmaCall} alt="Get paid to block scam calls!" />
-            </a>
+        {/*fix the image / link issue here*/}
+        <div className="AppText">
+          <div className="social-media-container">
+            <div className="text-block-left">
+              <h2 className="text-wrapper-2">Are your customers getting{" "}
+                <span className="text-wrapper-3-red">phished</span>?
+              </h2>
+              <p> Stop scams with refundable deposits. Our tech asks unknown senders
+                to risk losing money to your audience before they can reach them.
+                Click the images to learn more.
+              </p>
+            </div>
+            <div className="logo-container">
+              {/* todo add dark modes*/}
+              <div className="top-logos-left">
+                <Link to="/fyncom-filters-email-edition" className="index-links">
+                  <img src={fyncomFilterGmail} alt="block bad emails automatically & get paid." className="index-logo-discord" />
+                </Link>
+                <Link to="https://www.karmacall.com"  className="index-links">
+                  <img src={karmaCall} alt="Get paid to block scam calls!" className="index-logo" />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
+        <br />
 
-        <div className="use-case-section">
-          <h3>Too many scam DMs in chats?</h3>
-          <div className="use-case-image">
-            <img src={discordLogo} alt="Discord Logo" />
-            <img src={tinderLogo} alt="Tinder Logo" />
-            <img src={telegramLogo} alt="Telegram Logo" />
-          </div>
-          <div className="use-case-description">
-            <p>
-              Your community loves making connections, but not with scammers &
-              imposters. Help mods by adding FynCom's Direct Message tech into
-              your Discord, Telegram, or other chat-based community. Bonus -
-              your users make $$ for every blocked spam DM!{" "}
-              <a href="path_to_contact_page">Contact us</a>
-            </p>
+        <div className="AppText">
+          <div className="social-media-container">
+            <div className="logo-container">
+              <div className="top-logos">
+                <img src={discordLogo} alt="Discord" className="index-logo-discord" />
+                <img src={telegramLogo} alt="Telegram" className="index-logo-tg" />
+              </div>
+              <div className="bottom-logo">
+                <img src={tinderLogo} alt="Tinder" className="index-logo" />
+              </div>
+            </div>
+            <div className="text-block">
+              <h2 className="text-wrapper-2">Too many {" "}
+                <span className="text-wrapper-3">abusive DMs</span>{" "}in your communities?
+              </h2>
+              <p> Your community loves making connections, but not with scammers &amp; imposters. Help mods by adding
+                FynCom&#39;s Direct Message tech into your Discord, Telegram, or other chat-based community. Bonus - your
+                users make $$ for every blocked spam DM!{" "}
+                <span className="span">Contact us</span>
+              </p>
+            </div>
           </div>
         </div>
+        <br />
+
 
         <section>
           <h3>Why FynCom?</h3>
