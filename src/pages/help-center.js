@@ -2,30 +2,27 @@ import React, { useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/help-center.css"
-import { navigate } from 'gatsby';
+import { navigate, Link } from 'gatsby';
 import slugify from 'slugify';
 import MarkdownContent from "../components/MarkdownContent"
-import helpItems from "../../static/help-items";
-import { Link } from "gatsby";
+import { helpItems } from "../../static/help-items";
 
 const HelpCenter = () => {
   const [selectedItemUrl, setSelectedItemUrl] = useState(null)
-
-    // Function to handle item click
-    const handleClick = (item) => {
-        console.log("URL Loaded:", item.url);
-        setSelectedItemUrl(item.url); // Set the URL to state for rendering MarkdownContent
-        navigate(`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`);
-    };
-
+  const handleClick = (item) => {
+      // console.log("URL Loaded:", item.url);
+      setSelectedItemUrl(item.url);
+      navigate(`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`);
+  };
   return (
     <div>
       <Header />
       <div className="help-center">
         <h1 className="centered">Help Center</h1>
         <p className="centered-p">What do you need help with?</p>
+        Not a business? {" "}
         <Link to="/user-help-center">
-          Not a business? Click here for our User Help Center.
+          Click here for our User Help Center.
         </Link>
         <div className="help-items">
             {helpItems.map((item) => (

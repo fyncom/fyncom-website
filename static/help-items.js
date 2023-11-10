@@ -1,4 +1,4 @@
-const helpItems = [
+export const helpItems = [
 {title: "Overview of Rewards Tools", description: "Learn more about our services", icon: "info-circle",
     topicUrl: "rewards-for-emails-text-and-more", url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Overview-Of-FynCom-Tools.md",},
 {title: "Zapier Setup", description: "Automate Rewards in Zapier", icon: "zap",
@@ -20,4 +20,10 @@ const helpItems = [
     topicUrl: "account-balance-help", url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Account-Balance.md",},
 ]
 
-export default helpItems
+export const helpItemsUser = [
+{title: "Crowdin Rewards Setup", description: "Translate a word, get instantly paid! Input your Crowdin username to start", icon: "info-circle",
+    topicUrl: "crowdin-rewards-for-translations-user-setup", url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Crowdin-Setup-FynCom.md",},
+ // next one would be "email-filters-and-rewards, but that is just html - no markdown
+  // {title: "FynCom Filters for Emails", description: "Get rewarded to block email. Allow trused email. Cash out your way", icon: "info-circle",
+  //   topicUrl: "email-filters-and-rewards", url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Crowdin-Setup-FynCom.md",},
+]

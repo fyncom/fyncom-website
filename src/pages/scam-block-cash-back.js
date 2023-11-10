@@ -8,6 +8,7 @@ import "../components/use-cases.css"
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";
 import { Link } from "gatsby";
 
+// NOTE: This is suppose to be the 2nd main page - currently this is an old version of what is currently index.js
 const ScamBlockCashBlock = () => {
   return (
     <div>
@@ -47,7 +48,7 @@ const ScamBlockCashBlock = () => {
                 imposters. Help mods by adding FynCom's Direct Message tech into
                 your Discord, Telegram, or other chat-based community. Bonus -
                 your users make $$ for every blocked spam DM!{" "}
-                <Link to="path_to_contact_page">Contact us</Link>
+                <a href="mailto:support@fyncom.com?subject=FynCom DMs">Contact us</a>
               </p>
               {/*<a href="/use-cases/close-deals" className="learn-more-btn">LEARN MORE</a>*/}
             </div>

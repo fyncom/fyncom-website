@@ -2,7 +2,7 @@ import React from "react";
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";
 import "./header.css";
 import {Link} from "gatsby";
-import helpItems from "../../static/help-items";
+import { helpItems } from "../../static/help-items";
 
 const Header = () => {
     return (
