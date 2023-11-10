@@ -106,3 +106,23 @@ button.user:hover {
 .dropdown-content a:hover {
     background-color: var(--dropdown-hover-color);
 }
+
+/* once hamburger menu is ready - this won't suck as much*/
+@media (max-width: 768px) {
+  /* Ensure that buttons and links are easily clickable on mobile */
+  button, .cta-button, a {
+    min-width: 44px; /* The minimum recommended size for touch targets */
+    min-height: 44px; /* The minimum recommended size for touch targets */
+  }
+  /* Adjust heading sizes for mobile to ensure they don't overflow their containers */
+  h1, h2, h3 {
+    font-size: smaller; /* Adjust the font size down, or use a specific size */
+  }
+  /* Make sure that any paragraphs or spans are not too wide and have adequate line height */
+  p, span {
+    line-height: 1.5; /* Increase line height for readability */
+    word-wrap: break-word; /* Ensure long words don't overflow their containers */
+  }
+}
+
+

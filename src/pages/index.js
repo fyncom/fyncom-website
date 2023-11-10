@@ -33,7 +33,7 @@ const BlockSpamEarnCash = () => {
           <div className="social-media-container">
             <div className="logo-container">
               <div className="bottom-logo">
-                <img src={fyncomGif} className="story-image" alt="Financial Communications cuts out noise and bring in trust"/>
+                <img src={fyncomGif} className="index-story-image" alt="Financial Communications cuts out noise and bring in trust"/>
               </div>
             </div>
             <div className="text-block">
@@ -43,7 +43,6 @@ const BlockSpamEarnCash = () => {
             </div>
           </div>
         </div>
-        <br />
 
         {/*fix the image / link issue here*/}
         <div className="AppText">
@@ -58,19 +57,19 @@ const BlockSpamEarnCash = () => {
               </p>
             </div>
             <div className="logo-container">
-              {/* todo add dark modes*/}
               <div className="top-logos-left">
                 <Link to="/fyncom-filters-email-edition" className="index-links">
-                  <img src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid." className="index-logo-discord" />
+                  <img src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."
+                       className="index-logo-discord" />
                 </Link>
                 <Link to="https://www.karmacall.com"  className="index-links">
-                  <img src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!" className="index-logo" />
+                  <img src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"
+                       className="index-logo" />
                 </Link>
               </div>
             </div>
           </div>
         </div>
-        <br />
 
         <div className="AppText">
           <div className="social-media-container">
@@ -95,7 +94,6 @@ const BlockSpamEarnCash = () => {
             </div>
           </div>
         </div>
-        <br />
 
         <section className="why-fyncom">
           <h3>Why FynCom?</h3>
