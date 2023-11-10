@@ -65,11 +65,16 @@
   max-width: 30%;
   min-width: 180px;
 }
+.index-logo-use-cases {
+  max-width: 80%;
+  min-width: 300px;
+}
 .index-logo:hover,
 .index-logo-tg:hover,
 .index-logo-discord:hover,
 .index-logo-fyncom-filter:hover,
-.index-logo-karmacall:hover {
+.index-logo-karmacall:hover,
+.index-logo-use-cases:hover {
   transform: scale(1.15);
   transition: transform 0.3s;
 }
@@ -184,6 +189,10 @@
     min-width: 180px;
   }
   .index-logo-karmacall {
+    min-width: 120px;
+  }
+  .index-logo-use-cases {
+    max-width: 60%;
     min-width: 120px;
   }
 

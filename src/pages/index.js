@@ -117,7 +117,7 @@ const BlockSpamEarnCash = () => {
             </div>
             <div className="logo-container">
               <div className="bottom-logo">
-                <img className="index-logo" src={increaseResponseRates} alt="Increase Customer Engagement"/>
+                <img className="index-logo-use-cases" src={increaseResponseRates} alt="Increase Customer Engagement"/>
               </div>
             </div>
           </div>
