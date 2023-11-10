@@ -14,12 +14,15 @@ import increaseResponseRates from "../images/increase-response=rates-across-any 
 import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
 
 const BlockSpamEarnCash = () => {
-  const [isDarkMode, setIsDarkMode] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = () => setIsDarkMode(mediaQuery.matches);
-    mediaQuery.addListener(handleChange);
-    return () => mediaQuery.removeListener(handleChange);
+    if(typeof window !== 'undefined') {  // Check if window is defined (this means we're on the client-side)
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = () => setIsDarkMode(mediaQuery.matches);
+      setIsDarkMode(mediaQuery.matches);  // Set the initial value based on the media query
+      mediaQuery.addListener(handleChange);  // Add a listener for changes to the media query
+      return () => mediaQuery.removeListener(handleChange);  // Return cleanup function to remove media query listener
+    }
   }, []);
 
   return (
@@ -93,7 +96,6 @@ const BlockSpamEarnCash = () => {
           </div>
         </div>
         <br />
-
 
         <section className="why-fyncom">
           <h3>Why FynCom?</h3>
