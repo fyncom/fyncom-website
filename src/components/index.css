@@ -1,10 +1,22 @@
-.AppText {
+.AppText. why-fyncom {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
-  padding: 1rem;
+  padding: 2rem;
+  /*margin: auto;*/
+  /*margin-top: 100px;*/
   box-sizing: border-box; /* This ensures padding is included in the height calculation */
+}
+
+.why-fyncom h3 {
+  align-content: center;
+  text-align: center;
+}
+.why-fyncom p {
+  align-content: center;
+  text-align: center;
+  padding: 2rem;
 }
 
 .logo-container {
@@ -116,11 +128,13 @@
 
 /* social media css*/
 .social-media-container {
+  margin: auto;
   display: flex;
   align-items: center; /* Vertically centers children */
   justify-content: center; /* Horizontally centers children */
   width: 100%;            /* Use the full width of the App container */
   max-width: 1200px;
+  padding: 1rem;
   max-height: 600px;
   /*margin: 0 auto;*/
 }
@@ -140,7 +154,7 @@
   text-align: left;
   padding: 0px;
 }
-.AppText .span {
+.AppText .span, .AppText .span a {
   color: var(--fyncom-red);
   margin: auto;
   text-align: left;
@@ -159,11 +173,20 @@
 
 @media (max-width: 768px) {
   .AppText {
-    padding: 0rem;
+    padding: 1rem;
+    flex-direction: column; /* Stack the child elements vertically */
   }
-  .social-media-container {
+  .social-media-container,
+  .text-block,
+  .text-block-left,
+  .logo-container,
+  .top-logos,
+  .top-logos-left,
+  .bottom-logo {
     flex-direction: column;
     align-items: center; /* Center align items for mobile */
+    text-align: center; /* Center the text for mobile */
+    max-width: 100%; /* Override any max-width set for larger screens */
   }
   .logo-container, .top-logos, .bottom-logo {
     width: 100%;        /* Take the full width of the container on small screens */
@@ -172,8 +195,9 @@
     gap: 0rem;
   }
   .index-logo, .index-logo-tg, .index-logo-discord {
-    object-fit: contain;
-    min-width: 10px;
+    width: 80%; /* Increase width to fit mobile screens, adjust as needed */
+    margin-bottom: 1rem; /* Add some space between logos */
+    height: auto; /* Maintain aspect ratio */
   }
   .index-logo {
     max-width: 30%;
@@ -187,14 +211,33 @@
     min-width: 100px;
     max-width: 25%;
   }
+
   .text-block {
     padding: 20px;
     margin-left: 0;
     /* If you want to add some spacing between the logos and text block on smaller screens */
     margin-top: 1rem;
   }
+  .text-block, .text-block-left {
+    margin: 1rem 0; /* Add some top and bottom margin for spacing */
+    padding: 0 1rem; /* Add padding to ensure text doesn't touch the edges */
+  }
   .AppText .span {
     text-align: center;
+  }
+  /* Ensure that buttons and links are easily clickable on mobile */
+  button, .cta-button, a {
+    min-width: 44px; /* The minimum recommended size for touch targets */
+    min-height: 44px; /* The minimum recommended size for touch targets */
+  }
+  /* Adjust heading sizes for mobile to ensure they don't overflow their containers */
+  h1, h2, h3 {
+    font-size: smaller; /* Adjust the font size down, or use a specific size */
+  }
+  /* Make sure that any paragraphs or spans are not too wide and have adequate line height */
+  p, span {
+    line-height: 1.5; /* Increase line height for readability */
+    word-wrap: break-word; /* Ensure long words don't overflow their containers */
   }
 
 }

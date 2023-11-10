@@ -1,4 +1,4 @@
-import React from "react"
+import React,  { useState, useEffect } from 'react';
 import Header from "../components/header"
 import Footer from "../components/footer"
 import { Link } from "gatsby"
@@ -7,11 +7,21 @@ import tinderLogo from "../images/logos/tinder-logo.png"
 import discordLogo from "../images/logos/Discord-logo.png"
 import telegramLogo from "../images/logos/telegram-logo.png"
 import fyncomFilterGmail from "../images/fyncom_filters_gmail_edition_no_logo.png"
+import fyncomFilterGmailDark from "../images/fyncom_filters_gmail_edition_no_logo-white.png"
 import karmaCall from "../images/karmacall-logo.png"
+import karmaCallDark from "../images/karmacall-logo-white.png"
 import increaseResponseRates from "../images/increase-response=rates-across-any platform-and-channel.png"
 import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
 
 const BlockSpamEarnCash = () => {
+  const [isDarkMode, setIsDarkMode] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => setIsDarkMode(mediaQuery.matches);
+    mediaQuery.addListener(handleChange);
+    return () => mediaQuery.removeListener(handleChange);
+  }, []);
+
   return (
     <div>
       <Header />
@@ -48,10 +58,10 @@ const BlockSpamEarnCash = () => {
               {/* todo add dark modes*/}
               <div className="top-logos-left">
                 <Link to="/fyncom-filters-email-edition" className="index-links">
-                  <img src={fyncomFilterGmail} alt="block bad emails automatically & get paid." className="index-logo-discord" />
+                  <img src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid." className="index-logo-discord" />
                 </Link>
                 <Link to="https://www.karmacall.com"  className="index-links">
-                  <img src={karmaCall} alt="Get paid to block scam calls!" className="index-logo" />
+                  <img src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!" className="index-logo" />
                 </Link>
               </div>
             </div>
@@ -77,7 +87,7 @@ const BlockSpamEarnCash = () => {
               <p> Your community loves making connections, but not with scammers &amp; imposters. Help mods by adding
                 FynCom&#39;s Direct Message tech into your Discord, Telegram, or other chat-based community. Bonus - your
                 users make $$ for every blocked spam DM!{" "}
-                <span className="span">Contact us</span>
+                <span className="span"><a href="mailto:support@fyncom.com?subject=FynCom DMs">Contact us</a></span>
               </p>
             </div>
           </div>
@@ -85,13 +95,13 @@ const BlockSpamEarnCash = () => {
         <br />
 
 
-        <section>
+        <section className="why-fyncom">
           <h3>Why FynCom?</h3>
           <p>
             Our company is built around refundable deposits as a tool to create
             trust between unknown parties in digital communications. Protect
             yourself from unwanted communications & get the power to put a
-            monetary value to your time & data.{" "}
+            monetary value to your time & data.{" "} <br/>
             <a href="path_to_read_more">Read More</a>
           </p>
         </section>
