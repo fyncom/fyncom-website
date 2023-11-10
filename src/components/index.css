@@ -1,0 +1,202 @@
+.AppText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  padding: 1rem;
+  box-sizing: border-box; /* This ensures padding is included in the height calculation */
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;                 /* Takes equal space as the text-block */
+}
+
+.top-logos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.top-logos-left {
+  display: flex;
+  justify-content: center;
+  /*gap: 1rem;*/
+}
+.markdown-content img {
+  filter: var(--img-brightness);
+  max-width: 600px;
+}
+
+/* ATTEMPTS TO FIX LINK ISSUES BELOW THIS*/
+
+/*.top-logos-left > a {*/
+/*  margin: 0;*/
+/*  margin-right: 0;*/
+/*  width: auto; !* Or specific width if needed *!*/
+/*}*/
+
+/*a > .index-logo-discord {*/
+/*  margin: 0;*/
+/*  margin-right: 0;*/
+/*  width: auto; !* Or specific width if needed *!*/
+/*  !* Your styles here will affect the <a> tag that directly contains the image with class .index-logo-discord *!*/
+/*}*/
+
+.index-links a, a index-links {
+  display: inline-block; /* Or other display properties */
+  /*width: auto; !* Or specific width if needed *!*/
+  line-height: 0; /* This removes any extra line-height space around the image */
+
+  /* Other styles */
+  /*background-color: transparent;*/
+  /*color: transparent;*/
+  /*text-decoration: none;*/
+  /*font-weight: 100;*/
+  /*text-decoration: underline;*/
+  /*text-decoration-thickness: 0;*/
+  /*text-underline-offset: 0;*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+}
+
+.bottom-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.index-logo, .index-logo-tg, .index-logo-discord {
+  /*display: block; !* This removes any default inline image space *!*/
+  /*width: 100%; !* This constrains the image to the width of the <Link> *!*/
+  /*height: auto; !* Keeps the aspect ratio of the image *!*/
+  /*margin-bottom: 1rem;*/
+  object-fit: contain;
+  margin-bottom: 0.2rem;
+  margin-left: 0;
+}
+
+/* ATTEMPTS TO FIX LINK ISSUES ABOVE THIS*/
+
+
+.index-logo {
+  max-width: 60%;
+  min-width: 100px;
+}
+.index-logo-tg {
+  max-width: 25%;
+  min-width: 80px;
+}
+.index-logo-discord {
+  max-width: 50%;
+  min-width: 200px;
+}
+.index-logo:hover,
+.index-logo-tg:hover,
+.index-logo-discord:hover {
+  transform: scale(1.15);
+  transition: transform 0.3s;
+}
+.bottom-logo > .story-image {
+  filter: var(--img-brightness);
+}
+
+.text-block {
+  margin-left: 6rem;
+  flex: 1;                 /* Takes equal space as the logo-container */
+  max-width: 600px;        /* Adjust as needed */
+}
+.text-block-left {
+  margin-right: 6rem;
+  flex: 1;                 /* Takes equal space as the logo-container */
+  max-width: 600px;        /* Adjust as needed */
+}
+
+
+/* social media css*/
+.social-media-container {
+  display: flex;
+  align-items: center; /* Vertically centers children */
+  justify-content: center; /* Horizontally centers children */
+  width: 100%;            /* Use the full width of the App container */
+  max-width: 1200px;
+  max-height: 600px;
+  /*margin: 0 auto;*/
+}
+.content-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;            /* Use the full width of the App container */
+  max-width: 1200px;      /* Adjust as needed */
+  margin: 0 auto;
+}
+
+
+/* bits and pieces*/
+.AppText p {
+  /*margin-block-start: 2rem;*/
+  text-align: left;
+  padding: 0px;
+}
+.AppText .span {
+  color: var(--fyncom-red);
+  margin: auto;
+  text-align: left;
+  padding: 0px;
+}
+
+.text-wrapper-3-red {
+  color: var(--fyncom-red);
+}
+.text-wrapper-3 {
+  text-decoration: underline;
+}
+.text-wrapper-2 {
+  color: var(--fyncom-blue);
+}
+
+@media (max-width: 768px) {
+  .AppText {
+    padding: 0rem;
+  }
+  .social-media-container {
+    flex-direction: column;
+    align-items: center; /* Center align items for mobile */
+  }
+  .logo-container, .top-logos, .bottom-logo {
+    width: 100%;        /* Take the full width of the container on small screens */
+    justify-content: space-evenly; /* Evenly space logos horizontally on small screens */
+    min-width: 10px;
+    gap: 0rem;
+  }
+  .index-logo, .index-logo-tg, .index-logo-discord {
+    object-fit: contain;
+    min-width: 10px;
+  }
+  .index-logo {
+    max-width: 30%;
+    min-width: 50px;
+  }
+  .index-logo-tg {
+    max-width: 13%;
+    min-width: 40px;
+  }
+  .index-logo-discord {
+    min-width: 100px;
+    max-width: 25%;
+  }
+  .text-block {
+    padding: 20px;
+    margin-left: 0;
+    /* If you want to add some spacing between the logos and text block on smaller screens */
+    margin-top: 1rem;
+  }
+  .AppText .span {
+    text-align: center;
+  }
+
+}
+
+

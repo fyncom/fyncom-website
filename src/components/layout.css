@@ -54,6 +54,10 @@
     --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
     --filters-dark-mode: url('../images/fyncom-filters-white.png');
     --filters-light-mode: url('../images/fyncom-filters.png');
+    --filters-gmail-dark-mode: url('../images/fyncom_filters_gmail_edition_no_logo-white.png');
+    --filters-gmail-light-mode: url('../images/fyncom_filters_gmail_edition_no_logo.png');
+    --karmacall-dark-mode: url('../images/karmacall-logo-white.png');
+    --karmacall-light-mode: url('../images/karmacall-logo.png');
     --img-brightness: brightness(1);
     .fyncom-logo {
         content: var(--logo-light-mode);
@@ -71,6 +75,18 @@
         content: var(--filters-light-mode);
         margin: 1.5rem auto;
         max-width: 500px;
+    }
+  .fyncom-filters-gmail-edition {
+        content: var(--filters-gmail-light-mode);
+        margin: 1.5rem auto;
+    /*min-width: 400px;*/
+    /*max-width: 600px;*/
+    }
+  .karmacall-logo {
+        content: var(--karmacall-light-mode);
+        margin: 1.5rem auto;
+    /*min-width: 400px;*/
+    /*max-width: 600px;*/
     }
 }
 
@@ -105,6 +121,12 @@
         .fyncom-filters-words {
             content: var(--filters-dark-mode);
         }
+      .fyncom-filters-gmail-edition {
+            content: var(--filters-gmail-dark-mode);
+        }
+      .karmacall-logo {
+            content: var(--karmacall-dark-mode);
+        }
     }
 }
 
@@ -138,7 +160,13 @@
     .fyncom-filters-words {
         content: var(--filters-dark-mode);
     }
-}
+    .fyncom-filters-gmail-edition {
+      content: var(--filters-gmail-dark-mode);
+    }
+    .karmacall-logo {
+      content: var(--karmacall-dark-mode);
+    }
+  }
 
 /****** *Setting mobile device css ******/
 /* Styles for tablets and above */
