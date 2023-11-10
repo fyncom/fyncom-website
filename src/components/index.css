@@ -11,7 +11,7 @@
   display: grid;
   justify-content: center;
 }
-.why-fyncom h3, .why-fyncom p {
+.why-fyncom h2, .why-fyncom p {
   text-align: center;
 }
 
@@ -29,30 +29,21 @@
   gap: 1rem;
 }
 .top-logos-left {
+  display: inline-block; /* Ensures the link is a block-level element */
   display: flex;
-  justify-content: center;
-  vertical-align: middle;
-  text-underline-offset: unset;
-  border-radius: unset;
+  /*flex-shrink: 0;  !* Prevents the link container from shrinking *!*/
 }
-
-/* ATTEMPTS TO FIX LINK ISSUES BELOW THIS*/
-/* the inherit link thing goes away with flex 0 on logo-container, but ruins all else*/
 
 .bottom-logo {
   display: flex;
   justify-content: center;
 }
 
-.index-logo, .index-logo-tg, .index-logo-discord {
-  /*display: block; !* This removes any default inline image space *!*/
-  /*width: 100%; !* This constrains the image to the width of the <Link> *!*/
-  /*height: auto; !* Keeps the aspect ratio of the image *!*/
+.index-logo, .index-logo-tg, .index-logo-discord, .index-logo-fyncom-filter, .index-logo-karmacall {
   object-fit: contain;
   margin-bottom: 0.2rem;
   margin-left: 0;
 }
-/* ATTEMPTS TO FIX LINK ISSUES ABOVE THIS*/
 
 .index-logo {
   max-width: 60%;
@@ -66,9 +57,19 @@
   max-width: 50%;
   min-width: 200px;
 }
+.index-logo-fyncom-filter {
+  max-width: 90%;
+  min-width: 220px;
+}
+.index-logo-karmacall {
+  max-width: 30%;
+  min-width: 180px;
+}
 .index-logo:hover,
 .index-logo-tg:hover,
-.index-logo-discord:hover {
+.index-logo-discord:hover,
+.index-logo-fyncom-filter:hover,
+.index-logo-karmacall:hover {
   transform: scale(1.15);
   transition: transform 0.3s;
 }
@@ -78,12 +79,12 @@
 }
 
 .text-block {
-  margin-left: 6rem;
+  margin-left: 1rem;
   flex: 1;                 /* Takes equal space as the logo-container */
   max-width: 600px;        /* Adjust as needed */
 }
 .text-block-left {
-  margin-right: 6rem;
+  margin-right: 1rem;
   flex: 1;                 /* Takes equal space as the logo-container */
   max-width: 600px;        /* Adjust as needed */
 }
@@ -119,6 +120,27 @@
 }
 .text-wrapper-2 {
   color: var(--fyncom-blue);
+  margin-bottom: 1rem;
+  font-size: 36px;
+}
+
+.index-links {
+  display: inline-flex; /* or 'inline-block' depending on your layout needs */
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+  padding: 0; /* Reset padding */
+  border: none ; /* Reset border */
+  margin: 0; /* Reset margin */
+  max-width: fit-content; /* Use 'fit-content' to shrink-wrap the content */
+}
+
+.index-logo-fyncom-filter, .index-logo-karmacall {
+  display: block;
+  width: auto; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure it doesn't stretch beyond its container */
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
@@ -131,7 +153,6 @@
   .text-block-left,
   .logo-container,
   .top-logos,
-  .top-logos-left,
   .bottom-logo {
     flex-direction: column;
     align-items: center; /* Center align items for mobile */
@@ -144,7 +165,7 @@
     min-width: 10px;
     gap: 0rem;
   }
-  .index-logo, .index-logo-tg, .index-logo-discord {
+  .index-logo, .index-logo-tg, .index-logo-discord, .index-logo-fyncom-filter, .index-logo-karmacall {
     width: 100%; /* Increase width to fit mobile screens, adjust as needed */
   }
   .index-logo {
@@ -158,6 +179,12 @@
   .index-logo-discord {
     max-width: 35%;
     min-width: 100px;
+  }
+  .index-logo-fyncom-filter {
+    min-width: 180px;
+  }
+  .index-logo-karmacall {
+    min-width: 120px;
   }
 
   .text-block, .text-block-left {
