@@ -16,12 +16,12 @@ import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
 const BlockSpamEarnCash = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
-    if(typeof window !== 'undefined') {  // Check if window is defined (this means we're on the client-side)
+    if(typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       const handleChange = () => setIsDarkMode(mediaQuery.matches);
-      setIsDarkMode(mediaQuery.matches);  // Set the initial value based on the media query
-      mediaQuery.addListener(handleChange);  // Add a listener for changes to the media query
-      return () => mediaQuery.removeListener(handleChange);  // Return cleanup function to remove media query listener
+      setIsDarkMode(mediaQuery.matches);
+      mediaQuery.addListener(handleChange);
+      return () => mediaQuery.removeListener(handleChange);
     }
   }, []);
 
@@ -33,7 +33,7 @@ const BlockSpamEarnCash = () => {
           <div className="social-media-container">
             <div className="logo-container">
               <div className="bottom-logo">
-                <img src={fyncomGif} className="index-story-image" alt="Financial Communications cuts out noise and bring in trust"/>
+                <img className="index-story-image" src={fyncomGif} alt="Financial Communications cuts out noise and bring in trust"/>
               </div>
             </div>
             <div className="text-block">
@@ -59,12 +59,10 @@ const BlockSpamEarnCash = () => {
             <div className="logo-container">
               <div className="top-logos-left">
                 <Link to="/fyncom-filters-email-edition" className="index-links">
-                  <img src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."
-                       className="index-logo-discord" />
+                  <img className="index-logo-discord" src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."/>
                 </Link>
                 <Link to="https://www.karmacall.com"  className="index-links">
-                  <img src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"
-                       className="index-logo" />
+                  <img className="index-logo" src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"/>
                 </Link>
               </div>
             </div>
@@ -75,11 +73,11 @@ const BlockSpamEarnCash = () => {
           <div className="social-media-container">
             <div className="logo-container">
               <div className="top-logos">
-                <img src={discordLogo} alt="Discord" className="index-logo-discord" />
-                <img src={telegramLogo} alt="Telegram" className="index-logo-tg" />
+                <img className="index-logo-discord" src={discordLogo} alt="Discord" />
+                <img className="index-logo-tg" src={telegramLogo} alt="Telegram" />
               </div>
               <div className="bottom-logo">
-                <img src={tinderLogo} alt="Tinder" className="index-logo" />
+                <img className="index-logo" src={tinderLogo} alt="Tinder" />
               </div>
             </div>
             <div className="text-block">
@@ -102,16 +100,13 @@ const BlockSpamEarnCash = () => {
             trust between unknown parties in digital communications. Protect
             yourself from unwanted communications & get the power to put a
             monetary value to your time & data.{" "} <br/>
-            <a href="path_to_read_more">Read More</a>
+            <Link to="/white-paper-original-scam-calls">Read More</Link>
           </p>
         </section>
 
         <div className="use-case-section">
           <div className="use-case-image">
-            <img
-              src={increaseResponseRates}
-              alt="Increase Customer Engagement"
-            />
+            <img src={increaseResponseRates} alt="Increase Customer Engagement"/>
           </div>
           <div className="use-case-description">
             <h3>A scam blocking tool for some...</h3>
