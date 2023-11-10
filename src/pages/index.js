@@ -59,10 +59,10 @@ const BlockSpamEarnCash = () => {
             <div className="logo-container">
               <div className="top-logos-left">
                 <Link to="/fyncom-filters-email-edition" className="index-links">
-                  <img className="index-logo-discord" src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."/>
+                  <img className="index-logo-fyncom-filter" src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."/>
                 </Link>
                 <Link to="https://www.karmacall.com"  className="index-links">
-                  <img className="index-logo" src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"/>
+                  <img className="index-logo-karmacall" src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"/>
                 </Link>
               </div>
             </div>
@@ -94,7 +94,7 @@ const BlockSpamEarnCash = () => {
         </div>
 
         <section className="why-fyncom">
-          <h3>Why FynCom?</h3>
+          <h2 className="text-wrapper-2">Why FynCom?</h2>
           <p>
             Our company is built around refundable deposits as a tool to create
             trust between unknown parties in digital communications. Protect
@@ -104,25 +104,36 @@ const BlockSpamEarnCash = () => {
           </p>
         </section>
 
-        <div className="use-case-section">
-          <div className="use-case-image">
-            <img src={increaseResponseRates} alt="Increase Customer Engagement"/>
-          </div>
-          <div className="use-case-description">
-            <h3>A scam blocking tool for some...</h3>
-            <p>
-              ...and a rewards engine for all. FynCom creates trust in online
-              communications with its Refundable Deposits API. Any platform with
-              communication between users can give cash-back to users for
-              blocking scams. Bring a modern approach to cybersecurity that your
-              customers will love & your revenue teams will love more.
-            </p>
+        <div className="AppText">
+          <div className="social-media-container">
+            <div className="text-block-left">
+              <h2 className="text-wrapper-2">A scam blocking tool for some...</h2>
+              <p>
+                <p2 className="text-wrapper-3-red">...and a rewards engine for all.</p2>
+                FynCom creates trust in online communications with its Refundable Deposits API. Any platform with communication between
+                users can give cash-back to users for blocking scams. Bring a modern approach to cybersecurity that your
+                customers will love & your revenue teams will love more.
+              </p>
+            </div>
+            <div className="logo-container">
+              <div className="bottom-logo">
+                <img className="index-logo" src={increaseResponseRates} alt="Increase Customer Engagement"/>
+              </div>
+            </div>
           </div>
         </div>
 
-        <section>
-          <h3>Give the Gift of Cash-Back for Scam Blocking</h3>
-          <button>REQUEST A DEMO</button>
+        <section className="why-fyncom">
+          <h2 className="text-wrapper-3">Give the Gift of Cash-Back for Scam Blocking</h2>
+          <p>
+            Our company is built around refundable deposits as a tool to create
+            trust between unknown parties in digital communications. Protect
+            yourself from unwanted communications & get the power to put a
+            monetary value to your time & data.{" "} <br/>
+            <a href="https://calendly.com/adrian-fyncom/30min">
+              <button className="learn-more-btn">Sieze The Day!</button>
+            </a>
+          </p>
         </section>
       </section>
       <Footer />
