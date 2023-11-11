@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "../components/white-paper.css";
-import whitePaper from "../images/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf"
+import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf"
 
 const WhitePaperOriginalScamCalls = () => {
   return (

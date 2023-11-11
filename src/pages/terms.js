@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "../components/white-paper.css";
-import termsOfUse from "../images/pdfs/Fyncom - Terms of Use (general) - 20211221.pdf"
+import termsOfUse from "../../static/pdfs/Fyncom - Terms of Use (general) - 20211221.pdf"
 
 const Terms = () => {
   return (
