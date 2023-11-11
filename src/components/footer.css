@@ -71,3 +71,29 @@ footer {
 .footer-links a:hover {
   text-decoration: underline;
 }
+
+
+/* Media Query for mobile devices */
+@media (max-width: 768px) {
+  .footer-header, .footer-links-container, .footer-socials {
+    flex-direction: column;
+  }
+
+  .footer-header > a > img {
+    margin: 0 auto; /* Center the logo horizontally */
+  }
+
+  .info-container, .footer-socials, .footer-links {
+    width: 100%; /* Make each section take full width */
+    text-align: center; /* Center align the text for all */
+  }
+
+  .footer-links-container {
+    gap: 1rem; /* Reduce gap size for mobile */
+  }
+
+  /* Adjust font sizes if necessary */
+  .info-container p {
+    font-size: 12px; /* Reduce font size for mobile */
+  }
+}

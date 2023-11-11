@@ -7,6 +7,7 @@ import "../components/white-paper.css";
 import "../components/blocked-email.css";
 import { useLocation } from "@reach/router";
 import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf";
+import Seo from "../components/seo";
 
 const MakeADeposit = () => {
     const [blockedEmailDetails, setBlockedEmailDetails] = useState(null);
@@ -34,7 +35,6 @@ const MakeADeposit = () => {
             </div>
         );
     };
-
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -93,6 +93,11 @@ const MakeADeposit = () => {
     }
   return (
     <div>
+      <Seo
+        title="Deposits Refundable"
+        description="Looks like you got a PayCation email from FynCom. Pay a small, refundable deposit to get your email to the top of your recipient's inbox
+         & get their immediate attention. If they respond, you get your deposit back. Simple!"
+      />
       <Header />
       <div className="content-container">
         <h1>Get Your Email Noticed. Make a Deposit. </h1>

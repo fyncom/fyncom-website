@@ -27,4 +27,9 @@
     font-size: 0.9em; /* Just an example size */
 }
 
+.unicorner-container > a > .fyncom-logo {
+  margin: 0;
+  max-width: 80px;
+}
+
 

@@ -14,7 +14,11 @@ import Seo from "../components/seo";
 const About = () => {
   return (
     <div>
-      <Seo title="About FynCom" description="A description of my page." />
+      <Seo
+        title="About Us"
+        description="Spam has plauged communications for decades. AI will accelerate that trend. Discover the FynCom solution to protect
+       your mental clarity, help you stand out, and get people paid!"
+      />
       <Header />
       <section className="mission-section">
         <h1>About Us</h1>

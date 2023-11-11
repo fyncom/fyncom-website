@@ -6,6 +6,7 @@ import { navigate, Link } from 'gatsby';
 import slugify from 'slugify';
 import MarkdownContent from "../components/MarkdownContent"
 import { helpItems } from "../../static/help-items";
+import Seo from "../components/seo";
 
 const HelpCenter = () => {
   const [selectedItemUrl, setSelectedItemUrl] = useState(null)
@@ -16,6 +17,10 @@ const HelpCenter = () => {
   };
   return (
     <div>
+      <Seo
+        title="Help Center"
+        description="Setting up FynCom tools can be a challenge. We're here to help!"
+      />
       <Header />
       <div className="help-center">
         <h1 className="centered">Help Center</h1>

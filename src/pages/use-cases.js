@@ -12,7 +12,10 @@ import Seo from "../components/seo";
 const UseCases = () => {
   return (
     <div>
-      <Seo title="Use Cases | FynCom" description="Discover how FynCom enhances customer engagement through innovative use cases." />
+      <Seo
+        title="Use Cases"
+        description="Discover how FynCom enhances customer engagement through innovative use cases."
+      />
       <Header />
         <div className="use-cases-container">
           <h1>Drive the behavior you want</h1>

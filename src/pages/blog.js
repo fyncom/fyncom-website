@@ -3,6 +3,7 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import BlogPost from '../components/blog-post';
 import '../components/help-center.css';
+import Seo from "../components/seo";
 
 const blogPostsData = [
   // Array of blog post data; each item represents a blog post
@@ -21,6 +22,10 @@ const blogPostsData = [
 const Blog = () => {
   return (
     <div>
+      <Seo
+        title="Blog"
+        description="Read the latest on how to stay innovative in this evolving digital world"
+      />
       <Header />
       <main>
         {blogPostsData.map((post, index) => (
