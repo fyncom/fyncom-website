@@ -5,8 +5,9 @@
  * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
-import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
 
 function Seo({ description, title, lang = 'en', children }) {
   const { site } = useStaticQuery(
@@ -21,15 +22,17 @@ function Seo({ description, title, lang = 'en', children }) {
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site.siteMetadata.description;
+  const defaultTitle = site.siteMetadata?.title;
 
   return (
-    <>
-      <html lang={lang} />
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+    <Helmet
+      htmlAttributes={{ lang }}
+      title={title}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+    >
       <meta name="description" content={metaDescription} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta property="og:title" content={title} />
@@ -40,8 +43,8 @@ function Seo({ description, title, lang = 'en', children }) {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
       {children}
-    </>
-  )
+    </Helmet>
+  );
 }
 
-export default Seo
+export default Seo;

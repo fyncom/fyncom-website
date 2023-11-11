@@ -7,10 +7,12 @@ import closingDeals from "../images/close-deals-customers-engagement.webp"
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
 import "../components/use-cases.css"
 import { Link } from "gatsby";
+import Seo from "../components/seo";
 
 const UseCases = () => {
   return (
     <div>
+      <Seo title="Use Cases | FynCom" description="Discover how FynCom enhances customer engagement through innovative use cases." />
       <Header />
         <div className="use-cases-container">
           <h1>Drive the behavior you want</h1>
@@ -64,7 +66,6 @@ const UseCases = () => {
             </form>
           </div>
 
-          {/*Div holds the dark/light - src for fallback*/}
           <div className="fyncom-logo">
             <img src={fyncomLogo} alt="FynCom Logo" />
           </div>
