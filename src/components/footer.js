@@ -8,6 +8,7 @@ import { Link } from "gatsby";
 
 const Footer = () => {
   return (
+    <div>
     <footer>
       <div className="footer-header">
         <a href="https://www.linkedin.com/company/fyncom">
@@ -18,7 +19,7 @@ const Footer = () => {
             <a href="mailto:info@fyncom.com">info@fyncom.com</a>
           </p>
           <p>
-            We are located in Irvine, CA, focused in the USA & operate globally.
+            We are located in Merced, CA, focused in the USA & operate globally.
           </p>
         </div>
       </div>
@@ -75,6 +76,7 @@ const Footer = () => {
         </ul>
       </div>
     </footer>
+    </div>
   )
 }
 

@@ -5,6 +5,7 @@ import "../components/help-center.css"
 import { helpItemsUser } from "../../static/help-items";
 import {Link, navigate} from "gatsby";
 import MarkdownContent from "../components/MarkdownContent";
+import Seo from "../components/seo";
 
 const UserHelpCenter = () => {
   const [selectedItemUrl, setSelectedItemUrl] = useState(null)
@@ -15,6 +16,10 @@ const UserHelpCenter = () => {
   };
   return (
     <div>
+      <Seo
+        title="User Help Center"
+        description="For non-business users, this is the help center for you."
+      />
       <Header />
       <div className="help-center">
         <h1 className="centered">User Help Center</h1>

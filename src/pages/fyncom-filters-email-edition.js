@@ -7,10 +7,15 @@ import closingDeals from "../images/close-deals-customers-engagement.webp"
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
 import "../components/use-cases.css"
 import { Link } from "gatsby";
+import Seo from "../components/seo";
 
 const FyncomFiltersEmailEdition = () => {
   return (
     <div>
+      <Seo
+        title="Email Cash Back"
+        description="FynCom Filters for GMail let you decide the value an email should have before it hits your inbox. Works right in your GMail app"
+      />
       <Header />
         <div className="use-cases-container">
           <h1>Block Spam Emails</h1>

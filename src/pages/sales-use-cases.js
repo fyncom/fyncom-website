@@ -9,10 +9,15 @@ import salesHeroImage from "../images/illustrations/sales-phone-calls.png";
 import increaseBookings from "../images/illustrations/increase-bookings.png";
 import accelerateDeals from "../images/illustrations/deal-acceleration-charts.png";
 import minMax from "../images/illustrations/min-max-gift-rewards-value-mobile.png";
+import Seo from "../components/seo";
 
 const SalesUseCases = () => {
   return (
     <div className="sales-use-cases">
+      <Seo
+        title="Sales Use Cases"
+        description="Getting your sales team to hit their targets is hard. FynCom helps you close more deals by using rewards at key stages of your sales process."
+      />
       <Header />
       <div className="hero-section">
         <img className="story-image" src={salesHeroImage} alt="use rewards at each touchpoint to keep leads moving down through the customer journey" />

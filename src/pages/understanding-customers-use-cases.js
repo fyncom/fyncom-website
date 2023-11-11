@@ -9,10 +9,15 @@ import customerHeroImage from "../images/illustrations/marketing-mobile-survey.p
 import seamlessIntegrations from "../images/illustrations/seamless-integrations-comfy.png";
 import loyalCustomers from "../images/illustrations/identifying-loyal-customers.png";
 import driveAdoption from "../images/illustrations/customer-journey-optimization.png";
+import Seo from "../components/seo";
 
 const UnderstandingCustomersUseCase = () => {
   return (
     <div className="understanding-customers-use-cases">
+      <Seo
+        title="Understanding Customers Use Cases"
+        description="Using Micro Rewards throughout your customer journey to keep them coming back to you!"
+      />
       <Header />
       <div className="hero-section">
         <img className="story-image" src={customerHeroImage} alt="use micro-rewards to keep customers moving down through their journey" />

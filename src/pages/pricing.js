@@ -2,13 +2,13 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/pricing.css"
+import Seo from "../components/seo";
 
 const Pricing = () => {
   const htmlContent = `<!doctype html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FynCom Pricing Page</title>
   </head>
   <body>
     <h1 id="pricing">Pricing</h1>
@@ -404,6 +404,10 @@ const Pricing = () => {
   return (
     // <ReactMarkdown skipHtml={false}>{markdownContent}</ReactMarkdown>
     <div>
+      <Seo
+        title="Pricing"
+        description="Purchase FynCom tools to help you increase trust and show people why you are different and should be heard."
+      />
       <Header />
       <div className="html-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
       <div className="html-content-dropdown" dangerouslySetInnerHTML={{ __html: infoDropDown }} />

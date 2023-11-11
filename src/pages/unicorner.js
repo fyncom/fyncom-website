@@ -5,14 +5,20 @@ import googlePlayBadge from "../images/google-play-en.png"
 import appStoreBadge from "../images/apple-en.png"
 import "../components/unicorner.css"
 import { Link } from "gatsby"
+import Seo from "../components/seo";
 
 const Unicorner = () => {
   return (
       <div className="unicorner-container">
-        {/*todo see if you can update this to be fully left side*/}
-        {/*<div className="fyncom-logo">*/}
-        {/*    <img src={fyncomLogo} alt="FynCom Logo" />*/}
-        {/*</div>*/}
+        <Seo
+          title="For Unicorner's Eyes only"
+          description="Hope you enjoyed that listing! This brief page shows you all of the service FynCom offers "
+        />
+        <Link to="/">
+        <div className="fyncom-logo">
+            {/*<img src={fyncomLogo} alt="FynCom Logo" />*/}
+        </div>
+        </Link>
         <h1>Spam Sucks!</h1>
         <h2>Get instantly paid to block bad emails & calls with...</h2>
         <div className="fyncom-filters-words">

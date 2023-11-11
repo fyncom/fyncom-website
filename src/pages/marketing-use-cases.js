@@ -9,10 +9,16 @@ import handshake from "../images/illustrations/handshake.png"
 import collaborate from "../images/illustrations/collaborating-with-others.png"
 import effectiveSpend from "../images/illustrations/create-efficient-costs.png"
 import integrations from "../images/illustrations/integrate-with-emails-and-more.png"
+import Seo from "../components/seo";
 
 const MarketingUseCases = () => {
   return (
     <div className="marketing-use-cases">
+      <Seo
+        title="Marketing Use Cases"
+        description="FynCom helps you increase customer engagement and increase customer loyalty by offering incentivized rewards along the sales funnel to
+        encourage your audience to learn more about your products and offerings"
+      />
       <Header />
       <div className="hero-section">
         <img className="story-image" src={handshake} alt="Close deals more quickly with FynCom Rewards" />

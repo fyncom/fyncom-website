@@ -3,10 +3,15 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import "../components/white-paper.css";
 import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf"
+import Seo from "../components/seo";
 
 const WhitePaperOriginalScamCalls = () => {
   return (
     <div>
+      <Seo
+        title="The Dream of a Spam-Free World"
+        description="It started with endless scam / spam phone calls and evolved into a financial communications layer for the internet."
+      />
       <Header />
       <div className="content-container">
         <h2>Why Do Spam Calls Still Exist?</h2>

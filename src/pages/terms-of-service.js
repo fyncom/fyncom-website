@@ -3,10 +3,15 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import "../components/white-paper.css";
 import termsOfService from "../../static/pdfs/FynCom- Platform Terms of Service _CLEAN_ - 20220117.pdf";
+import Seo from "../components/seo";
 
 const TermsOfService = () => {
   return (
     <div>
+      <Seo
+        title="Terms of Service"
+        description="FynComs Terms of Service are listed here."
+      />
       <Header />
       <div className="content-container">
         <h1>FynCom's Terms of Service</h1>
