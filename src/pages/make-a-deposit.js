@@ -6,6 +6,7 @@ import nanoQrCode from "../images/DepositNanoQRCode.jpg"
 import "../components/white-paper.css";
 import "../components/blocked-email.css";
 import { useLocation } from "@reach/router";
+import whitePaper from "../images/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf";
 
 const MakeADeposit = () => {
     const [blockedEmailDetails, setBlockedEmailDetails] = useState(null);
@@ -110,7 +111,7 @@ const MakeADeposit = () => {
             Thanks for reading!
         </p>
           - Team Fyncom
-        <iframe src="https://drive.google.com/file/d/1nHVoFPQMUuin5MOU7nGEWt6nseNzI_Kf/preview" allow="autoplay"></iframe>
+        <iframe src={whitePaper} width="100%" height="800px"></iframe>
       </div>
       <Footer />
     </div>
