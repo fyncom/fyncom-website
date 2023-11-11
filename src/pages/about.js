@@ -9,10 +9,12 @@ import transparency from "../images/transparency.webp";
 import customerFocus from "../images/customer-focus.webp";
 import continuousImprovement from "../images/continuous-improvement.webp";
 import { Link } from "gatsby";
+import Seo from "../components/seo";
 
 const About = () => {
   return (
     <div>
+      <Seo title="About FynCom" description="A description of my page." />
       <Header />
       <section className="mission-section">
         <h1>About Us</h1>

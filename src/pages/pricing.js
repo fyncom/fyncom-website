@@ -4,7 +4,6 @@ import Footer from "../components/footer"
 import "../components/pricing.css"
 
 const Pricing = () => {
-  // set the HTML content here.
   const htmlContent = `<!doctype html>
 <html>
   <head>
