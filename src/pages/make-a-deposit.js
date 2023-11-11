@@ -6,7 +6,7 @@ import nanoQrCode from "../images/DepositNanoQRCode.jpg"
 import "../components/white-paper.css";
 import "../components/blocked-email.css";
 import { useLocation } from "@reach/router";
-import whitePaper from "../images/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf";
+import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf";
 
 const MakeADeposit = () => {
     const [blockedEmailDetails, setBlockedEmailDetails] = useState(null);
