@@ -11,12 +11,12 @@ import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
-
-
 const WhitePaperOriginalScamCalls = () => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1); // Set the initial page
   const [loading, setLoading] = useState(true);
+  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
@@ -33,13 +33,13 @@ const WhitePaperOriginalScamCalls = () => {
         <div className="pdf-viewer">
           <Document
             file={whitePaper}
-            className="pdf-page"
+            className={`pdf-page ${prefersDarkMode ? "dark-mode" : ""}`}
             onLoadSuccess={onDocumentLoadSuccess}
             onError={(error) => console.error('PDF failed to load: ', error.message)}
             onLoadStart={() => setLoading(true)}
             onLoadEnd={() => setLoading(false)}
           >
-            <Page pageNumber={pageNumber}/>
+            <Page pageNumber={pageNumber} options={{pageColors: { background: 'black', foreground: 'white' } }}/>
           </Document>
           <p>Page {pageNumber} of {numPages}</p>
           {/*this is an issue, but can potentailly be resolved by following a MarkdownContent appraoch where this goes into a component*/}
