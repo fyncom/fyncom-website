@@ -4,22 +4,9 @@ import Footer from "../components/footer";
 import "../components/white-paper.css";
 import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf"
 import Seo from "../components/seo";
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
-import "react-pdf/dist/esm/Page/TextLayer.css";
-import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
-
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+import PdfContent from "../components/PdfContent";
 
 const WhitePaperOriginalScamCalls = () => {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1); // Set the initial page
-  const [loading, setLoading] = useState(true);
-  const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
   return (
     <div>
       <Seo
@@ -30,24 +17,7 @@ const WhitePaperOriginalScamCalls = () => {
       <div className="content-container">
         <h2>Why Do Spam Calls Still Exist?</h2>
         <p>...and how can I stop scams, but let good callers reach me?</p>
-        <div className="pdf-viewer">
-          <Document
-            file={whitePaper}
-            className={`pdf-page ${prefersDarkMode ? "dark-mode" : ""}`}
-            onLoadSuccess={onDocumentLoadSuccess}
-            onError={(error) => console.error('PDF failed to load: ', error.message)}
-            onLoadStart={() => setLoading(true)}
-            onLoadEnd={() => setLoading(false)}
-          >
-            <Page pageNumber={pageNumber} options={{pageColors: { background: 'black', foreground: 'white' } }}/>
-          </Document>
-          <p>Page {pageNumber} of {numPages}</p>
-          {/*this is an issue, but can potentailly be resolved by following a MarkdownContent appraoch where this goes into a component*/}
-          {loading && <div>Loading PDF...</div>}
-
-          <button onClick={() => setPageNumber(prevPageNumber => prevPageNumber - 1)} disabled={pageNumber === 1}>Previous</button>
-          <button onClick={() => setPageNumber(prevPageNumber => prevPageNumber + 1)} disabled={pageNumber === numPages}>Next</button>
-        </div>
+        <PdfContent file={whitePaper} />
         <p>Thanks for reading our White Paper on stopping spam across the world, starting with scam calls!</p>
       </div>
       <Footer />

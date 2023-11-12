@@ -4,6 +4,7 @@ import Footer from "../components/footer";
 import "../components/white-paper.css";
 import privacyPolicy from "../../static/pdfs/FynCom- Privacy Policy - 20211221.pdf";
 import Seo from "../components/seo";
+import PdfContent from "../components/PdfContent";
 
 const PrivacyPolicy = () => {
   return (
@@ -15,7 +16,7 @@ const PrivacyPolicy = () => {
       <Header />
       <div className="content-container">
         <h1>FynCom's Privacy Policy</h1>
-        <iframe src={privacyPolicy} width="100%" height="800px"></iframe>
+        <PdfContent file={privacyPolicy} />
       </div>
       <Footer />
     </div>
