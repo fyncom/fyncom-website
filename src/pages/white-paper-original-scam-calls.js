@@ -10,7 +10,7 @@ const WhitePaperOriginalScamCalls = () => {
   return (
     <div>
       <Seo
-        title="The Dream of a Spam-Free World"
+        title="Cash-Back For Spam? Stop Scams & Increase Trust with Refundable Deposits"
         description="It started with endless scam / spam phone calls and evolved into a financial communications layer for the internet."
       />
       <Header />
