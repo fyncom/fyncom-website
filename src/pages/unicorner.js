@@ -15,9 +15,7 @@ const Unicorner = () => {
           description="Hope you enjoyed that listing! This brief page shows you all of the service FynCom offers "
         />
         <Link to="/">
-        <div className="fyncom-logo">
-            {/*<img src={fyncomLogo} alt="FynCom Logo" />*/}
-        </div>
+        <div className="fyncom-logo"></div>
         </Link>
         <h1>Spam Sucks!</h1>
         <h2>Get instantly paid to block bad emails & calls with...</h2>
