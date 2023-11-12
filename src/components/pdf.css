@@ -1,0 +1,24 @@
+.pdf-viewer {
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box; /* Recommended to ensure padding and borders are included in the element's dimensions */
+  height: auto;
+  overflow: auto; /* Allows scrolling if the PDF is larger than the viewer */
+}
+.pdf-viewer p {
+  text-align: center;
+}
+.pdf-document {
+  display: flex;
+  justify-content: center; /* Centers the PDF document if it's smaller than the viewer */
+}
+.pdf-page {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Optional: adds shadow for depth */
+  margin-bottom: 1rem; /* Adds space below the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pdf-document.dark-mode canvas {
+  filter: invert(1) hue-rotate(180deg);
+}
