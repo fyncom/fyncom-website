@@ -3,8 +3,29 @@
     flex-direction: column;
     align-items: center;
 }
-
 .content-container iframe {
     width: 70%;
     height: 1200px;
+}
+.pdf-viewer {
+  text-align: center;
+  /*all: unset; !* This CSS property resets all inherited styles *!*/
+  width: 100%;
+  box-sizing: border-box; /* Recommended to ensure padding and borders are included in the element's dimensions */
+  height: auto; /* or any other size */
+  overflow: auto; /* Allows scrolling if the PDF is larger than the viewer */
+}
+.pdf-viewer p {
+  text-align: center;
+}
+.pdf-document {
+  display: flex;
+  justify-content: center; /* Centers the PDF document if it's smaller than the viewer */
+}
+.pdf-page {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5); /* Optional: adds shadow for depth */
+  margin-bottom: 1rem; /* Adds space below the page */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
