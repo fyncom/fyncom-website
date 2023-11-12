@@ -3,11 +3,11 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/about.css"
 import teamMeeting from "../images/team-meeting.webp";
-import innovation from "../images/innovation.webp";
-import collaboration from "../images/collaboration.webp";
-import transparency from "../images/transparency.webp";
-import customerFocus from "../images/customer-focus.webp";
-import continuousImprovement from "../images/continuous-improvement.webp";
+import innovation from "../images/icons/innovation.webp";
+import collaboration from "../images/icons/collaboration.webp";
+import transparency from "../images/icons/transparency.webp";
+import customerFocus from "../images/icons/customer-focus.webp";
+import continuousImprovement from "../images/icons/continuous-improvement.webp";
 import { Link } from "gatsby";
 import Seo from "../components/seo";
 
