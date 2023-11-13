@@ -75,3 +75,20 @@
     margin-right: unset;
     padding-left: unset;
 }
+.learn-more-btn.xno {
+    background-color: var(--fyncom-blue);
+    color: #fff !important;
+}
+.learn-more-btn.xno:hover {
+    background-color: var(--karmacall-green);
+    color: #fff !important;
+}
+
+.learn-more-btn.cash {
+    background-color: var(--fyncom-red);
+    color: #fff !important;
+}
+.learn-more-btn.cash:hover {
+    background-color: var(--robocash-green);
+    color: #fff !important;
+}
