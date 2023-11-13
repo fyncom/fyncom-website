@@ -7,42 +7,14 @@ import "../components/contact.css";
 import googlePlayBadge from "../images/google-play-en.png";
 import appStoreBadge from "../images/apple-en.png";
 import fyncomFilters from "../images/fyncom-filters.png";
+import { SuccessModal, FailureModal } from "../components/Modal";
+
 
 const Contact = () => {
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
   const [isFailureModalOpen, setFailureModalOpen] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
-  const [isModalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({name: '', email: '', message: ''});
-  const toggleModal = () => {setModalOpen(!isModalOpen);};
-  const toggleFailureModal = () => {setFailureModalOpen(!isFailureModalOpen);};
-
-  // Define the modal component within Contact to show success message
-  const SuccessModal = ({ onClose }) => {
-    return (
-      <div className="modal">
-        <div className="modal-content">
-          <span className="close" onClick={onClose}>&times;</span>
-          <h2>Thank You!</h2>
-          <p>Your message has been sent successfully.</p>
-          <p>We'll get back to you shortly.</p>
-        </div>
-      </div>
-    );
-  };
-
-  // Define the failure modal component
-  const FailureModal = ({ message, onClose }) => {
-    return (
-      <div className="modal-failure" >
-        <div className="modal-content">
-          <span className="close" onClick={onClose}>&times;</span>
-          <h2>Submission Failed</h2>
-          <p>{message}</p>
-        </div>
-      </div>
-    );
-  };
+  const [modalMessage, setModalMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -68,11 +40,12 @@ const Contact = () => {
       const data = await response.json();
       if (response.status === 200) {
         console.log('Email sent successfully');
-        toggleModal();
+        setModalMessage('Your message has been sent.');
+        setSuccessModalOpen(true);
       } else {
         console.error('Failed to send email');
-        setErrorMessage(data.message || 'Failed to send your message.');
-        toggleFailureModal();
+        setModalMessage(data.message || 'Failed to send your message.');
+        setFailureModalOpen(true);
       }
     } catch (error) {
       console.error('Error submitting form', error);
@@ -134,9 +107,12 @@ const Contact = () => {
         <i><p className="centered">Examples of our consumer tools</p></i>
         <h1 className="centered">Spam Sucks!</h1>
         <h2 className="centered">Get instantly paid to block bad emails & calls with...</h2>
-        <div className="fyncom-filters-words">
-          <img src={fyncomFilters} alt="FynCom Filters" />
-        </div>
+        {/*todo fix this link length*/}
+        <Link to="/fyncom-filters-email-edition">
+          <div className="fyncom-filters-words">
+            <img src={fyncomFilters} alt="FynCom Filters" />
+          </div>
+        </Link>
         <div className="info-section">
           <p>
             Save time & let us pay you to ignore those scam emails & calls! Be
@@ -168,8 +144,8 @@ const Contact = () => {
         </div>
       </main>
       <Footer />
-      {isModalOpen && <SuccessModal onClose={toggleModal} />}
-      {isFailureModalOpen && <FailureModal message={errorMessage} onClose={toggleFailureModal} />}
+      <SuccessModal isOpen={isSuccessModalOpen} message={modalMessage} onClose={() => setSuccessModalOpen(false)} />
+      <FailureModal isOpen={isFailureModalOpen} message={modalMessage} onClose={() => setFailureModalOpen(false)} />
     </div>
   );
 }
