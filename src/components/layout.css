@@ -155,7 +155,7 @@
 
 /****** *Setting mobile device css ******/
 /* Styles for tablets and above */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px)  {
     .use-case-section {
         flex-direction: row;
     }
