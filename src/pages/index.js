@@ -12,6 +12,7 @@ import karmaCall from "../images/karmacall-logo.png"
 import karmaCallDark from "../images/karmacall-logo-white.png"
 import increaseResponseRates from "../images/increase-response=rates-across-any platform-and-channel.png"
 import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
+import Seo from "../components/seo";
 
 const BlockSpamEarnCash = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -27,6 +28,9 @@ const BlockSpamEarnCash = () => {
 
   return (
     <div>
+      <Seo
+        title="FynCom"
+      />
       <Header />
       <section>
         <div className="AppText">
