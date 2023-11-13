@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
@@ -6,10 +6,47 @@ import Seo from "../components/seo";
 import "../components/contact.css";
 import googlePlayBadge from "../images/google-play-en.png";
 import appStoreBadge from "../images/apple-en.png";
-import fyncomFilters from "../images/fyncom-filters.png"; // Make sure to create this CSS file for styles
-
+import fyncomFilters from "../images/fyncom-filters.png";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    let newUrl = `${process.env.GATSBY_API_URL}api/public/contact`;
+    e.preventDefault();
+    try {
+      // You can send the data to your backend API endpoint
+      const response = await fetch(newUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        console.log('Email sent successfully'); // Handle success - maybe reset the form or show a success message
+      } else {
+        console.error('Failed to send email'); // Handle failure - show an error message
+      }
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div>
       <Seo
@@ -20,13 +57,33 @@ const Contact = () => {
       <main className="contact-container">
         <h1>Contact Us</h1>
         <p>If you have any questions or inquiries, feel free to reach out to us.</p>
-        <form className="contact-form" action="/submit-form" method="POST">
+        <form className="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
-          <input type="text" id="name" name="name" required />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
           <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
           <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            required
+          />
           <button type="submit" className="submit-btn">Send Message</button>
         </form>
 
