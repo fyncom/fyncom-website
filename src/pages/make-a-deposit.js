@@ -7,33 +7,14 @@ import "../components/blocked-email.css";
 import { useLocation } from "@reach/router";
 import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf";
 import Seo from "../components/seo";
+import PdfContent from "../components/PdfContent";
+import { MakeADepositModal} from "../components/Modal";
 
 const MakeADeposit = () => {
     const [blockedEmailDetails, setBlockedEmailDetails] = useState(null);
     const location = useLocation();
     const [isModalOpen, setModalOpen] = useState(false);
-
-    // Function to toggle the modal visibility
-    const toggleModal = () => {
-        setModalOpen(!isModalOpen);
-    };
-    // Modal component
-    const Modal = ({ onClose }) => {
-        return (
-            <div className="modal">
-                <div className="modal-content">
-                    <span className="close" onClick={onClose}>&times;</span>
-                    <h2>Got nano?</h2>
-                    <p>Use "nano"-transactions!</p>
-                    <p>Deposit 0.1 nano to</p>
-                    <p className="nano-address">nano_1bf3r8pqfsutekxunazj895an8h84ai3ao1ftqyejqiul65p3xsb9k99kc1</p>
-                    <div className="qr-code-container">
-                        <img src={nanoQrCode} alt="QR Code of the nano address you should send your deposit to" />
-                    </div>
-                </div>
-            </div>
-        );
-    };
+    const toggleModal = () => { setModalOpen(!isModalOpen); };
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -84,7 +65,7 @@ const MakeADeposit = () => {
                 <>
                     <a href={stripeUrl} className="button button1" role="button" target="_blank" rel="noopener noreferrer">Deposit cash</a>
                     <button className="button button2" onClick={toggleModal}>Deposit nano</button>
-                    {isModalOpen && <Modal onClose={toggleModal} />}
+                    {isModalOpen && <MakeADepositModal onClose={toggleModal} />}
                 </>
             );
         } else {
@@ -102,21 +83,21 @@ const MakeADeposit = () => {
       <div className="content-container">
         <h1>Get Your Email Noticed. Make a Deposit. </h1>
         <sub>Pay a small, refundable deposit to get your email to my main inbox & get my immediate attention. If I respond, you get your deposit back. Simple!</sub>
-        <p className="html5"> You're seeing this because you've gotten a "PayCation" email. </p>
+        <p className="html-dynamic"> You're seeing this because you've gotten a "PayCation" email. </p>
           {renderPaymentButton()}
           {/*  some text / image manipulation has to happen here*/}
         <p>Still here? Why not read something interesting? Ever get annoying calls? Emails? DMs? Read below to find out how we're helping fix that problem by
             getting people paid to block scam / spam and respond to good messages.</p>
         <h2>Why Do Spam Calls Still Exist?</h2>
         <p>...and how can I stop scams, but get useful outreach?</p>
-        <p>That's the thought that started FynCom on a journey of exploring an emerging market based in "communications + currency". Here's our paper we wrote
-            to record our intents - it later became
-            <a href="https://patents.google.com/patent/US11310368B2">our 1st patent</a>,
-            <a href="https://karmacall.com/">app</a>, and is the basis for how we came to be.
+        <p>That's the thought that started FynCom on a journey of exploring an emerging market based in "communications + currency" to create trust between
+          strangers with shared interests. Here's our paper we wrote to record our thought process - it later became{" "}
+            <a href="https://patents.google.com/patent/US11310368B2">our 1st patent</a>,{" "}
+            <a href="https://karmacall.com/">app</a>,{" "} and is the basis for how we came to be.
             Thanks for reading!
         </p>
           - Team Fyncom
-        <iframe src={whitePaper} width="100%" height="800px"></iframe>
+        <PdfContent file={whitePaper} />
       </div>
       <Footer />
     </div>
