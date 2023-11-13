@@ -68,3 +68,10 @@
 .html-dynamic {
     text-align: center;
 }
+.emphasis {
+    font-weight: bold;
+    white-space: nowrap; /* Prevent line breaks */
+    display: unset;
+    margin-right: unset;
+    padding-left: unset;
+}
