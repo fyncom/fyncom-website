@@ -2,12 +2,10 @@
     text-align: center; /* Centers the text of the titles and descriptions */
     padding: 20px; /* Adds padding around the help center content */
 }
-/* todo center the "What do you need help with?" later - be wary here - it affects all p */
-/*.help-center p {*/
-/*    color: var(--color-text);*/
-/*    !*text-align: center; !* Centers the text of the titles and descriptions *!*!*/
-/*    !*padding: 20px; !* Adds padding around the help center content *!*!*/
-/*}*/
+.help-center > p {
+  max-width: 100%;
+  text-align: center; /* Centers the text of the titles and descriptions */
+}
 .help-items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Creates a responsive grid layout */
@@ -30,14 +28,14 @@
 }
 
 .help-item:hover {
-    transform: translateY(-5px); /* existing effect */
-    background-color: #f0f8ff; /* New background color on hover */
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-5px);
+  background-color: var(--help-item-hover);
+  box-shadow: 0px 8px 16px var(--navigation-hover);
 }
 .help-item h2:hover, .help-item p:hover {
     text-decoration: underline; /* Underlines the text on hover */
 }
-.help-item:hover h2, .help-item:hover p {
+.help-item:hover h2, .help-item:hover p, .help-item:hover .icon {
     color: #007bff; /* Changes text color on hover */
 }
 

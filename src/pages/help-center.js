@@ -3,7 +3,6 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/help-center.css"
 import { navigate, Link } from 'gatsby';
-import slugify from 'slugify';
 import MarkdownContent from "../components/MarkdownContent"
 import { helpItems } from "../../static/help-items";
 import Seo from "../components/seo";
@@ -37,9 +36,9 @@ const HelpCenter = () => {
                     onClick={() => item.url && handleClick(item)}
                     data-has-url={!!item.url}
                 >
-                    <div className={`icon ${item.icon}`}></div>
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
+                  <div className="icon">{item.icon}</div>
+                  <h2>{item.title}</h2>
+                  <p>{item.description}</p>
                 </div>
             ))}
         </div>
