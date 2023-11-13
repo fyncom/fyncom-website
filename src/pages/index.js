@@ -61,9 +61,9 @@ const BlockSpamEarnCash = () => {
                 <Link to="/fyncom-filters-email-edition" className="index-links">
                   <img className="index-logo-fyncom-filter" src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."/>
                 </Link>
-                <Link to="https://www.karmacall.com"  className="index-links">
+                <a href="https://www.karmacall.com"  className="index-links">
                   <img className="index-logo-karmacall" src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"/>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

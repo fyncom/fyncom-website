@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import nanoQrCode from "../images/DepositNanoQRCode.jpg"
@@ -79,6 +78,7 @@ const MakeADeposit = () => {
             console.log("data is here from {}", blockedEmailDetails);
             // Render your button and use the details from blockedEmailDetails
             const stripeUrl = `https://buy.stripe.com/fZe5obgilbJa5lm001?prefilled_email=${blockedEmailDetails.senderEmailRaw}&client_reference_id=${blockedEmailDetails.blockedEmailLogId}`;
+            // todo - only use this if you plan to show a button to everyone that visits this page.
             const stripeUrlDefault = `https://buy.stripe.com/fZe5obgilbJa5lm001`;
             return (
                 <>

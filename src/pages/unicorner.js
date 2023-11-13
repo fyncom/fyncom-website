@@ -1,6 +1,5 @@
 import React from "react"
 import fyncomFilters from "../images/fyncom-filters.png"
-import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
 import googlePlayBadge from "../images/google-play-en.png"
 import appStoreBadge from "../images/apple-en.png"
 import "../components/unicorner.css"
