@@ -79,7 +79,7 @@ const MakeADeposit = () => {
       const stripeUrlDefault = `https://buy.stripe.com/fZe5obgilbJa5lm001`;
       return (
         <>
-          <a href={stripeUrl} className="learn-more-btn cash" role="button" target="_blank" rel="noopener noreferrer">Deposit cash</a>
+          <a href={stripeUrl} className="learn-more-btn cash" target="_blank" rel="noopener noreferrer">Deposit cash</a>
           <button className="learn-more-btn xno" onClick={toggleModal}>Deposit nano</button>
           {isModalOpen && <MakeADepositModal onClose={toggleModal}/>}
         </>
