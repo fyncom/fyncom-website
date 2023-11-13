@@ -13,16 +13,9 @@ const Contact = () => {
   const [isFailureModalOpen, setFailureModalOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isModalOpen, setModalOpen] = useState(false);
-
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-
-  const toggleModal = () => {
-    setModalOpen(!isModalOpen);
-  };
+  const [formData, setFormData] = useState({name: '', email: '', message: ''});
+  const toggleModal = () => {setModalOpen(!isModalOpen);};
+  const toggleFailureModal = () => {setFailureModalOpen(!isFailureModalOpen);};
 
   // Define the modal component within Contact to show success message
   const SuccessModal = ({ onClose }) => {
@@ -33,6 +26,19 @@ const Contact = () => {
           <h2>Thank You!</h2>
           <p>Your message has been sent successfully.</p>
           <p>We'll get back to you shortly.</p>
+        </div>
+      </div>
+    );
+  };
+
+  // Define the failure modal component
+  const FailureModal = ({ message, onClose }) => {
+    return (
+      <div className="modal-failure" >
+        <div className="modal-content">
+          <span className="close" onClick={onClose}>&times;</span>
+          <h2>Submission Failed</h2>
+          <p>{message}</p>
         </div>
       </div>
     );
@@ -64,7 +70,9 @@ const Contact = () => {
         console.log('Email sent successfully');
         toggleModal();
       } else {
-        console.error('Failed to send email'); // Handle failure - show an error message
+        console.error('Failed to send email');
+        setErrorMessage(data.message || 'Failed to send your message.');
+        toggleFailureModal();
       }
     } catch (error) {
       console.error('Error submitting form', error);
@@ -98,7 +106,7 @@ const Contact = () => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            required
+            // required
           />
           <label htmlFor="message">Message:</label>
           <textarea
@@ -161,6 +169,7 @@ const Contact = () => {
       </main>
       <Footer />
       {isModalOpen && <SuccessModal onClose={toggleModal} />}
+      {isFailureModalOpen && <FailureModal message={errorMessage} onClose={toggleFailureModal} />}
     </div>
   );
 }
