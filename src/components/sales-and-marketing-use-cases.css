@@ -95,4 +95,12 @@
     .logos-container {
         flex-wrap: wrap;
     }
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-content {
+        max-width: 90%; /* Adjust the width for smaller screens */
+        margin: 20px 0; /* Add some margin between the image and content */
+    }
 }
