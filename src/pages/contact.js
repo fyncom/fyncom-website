@@ -9,11 +9,34 @@ import appStoreBadge from "../images/apple-en.png";
 import fyncomFilters from "../images/fyncom-filters.png";
 
 const Contact = () => {
+  const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
+  const [isFailureModalOpen, setFailureModalOpen] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
   });
+
+  const toggleModal = () => {
+    setModalOpen(!isModalOpen);
+  };
+
+  // Define the modal component within Contact to show success message
+  const SuccessModal = ({ onClose }) => {
+    return (
+      <div className="modal">
+        <div className="modal-content">
+          <span className="close" onClick={onClose}>&times;</span>
+          <h2>Thank You!</h2>
+          <p>Your message has been sent successfully.</p>
+          <p>We'll get back to you shortly.</p>
+        </div>
+      </div>
+    );
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,8 +60,9 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      if (data.success) {
-        console.log('Email sent successfully'); // Handle success - maybe reset the form or show a success message
+      if (response.status === 200) {
+        console.log('Email sent successfully');
+        toggleModal();
       } else {
         console.error('Failed to send email'); // Handle failure - show an error message
       }
@@ -136,6 +160,7 @@ const Contact = () => {
         </div>
       </main>
       <Footer />
+      {isModalOpen && <SuccessModal onClose={toggleModal} />}
     </div>
   );
 }
