@@ -78,6 +78,7 @@
         margin: 1.5rem auto;
         max-width: 500px;
     }
+  --help-item-hover: #f0f8ff;
 }
 
 /* Automatically switch to dark mode based on user's system preference */
@@ -98,6 +99,7 @@
         --img-brightness: brightness(0.7);
       --navigation: rgba(0,0,0,0.2);
       --navigation-hover: rgba(255, 255, 255, 0.2);
+      --help-item-hover: #2c3e50;
         .fyncom-logo {
             content: var(--logo-dark-mode);
             display: block;
@@ -133,7 +135,8 @@
     --img-brightness: brightness(0.7);
   --navigation: rgba(0,0,0,0.2);
   --navigation-hover: rgba(255, 255, 255, 0.2);
-    .fyncom-logo {
+  --help-item-hover: #2c3e50;
+  .fyncom-logo {
         content: var(--logo-dark-mode);
         display: block;
         margin: 40px auto;

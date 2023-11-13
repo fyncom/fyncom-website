@@ -34,7 +34,7 @@ const UserHelpCenter = () => {
               onClick={() => item.url && handleClick(item)}
               data-has-url={!!item.url}
             >
-              <div className={`icon ${item.icon}`}></div>
+              <div className="icon">{item.icon}</div>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
             </div>
