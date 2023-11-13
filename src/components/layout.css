@@ -152,7 +152,7 @@
 
 /****** *Setting mobile device css ******/
 /* Styles for tablets and above */
-@media (min-width: 768px) {
+@media (min-width: 769px) and (max-width: 1024px) {
     .use-case-section {
         flex-direction: row;
     }
@@ -162,8 +162,7 @@
 }
 
 /* Styles for mobile devices phones*/
-/* Styles for mobile devices phones*/
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     h1, h2, h3, p, sub {
         text-align: center !important;
     }
