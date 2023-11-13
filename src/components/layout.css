@@ -79,11 +79,15 @@
         max-width: 500px;
     }
   --help-item-hover: #f0f8ff;
+  --mobile-menu-bg-color: var(--fyncom-blue);
+  --mobile-menu-text-color: white;
 }
 
 /* Automatically switch to dark mode based on user's system preference */
 @media (prefers-color-scheme: dark) {
     :root {
+      --mobile-menu-text-color: white;
+      --mobile-menu-bg-color: var(--fyncom-darkest-cyan);
         --color-text: #eaeaea;
         --color-background: #121212;
         --color-primary: #bb86fc;
@@ -120,6 +124,8 @@
 
 /* Manually switch to dark mode via class or data attribute */
 :root[data-theme='dark'] {
+  --mobile-menu-text-color: white;
+  --mobile-menu-bg-color: var(--fyncom-darkest-cyan);
     --color-text: #eaeaea;
     --color-background: #121212;
     --color-primary: #bb86fc;

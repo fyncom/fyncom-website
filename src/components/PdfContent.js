@@ -10,7 +10,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 const PdfContent = ({ file }) => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1); // Set the initial page
-  const [loading, setLoading] = useState(true);
   const [prefersDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -28,7 +27,6 @@ const PdfContent = ({ file }) => {
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
-    setLoading(false);
   };
 
   const handleDownload = () => {

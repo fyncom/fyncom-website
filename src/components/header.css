@@ -9,7 +9,6 @@
     flex: 1;
     text-align: center;
 }
-
 .header-container {
     display: flex;
     justify-content: space-between;
@@ -51,30 +50,27 @@ button {
     width: 7rem;
     margin-right: 10px;
 }
-/* Business button specific styling */
+
 button.business {
     background-color: #ff5a5f;
+  color: var(--mobile-menu-text-color);
 }
 button.business:hover {
     background-color: #e55055;
 }
-/* User button specific styling */
 button.user {
     background-color: #4a90e2;
+  color: var(--mobile-menu-text-color);
 }
 button.user:hover {
     background-color: #4180c6;
 }
 
-/* Style for dropdown container */
 .dropdown {
     position: relative;
     display: inline-block;
 }
-/* Style for dropdown button */
 .dropbtn {
-    /*highlighting the drop down seems odd*/
-    /*todo - figure out how to handle this on mobile*/
     /*background-color: darkgray;*/
     color: white;
     padding: 16px;
@@ -82,7 +78,7 @@ button.user:hover {
     border: none;
     cursor: pointer;
 }
-/* Style for dropdown content (hidden by default) */
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -107,21 +103,71 @@ button.user:hover {
     background-color: var(--dropdown-hover-color);
 }
 
-/* once hamburger menu is ready - this won't suck as much*/
+.mobile-menu-icon, .mobile-menu {
+  display: none;
+}
+
+
 @media (max-width: 768px) {
-  /* Ensure that buttons and links are easily clickable on mobile */
+  ul {
+    padding: 0;
+  }
+  .mobile-menu-icon, .mobile-menu {
+    display: revert;
+  }
+  .nav-links, .dropdown {
+    display: none;
+  }
   button, .cta-button, a {
-    min-width: 44px; /* The minimum recommended size for touch targets */
-    min-height: 44px; /* The minimum recommended size for touch targets */
+    min-width: 44px;
+    min-height: 44px;
   }
-  /* Adjust heading sizes for mobile to ensure they don't overflow their containers */
-  h1, h2, h3 {
-    font-size: smaller; /* Adjust the font size down, or use a specific size */
+  .mobile-menu-icon {
+    font-size: 50px;
+    display: block;
+    cursor: pointer;
   }
-  /* Make sure that any paragraphs or spans are not too wide and have adequate line height */
-  p, span {
-    line-height: 1.5; /* Increase line height for readability */
-    word-wrap: break-word; /* Ensure long words don't overflow their containers */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    width: auto;
+    max-width: 500px;
+    height: 100%;
+    background: var(--mobile-menu-bg-color);
+    box-shadow: 4px 0px 16px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .mobile-menu.open {
+    /*transform: translateX(100%);*/
+    transform: translateX(0);
+  }
+
+  .mobile-menu-item a {
+    color: var(--mobile-menu-text-color);
+    padding: 10px 20px;
+    display: block; /* This makes sure that the links take up the full available width */
+  }
+
+  /* Toggle the dropdown within the mobile menu */
+  .mobile-menu-item .mobile-dropbtn:after {
+    content: ' ▼'; /* Add a small arrow to denote that this is a dropdown */
+  }
+  .mobile-menu-item,
+  .mobile-dropdown-content {
+    display: block;
+  }
+  .mobile-menu-item.active .mobile-dropdown-content {
+    display: block;
+  }
+  .submenu {
+    display: none;
+  }
+  .menu-item-with-children.active .submenu {
+    display: block;
   }
 }
 
