@@ -18,9 +18,12 @@ const Unicorner = () => {
         </Link>
         <h1>Spam Sucks!</h1>
         <h2>Get instantly paid to block bad emails & calls with...</h2>
-        <div className="fyncom-filters-words">
-          <img src={fyncomFilters} alt="FynCom Filters" />
-        </div>
+        {/*todo fix this link length*/}
+        <Link to="/fyncom-filters-email-edition">
+          <div className="fyncom-filters-words">
+            <img src={fyncomFilters} alt="FynCom Filters" />
+          </div>
+        </Link>
 
         <div className="info-section">
           <p>

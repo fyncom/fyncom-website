@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import mobileMarketing from "../images/illustrations/marketing-mobile-survey.webp"
@@ -8,8 +8,50 @@ import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
 import "../components/use-cases.css"
 import { Link } from "gatsby";
 import Seo from "../components/seo";
+import { SuccessModal, FailureModal } from "../components/Modal";
 
 const UseCases = () => {
+  const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
+  const [isFailureModalOpen, setFailureModalOpen] = useState(false);
+  const [formData, setFormData] = useState({name: '', email: '', message: ''});
+  const [modalMessage, setModalMessage] = useState('');
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  // Function to handle form submission
+  const handleSubmit = async (e) => {
+    let newUrl = `${process.env.GATSBY_API_URL}api/public/contact`;
+    e.preventDefault();
+    try {
+      // You can send the data to your backend API endpoint
+      const response = await fetch(newUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (response.status === 200) {
+        console.log('Email sent successfully');
+        setModalMessage('Your message has been sent.');
+        setSuccessModalOpen(true);
+      } else {
+        console.error('Failed to send email');
+        setModalMessage(data.message || 'Failed to send your message.');
+        setFailureModalOpen(true);
+      }
+    } catch (error) {
+      console.error('Error submitting form', error);
+    }
+  };
+
   return (
     <div>
       <Seo
@@ -60,20 +102,21 @@ const UseCases = () => {
           <div className="demo-form">
             <h2>REQUEST A DEMO</h2>
             <p>Get in contact with us!</p>
-            <form action="/submit-demo-request" method="post">
-              <input type="text" name="name" placeholder="Name" required />
-              <input type="email" name="email" placeholder="Email" required />
-              <input type="text" name="subject" placeholder="Subject" />
-              <textarea name="message" placeholder="Type your message here..." required></textarea>
+            <form onSubmit={handleSubmit}>
+              <input type="text" id="name" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
+              <input type="email" id="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
+              <input type="text" id="subject" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} required />
+              <textarea id="message" name="message" placeholder="Type your message here..." value={formData.message} onChange={handleChange} required />
               <button type="submit">Submit</button>
             </form>
           </div>
-
           <div className="fyncom-logo">
             <img src={fyncomLogo} alt="FynCom Logo" />
           </div>
         </div>
       <Footer />
+      <SuccessModal isOpen={isSuccessModalOpen} message={modalMessage} onClose={() => setSuccessModalOpen(false)} />
+      <FailureModal isOpen={isFailureModalOpen} message={modalMessage} onClose={() => setFailureModalOpen(false)} />
     </div>
   )
 }
