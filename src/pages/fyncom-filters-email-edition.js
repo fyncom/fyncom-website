@@ -7,8 +7,17 @@ import getPaidToBlockSpamEmails from "../images/get-paid-to-block-spam-emails.pn
 import cleanInboxCleanMind from "../images/a-clean-inbox-and-a-focused-mind.png"
 import nanoQrCode from "../images/qr-code-fyncom-filter-email-edition-nano.png";
 import "../components/use-cases.css"
+import "../components/pricing-table.css"
 import { Link } from "gatsby";
 import Seo from "../components/seo";
+
+const PricingOption = ({ title, price, period, buttonText, buttonLink }) => (
+  <div className="pricing-option">
+    <h3>{title}</h3>
+    <p className="price">{price}<span className="period">{period}</span></p>
+    <a href={buttonLink} className="learn-more-btn">{buttonText}</a>
+  </div>
+);
 
 const FyncomFiltersEmailEdition = () => {
   return (
@@ -25,8 +34,7 @@ const FyncomFiltersEmailEdition = () => {
           <p>Save time. Only see unknown emails that are so important, <b>senders are willing to lose money (to you)</b> if you don't respond.
             Block 100 emails / month, free.
           </p>
-          {/*link this to anchor 1*/}
-          <a href="https://calendly.com/adrian-fyncom/30min">
+          <a href="#pricing">
             <button className="demo-button">Start now</button>
           </a>
         </div>
@@ -45,7 +53,7 @@ const FyncomFiltersEmailEdition = () => {
             </div>
             <div className="use-case-image">
               <img src={cleanInboxCleanMind} alt="Understand your customers better" />
-              <p className="centered">Keep your inbox for known contacts & people willing to put their $$ where their email is.</p>
+              <p className="centered">Your inbox is for known contacts & people who put their $$ where their email is.</p>
             </div>
           </div>
 
@@ -56,27 +64,31 @@ const FyncomFiltersEmailEdition = () => {
             <div className="use-case-description">
               <h3>Reduce unwanted emails by 100%</h3>
               <p>...for less than $15 / year. Get paid for each blocked spam email. Get your FynCom Filter today!</p>
-              <Link to="/understanding-customers-use-cases" className="learn-more-btn">LEARN MORE</Link>
             </div>
           </div>
 
-          {/* pricing table should go here */}
+          <div className="pricing-table" id="pricing">
+            <PricingOption title="Monthly" price="$2" period="/per month" buttonText="Get it Now!"
+              buttonLink="https://fyncom.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=fyncom-filter-email-USD-Monthly&subscription_items[quantity][0]=1" />
+            <PricingOption title="Yearly" price="$15" period="/per year" buttonText="Get it Now!"
+              buttonLink="https://fyncom.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=fyncom-filter-email-USD-Yearly&subscription_items[quantity][0]=1" />
+            <PricingOption title="Lifetime" price="$49" period="/Lifetime" buttonText="Get it Now!"
+              buttonLink="https://buy.stripe.com/00g9Er4zDdRiaFG9AA" />
+          </div>
 
           <p className="centered">Block less than 100 email per month? <Link to="/user-help-center/email-filters-and-rewards">Try it for free!</Link></p>
 
           <div className="use-case-section">
             <div className="use-case-description">
-              <h3>Want to reserve your spot with nano?</h3>
+              <h3>Want to buy with nano?</h3>
               <p>Send us the USD equivalent of nano, then email us. Try the QR code or use the nano address below.</p>
-              <sub>pay to: nano_3fi1tert5344eh9w5u33349rogs7dyaq3twg71fqsw7rupno3hj7c6wj7k4j</sub> <br/><br/>
-              <sub>email to: support@fyncom.com</sub>
+              <p>pay to: <br/><b>nano_3fi1tert5344eh9w5u33349rogs7dyaq3twg71fqsw7rupno3hj7c6wj7k4j</b></p>
+              <p>email to: <a href="mailto:support@fyncom.com?subject=FynCom Filter - my nano payment"><br/>support@fyncom.com</a></p>
             </div>
             <div className="use-case-image">
               <img src={nanoQrCode} alt="Close more deals" />
             </div>
           </div>
-
-          <div className="fyncom-logo"></div>
         </div>
       <Footer />
     </div>

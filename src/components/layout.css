@@ -175,7 +175,7 @@
         flex-direction: row;
     }
     .use-case-description {
-        width: 50%; /* Set to original width on larger screens */
+        width: 46%; /* Set to original width on larger screens */
     }
 }
 
