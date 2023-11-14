@@ -43,7 +43,7 @@
     left: 0;
     width: 0;  /* Start width is 0, so it's initially not visible */
     height: 2px;  /* Thickness of the underline */
-    background-color: #fff;  /* Color of the underline */
+    background-color: var(--color-bar);  /* Color of the underline */
     transition: width 0.3s;  /* Transition effect for expanding underline */
 }
 .learn-more-btn:hover::after {
