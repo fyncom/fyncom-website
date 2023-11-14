@@ -1,12 +1,18 @@
 .story-image {
-    min-width: 400px;
+    min-width: 300px;
     max-width: 600px;
+    max-height: 800px;
 }
 .hero-section {
     text-align: center;
     padding: 50px;
     flex: 1  1 auto;
     display: flex;
+}
+.hero-section .story-image {
+    max-width: 100%; /* Ensures image is not larger than its container */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Ensures the image is scaled properly within its box */
 }
 .hero-content {
     /*max-width: 500px; !* Adjust the width as needed *!*/
@@ -94,6 +100,10 @@
 
 /* Adjustments for responsive design */
 @media (max-width: 768px) {
+    .story-image {
+        max-height: 500px;
+        margin-left: unset;
+    }
     .use-cases-sales-marketing-container {
         flex-direction: column;
         align-items: center;
