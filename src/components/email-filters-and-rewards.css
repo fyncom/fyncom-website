@@ -85,7 +85,7 @@
     }
     .setup-section h1, .setup-section h2, .setup-section h3,  .setup-section p {
         padding: 0.5rem;
-        margin: 10px 0px;
+        margin: 10px;
         text-align: center;
     }
     ol {
@@ -93,21 +93,6 @@
     }
     ul {
         padding: 0;
-    }
-    .mobile-menu-icon, .mobile-menu {
-        display: revert;
-    }
-    .nav-links, .dropdown {
-        display: none;
-    }
-    button, .cta-button, a {
-        min-width: 44px;
-        min-height: 44px;
-    }
-    .mobile-menu-icon {
-        font-size: 50px;
-        display: block;
-        cursor: pointer;
     }
     .videos-container {
         flex-direction: column;
