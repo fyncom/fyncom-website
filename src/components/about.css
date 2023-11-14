@@ -9,8 +9,8 @@
 .mission-section > sub {
     text-align: center;
     margin: 0 auto; /* Ensure any automatic margin that may affect alignment is set to auto */
-    width: 90%; /* Ensure it takes the full width of its container */
-    display: block; /* Ensure it's a block element */
+    width: 90%;
+    display: block;
     font-size: 16pt;
 }
 
@@ -26,21 +26,20 @@
 .values-header > h2 {
     text-align: center;
 }
-
 .value {
     width: 30%;
     margin-bottom: 20px;
     text-align: center;
-    display: block; /* Ensures the container is a block element */
+    display: block;
 }
 .value img {
-    display: block; /* Ensures each <p> is a block element */
+    display: block;
     width: 100px;
     height: 100px;
     margin: 0 auto; /* This centers the image horizontally */
 }
 .value > p {
-    display: block; /* Ensures each <p> is a block element */
+    display: block;
     margin-top: 1rem;
     text-align: center;
 }
@@ -49,7 +48,7 @@
 .story-section {
     display: flex;
     justify-content: space-between;
-    align-items: center; /* To vertically center items */
+    align-items: center;
 }
 .story-text > h3 {
     text-align: center;
@@ -73,7 +72,6 @@
 .p2-blue {
     color: var(--fyncom-blue);
 }
-
 
 /** Responsive layout adjustments *!*/
 @media (max-width: 768px) {

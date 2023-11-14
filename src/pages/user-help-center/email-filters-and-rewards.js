@@ -8,14 +8,14 @@ import "../../components/emailFiltersAndRewards.css";
 import Seo from "../../components/seo";
 
 const EmailFiltersAndRewards = () => {
-  const { search } = useLocation();
-  const { contentUrl } = queryString.parse(search);
+  const {search} = useLocation();
+  const {contentUrl} = queryString.parse(search);
 
   return (
     <div className="email-filters-rewards-container">
       <Seo title="FynCom Filters: Email Edition"
-      description="setup your meail filters her."/>
-      <Header />
+           description="setup your meail filters her."/>
+      <Header/>
       <main>
         <section className="setup-section">
           <h1>FynCom Filters: Email Edition</h1>
@@ -47,30 +47,48 @@ const EmailFiltersAndRewards = () => {
             <ol>
               <li>Global Whitelist
                 <ul>
-                 <li>
-                    <a href="https://github.com/fyncom/whitelist/blob/main/domains.json"> The global whitelist is publicly viewable and updated in realt-time.</a>{" "}
-                   Domains like .edu and .gov are whitelisted by default. A number of other domains and email senders are whitelisted here.{" "}
-                   <a href="https://github.com/fyncom/whitelist">Guidelines are here</a>.
+                  <li>
+                    <a href="https://github.com/fyncom/whitelist/blob/main/domains.json"> The global whitelist is publicly viewable and updated in
+                      realt-time.</a>{" "}
+                    Domains like .edu and .gov are whitelisted by default. A number of other domains and email senders are whitelisted here.{" "}
+                    <a href="https://github.com/fyncom/whitelist">Guidelines are here</a>.
                   </li>
                 </ul>
               </li>
               <li>Personal Whitelist
                 <ul>
-                 <li>
-                   To move emails into your personal whitelist, you can drag an email out of the FynFiltered and into the FynWhiteList email label.
-                   <a href="https://youtu.be/XgVJ7qrwlHk?t=189"> See Timestamp here</a>.
-                 </li>
+                  <li>
+                    To move emails into your personal whitelist, you can drag an email out of the FynFiltered and into the FynWhiteList email label.
+                    {" "}<a href="https://youtu.be/XgVJ7qrwlHk?t=189">See Timestamp here</a>.
+                  </li>
                 </ul>
               </li>
             </ol>
           </div>
-          {/* Assume videos and FAQ sections are components or will be populated similarly */}
-          <h3>Roadmap</h3>
-
         </section>
-      {/*  put google docs viewer here.*/}
+
+        <div className="videos-section">
+          <h3>Video Tutorials</h3>
+          <div className="videos-container">
+            <div className="video-description">
+              <p>Watch this first. It's our most recent video</p>
+              <iframe className="video" src="https://www.youtube.com/embed/BKLMSqC9mtA" title="YouTube video player"
+                frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+              </iframe>
+            </div>
+            <div className="video-description">
+              <p>Only watch this if you want to see the first version</p>
+              <iframe className="video" src="https://www.youtube.com/embed/XgVJ7qrwlHk" title="YouTube video player"
+                frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+        {/*  put google docs viewer here.*/}
+        {/* Assume videos and FAQ sections are components or will be populated similarly */}
+        <h3>Roadmap</h3>
       </main>
-      <Footer />
+      <Footer/>
     </div>
   );
 };
