@@ -1,0 +1,67 @@
+.email-filters-rewards-container {
+    margin-left: 2rem;
+}
+.setup-section h1, .setup-section h2, .setup-section h3,  .setup-section p {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 0 1rem;
+    padding: 10px;
+}
+/* to create the underline effect - change the css classes as needed for others*/
+.setup-instructions > h2 {
+    text-align: left;
+    position: relative; /* Makes sure the pseudo-element positions itself relative to the h3 */
+}
+.setup-section .setup-instructions h2::after {
+    content: ""; /* This is necessary for the pseudo-element to show */
+    position: absolute; /* Allows precise positioning */
+    left: 0.5rem;
+    right: 40rem;
+    bottom: -8px;
+    height: 2px; /* Thickness of the underline */
+    background: var(--color-bar);
+}
+
+
+@media (max-width: 768px) {
+    .setup-section .setup-instructions h2::after {
+        left: 0; /* Align pseudo-element to the left */
+        right: 0; /* Align pseudo-element to the right */
+        bottom: -8px;
+        width: 50px; /* Set a fixed width for the underline */
+        margin: 0 auto; /* Center the underline */
+    }
+    .email-filters-rewards-container {
+        margin-left: 0;
+        flex-direction: column; /* Stack the child elements vertically */
+    }
+    .setup-section h1, .setup-section h2, .setup-section h3,  .setup-section p {
+        padding: 0.5rem;
+        margin: 10px 0px;
+        text-align: center; /* Optional: Center text if it fits your design */
+
+    }
+    ol {
+        margin: unset;
+    }
+    ul {
+        padding: 0;
+    }
+    .mobile-menu-icon, .mobile-menu {
+        display: revert;
+    }
+    .nav-links, .dropdown {
+        display: none;
+    }
+    button, .cta-button, a {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    .mobile-menu-icon {
+        font-size: 50px;
+        display: block;
+        cursor: pointer;
+    }
+}
+

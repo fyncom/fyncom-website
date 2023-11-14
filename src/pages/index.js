@@ -53,7 +53,7 @@ const BlockSpamEarnCash = () => {
           <div className="social-media-container">
             <div className="text-block-left">
               <h2 className="text-wrapper-2">Are your customers getting{" "}
-                <span className="text-wrapper-3-red">phished</span>?
+                <span className="underline-red">phished</span>?
               </h2>
               <p> Stop scams with refundable deposits. Our tech asks unknown senders
                 to risk losing money to your audience before they can reach them.
@@ -86,7 +86,7 @@ const BlockSpamEarnCash = () => {
             </div>
             <div className="text-block">
               <h2 className="text-wrapper-2">Too many {" "}
-                <span className="text-wrapper-3">abusive DMs</span>{" "}in your communities?
+                <span className="underline">abusive DMs</span>{" "}in your communities?
               </h2>
               <p> Your community loves making connections, but not with scammers &amp; imposters. Help mods by adding
                 FynCom&#39;s Direct Message tech into your Discord, Telegram, or other chat-based community. Bonus - your
@@ -113,7 +113,7 @@ const BlockSpamEarnCash = () => {
             <div className="text-block-left">
               <h2 className="text-wrapper-2">A scam blocking tool for some...</h2>
               <p>
-                <p2 className="text-wrapper-3-red">...and a rewards engine for all.</p2>
+                <p2 className="underline-red">...and a rewards engine for all.</p2>
                 FynCom creates trust in online communications with its Refundable Deposits API. Any platform with communication between
                 users can give cash-back to users for blocking scams. Bring a modern approach to cybersecurity that your
                 customers will love & your revenue teams will love more.
@@ -128,7 +128,7 @@ const BlockSpamEarnCash = () => {
         </div>
 
         <section className="why-fyncom">
-          <h2 className="text-wrapper-3">Give the Gift of Cash-Back for Scam Blocking</h2>
+          <h2 className="underline">Give the Gift of Cash-Back for Scam Blocking</h2>
           <p>
             Our company is built around refundable deposits as a tool to create
             trust between unknown parties in digital communications. Protect
