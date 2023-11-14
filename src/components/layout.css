@@ -120,6 +120,10 @@
         .fyncom-filters-words {
             content: var(--filters-dark-mode);
         }
+        /* dark mode inverter for pds when react-pdf is not usable */
+        .google-docs-iframe-container {
+            filter: invert(1) hue-rotate(180deg);
+        }
     }
 }
 
@@ -157,6 +161,10 @@
     }
     .fyncom-filters-words {
         content: var(--filters-dark-mode);
+    }
+    /* dark mode inverter for pds when react-pdf is not usable */
+    .google-docs-iframe-container {
+        filter: invert(1) hue-rotate(180deg);
     }
   }
 

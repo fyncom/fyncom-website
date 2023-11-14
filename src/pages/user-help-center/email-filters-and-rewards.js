@@ -6,6 +6,7 @@ import Footer from "../../components/footer";
 import "../../components/help-center.css";
 import "../../components/emailFiltersAndRewards.css";
 import Seo from "../../components/seo";
+import GoogleDocsViewer from "../../components/GoogleDocsViewer";
 
 const EmailFiltersAndRewards = () => {
   const {search} = useLocation();
@@ -84,9 +85,8 @@ const EmailFiltersAndRewards = () => {
             </div>
           </div>
         </div>
-        {/*  put google docs viewer here.*/}
-        {/* Assume videos and FAQ sections are components or will be populated similarly */}
         <h3>Roadmap</h3>
+        <GoogleDocsViewer fileID="1KbcIqV3PClA6KF7W0uwPJgvzTUxtFJuoD39wMwZ5nvQ" />
       </main>
       <Footer/>
     </div>
