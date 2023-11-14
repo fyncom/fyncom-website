@@ -4,7 +4,7 @@ import queryString from "query-string";
 import Header from "../../components/header";
 import Footer from "../../components/footer";
 import "../../components/help-center.css";
-import "../../components/emailFiltersAndRewards.css";
+import "../../components/email-filters-and-rewards.css";
 import Seo from "../../components/seo";
 import GoogleDocsViewer from "../../components/GoogleDocsViewer";
 
