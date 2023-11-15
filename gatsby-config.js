@@ -52,20 +52,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-relative-images`,
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 800,
-            },
-          },
-        ],
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [process.env.GATSBY_GOOGLE_TAG_ID],
