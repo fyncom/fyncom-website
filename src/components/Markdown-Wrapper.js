@@ -4,11 +4,11 @@ import Header from "./header";
 import Footer from "./footer";
 import Seo from "./seo"
 
-export const Wrapper = ({ children, title, description }) => (
+export const Wrapper = ({ children, seo }) => (
   <div>
     <Seo
-      title={title}
-      description={description}
+      title={seo.title}
+      description={seo.description}
     />
     <Header />
     <div className="gatsby-focus-wrapper">{children}</div>
