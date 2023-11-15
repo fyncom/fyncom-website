@@ -7,6 +7,9 @@
 /**
  * @type {import('gatsby').GatsbyNode['createPages']}
  */
+const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
+
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
   createPage({
@@ -27,4 +30,15 @@ exports.onCreateWebpackConfig = ({actions}) => {
       ],
     },
   });
+};
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions;
+  if (node.internal.type === 'Mdx') {
+    const slug = createFilePath({ node, getNode });
+    createNodeField({
+      node,
+      name: 'slug',
+      value: `${slug}`,
+    });
+  }
 };
