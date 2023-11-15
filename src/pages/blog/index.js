@@ -1,23 +1,26 @@
 import React from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
-import BlogPost from '../../components/blog-post';
 import '../../components/help-center.css';
 import Seo from "../../components/seo";
 import { graphql, Link } from 'gatsby'
 import {Wrapper} from "../../components/Markdown-Wrapper";
 
 export default function BlogIndex({ data }) {
+  const title = "Blog FynCom";
+  const description = "Read the latest on how to stay innovative in this evolving digital world";
+
   return (
-    <Wrapper>
+    <Wrapper title={title} description={description}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px' }}>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
           <div key={id}>
             <h2>
-              <Link to={`/blog/${fields.slug}`}>
+              <Link to={`${fields.slug}`}>
                 {frontmatter.title}
               </Link>
             </h2>
+            <small>{frontmatter.date}</small>
             <p>{excerpt}</p>
           </div>
         ))}
