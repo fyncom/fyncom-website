@@ -7,11 +7,12 @@ import { graphql, Link } from 'gatsby'
 import {Wrapper} from "../../components/Markdown-Wrapper";
 
 export default function BlogIndex({ data }) {
-  const title = "Blog FynCom";
-  const description = "Read the latest on how to stay innovative in this evolving digital world";
-
+  const seo = {
+    title: "Blog FynCom",
+    description: "Read the latest on how to stay innovative in this evolving digital world",
+  };
   return (
-    <Wrapper title={title} description={description}>
+    <Wrapper seo={seo}>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px' }}>
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
           <div key={id}>
@@ -21,7 +22,7 @@ export default function BlogIndex({ data }) {
               </Link>
             </h2>
             <small>{frontmatter.date}</small>
-            <p>{excerpt}</p>
+            <p>{frontmatter.description}</p>
           </div>
         ))}
       </div>
@@ -38,6 +39,7 @@ export const pageQuery = graphql`
         frontmatter {
           title
           date(formatString: "MMMM DD, YYYY")
+          description
         }
         fields {
           slug
