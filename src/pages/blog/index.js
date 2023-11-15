@@ -1,8 +1,5 @@
 import React from 'react';
-import Header from '../../components/header';
-import Footer from '../../components/footer';
 import '../../components/help-center.css';
-import Seo from "../../components/seo";
 import { graphql, Link } from 'gatsby'
 import {Wrapper} from "../../components/Markdown-Wrapper";
 import Img from 'gatsby-image'
