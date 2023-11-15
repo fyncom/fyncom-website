@@ -5,6 +5,7 @@ import '../../components/help-center.css';
 import Seo from "../../components/seo";
 import { graphql, Link } from 'gatsby'
 import {Wrapper} from "../../components/Markdown-Wrapper";
+import Img from 'gatsby-image'
 
 export default function BlogIndex({ data }) {
   const seo = {
@@ -23,13 +24,17 @@ export default function BlogIndex({ data }) {
             </h2>
             <small>{frontmatter.date}</small>
             <p>{frontmatter.description}</p>
+            {/*<Img fluid={"../images/get-paid-to-block-spam-emails.png"} />*/}
+            {/*<Img fluid={frontmatter.featuredImage} />*/}
+            {/*<Img fluid={frontmatter.featuredImage..childImageSharp.fluid} />*/}
+            {/*<img src={frontmatter.featuredImage} alt="Featured" />*/}
           </div>
         ))}
       </div>
     </Wrapper>
   )
 }
-
+// cannot get featuredImage to work
 export const pageQuery = graphql`
   query {
     allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
@@ -40,6 +45,7 @@ export const pageQuery = graphql`
           title
           date(formatString: "MMMM DD, YYYY")
           description
+          featuredImage
         }
         fields {
           slug
