@@ -1,0 +1,32 @@
+.gatsby-focus-wrapper {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1200px;
+    /*padding: 0px 0;*/
+}
+img {
+    margin-left: unset;
+    margin-bottom: 3rem;
+    /*display: block;*/
+    /*width: 100%; !* make image width responsive *!*/
+    /*height: auto; !* maintain aspect ratio *!*/
+    /*object-fit: cover; !* adjust how the image fits in its container *!*/
+}
+p {
+    max-width: unset;
+}
+.float-left {
+    float: left;
+    max-width: 200px;
+    margin-right: 1rem;
+    /*justify-content: space-between;*/
+}
+.float-left.large {
+    max-width: 400px;
+}
+a {
+    color: var(--fyncom-light-blue);
+}
+/*.use-case-image.blog {*/
+    /*max-width: 100px;*/
+/*}*/
