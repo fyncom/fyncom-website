@@ -4,6 +4,7 @@
 /usecase-understanding-customers  /understanding-customers-use-cases  301
 /karmacallwhitepaper  /white-paper-original-scam-calls  301
 /the-dream  /white-paper-original-scam-calls  301
+/about-the-fyncom-team  /about  301
 
 # Desired URLs for user help center, but using the below as a temporary workaround
 #/crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
@@ -12,7 +13,7 @@
 
 /crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-translations-user-setup/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FCrowdin-Setup-FynCom.md  301
 /crowdin-rewards-for-user-translations-setup  /user-help-center/crowdin-rewards-for-translations-user-setup/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FCrowdin-Setup-FynCom.md  301
-/email-filters-and-rewards  http://localhost:8000/user-help-center/email-filters-and-rewards/?contentUrl=filtering  301
+/email-filters-and-rewards  /user-help-center/email-filters-and-rewards/?contentUrl=filtering  301
 
 # Desired URLs for help center, but using the below as a temporary workaround
 #/account-balance-help  /help-center/account-balance-help  301
