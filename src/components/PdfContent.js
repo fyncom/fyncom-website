@@ -17,7 +17,7 @@ const PdfContent = ({ file }) => {
       setIsDarkMode(e.matches);
     };
 
-    if(typeof window !== 'undefined') {  // Check if window is defined (this means we're on the client-side)
+    if(typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       setIsDarkMode(mediaQuery.matches);
       mediaQuery.addEventListener('change', setDarkModeFromMediaQuery); // Add the event listener for changes

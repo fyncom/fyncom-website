@@ -1,22 +1,9 @@
 import React, { useState, useEffect, useRef} from "react";
-import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";
 import "./header.css";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { helpItems } from "../../static/help-items";
 import { FaBars } from 'react-icons/fa';
 import Img from "gatsby-image";
-
-export const query = graphql`
-  query {
-    file(relativePath: { eq: "FynCom_Logo_New-LARGEST.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`;
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -26,7 +13,40 @@ const Header = () => {
     event.stopPropagation();
     setMenuOpen(!isMenuOpen);
   };
-  const data = useStaticQuery(query);
+  const data = useStaticQuery(graphql`
+    query {
+      lightLogo: file(relativePath: { eq: "FynCom_Logo_New-LARGEST.png" }) {
+        childImageSharp {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+      darkLogo: file(relativePath: { eq: "FynCom_Logo_New-LARGEST-White.png" }) {
+        childImageSharp {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
+
+  // State to hold which logo to show
+  const [logoData, setLogoData] = useState(data.lightLogo.childImageSharp.fixed);
+
+  // Effect for setting the logo based on the system color scheme
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = (e) => {
+        setLogoData(e.matches ? data.darkLogo.childImageSharp.fixed : data.lightLogo.childImageSharp.fixed);
+      };
+      handleChange(mediaQuery); // Initial check
+      mediaQuery.addListener(handleChange); // Listen for changes
+      return () => mediaQuery.removeListener(handleChange);
+    }
+  }, [data.lightLogo.childImageSharp.fixed, data.darkLogo.childImageSharp.fixed]);
 
 
   useEffect(() => {
@@ -52,9 +72,8 @@ const Header = () => {
     <header className="header-top">
       <div className="header-container">
         <Link to="/">
-          <Img className={"testing"} fluid={data.file.childImageSharp.fluid} alt="FynCom Logo" />
           <div className="fyncom-logo-header">
-            <img src={fyncomLogo} alt="FynCom Logo" />
+            <Img fixed={logoData} alt="FynCom Logo" />
           </div>
         </Link>
         <div ref={hamburgerRef} className="mobile-menu-icon" onClick={toggleMenu}>
