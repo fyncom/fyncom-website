@@ -3,7 +3,8 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import {graphql, Link, useStaticQuery} from "gatsby"
 import "../components/index.css"
-import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
+import fyncomWebm from "../images/fyncom-GIF-expanding-logo-cropped.webm"
+import fyncomMp4 from "../images/fyncom-GIF-expanding-logo-cropped.mp4"
 import Seo from "../components/seo";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
@@ -95,13 +96,11 @@ const BlockSpamEarnCash = () => {
           <div className="social-media-container">
             <div className="logo-container">
               <div className="bottom-logo">
-                <img className="index-story-image" src={fyncomGif} alt="Financial Communications cuts out noise and bring in trust"/>
-                {/* todo convert gif to video via ffmpeg*/}
-                {/*<video className="index-story-video" autoPlay loop muted playsInline>*/}
-                {/*  <source src="/path-to-your-video/fyncom-video.webm" type="video/webm" />*/}
-                {/*  <source src="/path-to-your-video/fyncom-video.mp4" type="video/mp4" />*/}
-                {/*  Sorry, your browser doesn't support embedded videos.*/}
-                {/*</video>*/}
+                <video className="index-story-video" autoPlay loop muted playsInline>
+                  <source src={fyncomWebm} type="video/webm" />
+                  <source src={fyncomMp4} type="video/mp4" />
+                  Sorry, your browser doesn't support embedded videos.
+                </video>
               </div>
             </div>
             <div className="text-block">

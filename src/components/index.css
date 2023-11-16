@@ -37,7 +37,7 @@
   transform: scale(1.15);
   transition: transform 0.3s;
 }
-.bottom-logo > .index-story-image {
+.bottom-logo > .index-story-video {
   filter: var(--img-brightness);
   max-width: 70%;
 }
