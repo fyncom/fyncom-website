@@ -10,13 +10,12 @@ import gettingResponses from '../../images/blog/feels-good-to-get-responses.gif'
 import linkedInSurvey from '../../images/blog/statistics-linked-in-survey.png'
 import {Wrapper} from "../../components/Markdown-Wrapper";
 
-[//]: # (Using automation outreach tools can be a double-edged sword. Read here to see 1 example of LinkedIn automation for getting survey responses.)
-
 export const meta = {
 title: "Boosting Response Rates: Unleashing the Power of Automated Rewards",
   description: "Maximize customer engagement and drive success in your outreach campaigns with FynCom's Rewards Technology. Learn how automated rewards can triple your response rates and increase customer interaction affordably."
 };
 
+[//]: # (GIf does not show up on home page of blogs)
 <Wrapper seo={meta}>
 
   # Damn, it feels good to be a Response-Getta
@@ -35,12 +34,12 @@ title: "Boosting Response Rates: Unleashing the Power of Automated Rewards",
 
   ## **Getting responses is the ultimate revenue driver**
 
-  [//]: # (put in side by side component)
-
-  <img src={linkedInSurvey} alt="Product marketers want responses!" />
   <div className="use-case-section">
     <div className="use-case-image">
-      <img src={linkedInSurvey} alt="Product marketers want responses!" />
+[//]: # (causes issues)
+[//]: # (<img className={"float-left large"} src={linkedInSurvey} alt="Product marketers want responses!" />)
+[//]: # (      <img className={"float-left"} src={linkedInSurvey} alt="Product marketers want responses!" />)
+      <img  src={linkedInSurvey} alt="Product marketers want responses!" />
     </div>
     <div className="use-case-description">
       Product marketers want responses!

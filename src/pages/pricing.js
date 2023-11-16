@@ -191,6 +191,9 @@ const Pricing = () => {
             <td align="center"><button name="button" style="background-color:#4A90E2;color:white" onMouseOver="this.style.cursor='pointer'" onclick="window.open('https://fyncom.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=standard-USD-Monthly&amp;subscription_items[quantity][0]=1'), 'target=_blank', 'rel=noopener noreferrer';">Get Standard</button></td>
             <td align="center"><button name="button" style="background-color:#4A90E2;color:white" onMouseOver="this.style.cursor='pointer'" onclick="window.open('https://fyncom.chargebee.com/hosted_pages/checkout?subscription_items[item_price_id][0]=pro-USD-Monthly&amp;subscription_items[quantity][0]=1'), 'target=_blank', 'rel=noopener noreferrer';">Get Pro</button></td>
             <td align="center"><button name="button" style="background-color:#4A90E2;color:white" onMouseOver="this.style.cursor='pointer'" onclick="window.open('https://www.fyncom.com/contact'), 'target=_blank';">Contact Us</button></td>
+<!--Update to use gatsby Link later if possible-->
+<!--            <td align="center"><Link to="/contact" style="background-color:#4A90E2; color:white">FynCom</Link></td>-->
+
         </tr>
        </tbody>
     </table>
