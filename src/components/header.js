@@ -1,20 +1,33 @@
 import React, { useState, useEffect, useRef} from "react";
 import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";
 import "./header.css";
-import {Link} from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import { helpItems } from "../../static/help-items";
-import { FaBars } from 'react-icons/fa'; // To represent the hamburger menu
+import { FaBars } from 'react-icons/fa';
+import Img from "gatsby-image";
 
+export const query = graphql`
+  query {
+    file(relativePath: { eq: "FynCom_Logo_New-LARGEST.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef();
   const hamburgerRef = useRef(); // Ref for the hamburger menu icon
-
   const toggleMenu = (event) => {
     event.stopPropagation();
     setMenuOpen(!isMenuOpen);
   };
+  const data = useStaticQuery(query);
+
 
   useEffect(() => {
     const closeMenu = (event) => {
@@ -39,11 +52,11 @@ const Header = () => {
     <header className="header-top">
       <div className="header-container">
         <Link to="/">
+          <Img className={"testing"} fluid={data.file.childImageSharp.fluid} alt="FynCom Logo" />
           <div className="fyncom-logo-header">
             <img src={fyncomLogo} alt="FynCom Logo" />
           </div>
         </Link>
-        {/* Hamburger Menu Icon for Mobile View */}
         <div ref={hamburgerRef} className="mobile-menu-icon" onClick={toggleMenu}>
           <FaBars />
         </div>
