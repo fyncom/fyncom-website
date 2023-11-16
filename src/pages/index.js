@@ -36,12 +36,18 @@ const BlockSpamEarnCash = () => {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
+      increaseResponseRates: file(relativePath: { eq: "increase-response=rates-across-any platform-and-channel.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
     }
   `);
   const filterImage = getImage(data.fyncomFilterGmail.childImageSharp.gatsbyImageData);
   const filterImageDark = getImage(data.fyncomFilterGmailDark.childImageSharp.gatsbyImageData);
   const karmacallImage = getImage(data.karmaCall.childImageSharp.gatsbyImageData);
   const karmacallImageDark = getImage(data.karmaCallDark.childImageSharp.gatsbyImageData);
+  const increaseCustomerResponse = getImage(data.increaseResponseRates.childImageSharp.gatsbyImageData);
 
   // Use state to keep track of the images for the current theme
   const [filterLogo, setFilterLogo] = useState(filterImage);
@@ -159,7 +165,7 @@ const BlockSpamEarnCash = () => {
             </div>
             <div className="logo-container">
               <div className="bottom-logo">
-                <img className="index-logo-use-cases" src={increaseResponseRates} alt="Increase Customer Engagement"/>
+                <GatsbyImage image={increaseCustomerResponse} alt="Increase Customer Engagement" />
               </div>
             </div>
           </div>
