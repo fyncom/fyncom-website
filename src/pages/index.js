@@ -6,14 +6,11 @@ import "../components/index.css"
 import tinderLogo from "../images/logos/tinder-logo.png"
 import discordLogo from "../images/logos/Discord-logo.png"
 import telegramLogo from "../images/logos/telegram-logo.png"
-// import fyncomFilterGmail from "../images/fyncom_filters_gmail_edition_no_logo.png"
-// import fyncomFilterGmailDark from "../images/fyncom_filters_gmail_edition_no_logo-white.png"
-// import karmaCall from "../images/karmacall-logo.png"
-// import karmaCallDark from "../images/karmacall-logo-white.png"
-import Img from "gatsby-image";
 import increaseResponseRates from "../images/increase-response=rates-across-any platform-and-channel.png"
 import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
 import Seo from "../components/seo";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 
 const BlockSpamEarnCash = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -21,52 +18,50 @@ const BlockSpamEarnCash = () => {
     query {
       fyncomFilterGmail: file(relativePath: { eq: "fyncom_filters_gmail_edition_no_logo.png" }) {
         childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       fyncomFilterGmailDark: file(relativePath: { eq: "fyncom_filters_gmail_edition_no_logo-white.png" }) {
         childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       karmaCall: file(relativePath: { eq: "karmacall-logo.png" }) {
         childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       karmaCallDark: file(relativePath: { eq: "karmacall-logo-white.png" }) {
         childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
   `);
-  const [filterLogo, setFilterLogo] = useState(data.fyncomFilterGmail.childImageSharp.fixed);
-  const [karmacallLogo, setKarmacallLogo] = useState(data.karmaCall.childImageSharp.fixed);
+  const filterImage = getImage(data.fyncomFilterGmail.childImageSharp.gatsbyImageData);
+  const filterImageDark = getImage(data.fyncomFilterGmailDark.childImageSharp.gatsbyImageData);
+  const karmacallImage = getImage(data.karmaCall.childImageSharp.gatsbyImageData);
+  const karmacallImageDark = getImage(data.karmaCallDark.childImageSharp.gatsbyImageData);
+
+  // Use state to keep track of the images for the current theme
+  const [filterLogo, setFilterLogo] = useState(filterImage);
+  const [karmacallLogo, setKarmacallLogo] = useState(karmacallImage);
+
 
   useEffect(() => {
     if(typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       // const handleChange = () => setIsDarkMode(mediaQuery.matches);
       const handleChange = (e) => {
-        setFilterLogo(e.matches ? data.fyncomFilterGmailDark.childImageSharp.fixed : data.fyncomFilterGmail.childImageSharp.fixed);
-        setKarmacallLogo(e.matches ? data.karmaCallDark.childImageSharp.fixed : data.karmaCall.childImageSharp.fixed);
+        setFilterLogo(e.matches ? filterImageDark : filterImage );
+        setKarmacallLogo(e.matches ? karmacallImageDark: karmacallImage );
       };
       // setIsDarkMode(mediaQuery.matches);
       handleChange(mediaQuery); // Initial check
       mediaQuery.addListener(handleChange);
       return () => mediaQuery.removeListener(handleChange);
     }
-  }, [data.fyncomFilterGmailDark.childImageSharp.fixed, data.fyncomFilterGmail.childImageSharp.fixed,
-    data.karmaCallDark.childImageSharp.fixed, data.karmaCall.childImageSharp.fixed]);
+  }, [filterImage, filterImageDark, karmacallImage, karmacallImageDark]);
 
 
   return (
@@ -106,12 +101,10 @@ const BlockSpamEarnCash = () => {
             <div className="logo-container">
               <div className="top-logos-left">
                 <Link to="/fyncom-filters-email-edition" className="index-links">
-                  {/*<img className="index-logo-fyncom-filter" src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."/>*/}
-                  <Img fixed={filterLogo} alt="block bad emails automatically & get paid." />
+                  <GatsbyImage image={filterLogo} alt="block bad emails automatically & get paid." />
                 </Link>
                 <a href="https://www.karmacall.com"  className="index-links">
-                  {/*<img className="index-logo-karmacall" src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"/>*/}
-                  <Img fixed={karmacallLogo} alt="Get paid to block scam calls!" />
+                  <GatsbyImage image={karmacallLogo} alt="Get paid to block scam calls!" />
                 </a>
               </div>
             </div>

@@ -39,7 +39,7 @@
   justify-content: center;
 }
 
-.index-logo, .index-logo-tg, .index-logo-discord, .index-logo-fyncom-filter, .index-logo-karmacall {
+.index-logo, .index-logo-tg, .index-logo-discord {
   object-fit: contain;
   margin-bottom: 0.2rem;
   margin-left: 0;
@@ -57,14 +57,6 @@
   max-width: 50%;
   min-width: 200px;
 }
-.index-logo-fyncom-filter {
-  max-width: 90%;
-  min-width: 220px;
-}
-.index-logo-karmacall {
-  max-width: 30%;
-  min-width: 180px;
-}
 .index-logo-use-cases {
   max-width: 80%;
   min-width: 300px;
@@ -72,8 +64,7 @@
 .index-logo:hover,
 .index-logo-tg:hover,
 .index-logo-discord:hover,
-.index-logo-fyncom-filter:hover,
-.index-logo-karmacall:hover,
+.gatsby-image-wrapper:hover,
 .index-logo-use-cases:hover {
   transform: scale(1.15);
   transition: transform 0.3s;
@@ -140,12 +131,10 @@
   max-width: fit-content; /* Use 'fit-content' to shrink-wrap the content */
 }
 
-.index-logo-fyncom-filter, .index-logo-karmacall {
-  display: block;
-  width: auto; /* Adjust the width as needed */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure it doesn't stretch beyond its container */
-  object-fit: contain;
+.gatsby-image-wrapper {
+    max-width: 100%; /* Ensure it doesn't stretch beyond its container */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Make sure it behaves like a block-level element */
 }
 
 @media (max-width: 768px) {
@@ -170,7 +159,7 @@
     min-width: 10px;
     gap: 0rem;
   }
-  .index-logo, .index-logo-tg, .index-logo-discord, .index-logo-fyncom-filter, .index-logo-karmacall {
+  .index-logo, .index-logo-tg, .index-logo-discord {
     width: 100%; /* Increase width to fit mobile screens, adjust as needed */
   }
   .index-logo {
@@ -184,12 +173,6 @@
   .index-logo-discord {
     max-width: 35%;
     min-width: 100px;
-  }
-  .index-logo-fyncom-filter {
-    min-width: 180px;
-  }
-  .index-logo-karmacall {
-    min-width: 120px;
   }
   .index-logo-use-cases {
     max-width: 60%;
