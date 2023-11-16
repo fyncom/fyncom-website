@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaAward, FaTools, FaEnvelopeOpenText, FaKey, FaMailBulk, FaChartLine, FaFileAlt, FaWallet, FaLanguage } from 'react-icons/fa';
+import { FaAward, FaTools, FaEnvelopeOpenText, FaKey, FaMailBulk, FaChartLine, FaFileAlt, FaWallet, FaLanguage, FaFilter } from 'react-icons/fa';
 
 export const helpItems = [
   {
@@ -71,7 +71,6 @@ export const helpItemsUser = [
     topicUrl: "crowdin-rewards-for-translations-user-setup",
     url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Crowdin-Setup-FynCom.md",
   },
-  // next one would be "email-filters-and-rewards", but that is just html - no markdown
-  // {title: "FynCom Filters for Emails", description: "Get rewarded to block email. Allow trused email. Cash out your way", icon: <FaFilter />,
-  //   topicUrl: "email-filters-and-rewards", url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Crowdin-Setup-FynCom.md",},
+  {title: "FynCom Filters for Emails", description: "Get rewarded to block email. Allow trused email. Cash out your way", icon: <FaFilter />,
+    topicUrl: "email-filters-and-rewards", url: "filtering",},
 ]

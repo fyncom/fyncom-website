@@ -16,7 +16,7 @@ const EmailFiltersAndRewards = () => {
     <div className="email-filters-rewards-container">
       <Seo
         title="FynCom Filters: Email Edition"
-        description="setup your meail filters her."
+        description="setup your meail filters here."
       />
       <Header />
       <main>
