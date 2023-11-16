@@ -1,30 +1,73 @@
 import React,  { useState, useEffect } from 'react';
 import Header from "../components/header"
 import Footer from "../components/footer"
-import { Link } from "gatsby"
+import {graphql, Link, useStaticQuery} from "gatsby"
 import "../components/index.css"
 import tinderLogo from "../images/logos/tinder-logo.png"
 import discordLogo from "../images/logos/Discord-logo.png"
 import telegramLogo from "../images/logos/telegram-logo.png"
-import fyncomFilterGmail from "../images/fyncom_filters_gmail_edition_no_logo.png"
-import fyncomFilterGmailDark from "../images/fyncom_filters_gmail_edition_no_logo-white.png"
-import karmaCall from "../images/karmacall-logo.png"
-import karmaCallDark from "../images/karmacall-logo-white.png"
+// import fyncomFilterGmail from "../images/fyncom_filters_gmail_edition_no_logo.png"
+// import fyncomFilterGmailDark from "../images/fyncom_filters_gmail_edition_no_logo-white.png"
+// import karmaCall from "../images/karmacall-logo.png"
+// import karmaCallDark from "../images/karmacall-logo-white.png"
+import Img from "gatsby-image";
 import increaseResponseRates from "../images/increase-response=rates-across-any platform-and-channel.png"
 import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
 import Seo from "../components/seo";
 
 const BlockSpamEarnCash = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const data = useStaticQuery(graphql`
+    query {
+      fyncomFilterGmail: file(relativePath: { eq: "fyncom_filters_gmail_edition_no_logo.png" }) {
+        childImageSharp {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+      fyncomFilterGmailDark: file(relativePath: { eq: "fyncom_filters_gmail_edition_no_logo-white.png" }) {
+        childImageSharp {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+      karmaCall: file(relativePath: { eq: "karmacall-logo.png" }) {
+        childImageSharp {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+      karmaCallDark: file(relativePath: { eq: "karmacall-logo-white.png" }) {
+        childImageSharp {
+          fixed(width: 100) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
+  const [filterLogo, setFilterLogo] = useState(data.fyncomFilterGmail.childImageSharp.fixed);
+  const [karmacallLogo, setKarmacallLogo] = useState(data.karmaCall.childImageSharp.fixed);
+
   useEffect(() => {
     if(typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handleChange = () => setIsDarkMode(mediaQuery.matches);
-      setIsDarkMode(mediaQuery.matches);
+      // const handleChange = () => setIsDarkMode(mediaQuery.matches);
+      const handleChange = (e) => {
+        setFilterLogo(e.matches ? data.fyncomFilterGmailDark.childImageSharp.fixed : data.fyncomFilterGmail.childImageSharp.fixed);
+        setKarmacallLogo(e.matches ? data.karmaCallDark.childImageSharp.fixed : data.karmaCall.childImageSharp.fixed);
+      };
+      // setIsDarkMode(mediaQuery.matches);
+      handleChange(mediaQuery); // Initial check
       mediaQuery.addListener(handleChange);
       return () => mediaQuery.removeListener(handleChange);
     }
-  }, []);
+  }, [data.fyncomFilterGmailDark.childImageSharp.fixed, data.fyncomFilterGmail.childImageSharp.fixed,
+    data.karmaCallDark.childImageSharp.fixed, data.karmaCall.childImageSharp.fixed]);
+
 
   return (
     <div>
@@ -63,10 +106,12 @@ const BlockSpamEarnCash = () => {
             <div className="logo-container">
               <div className="top-logos-left">
                 <Link to="/fyncom-filters-email-edition" className="index-links">
-                  <img className="index-logo-fyncom-filter" src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."/>
+                  {/*<img className="index-logo-fyncom-filter" src={isDarkMode ? fyncomFilterGmailDark : fyncomFilterGmail} alt="block bad emails automatically & get paid."/>*/}
+                  <Img fixed={filterLogo} alt="block bad emails automatically & get paid." />
                 </Link>
                 <a href="https://www.karmacall.com"  className="index-links">
-                  <img className="index-logo-karmacall" src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"/>
+                  {/*<img className="index-logo-karmacall" src={isDarkMode ? karmaCallDark : karmaCall} alt="Get paid to block scam calls!"/>*/}
+                  <Img fixed={karmacallLogo} alt="Get paid to block scam calls!" />
                 </a>
               </div>
             </div>
