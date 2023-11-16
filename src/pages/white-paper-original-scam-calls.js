@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import "../components/white-paper.css";
+import React from "react"
+import Header from "../components/header"
+import Footer from "../components/footer"
+import "../components/white-paper.css"
 import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf"
-import Seo from "../components/seo";
-import PdfContent from "../components/PdfContent";
+import Seo from "../components/seo"
+import PdfContent from "../components/PdfContent"
 
 const WhitePaperOriginalScamCalls = () => {
   return (
@@ -18,11 +18,14 @@ const WhitePaperOriginalScamCalls = () => {
         <h2>Why Do Spam Calls Still Exist?</h2>
         <p>...and how can I stop scams, but let good callers reach me?</p>
         <PdfContent file={whitePaper} />
-        <p>Thanks for reading our White Paper on stopping spam across the world, starting with scam calls!</p>
+        <p>
+          Thanks for reading our White Paper on stopping spam across the world,
+          starting with scam calls!
+        </p>
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default WhitePaperOriginalScamCalls;
+export default WhitePaperOriginalScamCalls

@@ -73,7 +73,7 @@
         display: block;
         margin: 0px 10px;
         max-width: 100px;
-        height: auto; /* Set an appropriate height or keep it auto if the aspect ratio is correct */
+        height: auto; 
         background-size: contain;
         background-repeat: no-repeat;
     }
