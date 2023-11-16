@@ -2,11 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /*height: 10vh;*/
   padding: 2rem;
   box-sizing: border-box; /* This ensures padding is included in the height calculation */
 }
-
 .why-fyncom {
   display: grid;
   justify-content: center;
@@ -31,33 +29,10 @@
 .top-logos-left {
   display: flex;
 }
-
 .bottom-logo {
   display: flex;
   justify-content: center;
 }
-
-.index-logo, .index-logo-tg, .index-logo-discord {
-  object-fit: contain;
-  margin-bottom: 0.2rem;
-  margin-left: 0;
-}
-
-.index-logo {
-  max-width: 60%;
-  min-width: 100px;
-}
-.index-logo-tg {
-  max-width: 25%;
-  min-width: 80px;
-}
-.index-logo-discord {
-  max-width: 50%;
-  min-width: 200px;
-}
-.index-logo:hover,
-.index-logo-tg:hover,
-.index-logo-discord:hover,
 .gatsby-image-wrapper:hover {
   transform: scale(1.15);
   transition: transform 0.3s;
@@ -77,7 +52,6 @@
   flex: 1;                 /* Takes equal space as the logo-container */
   max-width: 600px;        /* Adjust as needed */
 }
-
 
 /* social media css*/
 .social-media-container {
@@ -123,7 +97,6 @@
   margin: 0; /* Reset margin */
   max-width: fit-content; /* Use 'fit-content' to shrink-wrap the content */
 }
-
 .gatsby-image-wrapper {
     max-width: 100%; /* Ensure it doesn't stretch beyond its container */
     height: auto; /* Maintain aspect ratio */
@@ -135,39 +108,32 @@
     padding: 1rem;
     flex-direction: column; /* Stack the child elements vertically */
   }
+    .social-media-container.communities {
+        flex-direction: column-reverse;
+    }
+    .top-logos.communities {
+        flex-direction: row; /* Arrange the logos horizontally */
+        justify-content: center;
+    }
+    /*.bottom-logo.community {*/
+    /*    flex-direction: row; !* Arrange the logos horizontally *!*/
+    /*    justify-content: center;*/
+    /*}*/
   .social-media-container,
   .text-block,
   .text-block-left,
   .logo-container,
-  .top-logos,
   .bottom-logo {
     flex-direction: column;
     align-items: center; /* Center align items for mobile */
     text-align: center; /* Center the text for mobile */
     max-width: 100%; /* Override any max-width set for larger screens */
   }
-  .logo-container, .top-logos, .bottom-logo {
+  .logo-container, .bottom-logo {
     width: 100%;        /* Take the full width of the container on small screens */
     justify-content: space-evenly; /* Evenly space logos horizontally on small screens */
-    min-width: 10px;
     gap: 0;
   }
-  .index-logo, .index-logo-tg, .index-logo-discord {
-    width: 100%; /* Increase width to fit mobile screens, adjust as needed */
-  }
-  .index-logo {
-    max-width: 40%;
-    min-width: 50px;
-  }
-  .index-logo-tg {
-    max-width: 20%;
-    min-width: 40px;
-  }
-  .index-logo-discord {
-    max-width: 35%;
-    min-width: 100px;
-  }
-
   .text-block, .text-block-left {
     margin: 1rem 0; /* Add some top and bottom margin for spacing */
     padding: 0 1rem; /* Add padding to ensure text doesn't touch the edges */

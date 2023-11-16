@@ -3,10 +3,6 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import {graphql, Link, useStaticQuery} from "gatsby"
 import "../components/index.css"
-import tinderLogo from "../images/logos/tinder-logo.png"
-import discordLogo from "../images/logos/Discord-logo.png"
-import telegramLogo from "../images/logos/telegram-logo.png"
-import increaseResponseRates from "../images/increase-response=rates-across-any platform-and-channel.png"
 import fyncomGif from "../images/fyncom-GIF-expanding-logo-cropped.gif"
 import Seo from "../components/seo";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -41,6 +37,21 @@ const BlockSpamEarnCash = () => {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
+      tinderLogo: file(relativePath: { eq: "logos/tinder-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 320, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      discordLogo: file(relativePath: { eq: "logos/Discord-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      telegramLogo: file(relativePath: { eq: "logos/telegram-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 135, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
     }
   `);
   const filterImage = getImage(data.fyncomFilterGmail.childImageSharp.gatsbyImageData);
@@ -48,6 +59,9 @@ const BlockSpamEarnCash = () => {
   const karmacallImage = getImage(data.karmaCall.childImageSharp.gatsbyImageData);
   const karmacallImageDark = getImage(data.karmaCallDark.childImageSharp.gatsbyImageData);
   const increaseCustomerResponse = getImage(data.increaseResponseRates.childImageSharp.gatsbyImageData);
+  const tinderLogo = getImage(data.tinderLogo.childImageSharp.gatsbyImageData);
+  const discordLogo = getImage(data.discordLogo.childImageSharp.gatsbyImageData);
+  const telegramLogo = getImage(data.telegramLogo.childImageSharp.gatsbyImageData);
 
   // Use state to keep track of the images for the current theme
   const [filterLogo, setFilterLogo] = useState(filterImage);
@@ -82,6 +96,12 @@ const BlockSpamEarnCash = () => {
             <div className="logo-container">
               <div className="bottom-logo">
                 <img className="index-story-image" src={fyncomGif} alt="Financial Communications cuts out noise and bring in trust"/>
+                {/* todo convert gif to video via ffmpeg*/}
+                {/*<video className="index-story-video" autoPlay loop muted playsInline>*/}
+                {/*  <source src="/path-to-your-video/fyncom-video.webm" type="video/webm" />*/}
+                {/*  <source src="/path-to-your-video/fyncom-video.mp4" type="video/mp4" />*/}
+                {/*  Sorry, your browser doesn't support embedded videos.*/}
+                {/*</video>*/}
               </div>
             </div>
             <div className="text-block">
@@ -92,7 +112,6 @@ const BlockSpamEarnCash = () => {
           </div>
         </div>
 
-        {/*fix the image / link issue here*/}
         <div className="AppText">
           <div className="social-media-container">
             <div className="text-block-left">
@@ -118,14 +137,14 @@ const BlockSpamEarnCash = () => {
         </div>
 
         <div className="AppText">
-          <div className="social-media-container">
+          <div className="social-media-container communities">
             <div className="logo-container">
-              <div className="top-logos">
-                <img className="index-logo-discord" src={discordLogo} alt="Discord" />
-                <img className="index-logo-tg" src={telegramLogo} alt="Telegram" />
+              <div className="top-logos communities">
+                <GatsbyImage image={discordLogo} alt="Discord" />
+                <GatsbyImage image={telegramLogo} alt="Telegram" />
               </div>
-              <div className="bottom-logo">
-                <img className="index-logo" src={tinderLogo} alt="Tinder" />
+              <div className="bottom-logo community">
+                <GatsbyImage image={tinderLogo} alt="Tinder" />
               </div>
             </div>
             <div className="text-block">
