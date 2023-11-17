@@ -7,3 +7,6 @@
     width: 70%;
     height: 1200px;
 }
+.content-container p {
+    text-align: center;
+}
