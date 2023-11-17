@@ -54,8 +54,6 @@
 
     --logo-dark-mode: url('../images/FynCom_Logo_New-LARGEST-White.png');
     --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
-    --filters-dark-mode: url('../images/fyncom-filters-white.png');
-    --filters-light-mode: url('../images/fyncom-filters.png');
     --filters-gmail-dark-mode: url('../images/fyncom_filters_gmail_edition_no_logo-white.png');
     --filters-gmail-light-mode: url('../images/fyncom_filters_gmail_edition_no_logo.png');
     --karmacall-dark-mode: url('../images/karmacall-logo-white.png');
@@ -76,11 +74,6 @@
         height: auto; 
         background-size: contain;
         background-repeat: no-repeat;
-    }
-    .fyncom-filters-words {
-        content: var(--filters-light-mode);
-        margin: 1.5rem auto;
-        max-width: 500px;
     }
   --help-item-hover: #f0f8ff;
   --mobile-menu-bg-color: var(--fyncom-blue);
@@ -115,9 +108,6 @@
             margin: 40px auto;
             max-width: 300px;
         }
-        .fyncom-filters-words {
-            content: var(--filters-dark-mode);
-        }
         /* dark mode inverter for pds when react-pdf is not usable */
         .google-docs-iframe-container {
             filter: invert(1) hue-rotate(180deg);
@@ -150,9 +140,6 @@
         display: block;
         margin: 40px auto;
         max-width: 300px;
-    }
-    .fyncom-filters-words {
-        content: var(--filters-dark-mode);
     }
     /* dark mode inverter for pds when react-pdf is not usable */
     .google-docs-iframe-container {

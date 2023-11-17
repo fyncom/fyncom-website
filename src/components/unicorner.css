@@ -32,4 +32,8 @@
   max-width: 80px;
 }
 
-
+.gatsby-image-wrapper img {
+    max-width: 600px; /* Ensure it doesn't stretch beyond its container */
+    height: auto; /* Maintain aspect ratio */
+    margin: 1.5rem auto;
+}

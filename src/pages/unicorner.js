@@ -1,12 +1,42 @@
-import React from "react"
-import fyncomFilters from "../images/fyncom-filters.png"
+import React, {useEffect, useState} from "react"
 import googlePlayBadge from "../images/google-play-en.png"
 import appStoreBadge from "../images/apple-en.png"
 import "../components/unicorner.css"
-import { Link } from "gatsby"
+import {graphql, Link, useStaticQuery} from "gatsby"
 import Seo from "../components/seo";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const Unicorner = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      fyncomFiltersWords: file(relativePath: { eq: "fyncom-filters.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      fyncomFiltersWordsDark: file(relativePath: { eq: "fyncom-filters-white.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+  const fyncomFiltersWords = getImage(data.fyncomFiltersWords.childImageSharp.gatsbyImageData);
+  const fyncomFiltersWordsDark = getImage(data.fyncomFiltersWordsDark.childImageSharp.gatsbyImageData);
+  const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords);
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = (e) => {
+        setFilterLogo(e.matches ? fyncomFiltersWordsDark : fyncomFiltersWords );
+      };
+      handleChange(mediaQuery); // Initial check
+      mediaQuery.addListener(handleChange);
+      return () => mediaQuery.removeListener(handleChange);
+    }
+  }, [fyncomFiltersWords, fyncomFiltersWordsDark]);
+
   return (
       <div className="unicorner-container">
         <Seo
@@ -14,15 +44,12 @@ const Unicorner = () => {
           description="Hope you enjoyed that listing! This brief page shows you all of the service FynCom offers "
         />
         <Link to="/">
-        <div className="fyncom-logo"></div>
+          <div className="fyncom-logo"></div>
         </Link>
         <h1>Spam Sucks!</h1>
         <h2>Get instantly paid to block bad emails & calls with...</h2>
-        {/*todo fix this link length*/}
         <Link to="/fyncom-filters-email-edition">
-          <div className="fyncom-filters-words">
-            <img src={fyncomFilters} alt="FynCom Filters" />
-          </div>
+          <GatsbyImage image={filterLogo} alt="FynCom Filters" />
         </Link>
 
         <div className="info-section">
@@ -58,6 +85,7 @@ const Unicorner = () => {
         <div className="footer-section">
           <p>
             Our FynCom Filters work in the background to save you time and get
+            you paid. To find out more about why we're doing this & why this is
             you paid. To find out more about why we're doing this & why this is
             the only real solution to spam & scams, see our story.
           </p>
