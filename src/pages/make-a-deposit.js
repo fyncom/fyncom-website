@@ -114,9 +114,9 @@ const MakeADeposit = () => {
           strangers with shared interests. Here's our paper we wrote to record our thought process - it later became{" "}
           <a href="https://patents.google.com/patent/US11310368B2">our 1st patent</a>,{" "}
           <a href="https://karmacall.com/">app</a>,{" "} and is the basis for how we came to be.
-          Thanks for reading!
+          Thanks for reading! <br/>
+          <i>- Team FynCom</i>
         </p>
-        - Team Fyncom
         <PdfContent file={whitePaper}/>
       </div>
       <Footer/>
