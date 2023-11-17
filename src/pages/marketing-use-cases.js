@@ -2,16 +2,59 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/sales-and-marketing-use-cases.css"
-import sendgrid from "../images/logos/SG_Twilio_Lockup_RGBx1.png"
-import slicktext from "../images/logos/SlickText_Logo-Transparent.png"
-import zapier from "../images/logos/2560px-Zapier_logo.png"
-import handshake from "../images/illustrations/handshake.png"
-import collaborate from "../images/illustrations/collaborating-with-others.png"
-import effectiveSpend from "../images/illustrations/create-efficient-costs.png"
-import integrations from "../images/illustrations/integrate-with-emails-and-more.png"
 import Seo from "../components/seo";
+import {graphql, useStaticQuery} from "gatsby";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
+
 
 const MarketingUseCases = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      slicktext: file(relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      handshake: file(relativePath: { eq: "illustrations/handshake.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 400, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      collaborate: file(relativePath: { eq: "illustrations/collaborating-with-others.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      effectiveSpend: file(relativePath: { eq: "illustrations/create-efficient-costs.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      integrations: file(relativePath: { eq: "illustrations/integrate-with-emails-and-more.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+  const sendgrid = getImage(data.sendgrid.childImageSharp.gatsbyImageData);
+  const slicktext = getImage(data.slicktext.childImageSharp.gatsbyImageData);
+  const zapier = getImage(data.zapier.childImageSharp.gatsbyImageData);
+  const handshake = getImage(data.handshake.childImageSharp.gatsbyImageData);
+  const collaborate = getImage(data.collaborate.childImageSharp.gatsbyImageData);
+  const effectiveSpend = getImage(data.effectiveSpend.childImageSharp.gatsbyImageData);
+  const integrations = getImage(data.integrations.childImageSharp.gatsbyImageData);
+
   return (
     <div className="marketing-use-cases">
       <Seo
@@ -21,7 +64,7 @@ const MarketingUseCases = () => {
       />
       <Header />
       <div className="hero-section">
-        <img className="story-image" src={handshake} alt="Close deals more quickly with FynCom Rewards" />
+        <GatsbyImage image={handshake} alt="Close deals more quickly with FynCom Rewards" />
         <div className="hero-content">
           <h1>Increase Customer Engagement</h1>
           <p>Guide your customers along the customer journey and support the sales team by finding qualified leads</p>
@@ -33,17 +76,17 @@ const MarketingUseCases = () => {
 
       <div className="use-cases-sales-marketing-container">
         <div className="use-case">
-          <img className="use-case-image" src={integrations} alt="integrate into your basis digital tools" />
+          <GatsbyImage image={integrations} alt="integrate into your basis digital tools" />
           <h2>Seamless Integration</h2>
           <p>We work with you to integrate FynCom to your web page and marketing communications</p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={collaborate} alt="work on revenue goals more effectively with your team" />
+          <GatsbyImage image={collaborate} alt="work on revenue goals more effectively with your team" />
           <h2>Encourage Learning</h2>
           <p>Encourage your customers to learn more about your product and offerings by providing incentives along the way</p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={effectiveSpend} alt="easily see your costs per response" />
+          <GatsbyImage image={effectiveSpend} alt="easily see your costs per response" />
           <h2>Minimize Spend</h2>
           <p>Only pay for rewards when your customers move to the next phase of your customer journey</p>
         </div>
@@ -52,9 +95,9 @@ const MarketingUseCases = () => {
       <div className="integrations-section">
         <h2 className="background-stripe">Popular Integrations</h2>
         <div className="logos-container">
-          <img src={sendgrid} alt="Twilio" className="logo" />
-          <img src={slicktext} alt="SlickText" className="logo" />
-          <img src={zapier} alt="Zapier" className="logo" />
+          <GatsbyImage image={sendgrid} alt="Twilio" />
+          <GatsbyImage image={slicktext} alt="SlickText" />
+          <GatsbyImage image={zapier} alt="Zapier" />
         </div>
       </div>
 
