@@ -8,7 +8,7 @@ import Img from "gatsby-image";
 const Footer = () => {
   const data = useStaticQuery(graphql`
     query {
-      fyncomLogoWhite: file(relativePath: { eq: "fyncom-logo-white.png" }) {
+      fyncomLogoWhite: file(relativePath: { eq: "fyncom-logo-white-blank.png" }) {
         childImageSharp {
           gatsbyImageData(width: 80, layout: CONSTRAINED, placeholder: BLURRED)
         }

@@ -52,12 +52,10 @@
     --button-learn-more-hover: var(--karmacall-gold);
     --container-color: var(--fyncom-cyan);
 
-    --logo-dark-mode: url('../images/FynCom_Logo_New-LARGEST-White.png');
-    --logo-light-mode: url('../images/FynCom_Logo_New-LARGEST.png');
+    --logo-dark-mode: url('../images/fyncom-logo-white.png');
+    --logo-light-mode: url('../images/fyncom-logo.png');
     --filters-gmail-dark-mode: url('../images/fyncom_filters_gmail_edition_no_logo-white.png');
     --filters-gmail-light-mode: url('../images/fyncom_filters_gmail_edition_no_logo.png');
-    --karmacall-dark-mode: url('../images/karmacall-logo-white.png');
-    --karmacall-light-mode: url('../images/karmacall-logo.png');
     --img-brightness: brightness(1);
   --navigation: rgba(0,0,0,0.1);
   --navigation-hover: rgba(0,0,0,0.2);
@@ -69,7 +67,7 @@
     }
     .fyncom-logo-header {
         display: block;
-        margin: 0px 10px;
+        margin: 0 10px;
         max-width: 100px;
         height: auto; 
         background-size: contain;

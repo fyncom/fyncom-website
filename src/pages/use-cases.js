@@ -4,7 +4,7 @@ import Footer from "../components/footer"
 import mobileMarketing from "../images/illustrations/marketing-mobile-survey.webp"
 import phoneCalls from "../images/illustrations/sales-phone-calls.webp"
 import closingDeals from "../images/close-deals-customers-engagement.webp"
-import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png"
+import fyncomLogo from "../images/fyncom-logo.png"
 import "../components/use-cases.css"
 import { Link } from "gatsby";
 import Seo from "../components/seo";

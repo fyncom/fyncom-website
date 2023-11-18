@@ -5,7 +5,7 @@ import mobileMarketing from "../images/illustrations/marketing-mobile-survey.web
 import phoneCalls from "../images/illustrations/sales-phone-calls.webp"
 import closingDeals from "../images/close-deals-customers-engagement.webp"
 import "../components/use-cases.css"
-import fyncomLogo from "../images/FynCom_Logo_New-LARGEST.png";
+import fyncomLogo from "../images/fyncom-logo.png";
 import { Link } from "gatsby";
 
 // NOTE: This is suppose to be the 2nd main page - currently this is an old version of what is currently index.js
