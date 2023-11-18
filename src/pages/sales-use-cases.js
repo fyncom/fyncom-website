@@ -11,37 +11,37 @@ const SalesUseCases = () => {
     query {
       sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       slicktext: file(relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       salesHeroImage: file(relativePath: { eq: "illustrations/sales-phone-calls.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 800, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       increaseBookings: file(relativePath: { eq: "illustrations/increase-bookings.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       accelerateDeals: file(relativePath: { eq: "illustrations/deal-acceleration-charts.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       minMax: file(relativePath: { eq: "illustrations/min-max-gift-rewards-value-mobile.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
@@ -93,9 +93,9 @@ const SalesUseCases = () => {
       <div className="integrations-section">
         <h2>INTEGRATIONS</h2>
         <div className="logos-container">
-          <GatsbyImage image={sendgrid} alt="SendGrid" />
-          <GatsbyImage image={slicktext} alt="SlickText" />
-          <GatsbyImage image={zapier} alt="Zapier" />
+          <GatsbyImage image={sendgrid} alt="SendGrid" className={"logo"} />
+          <GatsbyImage image={slicktext} alt="SlickText" className={"logo"} />
+          <GatsbyImage image={zapier} alt="Zapier" className={"logo"} />
         </div>
       </div>
 

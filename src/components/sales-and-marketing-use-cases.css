@@ -1,3 +1,9 @@
+.sales-use-cases {
+    max-width: 1400px; /* Sets the maximum width of the page */
+    margin: 0 auto; /* Centers the page */
+    overflow: hidden; /* Prevents child elements from overflowing */
+    padding: 0 20px; /* Optional: if you want some space on the sides */
+}
 .story-image {
     min-width: 300px;
     max-width: 600px;
@@ -76,22 +82,23 @@
 
 .integrations-section {
     text-align: center;
-    padding: 50px;
+    padding: 30px;
 }
 .integrations-section h2 {
     text-align: center;
-    margin-bottom: 20px;
 }
-
+.call-to-action h2 {
+    margin-bottom: 30px;
+}
 .logos-container {
     display: flex;
     justify-content: center;
     gap: 50px;
+    align-items: center; /* Aligns logos vertically */
 }
 .logo {
-    width: 250px;
     height: auto;
-    object-fit: contain;
+    object-fit: contain; /* Keeps the image's aspect ratio and scales it to fit the container */
 }
 .logo:hover {
     transform: scale(1.05);
@@ -100,23 +107,27 @@
 
 /* Adjustments for responsive design */
 @media (max-width: 768px) {
-    .story-image {
-        max-height: 500px;
-        margin-left: unset;
-    }
     .use-cases-sales-marketing-container {
         flex-direction: column;
         align-items: center;
     }
     .logos-container {
+        display: flex;
         flex-wrap: wrap;
+        /*gap: unset;*/
+        gap: 10px;
+    }
+    .logo {
+        max-width: 45%; /* or a specific pixel value if you want a max size */
+        height: auto;
+        object-fit: unset; /* Keeps the image's aspect ratio and scales it to fit the container */
     }
     .hero-section {
         flex-direction: column;
         align-items: center;
     }
-    .hero-content {
-        max-width: 90%;
-        margin: 20px 0;
+    .hero-content, .use-case, .integrations-section {
+        max-width: 1400px;
+        margin: 0 auto; /* This will center the content */
     }
 }
