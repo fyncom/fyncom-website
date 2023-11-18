@@ -11,7 +11,7 @@ const About = () => {
     query {
       teamMeeting: file(relativePath: { eq: "team-meeting.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 486, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       innovation: file(relativePath: { eq: "icons/innovation.webp" }) {
@@ -63,7 +63,7 @@ const About = () => {
         </sub>
       </section>
       <section className="story-section">
-        <div className="story-image">
+        <div className={"story-image"}>
           <GatsbyImage image={teamMeeting} alt="Our Story" />
         </div>
         <div className="story-text">
