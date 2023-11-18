@@ -13,7 +13,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const Contact = () => {
   const data = useStaticQuery(graphql`
     query {
-      fyncomFiltersWords: file(relativePath: { eq: "fyncom-filters.png" }) {
+      fyncomFiltersWords: file(relativePath: { eq: "fyncom-filters-black.png" }) {
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
         }
