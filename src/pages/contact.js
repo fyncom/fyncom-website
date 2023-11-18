@@ -1,20 +1,37 @@
-import React, { useState } from "react";
-import { Link } from "gatsby";
+import React, {useEffect, useState} from "react";
+import {graphql, Link, useStaticQuery} from "gatsby"
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Seo from "../components/seo";
 import "../components/contact.css";
 import googlePlayBadge from "../images/google-play-en.png";
 import appStoreBadge from "../images/apple-en.png";
-import fyncomFilters from "../images/fyncom-filters.png";
 import { SuccessModal, FailureModal } from "../components/Modal";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 
 const Contact = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      fyncomFiltersWords: file(relativePath: { eq: "fyncom-filters-black.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      fyncomFiltersWordsDark: file(relativePath: { eq: "fyncom-filters-white.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+  const fyncomFiltersWords = getImage(data.fyncomFiltersWords.childImageSharp.gatsbyImageData);
+  const fyncomFiltersWordsDark = getImage(data.fyncomFiltersWordsDark.childImageSharp.gatsbyImageData);
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
   const [isFailureModalOpen, setFailureModalOpen] = useState(false);
   const [formData, setFormData] = useState({name: '', email: '', message: ''});
   const [modalMessage, setModalMessage] = useState('');
+  const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -23,6 +40,18 @@ const Contact = () => {
       [name]: value
     }));
   };
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const handleChange = (e) => {
+        setFilterLogo(e.matches ? fyncomFiltersWordsDark : fyncomFiltersWords );
+      };
+      handleChange(mediaQuery); // Initial check
+      mediaQuery.addListener(handleChange);
+      return () => mediaQuery.removeListener(handleChange);
+    }
+  }, [fyncomFiltersWords, fyncomFiltersWordsDark]);
 
   // Function to handle form submission
   const handleSubmit = async (e) => {
@@ -107,11 +136,8 @@ const Contact = () => {
         <i><p className="centered">Examples of our consumer tools</p></i>
         <h1 className="centered">Spam Sucks!</h1>
         <h2 className="centered">Get instantly paid to block bad emails & calls with...</h2>
-        {/*todo fix this link length*/}
         <Link to="/fyncom-filters-email-edition">
-          <div className="fyncom-filters-words">
-            <img src={fyncomFilters} alt="FynCom Filters" />
-          </div>
+          <GatsbyImage image={filterLogo} alt="FynCom Filters" />
         </Link>
         <div className="info-section">
           <p>

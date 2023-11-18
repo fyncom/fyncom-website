@@ -65,7 +65,7 @@
     background: var(--color-bar);
 }
 .story-image img {
-    max-width: 400px;
+    min-width: 300px; 
     display: block;
 }
 

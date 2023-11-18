@@ -1,15 +1,11 @@
 import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import heroImageFilter from "../images/email-filter-gmail.png"
-import emailFilterFyncom from "../images/email-filter-fyncom.png"
-import getPaidToBlockSpamEmails from "../images/get-paid-to-block-spam-emails.png"
-import cleanInboxCleanMind from "../images/a-clean-inbox-and-a-focused-mind.png"
-import nanoQrCode from "../images/qr-code-fyncom-filter-email-edition-nano.png"
 import "../components/use-cases.css"
 import "../components/pricing-table.css"
-import { Link } from "gatsby"
+import {graphql, Link, useStaticQuery} from "gatsby"
 import Seo from "../components/seo"
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 const PricingOption = ({ title, price, period, buttonText, buttonLink }) => (
   <div className="pricing-option">
@@ -25,6 +21,40 @@ const PricingOption = ({ title, price, period, buttonText, buttonLink }) => (
 )
 
 const FyncomFiltersEmailEdition = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      heroImageFilter: file(relativePath: { eq: "email-filter-gmail.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      emailFilterFyncom: file(relativePath: { eq: "email-filter-fyncom.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      getPaidToBlockSpamEmails: file(relativePath: { eq: "get-paid-to-block-spam-emails.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      cleanInboxCleanMind: file(relativePath: { eq: "a-clean-inbox-and-a-focused-mind.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      nanoQrCode: file(relativePath: { eq: "qr-code-fyncom-filter-email-edition-nano.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+  const heroImageFilter = getImage(data.heroImageFilter.childImageSharp.gatsbyImageData);
+  const emailFilterFyncom = getImage(data.emailFilterFyncom.childImageSharp.gatsbyImageData);
+  const getPaidToBlockSpamEmails = getImage(data.getPaidToBlockSpamEmails.childImageSharp.gatsbyImageData);
+  const cleanInboxCleanMind = getImage(data.cleanInboxCleanMind.childImageSharp.gatsbyImageData);
+  const nanoQrCode = getImage(data.nanoQrCode.childImageSharp.gatsbyImageData);
   return (
     <div className="fyncom-email-filter">
       <Seo
@@ -33,11 +63,7 @@ const FyncomFiltersEmailEdition = () => {
       />
       <Header />
       <div className="hero-section">
-        <img
-          className="story-image"
-          src={heroImageFilter}
-          alt="Get paid to block spam emails with FynCom!"
-        />
+        <GatsbyImage image={heroImageFilter} alt="Get paid to block spam emails with FynCom!" />
         <div className="hero-content">
           <h1>Block Spam Emails. Get Instantly Paid.</h1>
           <p>
@@ -62,20 +88,14 @@ const FyncomFiltersEmailEdition = () => {
 
         <div className="use-case-section">
           <div className="use-case-image">
-            <img
-              src={getPaidToBlockSpamEmails}
-              alt="Understand your customers better"
-            />
+            <GatsbyImage image={getPaidToBlockSpamEmails} alt="Understand your customers better" />
             <p className="centered">
               Spam emails go into a "FynFiltered" folder and you get paid each
               time.
             </p>
           </div>
           <div className="use-case-image">
-            <img
-              src={cleanInboxCleanMind}
-              alt="Understand your customers better"
-            />
+            <GatsbyImage image={cleanInboxCleanMind} alt="Understand your customers better" />
             <p className="centered">
               Your inbox is for known contacts & people who put their $$ where
               their email is.
@@ -85,10 +105,7 @@ const FyncomFiltersEmailEdition = () => {
 
         <div className="use-case-section">
           <div className="use-case-image">
-            <img
-              src={emailFilterFyncom}
-              alt="Understand your customers better"
-            />
+            <GatsbyImage image={emailFilterFyncom} alt="Understand your customers better" />
           </div>
           <div className="use-case-description">
             <h3>Reduce unwanted emails by 100%</h3>
@@ -152,7 +169,7 @@ const FyncomFiltersEmailEdition = () => {
             </p>
           </div>
           <div className="use-case-image">
-            <img src={nanoQrCode} alt="Close more deals" />
+            <GatsbyImage image={nanoQrCode} alt="Close more deals" />
           </div>
         </div>
       </div>

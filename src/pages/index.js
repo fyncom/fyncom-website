@@ -10,7 +10,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 
 const BlockSpamEarnCash = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const data = useStaticQuery(graphql`
     query {
       fyncomFilterGmail: file(relativePath: { eq: "fyncom_filters_gmail_edition_no_logo.png" }) {

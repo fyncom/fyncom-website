@@ -2,16 +2,58 @@ import React from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "../components/sales-and-marketing-use-cases.css";
-import sendgrid from "../images/logos/SG_Twilio_Lockup_RGBx1.png";
-import slicktext from "../images/logos/SlickText_Logo-Transparent.png";
-import zapier from "../images/logos/2560px-Zapier_logo.png";
-import customerHeroImage from "../images/illustrations/marketing-mobile-survey.png";
-import seamlessIntegrations from "../images/illustrations/seamless-integrations-comfy.png";
-import loyalCustomers from "../images/illustrations/identifying-loyal-customers.png";
-import driveAdoption from "../images/illustrations/customer-journey-optimization.png";
 import Seo from "../components/seo";
+import {graphql, useStaticQuery} from "gatsby";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const UnderstandingCustomersUseCase = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      slicktext: file(relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      customerHeroImage: file(relativePath: { eq: "illustrations/marketing-mobile-survey.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      seamlessIntegrations: file(relativePath: { eq: "illustrations/seamless-integrations-comfy.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      loyalCustomers: file(relativePath: { eq: "illustrations/identifying-loyal-customers.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      driveAdoption: file(relativePath: { eq: "illustrations/customer-journey-optimization.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+  const sendgrid = getImage(data.sendgrid.childImageSharp.gatsbyImageData);
+  const slicktext = getImage(data.slicktext.childImageSharp.gatsbyImageData);
+  const zapier = getImage(data.zapier.childImageSharp.gatsbyImageData);
+  const customerHeroImage = getImage(data.customerHeroImage.childImageSharp.gatsbyImageData);
+  const seamlessIntegrations = getImage(data.seamlessIntegrations.childImageSharp.gatsbyImageData);
+  const loyalCustomers = getImage(data.loyalCustomers.childImageSharp.gatsbyImageData);
+  const driveAdoption = getImage(data.driveAdoption.childImageSharp.gatsbyImageData);
+
   return (
     <div className="understanding-customers-use-cases">
       <Seo
@@ -20,7 +62,7 @@ const UnderstandingCustomersUseCase = () => {
       />
       <Header />
       <div className="hero-section">
-        <img className="story-image" src={customerHeroImage} alt="use micro-rewards to keep customers moving down through their journey" />
+        <GatsbyImage image={customerHeroImage} alt="use micro-rewards to keep customers moving down through their journey" />
         <div className="hero-content">
           <h1>Get to know your customers</h1>
           <p>Incentivize customers to complete their onboarding journey in order to understand product barriers </p>
@@ -32,28 +74,28 @@ const UnderstandingCustomersUseCase = () => {
 
       <div className="use-cases-sales-marketing-container">
         <div className="use-case">
-          <img className="use-case-image" src={seamlessIntegrations} alt="integrate rewards into the hardest parts of your customer journey" />
+          <GatsbyImage image={seamlessIntegrations} alt="integrate rewards into the hardest parts of your customer journey" />
           <h2>Seamless Integration</h2>
           <p>We work with you to provide rewards for customers completing type form surveys</p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={loyalCustomers} alt="find the traits of your most loyal customers more quickly" />
+          <GatsbyImage image={loyalCustomers} alt="find the traits of your most loyal customers more quickly" />
           <h2>Identify Loyal Customers</h2>
           <p>Reward your loyal customers and drive referrals </p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={driveAdoption} alt="using rewards at the hardest part of your product onboarding is key" />
+          <GatsbyImage image={driveAdoption} alt="using rewards at the hardest part of your product onboarding is key" />
           <h2>Drive Adoption & Onboarding</h2>
           <p>Properly timed incentives guide your customers' journeys and encourage long-term usage</p>
         </div>
       </div>
 
       <div className="integrations-section">
-        <h2>INTEGRATIONS</h2>
+        <h2 className="background-stripe">Popular Integrations</h2>
         <div className="logos-container">
-          <img src={sendgrid} alt="SendGrid" className="logo" />
-          <img src={slicktext} alt="SlickText" className="logo" />
-          <img src={zapier} alt="Zapier" className="logo" />
+          <GatsbyImage image={sendgrid} alt="SendGrid" className={"logo"} />
+          <GatsbyImage image={slicktext} alt="SlickText" className={"logo"} />
+          <GatsbyImage image={zapier} alt="Zapier" className={"logo"} />
         </div>
       </div>
 

@@ -2,16 +2,52 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/about.css"
-import teamMeeting from "../images/team-meeting.webp";
-import innovation from "../images/icons/innovation.webp";
-import collaboration from "../images/icons/collaboration.webp";
-import transparency from "../images/icons/transparency.webp";
-import customerFocus from "../images/icons/customer-focus.webp";
-import continuousImprovement from "../images/icons/continuous-improvement.webp";
-import { Link } from "gatsby";
+import {graphql, Link, useStaticQuery} from "gatsby";
 import Seo from "../components/seo";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const About = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      teamMeeting: file(relativePath: { eq: "team-meeting.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 486, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      innovation: file(relativePath: { eq: "icons/innovation.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      collaboration: file(relativePath: { eq: "icons/collaboration.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      transparency: file(relativePath: { eq: "icons/transparency.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      customerFocus: file(relativePath: { eq: "icons/customer-focus.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      continuousImprovement: file(relativePath: { eq: "icons/continuous-improvement.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 320, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+
+  const teamMeeting = getImage(data.teamMeeting.childImageSharp.gatsbyImageData);
+  const innovation = getImage(data.innovation.childImageSharp.gatsbyImageData);
+  const collaboration = getImage(data.collaboration.childImageSharp.gatsbyImageData);
+  const transparency = getImage(data.transparency.childImageSharp.gatsbyImageData);
+  const customerFocus = getImage(data.customerFocus.childImageSharp.gatsbyImageData);
+  const continuousImprovement = getImage(data.continuousImprovement.childImageSharp.gatsbyImageData);
   return (
     <div>
       <Seo
@@ -27,8 +63,8 @@ const About = () => {
         </sub>
       </section>
       <section className="story-section">
-        <div className="story-image">
-          <img src={teamMeeting} alt="Our Story" />
+        <div className={"story-image"}>
+          <GatsbyImage image={teamMeeting} alt="Our Story" />
         </div>
         <div className="story-text">
           <h3>Our Story</h3>
@@ -55,27 +91,27 @@ const About = () => {
       </section>
       <section className="values-section">
         <div className="value">
-          <img src={innovation} alt="Innovation" />
+          <GatsbyImage image={innovation} alt="Innovation" />
           <h4>Innovation</h4>
           <p>We are always looking for new ways to push the boundaries and deliver value to our clients.</p>
         </div>
         <div className="value">
-          <img src={collaboration} alt="Collaboration" />
+          <GatsbyImage image={collaboration} alt="Collaboration" />
           <h4>Collaboration</h4>
           <p>We believe that great things can be achieved when we work together as a team.</p>
         </div>
         <div className="value">
-          <img src={transparency} alt="Transparency" />
+          <GatsbyImage image={transparency} alt="Transparency" />
           <h4>Transparency</h4>
           <p>We are committed to open, honest communication and straightforward transparency.</p>
         </div>
         <div className="value">
-          <img src={customerFocus} alt="Customer Focus" />
+          <GatsbyImage image={customerFocus} alt="Focus" />
           <h4>Customer focus</h4>
           <p>Our customers are at the heart of everything we do. We are dedicated to delivering the best possible experience for them. Focus is key.</p>
         </div>
         <div className="value">
-          <img src={continuousImprovement} alt="Continuous Improvement" />
+          <GatsbyImage image={continuousImprovement} alt="Continuous Improvement" />
           <h4>Continuous improvement</h4>
           <p>We believe that there is always room for growth and improvement. We are committed to continuous learning and development.</p>
         </div>

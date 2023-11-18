@@ -2,16 +2,58 @@ import React from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import "../components/sales-and-marketing-use-cases.css";
-import sendgrid from "../images/logos/SG_Twilio_Lockup_RGBx1.png";
-import slicktext from "../images/logos/SlickText_Logo-Transparent.png";
-import zapier from "../images/logos/2560px-Zapier_logo.png";
-import salesHeroImage from "../images/illustrations/sales-phone-calls.png";
-import increaseBookings from "../images/illustrations/increase-bookings.png";
-import accelerateDeals from "../images/illustrations/deal-acceleration-charts.png";
-import minMax from "../images/illustrations/min-max-gift-rewards-value-mobile.png";
 import Seo from "../components/seo";
+import {graphql, useStaticQuery} from "gatsby";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 const SalesUseCases = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      slicktext: file(relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      salesHeroImage: file(relativePath: { eq: "illustrations/sales-phone-calls.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 800, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      increaseBookings: file(relativePath: { eq: "illustrations/increase-bookings.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      accelerateDeals: file(relativePath: { eq: "illustrations/deal-acceleration-charts.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      minMax: file(relativePath: { eq: "illustrations/min-max-gift-rewards-value-mobile.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+  const sendgrid = getImage(data.sendgrid.childImageSharp.gatsbyImageData);
+  const slicktext = getImage(data.slicktext.childImageSharp.gatsbyImageData);
+  const zapier = getImage(data.zapier.childImageSharp.gatsbyImageData);
+  const salesHeroImage = getImage(data.salesHeroImage.childImageSharp.gatsbyImageData);
+  const increaseBookings = getImage(data.increaseBookings.childImageSharp.gatsbyImageData);
+  const accelerateDeals = getImage(data.accelerateDeals.childImageSharp.gatsbyImageData);
+  const minMax = getImage(data.minMax.childImageSharp.gatsbyImageData);
+
   return (
     <div className="sales-use-cases">
       <Seo
@@ -20,7 +62,7 @@ const SalesUseCases = () => {
       />
       <Header />
       <div className="hero-section">
-        <img className="story-image" src={salesHeroImage} alt="use rewards at each touchpoint to keep leads moving down through the customer journey" />
+        <GatsbyImage  image={salesHeroImage} alt="use rewards at each touchpoint to keep leads moving down through the customer journey" />
         <div className="hero-content">
           <h1>Accelerate Sales</h1>
           <p>Close more deals with customers by using interactive rewards at key stages of your sales process</p>
@@ -32,28 +74,28 @@ const SalesUseCases = () => {
 
       <div className="use-cases-sales-marketing-container">
         <div className="use-case">
-          <img className="use-case-image" src={increaseBookings} alt="Increase bookings with rewards before and after a meeting" />
+          <GatsbyImage image={increaseBookings} alt="Increase bookings with rewards before and after a meeting" />
           <h2>Increase Bookings</h2>
           <p>Incentivize your prospective buyers to book time with you by offering rewards for scheduling meetings</p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={accelerateDeals} alt="Accelerate Deals with customer journey rewards" />
+          <GatsbyImage image={accelerateDeals} alt="Accelerate Deals with customer journey rewards" />
           <h2>Accelerate Deals</h2>
           <p>Move prospective clients through your sales journey by providing rewards for reaching the next stage</p>
         </div>
         <div className="use-case">
-          <img className="use-case-image" src={minMax} alt="Min / max the value you give based on the revenue you generate" />
+          <GatsbyImage image={minMax} alt="Min / max the value you give based on the revenue you generate" />
           <h2>Min/Max Gifts/Value</h2>
           <p>Only pay for rewards when your sales target moves along to the next stage of your sales journey</p>
         </div>
       </div>
 
       <div className="integrations-section">
-        <h2>INTEGRATIONS</h2>
+        <h2 className="background-stripe">Popular Integrations</h2>
         <div className="logos-container">
-          <img src={sendgrid} alt="SendGrid" className="logo" />
-          <img src={slicktext} alt="SlickText" className="logo" />
-          <img src={zapier} alt="Zapier" className="logo" />
+          <GatsbyImage image={sendgrid} alt="SendGrid" className={"logo"} />
+          <GatsbyImage image={slicktext} alt="SlickText" className={"logo"} />
+          <GatsbyImage image={zapier} alt="Zapier" className={"logo"} />
         </div>
       </div>
 

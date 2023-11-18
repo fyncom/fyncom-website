@@ -15,14 +15,14 @@ const Header = () => {
   };
   const data = useStaticQuery(graphql`
     query {
-      lightLogo: file(relativePath: { eq: "FynCom_Logo_New-LARGEST.png" }) {
+      lightLogo: file(relativePath: { eq: "fyncom-logo.png" }) {
         childImageSharp {
           fixed(width: 100) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
-      darkLogo: file(relativePath: { eq: "FynCom_Logo_New-LARGEST-White.png" }) {
+      darkLogo: file(relativePath: { eq: "fyncom-logo-white.png" }) {
         childImageSharp {
           fixed(width: 100) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
