@@ -62,7 +62,7 @@ const SalesUseCases = () => {
       />
       <Header />
       <div className="hero-section">
-        <GatsbyImage image={salesHeroImage} alt="use rewards at each touchpoint to keep leads moving down through the customer journey" />
+        <GatsbyImage  image={salesHeroImage} alt="use rewards at each touchpoint to keep leads moving down through the customer journey" />
         <div className="hero-content">
           <h1>Accelerate Sales</h1>
           <p>Close more deals with customers by using interactive rewards at key stages of your sales process</p>
@@ -91,7 +91,7 @@ const SalesUseCases = () => {
       </div>
 
       <div className="integrations-section">
-        <h2>INTEGRATIONS</h2>
+        <h2 className="background-stripe">Popular Integrations</h2>
         <div className="logos-container">
           <GatsbyImage image={sendgrid} alt="SendGrid" className={"logo"} />
           <GatsbyImage image={slicktext} alt="SlickText" className={"logo"} />

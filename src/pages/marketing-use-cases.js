@@ -12,37 +12,37 @@ const MarketingUseCases = () => {
     query {
       sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       slicktext: file(relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       handshake: file(relativePath: { eq: "illustrations/handshake.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 400, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 1000, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       collaborate: file(relativePath: { eq: "illustrations/collaborating-with-others.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       effectiveSpend: file(relativePath: { eq: "illustrations/create-efficient-costs.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       integrations: file(relativePath: { eq: "illustrations/integrate-with-emails-and-more.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
@@ -64,7 +64,7 @@ const MarketingUseCases = () => {
       />
       <Header />
       <div className="hero-section">
-        <GatsbyImage image={handshake} alt="Close deals more quickly with FynCom Rewards" />
+        <GatsbyImage  image={handshake} alt="Close deals more quickly with FynCom Rewards" />
         <div className="hero-content">
           <h1>Increase Customer Engagement</h1>
           <p>Guide your customers along the customer journey and support the sales team by finding qualified leads</p>
@@ -95,19 +95,17 @@ const MarketingUseCases = () => {
       <div className="integrations-section">
         <h2 className="background-stripe">Popular Integrations</h2>
         <div className="logos-container">
-          <GatsbyImage image={sendgrid} alt="Twilio" />
-          <GatsbyImage image={slicktext} alt="SlickText" />
-          <GatsbyImage image={zapier} alt="Zapier" />
+          <GatsbyImage image={sendgrid} alt="SendGrid" className={"logo"} />
+          <GatsbyImage image={slicktext} alt="SlickText" className={"logo"} />
+          <GatsbyImage image={zapier} alt="Zapier" className={"logo"} />
         </div>
       </div>
 
-      <div className="use-cases-sales-marketing-container">
-        <div className="call-to-action">
-          <h2>Drive engagement and convert MQLs into SQLs by nudging leads to respond to emails, book meetings, & express intent with FynCom's action-oriented rewards</h2>
-          <a href="https://calendly.com/adrian-fyncom/30min" className="cta-button">
-            Request Demo
-          </a>
-        </div>
+      <div className="call-to-action">
+        <h2>Drive engagement and convert MQLs into SQLs by nudging leads to respond to emails, book meetings, & express intent with FynCom's action-oriented rewards</h2>
+        <a href="https://calendly.com/adrian-fyncom/30min" className="cta-button">
+          Request Demo
+        </a>
       </div>
 
       <Footer />
