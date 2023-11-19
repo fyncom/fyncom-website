@@ -15,14 +15,14 @@ const Header = () => {
   };
   const data = useStaticQuery(graphql`
     query {
-      lightLogo: file(relativePath: { eq: "fyncom-logo.png" }) {
+      fyncomLogoLight: file(relativePath: { eq: "fyncom-logo.png" }) {
         childImageSharp {
           fixed(width: 100) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
-      darkLogo: file(relativePath: { eq: "fyncom-logo-white.png" }) {
+      fyncomLogoDark: file(relativePath: { eq: "fyncom-logo-white.png" }) {
         childImageSharp {
           fixed(width: 100) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
@@ -33,20 +33,20 @@ const Header = () => {
   `);
 
   // State to hold which logo to show
-  const [logoData, setLogoData] = useState(data.lightLogo.childImageSharp.fixed);
+  const [logoData, setLogoData] = useState(data.fyncomLogoLight.childImageSharp.fixed);
 
   // Effect for setting the logo based on the system color scheme
   useEffect(() => {
     if(typeof window !== 'undefined') {
       const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
       const handleChange = (e) => {
-        setLogoData(e.matches ? data.darkLogo.childImageSharp.fixed : data.lightLogo.childImageSharp.fixed);
+        setLogoData(e.matches ? data.fyncomLogoDark.childImageSharp.fixed : data.fyncomLogoLight.childImageSharp.fixed);
       };
       handleChange(mediaQuery); // Initial check
       mediaQuery.addListener(handleChange); // Listen for changes
       return () => mediaQuery.removeListener(handleChange);
     }
-  }, [data.lightLogo.childImageSharp.fixed, data.darkLogo.childImageSharp.fixed]);
+  }, [data.fyncomLogoLight.childImageSharp.fixed, data.fyncomLogoDark.childImageSharp.fixed]);
 
 
   useEffect(() => {

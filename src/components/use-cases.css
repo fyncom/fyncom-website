@@ -2,20 +2,18 @@
 .use-cases-container {
     margin: 0 auto;
     width: 80%;
-    max-width: 1200px;
-    padding: 40px 0;
+    max-width: 1000px;
+    padding: 20px 0;
 }
 
 /* Each Use Case Section */
 .use-case-section {
+    max-width: 1000px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin: 40px 0;
-}
-.use-case-image img {
-    max-width: 300px; /* You can adjust based on your preference */
-    margin-right: 20px;
+    gap: 40px;
 }
 
 /* Learn More Button */
@@ -41,14 +39,18 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 0;  /* Start width is 0, so it's initially not visible */
-    height: 2px;  /* Thickness of the underline */
-    background-color: var(--color-bar);  /* Color of the underline */
-    transition: width 0.3s;  /* Transition effect for expanding underline */
+    width: 0;
+    height: 2px;
+    background-color: var(--color-bar);
+    transition: width 0.3s;
 }
 .learn-more-btn:hover::after {
     width: 100%;  /* When hovering, expand the width to 100% */
 }
+/* can't figure out how to get 2nd button to align to end of container*/
+/*.use-case-section.close-more-deals .learn-more-btn {*/
+/*    align-self: flex-end;*/
+/*}*/
 
 /* Request a Demo Section */
 .demo-form {
@@ -58,8 +60,7 @@
     margin-top: 40px;
     border-radius: 10px;
 }
-.demo-form input,
-.demo-form textarea {
+.demo-form input, .demo-form textarea {
     width: 80%;
     padding: 10px;
     margin-bottom: 20px;
@@ -76,4 +77,15 @@
 }
 .demo-form button:hover {
     background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .use-case-section {
+        flex-direction: column;
+        gap: unset;
+        justify-content: space-between;
+    }
+    .use-case-section .learn-more-btn {
+        margin-top: 0;
+    }
 }
