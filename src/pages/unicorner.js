@@ -46,6 +46,9 @@ const Unicorner = () => {
   const fyncomFiltersWordsDark = getImage(
     data.fyncomFiltersWordsDark.childImageSharp.gatsbyImageData
   )
+  const lightLogo = data.lightLogo.childImageSharp.fixed
+  const darkLogo = data.darkLogo.childImageSharp.fixed
+
   const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords)
   const [logoData, setLogoData] = useState(data.lightLogo.childImageSharp.fixed)
 
@@ -54,17 +57,13 @@ const Unicorner = () => {
       const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
       const handleChange = e => {
         setFilterLogo(e.matches ? fyncomFiltersWordsDark : fyncomFiltersWords)
-        setLogoData(
-          e.matches
-            ? data.darkLogo.childImageSharp.fixed
-            : data.lightLogo.childImageSharp.fixed
-        )
+        setLogoData(e.matches ? darkLogo : lightLogo)
       }
       handleChange(mediaQuery) // Initial check
       mediaQuery.addListener(handleChange)
       return () => mediaQuery.removeListener(handleChange)
     }
-  }, [fyncomFiltersWords, fyncomFiltersWordsDark])
+  }, [fyncomFiltersWords, fyncomFiltersWordsDark, lightLogo, darkLogo]);
 
   return (
     <div className="unicorner-container">
