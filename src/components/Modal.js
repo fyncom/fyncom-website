@@ -1,9 +1,8 @@
-// Modal.js
 import React from "react";
 import "../components/contact.css";
 import "../components/blocked-email.css";
-import nanoQrCode from "../images/DepositNanoQRCode.jpg";
-// should import all into modal.css later
+import {graphql, useStaticQuery} from "gatsby";
+import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 export const SuccessModal = ({ isOpen, message, onClose }) => {
   if (!isOpen) return null;
@@ -32,6 +31,16 @@ export const FailureModal = ({ isOpen, message, onClose }) => {
 };
 
 export const MakeADepositModal = ({ onClose }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      nanoQrCode: file(relativePath: { eq: "DepositNanoQRCode.jpg" }) {
+        childImageSharp {
+          gatsbyImageData(width: 800, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  `);
+  const nanoQrCode = getImage(data.nanoQrCode.childImageSharp.gatsbyImageData);
   return (
     <div className="modal">
       <div className="modal-content">
@@ -41,7 +50,7 @@ export const MakeADepositModal = ({ onClose }) => {
         <p>Deposit 0.1 nano to</p>
         <p className="nano-address">nano_1bf3r8pqfsutekxunazj895an8h84ai3ao1ftqyejqiul65p3xsb9k99kc1</p>
         <div className="qr-code-container">
-          <img src={nanoQrCode} alt="QR Code of the nano address you should send your deposit to" />
+          <GatsbyImage image={nanoQrCode} alt="QR Code of the nano address you should send your deposit to. nano_1bf3r8pqfsutekxunazj895an8h84ai3ao1ftqyejqiul65p3xsb9k99kc1" />
         </div>
       </div>
     </div>

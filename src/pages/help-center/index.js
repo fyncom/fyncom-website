@@ -1,33 +1,35 @@
 import React, {useState} from "react"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import "../components/help-center.css"
-import { helpItemsUser } from "../../static/help-items";
+import Header from "../../components/header"
+import Footer from "../../components/footer"
+import "../../components/help-center.css"
+import { helpItems } from "../../../static/help-items";
 import {Link, navigate} from "gatsby";
-import MarkdownContent from "../components/MarkdownContent";
-import Seo from "../components/seo";
+import MarkdownContent from "../../components/MarkdownContent";
+import Seo from "../../components/seo";
 
-const UserHelpCenter = () => {
+const HelpCenter = () => {
   const [selectedItemUrl, setSelectedItemUrl] = useState(null)
   const handleClick = (item) => {
     console.log("URL Loaded:", item.url);
     setSelectedItemUrl(item.url);
-    navigate(`/user-help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`);
+    navigate(`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`);
   };
   return (
     <div>
       <Seo
-        title="User Help Center"
-        description="For non-business users, this is the help center for you."
+        title="Help Center"
+        description="Setting up FynCom tools can be a challenge. We're here to help!"
       />
       <Header />
       <div className="help-center">
-        <h1 className="centered">User Help Center</h1>
+        <h1 className="centered">Help Center</h1>
         <p className="centered-p">What do you need help with?</p>
-        Not here for personal help? {" "}
-        <Link to="/help-center"> Click here for our Business Help Center.</Link>
+        Not a business? {" "}
+        <Link to="/user-help-center">
+          Click here for our User Help Center.
+        </Link>
         <div className="help-items">
-          {helpItemsUser.map((item) => (
+          {helpItems.map((item) => (
             <div
               key={item.title}
               className="help-item"
@@ -47,4 +49,4 @@ const UserHelpCenter = () => {
   )
 }
 
-export default UserHelpCenter
+export default HelpCenter

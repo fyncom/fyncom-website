@@ -46,8 +46,6 @@
 }
 .qr-code-container {
     text-align: center;
-    max-width: 800px;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -91,4 +89,8 @@
 .learn-more-btn.cash:hover {
     background-color: var(--robocash-green);
     color: #fff !important;
+}
+.gatsby-image-wrapper:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s;
 }

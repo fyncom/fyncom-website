@@ -7,6 +7,7 @@ import "../../components/help-center.css"
 import "../../components/email-filters-and-rewards.css"
 import Seo from "../../components/seo"
 import GoogleDocsViewer from "../../components/GoogleDocsViewer"
+import Breadcrumbs from "../../components/Breadcrumbs";
 
 const EmailFiltersAndRewards = () => {
   const { search } = useLocation()
@@ -19,7 +20,9 @@ const EmailFiltersAndRewards = () => {
         description="setup your meail filters here."
       />
       <Header />
-      <main>
+      <Breadcrumbs link={"/user-help-center"} title="FynCom Filters: Email Edition" />
+
+      <main className={"filter-custom-page"}>
         <section className="setup-section">
           <h1>FynCom Filters: Email Edition</h1>
           <p>

@@ -176,13 +176,11 @@
     .use-case-section {
         flex-direction: column;
     }
-    .use-case-image,
-    .use-case-description {
+    .use-case-image, .use-case-description {
         width: 100%;
         margin: 0 auto;
         text-align: center;
     }
-
     /*sets the images / description in order for columns*/
     .use-case-section:nth-child(odd) .use-case-description {
         order: 2; /* Put the description second */
