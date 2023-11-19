@@ -16,27 +16,27 @@ const About = () => {
       }
       innovation: file(relativePath: { eq: "icons/innovation.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       collaboration: file(relativePath: { eq: "icons/collaboration.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       transparency: file(relativePath: { eq: "icons/transparency.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       customerFocus: file(relativePath: { eq: "icons/customer-focus.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
       continuousImprovement: file(relativePath: { eq: "icons/continuous-improvement.webp" }) {
         childImageSharp {
-          gatsbyImageData(width: 320, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
