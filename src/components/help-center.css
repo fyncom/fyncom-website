@@ -18,16 +18,13 @@
   margin: 0 auto; /* Centers the grid in the page */
 }
 .help-item {
-  cursor: default; /* Default cursor for items without a URL */
+  cursor: pointer; /* Changes the cursor to a pointer for items with a URL */
   background: var(--help-box); /* Sets the background color of each help item */
-  border: 1px solid #eaeaea; /* Sets a border for each help item */
+  border: 1px solid var(--color-bar); /* Sets a border for each help item */
   border-radius: 8px; /* Rounds the corners of the border */
   padding: 20px; /* Adds padding inside each help item */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow to each help item */
   transition: transform 0.3s ease; /* Smooth transition for hover effect */
-}
-.help-item {
-  cursor: pointer; /* Changes the cursor to a pointer for items with a URL */
 }
 
 .help-item:hover {
@@ -41,14 +38,13 @@
 .help-item:hover h2, .help-item:hover p, .help-item:hover .icon {
   color: #007bff; /* Changes text color on hover */
 }
-
 .icon {
   font-size: 50px; /* Sets the size of the icons */
   margin-bottom: 20px; /* Adds space between icon and title */
 }
-
-.help-center a:hover {
-  text-decoration: underline;
+.help-items a {
+    color: var(--color-text);
+    text-decoration: none;
 }
 
 .markdown-content {
