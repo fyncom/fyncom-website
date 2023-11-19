@@ -50,7 +50,7 @@ const Unicorner = () => {
   const darkLogo = data.darkLogo.childImageSharp.fixed
 
   const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords)
-  const [logoData, setLogoData] = useState(data.lightLogo.childImageSharp.fixed)
+  const [logoData, setLogoData] = useState(lightLogo)
 
   useEffect(() => {
     if (typeof window !== "undefined") {
