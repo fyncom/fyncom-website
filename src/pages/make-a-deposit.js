@@ -115,14 +115,11 @@ const MakeADeposit = () => {
           get my immediate attention. If I respond, you get your deposit back.
           Simple!
         </sub>
-        {/*<p className="html-dynamic">{dynamicMessage}</p>*/}
         <div
           className="html-dynamic"
           dangerouslySetInnerHTML={{ __html: dynamicMessage }}
         ></div>
-
         {renderPaymentButton()}
-        {/*  some text / image manipulation has to happen here*/}
         <p>
           Still here? Why not read something interesting? Ever get annoying
           calls? Emails? DMs? Read below to find out how we're helping fix that

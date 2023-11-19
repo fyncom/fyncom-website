@@ -90,7 +90,7 @@
   background-color: var(--robocash-green);
   color: #fff !important;
 }
-.gatsby-image-wrapper:hover {
+.nano-qr-code:hover {
   transform: scale(1.02);
   transition: transform 0.3s;
 }

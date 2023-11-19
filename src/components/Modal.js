@@ -58,7 +58,7 @@ export const MakeADepositModal = ({ onClose }) => {
           nano_1bf3r8pqfsutekxunazj895an8h84ai3ao1ftqyejqiul65p3xsb9k99kc1
         </p>
         <div className="qr-code-container">
-          <GatsbyImage
+          <GatsbyImage className={"nano-qr-code"}
             image={nanoQrCode}
             alt="QR Code of the nano address you should send your deposit to. nano_1bf3r8pqfsutekxunazj895an8h84ai3ao1ftqyejqiul65p3xsb9k99kc1"
           />
