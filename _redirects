@@ -7,32 +7,19 @@
 /about-the-fyncom-team  /about  301
 
 # Desired URLs for user help center, but using the below as a temporary workaround
-#/crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
-#/crowdin-rewards-for-user-translations-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
-#/email-filters-and-rewards  /user-help-center/email-filters-and-rewards  301
-
-/crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-translations-user-setup/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FCrowdin-Setup-FynCom.md  301
-/crowdin-rewards-for-user-translations-setup  /user-help-center/crowdin-rewards-for-translations-user-setup/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FCrowdin-Setup-FynCom.md  301
-/email-filters-and-rewards  /user-help-center/email-filters-and-rewards/?contentUrl=filtering  301
+/crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
+/crowdin-rewards-for-user-translations-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
+/email-filters-and-rewards  /user-help-center/email-filters-and-rewards  301
 
 # Desired URLs for help center, but using the below as a temporary workaround
-#/account-balance-help  /help-center/account-balance-help  301
-#/add-fyncom-rewards-to-sendgrid-marketing-email  /help-center/add-fyncom-rewards-to-sendgrid-marketing-email  301
-#/email-forwarding-setup-for-instant-rewards-delivery  /help-center/email-forwarding-setup-for-instant-rewards-delivery  301
-#/rewards-for-emails-text-and-more  /help-center/rewards-for-emails-text-and-more  301
-#/sendgrid-drafts-preparation  /help-center/sendgrid-drafts-preparation  301
-#/sendgrid-integration-api-key  /help-center/sendgrid-integration-api-key  301
-#/simple-email-rewards-setup  /help-center/simple-email-rewards-setup  301
-#/zapier-rewards  /help-center/zapier-rewards  301
-
-/rewards-for-emails-text-and-more  /help-center/rewards-for-emails-text-and-more/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FOverview-Of-FynCom-Tools.md	301
-/zapier-rewards	/help-center/zapier-rewards/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FZapier-Setup-FynCom.md	301
-/simple-email-rewards-setup  /help-center/simple-email-rewards-setup/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FEmails-Simple-Connection-With-FynCom.md 301
-/sendgrid-integration-api-key  /help-center/sendgrid-integration-api-key/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FSendgrid-API-Key-Integration.md  301
-/add-fyncom-rewards-to-sendgrid-marketing-email  /help-center/add-fyncom-rewards-to-sendgrid-marketing-email/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FAttaching-FynCom-Rewards-To-Sendgrid-Emails.md  301
-/email-forwarding-setup-for-instant-rewards-delivery  /help-center/email-forwarding-setup-for-instant-rewards-delivery/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FConnecting-Email-Address-With-FynCom.md  301
-/sendgrid-drafts-preparation  /help-center/sendgrid-drafts-preparation/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FSetting-Up-Sendgrid-Drafts.md  301
-/account-balance-help  /help-center/account-balance-help/?contentUrl=https%3A%2F%2Fraw.githubusercontent.com%2Ffyncom%2Ffyncom-help%2Fmain%2FAccount-Balance.md  301
+/account-balance-help  /help-center/account-balance-help  301
+/add-fyncom-rewards-to-sendgrid-marketing-email  /help-center/add-fyncom-rewards-to-sendgrid-marketing-email  301
+/email-forwarding-setup-for-instant-rewards-delivery  /help-center/email-forwarding-setup-for-instant-rewards-delivery  301
+/rewards-for-emails-text-and-more  /help-center/rewards-for-emails-text-and-more  301
+/sendgrid-drafts-preparation  /help-center/sendgrid-drafts-preparation  301
+/sendgrid-integration-api-key  /help-center/sendgrid-integration-api-key  301
+/simple-email-rewards-setup  /help-center/simple-email-rewards-setup  301
+/zapier-rewards  /help-center/zapier-rewards  301
 
 # blog redirects
 /how-to-win-in-the-attention-economy /blog/attention-economy-insights	301
