@@ -1,13 +1,11 @@
 import React, {useEffect, useState} from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import fyncomLogo from "../images/fyncom-logo.png";
 import "../components/use-cases.css"
 import {graphql, Link, useStaticQuery} from "gatsby";
 import Seo from "../components/seo";
 import { SuccessModal, FailureModal } from "../components/Modal";
 import {GatsbyImage, getImage} from "gatsby-plugin-image";
-import Img from "gatsby-image";
 
 const UseCases = () => {
   const data = useStaticQuery(graphql`
@@ -27,29 +25,15 @@ const UseCases = () => {
           gatsbyImageData(width: 1200, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
-      fyncomLogoLight: file(relativePath: { eq: "fyncom-logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      fyncomLogoDark: file(relativePath: { eq: "fyncom-logo-white.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
     }
   `);
   const mobileMarketing = getImage(data.mobileMarketing.childImageSharp.gatsbyImageData);
   const phoneCalls = getImage(data.phoneCalls.childImageSharp.gatsbyImageData);
   const closingDeals = getImage(data.closingDeals.childImageSharp.gatsbyImageData);
-  const fyncomLogoLight = getImage(data.fyncomLogoLight.childImageSharp.gatsbyImageData);
-  const fyncomLogoDark = getImage(data.fyncomLogoDark.childImageSharp.gatsbyImageData);
-
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false);
   const [isFailureModalOpen, setFailureModalOpen] = useState(false);
   const [formData, setFormData] = useState({name: '', email: '', message: ''});
   const [modalMessage, setModalMessage] = useState('');
-  const [logoData, setLogoData] = useState(data.fyncomLogoLight.childImageSharp.fixed);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -86,19 +70,6 @@ const UseCases = () => {
       console.error('Error submitting form', error);
     }
   };
-
-  // Effect for setting the logo based on the system color scheme
-  useEffect(() => {
-    if(typeof window !== 'undefined') {
-      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      const handleChange = (e) => {
-        setLogoData(e.matches ? data.fyncomLogoDark.childImageSharp.fixed : data.fyncomLogoLight.childImageSharp.fixed);
-      };
-      handleChange(mediaQuery); // Initial check
-      mediaQuery.addListener(handleChange); // Listen for changes
-      return () => mediaQuery.removeListener(handleChange);
-    }
-  }, [data.fyncomLogoLight.childImageSharp.fixed, data.fyncomLogoDark.childImageSharp.fixed]);
 
   return (
   <div>
