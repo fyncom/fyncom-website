@@ -1,5 +1,10 @@
-.email-filters-rewards-container {
-    margin-left: 2rem;
+.filter-custom-page {
+    width: 80%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.filter-custom-page p {
+    max-width: unset;
 }
 .setup-section h1, .setup-section h2, .setup-section h3,  .setup-section p {
 /*.videos-section h3,  .videos-section p {*/
