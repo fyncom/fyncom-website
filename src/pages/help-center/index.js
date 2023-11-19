@@ -30,7 +30,7 @@ const HelpCenter = () => {
       <div className="help-center">
         <h1 className="centered">Help Center</h1>
         <p className="centered-p">What do you need help with?</p>
-        Not a business?
+        Not a business?{" "}
         <Link to="/user-help-center">Click here for our User Help Center.</Link>
         <div className="help-items">
           {helpItems.map(item => (

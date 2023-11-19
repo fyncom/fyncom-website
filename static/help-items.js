@@ -73,10 +73,9 @@ const helpItemsUser = [
   {
     title: "FynCom Filters for Emails",
     description:
-      "Get rewarded to block email. Allow trused email. Cash out your way",
+      "Get rewarded to block email. Allow trusted email. Cash out your way",
     icon: "FaFilter",
     topicUrl: "email-filters-and-rewards",
-    url: "filtering",
   },
 ]
 

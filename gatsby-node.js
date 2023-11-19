@@ -51,6 +51,10 @@ exports.createPages = async ({ actions }) => {
   // Helper function to create pages for help items
   async function createHelpPages(items, basePath) {
     for (const item of items) {
+      // If this item does not require markdown or is the custom page, skip it
+      if (!item.url || item.url === "filtering") {
+        continue;
+      }
       const { topicUrl, url } = item;
       // Fetch the markdown file content from the raw GitHub URL
       console.log(`Fetching Markdown content for: ${url}`);
