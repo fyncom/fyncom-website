@@ -85,6 +85,8 @@
     padding: 4px;
 }
 .breadcrumb {
+    width: 80%;
+    margin: 5px auto;
     padding: 8px 15px;
     list-style: none;
     background-color: var(--navigation-hover);
