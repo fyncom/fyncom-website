@@ -58,6 +58,12 @@
     text-decoration: underline;
 }
 
+.markdown-content {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
 .markdown-content p {
     color: var(--color-text);
     max-width: fit-content;
@@ -103,4 +109,14 @@
 }
 .breadcrumb-item a {
     text-decoration: none;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+    .breadcrumb {
+        width: 95%;
+    }
+    .markdown-content {
+        width: 100%;
+    }
 }

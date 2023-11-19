@@ -25,7 +25,7 @@ const MarkdownContent = ({ url }) => {
   }
 
   // Safe to set HTML after sanitizing
-  return <div className="gatsby-focus-wrapper" dangerouslySetInnerHTML={{ __html: content }} />;
+  return <div className="markdown-content" dangerouslySetInnerHTML={{ __html: content }} />;
 };
 
 export default MarkdownContent;
