@@ -83,7 +83,9 @@ const Header = () => {
         <nav ref={menuRef} className={isMenuOpen ? 'mobile-menu open' : 'mobile-menu'}>
           <ul>
             <li className="mobile-menu-item dropdown">
-              <span className="mobile-dropbtn">Use Cases</span>
+              <span className="mobile-dropbtn">
+                <Link to="/use-cases">Use Cases</Link>
+              </span>
               <ul className="mobile-dropdown-content">
                 <Link to="/marketing-use-cases">Marketing</Link>
                 <Link to="/sales-use-cases">Sales</Link>
@@ -100,7 +102,9 @@ const Header = () => {
               <Link to="/blog">Blog</Link>
             </li>
             <li className="mobile-menu-item dropdown">
-              <span className="mobile-dropbtn">Help</span>
+              <span className="mobile-dropbtn">
+                <Link to="/help-center">Help</Link>
+              </span>
               <ul className="mobile-dropdown-content">
                 {helpItems.map((item) => (
                   <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`} key={item.title}>

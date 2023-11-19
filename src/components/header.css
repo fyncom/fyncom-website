@@ -145,13 +145,18 @@ button.user:hover {
     /*transform: translateX(100%);*/
     transform: translateX(0);
   }
-
   .mobile-menu-item a {
     color: var(--mobile-menu-text-color);
     padding: 10px 20px;
     display: block; /* This makes sure that the links take up the full available width */
   }
 
+    /* Ensure the link and the pseudo-element fit on one line */
+    .mobile-menu-item .mobile-dropbtn {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
   /* Toggle the dropdown within the mobile menu */
   .mobile-menu-item .mobile-dropbtn:after {
     content: ' ▼'; /* Add a small arrow to denote that this is a dropdown */
