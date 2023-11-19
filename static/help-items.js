@@ -1,5 +1,16 @@
-import React from 'react';
-import { FaAward, FaTools, FaEnvelopeOpenText, FaKey, FaMailBulk, FaChartLine, FaFileAlt, FaWallet, FaLanguage, FaFilter } from 'react-icons/fa';
+import React from "react"
+import {
+  FaAward,
+  FaTools,
+  FaEnvelopeOpenText,
+  FaKey,
+  FaMailBulk,
+  FaChartLine,
+  FaFileAlt,
+  FaWallet,
+  FaLanguage,
+  FaFilter,
+} from "react-icons/fa"
 
 export const helpItems = [
   {
@@ -21,7 +32,8 @@ export const helpItems = [
   //     topicUrl: "zapier-rewards", url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Zapier-Info.md",},
   {
     title: "Simple Email Setup",
-    description: "Set up your forwarding email No API key required. 1 Rewards Campaign at a time",
+    description:
+      "Set up your forwarding email No API key required. 1 Rewards Campaign at a time",
     icon: <FaEnvelopeOpenText />,
     topicUrl: "simple-email-rewards-setup",
     url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Emails-Simple-Connection-With-FynCom.md",
@@ -66,11 +78,18 @@ export const helpItems = [
 export const helpItemsUser = [
   {
     title: "Crowdin Rewards Setup",
-    description: "Translate a word, get instantly paid! Input your Crowdin username to start",
+    description:
+      "Translate a word, get instantly paid! Input your Crowdin username to start",
     icon: <FaLanguage />,
     topicUrl: "crowdin-rewards-for-translations-user-setup",
     url: "https://raw.githubusercontent.com/fyncom/fyncom-help/main/Crowdin-Setup-FynCom.md",
   },
-  {title: "FynCom Filters for Emails", description: "Get rewarded to block email. Allow trused email. Cash out your way", icon: <FaFilter />,
-    topicUrl: "email-filters-and-rewards", url: "filtering",},
+  {
+    title: "FynCom Filters for Emails",
+    description:
+      "Get rewarded to block email. Allow trused email. Cash out your way",
+    icon: <FaFilter />,
+    topicUrl: "email-filters-and-rewards",
+    url: "filtering",
+  },
 ]

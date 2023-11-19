@@ -2,7 +2,7 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/pricing.css"
-import Seo from "../components/seo";
+import Seo from "../components/seo"
 
 const Pricing = () => {
   const htmlContent = `<!doctype html>
@@ -252,7 +252,7 @@ const Pricing = () => {
     </table>
     <p><sup>3</sup><strong>Advanced Data Insights</strong> <br> <span>Be the first to know the optimal rewards sizes to deliver to certain demographics and at which point of the journey to deliver said rewards.</span></p>
   </body>
-</html>`;
+</html>`
 
   // The drop down HTML
   const infoDropDown = `<!doctype html>
@@ -402,7 +402,7 @@ const Pricing = () => {
     </div>
   </body>
 </html>
-`;
+`
 
   return (
     // <ReactMarkdown skipHtml={false}>{markdownContent}</ReactMarkdown>
@@ -412,11 +412,16 @@ const Pricing = () => {
         description="Purchase FynCom tools to help you increase trust and show people why you are different and should be heard."
       />
       <Header />
-      <div className="html-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
-      <div className="html-content-dropdown" dangerouslySetInnerHTML={{ __html: infoDropDown }} />
+      <div
+        className="html-content"
+        dangerouslySetInnerHTML={{ __html: htmlContent }}
+      />
+      <div
+        className="html-content-dropdown"
+        dangerouslySetInnerHTML={{ __html: infoDropDown }}
+      />
       <Footer />
     </div>
-
   )
 }
 

@@ -1,19 +1,21 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 import "../../components/help-center.css"
-import { helpItems } from "../../../static/help-items";
-import {Link, navigate} from "gatsby";
-import MarkdownContent from "../../components/MarkdownContent";
-import Seo from "../../components/seo";
+import { helpItems } from "../../../static/help-items"
+import { Link, navigate } from "gatsby"
+import MarkdownContent from "../../components/MarkdownContent"
+import Seo from "../../components/seo"
 
 const HelpCenter = () => {
   const [selectedItemUrl, setSelectedItemUrl] = useState(null)
-  const handleClick = (item) => {
-    console.log("URL Loaded:", item.url);
-    setSelectedItemUrl(item.url);
-    navigate(`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`);
-  };
+  const handleClick = item => {
+    console.log("URL Loaded:", item.url)
+    setSelectedItemUrl(item.url)
+    navigate(
+      `/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`
+    )
+  }
   return (
     <div>
       <Seo
@@ -24,12 +26,10 @@ const HelpCenter = () => {
       <div className="help-center">
         <h1 className="centered">Help Center</h1>
         <p className="centered-p">What do you need help with?</p>
-        Not a business? {" "}
-        <Link to="/user-help-center">
-          Click here for our User Help Center.
-        </Link>
+        Not a business?{" "}
+        <Link to="/user-help-center">Click here for our User Help Center.</Link>
         <div className="help-items">
-          {helpItems.map((item) => (
+          {helpItems.map(item => (
             <div
               key={item.title}
               className="help-item"

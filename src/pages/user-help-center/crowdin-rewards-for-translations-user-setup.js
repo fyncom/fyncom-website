@@ -1,17 +1,19 @@
-import React from "react";
-import {useLocation} from "@reach/router";
-import queryString from "query-string";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
-import "../../components/help-center.css";
-import MarkdownContent from "../../components/MarkdownContent";
-import Breadcrumbs from "../../components/Breadcrumbs";
-import {helpItemsUser} from "../../../static/help-items";
+import React from "react"
+import { useLocation } from "@reach/router"
+import queryString from "query-string"
+import Header from "../../components/header"
+import Footer from "../../components/footer"
+import "../../components/help-center.css"
+import MarkdownContent from "../../components/MarkdownContent"
+import Breadcrumbs from "../../components/Breadcrumbs"
+import { helpItemsUser } from "../../../static/help-items"
 
 const RewardsOverview = () => {
-  const { search } = useLocation();
-  const { contentUrl } = queryString.parse(search);
-  const title = helpItemsUser.find(item => decodeURIComponent(contentUrl) === item.url)?.title || "Help Article";
+  const { search } = useLocation()
+  const { contentUrl } = queryString.parse(search)
+  const title =
+    helpItemsUser.find(item => decodeURIComponent(contentUrl) === item.url)
+      ?.title || "Help Article"
 
   return (
     <div>
@@ -20,7 +22,7 @@ const RewardsOverview = () => {
       <MarkdownContent url={decodeURIComponent(contentUrl)} />
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default RewardsOverview;
+export default RewardsOverview

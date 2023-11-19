@@ -1,10 +1,10 @@
-import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import "../components/white-paper.css";
-import termsOfService from "../../static/pdfs/FynCom- Platform Terms of Service _CLEAN_ - 20220117.pdf";
-import Seo from "../components/seo";
-import PdfContent from "../components/PdfContent";
+import React from "react"
+import Header from "../components/header"
+import Footer from "../components/footer"
+import "../components/white-paper.css"
+import termsOfService from "../../static/pdfs/FynCom- Platform Terms of Service _CLEAN_ - 20220117.pdf"
+import Seo from "../components/seo"
+import PdfContent from "../components/PdfContent"
 
 const TermsOfService = () => {
   return (
@@ -20,7 +20,7 @@ const TermsOfService = () => {
       </div>
       <Footer />
     </div>
-  );
+  )
 }
 
-export default TermsOfService;
+export default TermsOfService
