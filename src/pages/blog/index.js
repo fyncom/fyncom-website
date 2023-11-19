@@ -37,7 +37,11 @@ export default function BlogIndex({ data }) {
               <small>{frontmatter.date}</small>
               <p>{shortenText(frontmatter.description, 100)}</p>{" "}
               {/* Truncate to 100 characters */}
-              <Img fluid={frontmatter.featuredImage?.childImageSharp?.fluid} />
+              {frontmatter.featuredImage?.childImageSharp ? (
+                <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
+              ) : (
+                <img className={"gif-image"} src={frontmatter.featuredImage?.publicURL} alt={frontmatter.title} />
+              )}
             </Link>
           </div>
         ))}
@@ -56,6 +60,7 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           description
           featuredImage {
+            publicURL
             childImageSharp {
               fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid
