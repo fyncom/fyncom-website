@@ -1,82 +1,85 @@
 /* Mission and Story Section */
-.mission-section, .story-section {
-    margin: 40px 20px 40px;
-    padding-right: 40px;
+.mission-section,
+.story-section {
+  margin: 40px 20px 40px;
+  padding-right: 40px;
 }
 .mission-section > h1 {
-    text-align: center;
+  text-align: center;
 }
 .mission-section > sub {
-    text-align: center;
-    margin: 0 auto; /* Ensure any automatic margin that may affect alignment is set to auto */
-    width: 90%;
-    display: block;
-    font-size: 16pt;
+  text-align: center;
+  margin: 0 auto; /* Ensure any automatic margin that may affect alignment is set to auto */
+  width: 90%;
+  display: block;
+  font-size: 16pt;
 }
 
 /* Values Section */
 .values-section {
-    padding-left: 40px;
-    padding-right: 40px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 40px 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 40px 40px;
 }
 .values-header > h2 {
-    text-align: center;
+  text-align: center;
 }
 .value {
-    width: 30%;
-    margin-bottom: 20px;
-    text-align: center;
-    display: block;
+  width: 30%;
+  margin-bottom: 20px;
+  text-align: center;
+  display: block;
 }
 .value img {
-    display: block;
-    width: 100px;
-    height: 100px;
-    margin: 0 auto; /* This centers the image horizontally */
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto; /* This centers the image horizontally */
 }
 .value > p {
-    display: block;
-    margin-top: 1rem;
-    text-align: center;
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
 }
 
 /* Our Story Section */
 .story-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .story-text > h3 {
-    text-align: center;
-    position: relative; /* Makes sure the pseudo-element positions itself relative to the h3 */
+  text-align: center;
+  position: relative; /* Makes sure the pseudo-element positions itself relative to the h3 */
 }
 
 .story-section .story-text h3::after {
-    content: ""; /* This is necessary for the pseudo-element to show */
-    position: absolute; /* Allows precise positioning */
-    left: 100px;
-    right: 100px;
-    bottom: -8px;
-    height: 2px; /* Thickness of the underline */
-    background: var(--color-bar);
+  content: ""; /* This is necessary for the pseudo-element to show */
+  position: absolute; /* Allows precise positioning */
+  left: 100px;
+  right: 100px;
+  bottom: -8px;
+  height: 2px; /* Thickness of the underline */
+  background: var(--color-bar);
 }
 .story-image img {
-    min-width: 300px; 
-    display: block;
+  min-width: 300px;
+  display: block;
 }
 
 .p2-blue {
-    color: var(--fyncom-blue);
+  color: var(--fyncom-blue);
 }
 
 /** Responsive layout adjustments *!*/
 @media (max-width: 768px) {
   /* Section adjustments for better mobile view */
-  .mission-section, .story-section, .values-section {
+  .mission-section,
+  .story-section,
+  .values-section {
     padding: 0.1rem;
     margin: 0px 10px;
     text-align: center;
@@ -87,7 +90,8 @@
     margin: 15px; /* Adjust margin for mobile */
     padding: 0; /* Reset padding */
   }
-  .story-section .story-image, .story-section .story-text {
+  .story-section .story-image,
+  .story-section .story-text {
     width: 100%; /* Full width for mobile */
     margin-bottom: 20px; /* Add some spacing between the image and text */
   }

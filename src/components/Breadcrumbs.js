@@ -1,5 +1,5 @@
-import React from 'react';
-import {Link} from "gatsby";
+import React from "react"
+import { Link } from "gatsby"
 
 const Breadcrumbs = ({ link, title }) => {
   return (
@@ -13,7 +13,7 @@ const Breadcrumbs = ({ link, title }) => {
         </li>
       </ol>
     </nav>
-  );
-};
+  )
+}
 
-export default Breadcrumbs;
+export default Breadcrumbs

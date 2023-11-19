@@ -1,19 +1,25 @@
-import React, {useState} from "react"
+import React from "react"
 import Header from "../../components/header"
 import Footer from "../../components/footer"
 import "../../components/help-center.css"
-import { helpItems } from "../../../static/help-items";
-import {Link, navigate} from "gatsby";
-import MarkdownContent from "../../components/MarkdownContent";
-import Seo from "../../components/seo";
+import { helpItems } from "../../../static/help-items"
+import { Link } from "gatsby"
+import Seo from "../../components/seo"
+import {FaAward, FaTools, FaEnvelopeOpenText, FaKey, FaMailBulk, FaChartLine, FaFileAlt, FaWallet, FaLanguage, FaFilter,} from "react-icons/fa"
+const iconMap = {
+  FaAward: <FaAward />,
+  FaTools: <FaTools />,
+  FaEnvelopeOpenText: <FaEnvelopeOpenText />,
+  FaKey: <FaKey />,
+  FaMailBulk: <FaMailBulk />,
+  FaChartLine: <FaChartLine />,
+  FaFileAlt: <FaFileAlt />,
+  FaWallet: <FaWallet />,
+  FaLanguage: <FaLanguage />,
+  FaFilter: <FaFilter />,
+};
 
 const HelpCenter = () => {
-  const [selectedItemUrl, setSelectedItemUrl] = useState(null)
-  const handleClick = (item) => {
-    console.log("URL Loaded:", item.url);
-    setSelectedItemUrl(item.url);
-    navigate(`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`);
-  };
   return (
     <div>
       <Seo
@@ -24,25 +30,17 @@ const HelpCenter = () => {
       <div className="help-center">
         <h1 className="centered">Help Center</h1>
         <p className="centered-p">What do you need help with?</p>
-        Not a business? {" "}
-        <Link to="/user-help-center">
-          Click here for our User Help Center.
-        </Link>
+        Not a business?{" "}
+        <Link to="/user-help-center">Click here for our User Help Center.</Link>
         <div className="help-items">
-          {helpItems.map((item) => (
-            <div
-              key={item.title}
-              className="help-item"
-              onClick={() => item.url && handleClick(item)}
-              data-has-url={!!item.url}
-            >
-              <div className="icon">{item.icon}</div>
+          {helpItems.map(item => (
+            <Link to={`/help-center/${item.topicUrl}`} key={item.title} className="help-item">
+              <div className="icon">{iconMap[item.icon]}</div>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
-            </div>
+            </Link>
           ))}
         </div>
-        {selectedItemUrl && <MarkdownContent url={selectedItemUrl} />}
       </div>
       <Footer />
     </div>

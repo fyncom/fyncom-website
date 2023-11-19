@@ -1,9 +1,9 @@
-import React from 'react';
-import '../../components/help-center.css';
-import { graphql, Link } from 'gatsby'
-import {Wrapper} from "../../components/Markdown-Wrapper";
-import Img from 'gatsby-image'
-import truncate from 'lodash/truncate'; // You may need to install lodash if not already installed
+import React from "react"
+import "../../components/help-center.css"
+import { graphql, Link } from "gatsby"
+import { Wrapper } from "../../components/Markdown-Wrapper"
+import Img from "gatsby-image"
+import truncate from "lodash/truncate" // You may need to install lodash if not already installed
 import "../../components/blog.css"
 
 export default function BlogIndex({ data }) {
@@ -15,10 +15,10 @@ export default function BlogIndex({ data }) {
   // A function to truncate text to a specific length
   const shortenText = (text, length) => {
     return truncate(text, {
-      'length': length, // maximum length of the text
-      'separator': /,? +/ // truncates at the nearest space or comma
-    });
-  };
+      length: length, // maximum length of the text
+      separator: /,? +/, // truncates at the nearest space or comma
+    })
+  }
   return (
     <Wrapper seo={seo}>
       <div
@@ -29,15 +29,16 @@ export default function BlogIndex({ data }) {
         }}
       >
         {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
-        <div className="blog-item" key={id}>
-          <Link className={"blog-link"} to={`${fields.slug}`}>
-          <h2>
-              <Link to={`${fields.slug}`}>{frontmatter.title}</Link>
-            </h2>
-            <small>{frontmatter.date}</small>
-            <p>{shortenText(frontmatter.description, 100)}</p> {/* Truncate to 100 characters */}
-            <Img fluid={frontmatter.featuredImage?.childImageSharp?.fluid} />
-          </Link>
+          <div className="blog-item" key={id}>
+            <Link className={"blog-link"} to={`${fields.slug}`}>
+              <h2>
+                <Link to={`${fields.slug}`}>{frontmatter.title}</Link>
+              </h2>
+              <small>{frontmatter.date}</small>
+              <p>{shortenText(frontmatter.description, 100)}</p>{" "}
+              {/* Truncate to 100 characters */}
+              <Img fluid={frontmatter.featuredImage?.childImageSharp?.fluid} />
+            </Link>
           </div>
         ))}
       </div>
