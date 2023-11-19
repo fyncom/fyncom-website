@@ -5,6 +5,19 @@ import "../../components/help-center.css"
 import { helpItems } from "../../../static/help-items"
 import { Link } from "gatsby"
 import Seo from "../../components/seo"
+import {FaAward, FaTools, FaEnvelopeOpenText, FaKey, FaMailBulk, FaChartLine, FaFileAlt, FaWallet, FaLanguage, FaFilter,} from "react-icons/fa"
+const iconMap = {
+  FaAward: <FaAward />,
+  FaTools: <FaTools />,
+  FaEnvelopeOpenText: <FaEnvelopeOpenText />,
+  FaKey: <FaKey />,
+  FaMailBulk: <FaMailBulk />,
+  FaChartLine: <FaChartLine />,
+  FaFileAlt: <FaFileAlt />,
+  FaWallet: <FaWallet />,
+  FaLanguage: <FaLanguage />,
+  FaFilter: <FaFilter />,
+};
 
 const HelpCenter = () => {
   return (
@@ -22,7 +35,7 @@ const HelpCenter = () => {
         <div className="help-items">
           {helpItems.map(item => (
             <Link to={`/help-center/${item.topicUrl}`} key={item.title} className="help-item">
-              <div className="icon">{item.icon}</div>
+              <div className="icon">{iconMap[item.icon]}</div>
               <h2>{item.title}</h2>
               <p>{item.description}</p>
             </Link>
