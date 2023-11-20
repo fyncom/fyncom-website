@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState, useCallback } from "react";
 import { useLocation } from '@reach/router';
 import { GiftCardSentToEmail, GiftCardNotEnoughBalance, GiftCardTxIdNotFound } from './Modal';
 
@@ -12,25 +12,7 @@ const RewardsOneClick = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
 
-  useEffect(() => {
-    const txId = queryParams.get('txId');
-    const value = queryParams.get('value');
-    const type = queryParams.get('type');
-
-    if (txId) {
-      processReward(txId, value, type)
-        .then(data => {
-          setResult(data);
-          setSuccessModalOpen(true);
-        })
-        .catch(error => {
-          console.error('ERROR', error);
-          setFailureModalOpen(true);
-        });
-    }
-  }, [queryParams]);
-
-  const processReward = async (txId, value, type) => {
+  const processReward = useCallback(async (txId, value, type) => {
     try {
       const url = `${process.env.GATSBY_API_URL}app/rewards/gcow/easy`;
       const response = await fetch(url, {
@@ -43,6 +25,7 @@ const RewardsOneClick = () => {
         body: JSON.stringify({ campaignRewardTxId: txId, productName: type, value: value }),
       });
 
+      // might need to be remvoed
       if (response.status === 400) {
         setFailureModalOpen(true);
       } else if (response.status === 422) {
@@ -62,7 +45,26 @@ const RewardsOneClick = () => {
       setFailureModalOpen(true);
       throw error;
     }
-  };
+  }, []); // Empty dependencies array ensures creation only once
+
+  useEffect(() => {
+    const txId = queryParams.get('txId');
+    const value = queryParams.get('value');
+    const type = queryParams.get('type');
+    if (txId && !result) {
+      // Process the reward only if result is not already set
+      processReward(txId, value, type)
+        .then(data => {
+          setResult(data);
+          setSuccessModalOpen(true);
+        })
+        .catch(error => {
+          console.error('ERROR', error);
+          setFailureModalOpen(true); // Assuming error indicates failure
+        });
+    }
+  }, [queryParams, processReward, result]); // Include dependencies that, when changed, should re-run this effect
+
 
   const handleCloseModal = () => {
     setSuccessModalOpen(false);

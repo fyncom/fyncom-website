@@ -3,6 +3,8 @@ import "../components/contact.css"
 import "../components/blocked-email.css"
 import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import {FaGift, FaFileAlt, FaSearch, FaSadCry } from "react-icons/fa"
+
 
 export const SuccessModal = ({ isOpen, message, onClose }) => {
   if (!isOpen) return null
@@ -80,10 +82,11 @@ export const GiftCardSentToEmail = ({ isOpen, organizationName, onClose, urlRedi
         <span className="close" onClick={onClose}>
           &times;
         </span>
+        <FaGift size={80} />
         <h2>Whoo!</h2>
         <p>Your Reward will be sent to your email within 5 minutes.</p>
         <p>{organizationName}</p>
-        <p>Thank you</p>
+        <p>Thanks you!</p>
       </div>
     </div>
   );
@@ -97,6 +100,21 @@ export const GiftCardTxIdNotFound = ({ isOpen, onClose }) => {
         <span className="close" onClick={onClose}>
           &times;
         </span>
+        <div className="qr-code-container">
+          <div style={{ position: 'relative', display: 'inline-block' }}>
+            <FaFileAlt size={50} />
+            <FaSearch
+              size={30}
+              style={{
+                position: 'absolute',
+                bottom: 0,
+                right: -10,
+                color: 'red' // You can adjust the color as needed
+                //rgba(var(--fyncom-red-rgb), 0.5) // adjust to this later
+              }}
+            />
+          </div>
+        </div>
         <h2>Transaction not found</h2>
         <p>Sorry, we are unable to locate this transaction ID. Please send an email to support@fyncom.com if you think this is wrong.</p>
       </div>
@@ -115,6 +133,7 @@ export const GiftCardNotEnoughBalance = ({ isOpen, onClose }) => {
         <span className="close" onClick={onClose}>
           &times;
         </span>
+        <FaSadCry size={80}/>
         <h2>Low Balance.</h2>
         <p>It looks like your balance is not enough to purchase this.</p>
       </div>
