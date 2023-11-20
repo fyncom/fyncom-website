@@ -67,3 +67,57 @@ export const MakeADepositModal = ({ onClose }) => {
     </div>
   )
 }
+
+// Handle one click easy rewards
+export const GiftCardSentToEmail = ({ isOpen, organizationName, onClose, urlRedirect }) => {
+  if (!isOpen) return null;
+  setTimeout(() => {
+    window.location.href = urlRedirect;
+  }, 10000);
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <span className="close" onClick={onClose}>
+          &times;
+        </span>
+        <h2>Whoo!</h2>
+        <p>Your Reward will be sent to your email within 5 minutes.</p>
+        <p>{organizationName}</p>
+        <p>Thank you</p>
+      </div>
+    </div>
+  );
+};
+
+export const GiftCardTxIdNotFound = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+  return (
+    <div className="modal-failure">
+      <div className="modal-content">
+        <span className="close" onClick={onClose}>
+          &times;
+        </span>
+        <h2>Transaction not found</h2>
+        <p>Sorry, we are unable to locate this transaction ID. Please send an email to support@fyncom.com if you think this is wrong.</p>
+      </div>
+    </div>
+  );
+};
+
+export const GiftCardNotEnoughBalance = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+  setTimeout(() => {
+    window.location.href = 'https://www.fyncom.com/about-the-fyncom-team';
+  }, 8000);
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <span className="close" onClick={onClose}>
+          &times;
+        </span>
+        <h2>Low Balance.</h2>
+        <p>It looks like your balance is not enough to purchase this.</p>
+      </div>
+    </div>
+  );
+};
