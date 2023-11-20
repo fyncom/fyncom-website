@@ -1,10 +1,13 @@
 # general redirects
+/the-platform  /use-cases  301
 /usecase-marketing  /marketing-use-cases  301
 /usecase-sales  /sales-use-cases  301
 /usecase-understanding-customers  /understanding-customers-use-cases  301
 /karmacallwhitepaper  /white-paper-original-scam-calls  301
+/KarmaCallWhitePaper.pdf  /white-paper-original-scam-calls  301
 /the-dream  /white-paper-original-scam-calls  301
 /about-the-fyncom-team  /about  301
+/chat-with-us  /contact  301
 
 # Desired URLs for user help center, but using the below as a temporary workaround
 /crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
