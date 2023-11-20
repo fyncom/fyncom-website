@@ -40,7 +40,11 @@ export default function BlogIndex({ data }) {
               {frontmatter.featuredImage?.childImageSharp ? (
                 <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
               ) : (
-                <img className={"gif-image"} src={frontmatter.featuredImage?.publicURL} alt={frontmatter.title} />
+                <img
+                  className={"gif-image"}
+                  src={frontmatter.featuredImage?.publicURL}
+                  alt={frontmatter.title}
+                />
               )}
             </Link>
           </div>
