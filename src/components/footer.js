@@ -14,21 +14,21 @@ const Footer = () => {
           gatsbyImageData(width: 80, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
-      linkedInlogo: file(relativePath: { eq: "logos/linkedin-logo.webp" }) {
+      linkedInlogo: file(relativePath: { eq: "logos/linkedin-white-96.png" }) {
         childImageSharp {
           fixed(width: 24) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
-      fbLogo: file(relativePath: { eq: "logos/facebook-logo.webp" }) {
+      fbLogo: file(relativePath: { eq: "logos/facebook_logo_secondary_white.png" }) {
         childImageSharp {
           fixed(width: 24) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
-      xLogo: file(relativePath: { eq: "logos/x-logo.png" }) {
+      xLogo: file(relativePath: { eq: "logos/x-logo-white.png" }) {
         childImageSharp {
           fixed(width: 24) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
