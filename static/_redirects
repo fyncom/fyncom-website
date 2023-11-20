@@ -10,8 +10,8 @@
 /chat-with-us  /contact  301
 
 # Desired URLs for user help center, but using the below as a temporary workaround
-/crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
-/crowdin-rewards-for-user-translations-setup  /user-help-center/crowdin-rewards-for-user-translations-setup  301
+/crowdin-rewards-for-translations-user-setup  /user-help-center/crowdin-rewards-for-translations-user-setup  301
+/crowdin-rewards-for-user-translations-setup  /user-help-center/crowdin-rewards-for-translations-user-setup  301
 /email-filters-and-rewards  /user-help-center/email-filters-and-rewards  301
 
 # Desired URLs for help center, but using the below as a temporary workaround
