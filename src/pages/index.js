@@ -180,7 +180,7 @@ const BlockSpamEarnCash = () => {
             </div>
             <div className="text-block">
               <h2 className="text-wrapper-2">
-                Too many <span className="underline">abusive DMs</span> in your
+                Too many <span className="underline-red">abusive DMs</span> in your
                 communities?
               </h2>
               <p>
