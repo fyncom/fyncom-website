@@ -73,6 +73,14 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
+    .semi-barlow-extra-bold {
+        font-family: 'Barlow SemiCondensed', sans-serif;
+        font-weight: 800;
+    }
+    .semi-barlow-extra-light {
+        font-family: 'Barlow SemiCondensed', sans-serif;
+        font-weight: 200;
+    }
   --help-item-hover: #f0f8ff;
   --mobile-menu-bg-color: var(--fyncom-blue);
   --mobile-menu-text-color: white;
