@@ -10,7 +10,6 @@ import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const UseCases = () => {
   const { mobileMarketing, phoneCalls, closingDeals } = useCombinedQuery()
-
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false)
   const [isFailureModalOpen, setFailureModalOpen] = useState(false)
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })

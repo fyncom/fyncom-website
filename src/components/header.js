@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react"
 import "./header.css"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import { helpItems } from "../../static/help-items"
 import { FaBars } from "react-icons/fa"
 import Img from "gatsby-image"
+import { useCombinedQuery } from "./useCombinedQuery"
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -13,29 +14,9 @@ const Header = () => {
     event.stopPropagation()
     setMenuOpen(!isMenuOpen)
   }
-  const data = useStaticQuery(graphql`
-    query {
-      fyncomLogoLight: file(relativePath: { eq: "fyncom-logo.png" }) {
-        childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-      fyncomLogoDark: file(relativePath: { eq: "fyncom-logo-white.png" }) {
-        childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-    }
-  `)
-
+  const { fyncomLogoLight, fyncomLogoDark } = useCombinedQuery()
   // State to hold which logo to show
-  const [logoData, setLogoData] = useState(
-    data.fyncomLogoLight.childImageSharp.fixed
-  )
+  const [logoData, setLogoData] = useState(fyncomLogoLight)
 
   // Effect for setting the logo based on the system color scheme
   useEffect(() => {
@@ -44,18 +25,15 @@ const Header = () => {
       const handleChange = e => {
         setLogoData(
           e.matches
-            ? data.fyncomLogoDark.childImageSharp.fixed
-            : data.fyncomLogoLight.childImageSharp.fixed
+            ? fyncomLogoDark
+            : fyncomLogoLight
         )
       }
       handleChange(mediaQuery) // Initial check
       mediaQuery.addListener(handleChange) // Listen for changes
       return () => mediaQuery.removeListener(handleChange)
     }
-  }, [
-    data.fyncomLogoLight.childImageSharp.fixed,
-    data.fyncomLogoDark.childImageSharp.fixed,
-  ])
+  }, [fyncomLogoLight, fyncomLogoDark,])
 
   useEffect(() => {
     const closeMenu = event => {

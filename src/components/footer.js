@@ -1,49 +1,12 @@
 import React from "react"
 import "./footer.css"
-import { graphql, Link, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Img from "gatsby-image"
+import { useCombinedQuery } from "./useCombinedQuery"
 
 const Footer = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      fyncomLogoWhite: file(
-        relativePath: { eq: "fyncom-logo-white-blank.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 80, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      linkedInlogo: file(relativePath: { eq: "logos/linkedin-white-96.png" }) {
-        childImageSharp {
-          fixed(width: 24) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-      fbLogo: file(relativePath: { eq: "logos/facebook_logo_secondary_white.png" }) {
-        childImageSharp {
-          fixed(width: 24) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-      xLogo: file(relativePath: { eq: "logos/x-logo-white.png" }) {
-        childImageSharp {
-          fixed(width: 24) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-    }
-  `)
-  const fyncomLogoWhite = getImage(
-    data.fyncomLogoWhite.childImageSharp.gatsbyImageData
-  )
-  const linkedInlogo = data.linkedInlogo.childImageSharp.fixed
-  const fbLogo = data.fbLogo.childImageSharp.fixed
-  const xLogo = data.xLogo.childImageSharp.fixed
-
+  const { fyncomLogoWhite, linkedInlogo, fbLogo, xLogo } = useCombinedQuery()
   return (
     <div>
       <footer>
