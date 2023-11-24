@@ -1,86 +1,25 @@
 import React, { useState, useEffect } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import "../components/index.css"
 import fyncomWebm from "../images/fyncom-GIF-expanding-logo-cropped.webm"
 import fyncomMp4 from "../images/fyncom-GIF-expanding-logo-cropped.mp4"
 import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const BlockSpamEarnCash = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      fyncomFilterGmail: file(
-        relativePath: { eq: "fyncom_filters_gmail_edition_no_logo.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      fyncomFilterGmailDark: file(
-        relativePath: { eq: "fyncom_filters_gmail_edition_no_logo-white.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      karmaCall: file(relativePath: { eq: "karmacall-logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      karmaCallDark: file(relativePath: { eq: "karmacall-logo-white.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      increaseResponseRates: file(
-        relativePath: {
-          eq: "increase-response=rates-across-any platform-and-channel.png"
-        }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      tinderLogo: file(relativePath: { eq: "logos/tinder-logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 320, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      discordLogo: file(relativePath: { eq: "logos/Discord-logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      telegramLogo: file(relativePath: { eq: "logos/telegram-logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 135, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const filterImage = getImage(
-    data.fyncomFilterGmail.childImageSharp.gatsbyImageData
-  )
-  const filterImageDark = getImage(
-    data.fyncomFilterGmailDark.childImageSharp.gatsbyImageData
-  )
-  const karmacallImage = getImage(
-    data.karmaCall.childImageSharp.gatsbyImageData
-  )
-  const karmacallImageDark = getImage(
-    data.karmaCallDark.childImageSharp.gatsbyImageData
-  )
-  const increaseCustomerResponse = getImage(
-    data.increaseResponseRates.childImageSharp.gatsbyImageData
-  )
-  const tinderLogo = getImage(data.tinderLogo.childImageSharp.gatsbyImageData)
-  const discordLogo = getImage(data.discordLogo.childImageSharp.gatsbyImageData)
-  const telegramLogo = getImage(
-    data.telegramLogo.childImageSharp.gatsbyImageData
-  )
+  const {
+    filterImage,
+    filterImageDark,
+    karmacallImage,
+    karmacallImageDark,
+    increaseCustomerResponse,
+    tinderLogo,
+    discordLogo,
+    telegramLogo,
+  } = useCombinedQuery()
 
   // Use state to keep track of the images for the current theme
   const [filterLogo, setFilterLogo] = useState(filterImage)

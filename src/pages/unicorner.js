@@ -2,53 +2,14 @@ import React, { useEffect, useState } from "react"
 import googlePlayBadge from "../images/google-play-en.png"
 import appStoreBadge from "../images/apple-en.png"
 import "../components/unicorner.css"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Img from "gatsby-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const Unicorner = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      lightLogo: file(relativePath: { eq: "fyncom-logo.png" }) {
-        childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-      darkLogo: file(relativePath: { eq: "fyncom-logo-white.png" }) {
-        childImageSharp {
-          fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-      fyncomFiltersWords: file(
-        relativePath: { eq: "fyncom-filters-black.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      fyncomFiltersWordsDark: file(
-        relativePath: { eq: "fyncom-filters-white.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const fyncomFiltersWords = getImage(
-    data.fyncomFiltersWords.childImageSharp.gatsbyImageData
-  )
-  const fyncomFiltersWordsDark = getImage(
-    data.fyncomFiltersWordsDark.childImageSharp.gatsbyImageData
-  )
-  const lightLogo = data.lightLogo.childImageSharp.fixed
-  const darkLogo = data.darkLogo.childImageSharp.fixed
-
+  const { fyncomFiltersWords, fyncomFiltersWordsDark, lightLogo, darkLogo } = useCombinedQuery()
   const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords)
   const [logoData, setLogoData] = useState(lightLogo)
 

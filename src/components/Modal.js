@@ -1,9 +1,10 @@
 import React from "react"
 import "../components/contact.css"
 import "../components/blocked-email.css"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import {FaGift, FaFileAlt, FaSearch, FaSadCry } from "react-icons/fa"
+import { useCombinedQuery } from "./useCombinedQuery"
+
 
 
 export const SuccessModal = ({ isOpen, message, onClose }) => {
@@ -37,16 +38,7 @@ export const FailureModal = ({ isOpen, message, onClose }) => {
 }
 
 export const MakeADepositModal = ({ onClose }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      nanoQrCode: file(relativePath: { eq: "DepositNanoQRCode.jpg" }) {
-        childImageSharp {
-          gatsbyImageData(width: 800, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const nanoQrCode = getImage(data.nanoQrCode.childImageSharp.gatsbyImageData)
+  const { nanoQrCode } = useCombinedQuery()
   return (
     <div className="modal">
       <div className="modal-content">

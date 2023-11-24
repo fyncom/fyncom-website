@@ -3,9 +3,10 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/use-cases.css"
 import "../components/pricing-table.css"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const PricingOption = ({ title, price, period, buttonText, buttonLink }) => (
   <div className="pricing-option">
@@ -21,54 +22,7 @@ const PricingOption = ({ title, price, period, buttonText, buttonLink }) => (
 )
 
 const FyncomFiltersEmailEdition = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      heroImageFilter: file(relativePath: { eq: "email-filter-gmail.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      emailFilterFyncom: file(relativePath: { eq: "email-filter-fyncom.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      getPaidToBlockSpamEmails: file(
-        relativePath: { eq: "get-paid-to-block-spam-emails.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      cleanInboxCleanMind: file(
-        relativePath: { eq: "a-clean-inbox-and-a-focused-mind.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      nanoQrCode: file(
-        relativePath: { eq: "qr-code-fyncom-filter-email-edition-nano.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const heroImageFilter = getImage(
-    data.heroImageFilter.childImageSharp.gatsbyImageData
-  )
-  const emailFilterFyncom = getImage(
-    data.emailFilterFyncom.childImageSharp.gatsbyImageData
-  )
-  const getPaidToBlockSpamEmails = getImage(
-    data.getPaidToBlockSpamEmails.childImageSharp.gatsbyImageData
-  )
-  const cleanInboxCleanMind = getImage(
-    data.cleanInboxCleanMind.childImageSharp.gatsbyImageData
-  )
-  const nanoQrCode = getImage(data.nanoQrCode.childImageSharp.gatsbyImageData)
+  const { heroImageFilter, emailFilterFyncom, getPaidToBlockSpamEmails, cleanInboxCleanMind, nanoQrCode } = useCombinedQuery()
   return (
     <div className="fyncom-email-filter">
       <Seo

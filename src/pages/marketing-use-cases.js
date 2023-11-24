@@ -3,73 +3,11 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/sales-and-marketing-use-cases.css"
 import Seo from "../components/seo"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const MarketingUseCases = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      slicktext: file(
-        relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      handshake: file(relativePath: { eq: "illustrations/handshake.png" }) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 1000
-            layout: CONSTRAINED
-            placeholder: BLURRED
-          )
-        }
-      }
-      collaborate: file(
-        relativePath: { eq: "illustrations/collaborating-with-others.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      effectiveSpend: file(
-        relativePath: { eq: "illustrations/create-efficient-costs.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      integrations: file(
-        relativePath: { eq: "illustrations/integrate-with-emails-and-more.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const sendgrid = getImage(data.sendgrid.childImageSharp.gatsbyImageData)
-  const slicktext = getImage(data.slicktext.childImageSharp.gatsbyImageData)
-  const zapier = getImage(data.zapier.childImageSharp.gatsbyImageData)
-  const handshake = getImage(data.handshake.childImageSharp.gatsbyImageData)
-  const collaborate = getImage(data.collaborate.childImageSharp.gatsbyImageData)
-  const effectiveSpend = getImage(
-    data.effectiveSpend.childImageSharp.gatsbyImageData
-  )
-  const integrations = getImage(
-    data.integrations.childImageSharp.gatsbyImageData
-  )
-
+  const { sendgrid, slicktext, zapier, handshake, collaborate, effectiveSpend, integrations } = useCombinedQuery()
   return (
     <div className="marketing-use-cases">
       <Seo

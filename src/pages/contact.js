@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import Seo from "../components/seo"
@@ -7,38 +7,16 @@ import "../components/contact.css"
 import googlePlayBadge from "../images/google-play-en.png"
 import appStoreBadge from "../images/apple-en.png"
 import { SuccessModal, FailureModal } from "../components/Modal"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const Contact = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      fyncomFiltersWords: file(
-        relativePath: { eq: "fyncom-filters-black.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      fyncomFiltersWordsDark: file(
-        relativePath: { eq: "fyncom-filters-white.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const fyncomFiltersWords = getImage(
-    data.fyncomFiltersWords.childImageSharp.gatsbyImageData
-  )
-  const fyncomFiltersWordsDark = getImage(
-    data.fyncomFiltersWordsDark.childImageSharp.gatsbyImageData
-  )
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false)
   const [isFailureModalOpen, setFailureModalOpen] = useState(false)
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [modalMessage, setModalMessage] = useState("")
   const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords)
+  const { fyncomFiltersWords, fyncomFiltersWordsDark } = useCombinedQuery()
 
   const handleChange = e => {
     const { name, value } = e.target

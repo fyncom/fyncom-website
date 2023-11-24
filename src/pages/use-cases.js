@@ -2,56 +2,15 @@ import React, { useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/use-cases.css"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Seo from "../components/seo"
 import { SuccessModal, FailureModal } from "../components/Modal"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const UseCases = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      mobileMarketing: file(
-        relativePath: { eq: "illustrations/marketing-mobile-survey.webp" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 1200
-            layout: CONSTRAINED
-            placeholder: BLURRED
-          )
-        }
-      }
-      phoneCalls: file(
-        relativePath: { eq: "illustrations/sales-phone-calls.webp" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 1200
-            layout: CONSTRAINED
-            placeholder: BLURRED
-          )
-        }
-      }
-      closingDeals: file(
-        relativePath: { eq: "close-deals-customers-engagement.webp" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(
-            width: 1200
-            layout: CONSTRAINED
-            placeholder: BLURRED
-          )
-        }
-      }
-    }
-  `)
-  const mobileMarketing = getImage(
-    data.mobileMarketing.childImageSharp.gatsbyImageData
-  )
-  const phoneCalls = getImage(data.phoneCalls.childImageSharp.gatsbyImageData)
-  const closingDeals = getImage(
-    data.closingDeals.childImageSharp.gatsbyImageData
-  )
+  const { mobileMarketing, phoneCalls, closingDeals } = useCombinedQuery()
+
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false)
   const [isFailureModalOpen, setFailureModalOpen] = useState(false)
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
@@ -101,7 +60,7 @@ const UseCases = () => {
       />
       <Header />
       <div className="use-cases-container">
-        <h1>Drive The Behavior You Waant</h1>
+        <h1>Drive The Behavior You Want</h1>
         <sub>Enhance your sales, marketing & customer feedback tools</sub>
         <br />
         <br />

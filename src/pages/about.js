@@ -2,62 +2,13 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/about.css"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 import Seo from "../components/seo"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const About = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      teamMeeting: file(relativePath: { eq: "team-meeting.webp" }) {
-        childImageSharp {
-          gatsbyImageData(width: 486, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      innovation: file(relativePath: { eq: "icons/innovation.webp" }) {
-        childImageSharp {
-          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      collaboration: file(relativePath: { eq: "icons/collaboration.webp" }) {
-        childImageSharp {
-          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      transparency: file(relativePath: { eq: "icons/transparency.webp" }) {
-        childImageSharp {
-          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      customerFocus: file(relativePath: { eq: "icons/customer-focus.webp" }) {
-        childImageSharp {
-          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      continuousImprovement: file(
-        relativePath: { eq: "icons/continuous-improvement.webp" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 150, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-
-  const teamMeeting = getImage(data.teamMeeting.childImageSharp.gatsbyImageData)
-  const innovation = getImage(data.innovation.childImageSharp.gatsbyImageData)
-  const collaboration = getImage(
-    data.collaboration.childImageSharp.gatsbyImageData
-  )
-  const transparency = getImage(
-    data.transparency.childImageSharp.gatsbyImageData
-  )
-  const customerFocus = getImage(
-    data.customerFocus.childImageSharp.gatsbyImageData
-  )
-  const continuousImprovement = getImage(
-    data.continuousImprovement.childImageSharp.gatsbyImageData
-  )
+  const { innovation, collaboration, transparency, teamMeeting, customerFocus, continuousImprovement } = useCombinedQuery()
   return (
     <div>
       <Seo

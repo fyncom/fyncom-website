@@ -14,6 +14,26 @@ export const useCombinedQuery = () => {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
+      increaseResponseRates: file( relativePath: { eq: "increase-response=rates-across-any platform-and-channel.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      tinderLogo: file(relativePath: { eq: "logos/tinder-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 320, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      discordLogo: file(relativePath: { eq: "logos/Discord-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      telegramLogo: file(relativePath: { eq: "logos/telegram-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 135, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
       appStoreBadge: file(relativePath: { eq: "apple-en.png" }) {
         childImageSharp {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
@@ -327,6 +347,10 @@ export const useCombinedQuery = () => {
     karmacallLogoNoTaglineDark: data.karmacallLogoNoTaglineDark.childImageSharp.fixed,
     filterImage: getImage(data.fyncomFilterGmail.childImageSharp.gatsbyImageData),
     filterImageDark: getImage(data.fyncomFilterGmailDark.childImageSharp.gatsbyImageData),
+    increaseResponseRates: getImage(data.increaseResponseRates.childImageSharp.gatsbyImageData),
+    tinderLogo: getImage(data.tinderLogo.childImageSharp.gatsbyImageData),
+    discordLogo: getImage(data.discordLogo.childImageSharp.gatsbyImageData),
+    telegramLogo: getImage(data.telegramLogo.childImageSharp.gatsbyImageData),
     appStoreBadge: getImage(data.appStoreBadge.childImageSharp.gatsbyImageData),
     googlePlayBadge: getImage(data.googlePlayBadge.childImageSharp.gatsbyImageData),
     teamMeeting: getImage(data.teamMeeting.childImageSharp.gatsbyImageData),

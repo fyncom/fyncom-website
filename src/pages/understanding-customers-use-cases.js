@@ -3,75 +3,11 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/sales-and-marketing-use-cases.css"
 import Seo from "../components/seo"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const UnderstandingCustomersUseCase = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      slicktext: file(
-        relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      customerHeroImage: file(
-        relativePath: { eq: "illustrations/marketing-mobile-survey.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      seamlessIntegrations: file(
-        relativePath: { eq: "illustrations/seamless-integrations-comfy.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      loyalCustomers: file(
-        relativePath: { eq: "illustrations/identifying-loyal-customers.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      driveAdoption: file(
-        relativePath: { eq: "illustrations/customer-journey-optimization.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const sendgrid = getImage(data.sendgrid.childImageSharp.gatsbyImageData)
-  const slicktext = getImage(data.slicktext.childImageSharp.gatsbyImageData)
-  const zapier = getImage(data.zapier.childImageSharp.gatsbyImageData)
-  const customerHeroImage = getImage(
-    data.customerHeroImage.childImageSharp.gatsbyImageData
-  )
-  const seamlessIntegrations = getImage(
-    data.seamlessIntegrations.childImageSharp.gatsbyImageData
-  )
-  const loyalCustomers = getImage(
-    data.loyalCustomers.childImageSharp.gatsbyImageData
-  )
-  const driveAdoption = getImage(
-    data.driveAdoption.childImageSharp.gatsbyImageData
-  )
-
+  const { sendgrid, slicktext, zapier, customerHeroImage, seamlessIntegrations, loyalCustomers, driveAdoption } = useCombinedQuery()
   return (
     <div className="understanding-customers-use-cases">
       <Seo

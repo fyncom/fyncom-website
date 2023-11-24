@@ -3,75 +3,11 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/sales-and-marketing-use-cases.css"
 import Seo from "../components/seo"
-import { graphql, useStaticQuery } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const SalesUseCases = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      sendgrid: file(relativePath: { eq: "logos/SG_Twilio_Lockup_RGBx1.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      slicktext: file(
-        relativePath: { eq: "logos/SlickText_Logo-Transparent.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      zapier: file(relativePath: { eq: "logos/2560px-Zapier_logo.png" }) {
-        childImageSharp {
-          gatsbyImageData(width: 600, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      salesHeroImage: file(
-        relativePath: { eq: "illustrations/sales-phone-calls.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 800, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      increaseBookings: file(
-        relativePath: { eq: "illustrations/increase-bookings.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      accelerateDeals: file(
-        relativePath: { eq: "illustrations/deal-acceleration-charts.png" }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-      minMax: file(
-        relativePath: {
-          eq: "illustrations/min-max-gift-rewards-value-mobile.png"
-        }
-      ) {
-        childImageSharp {
-          gatsbyImageData(width: 375, layout: CONSTRAINED, placeholder: BLURRED)
-        }
-      }
-    }
-  `)
-  const sendgrid = getImage(data.sendgrid.childImageSharp.gatsbyImageData)
-  const slicktext = getImage(data.slicktext.childImageSharp.gatsbyImageData)
-  const zapier = getImage(data.zapier.childImageSharp.gatsbyImageData)
-  const salesHeroImage = getImage(
-    data.salesHeroImage.childImageSharp.gatsbyImageData
-  )
-  const increaseBookings = getImage(
-    data.increaseBookings.childImageSharp.gatsbyImageData
-  )
-  const accelerateDeals = getImage(
-    data.accelerateDeals.childImageSharp.gatsbyImageData
-  )
-  const minMax = getImage(data.minMax.childImageSharp.gatsbyImageData)
-
+  const { sendgrid, slicktext, zapier, salesHeroImage, increaseBookings, accelerateDeals, minMax } = useCombinedQuery()
   return (
     <div className="sales-use-cases">
       <Seo
