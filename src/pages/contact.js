@@ -11,12 +11,12 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const Contact = () => {
+  const { fyncomFiltersWords, fyncomFiltersWordsDark } = useCombinedQuery()
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false)
   const [isFailureModalOpen, setFailureModalOpen] = useState(false)
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [modalMessage, setModalMessage] = useState("")
   const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords)
-  const { fyncomFiltersWords, fyncomFiltersWordsDark } = useCombinedQuery()
 
   const handleChange = e => {
     const { name, value } = e.target
