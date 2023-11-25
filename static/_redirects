@@ -14,11 +14,13 @@
 /crowdin-rewards-for-user-translations-setup  /user-help-center/crowdin-rewards-for-translations-user-setup  301
 /email-filters-and-rewards  /user-help-center/email-filters-and-rewards  301
 
+
 # Desired URLs for help center, but using the below as a temporary workaround
 /account-balance-help  /help-center/account-balance-help  301
 /add-fyncom-rewards-to-sendgrid-marketing-email  /help-center/add-fyncom-rewards-to-sendgrid-marketing-email  301
 /email-forwarding-setup-for-instant-rewards-delivery  /help-center/email-forwarding-setup-for-instant-rewards-delivery  301
 /rewards-for-emails-text-and-more  /help-center/rewards-for-emails-text-and-more  301
+/rewards-for-emails-texts-and-more  /help-center/rewards-for-emails-text-and-more  301
 /sendgrid-drafts-preparation  /help-center/sendgrid-drafts-preparation  301
 /sendgrid-integration-api-key  /help-center/sendgrid-integration-api-key  301
 /simple-email-rewards-setup  /help-center/simple-email-rewards-setup  301
