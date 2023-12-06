@@ -1,0 +1,88 @@
+---
+title: "Original White Paper on Refundable Deposits in Communication"
+description: "Explore our innovative approach to authenticate communications using refundable deposits."
+keywords: "communication, authentication, refundable deposits, scam prevention"
+---
+
+import { CollapsibleSection, SEO, Wrapper } from '../../components'
+import { useState } from 'react'
+
+
+export const meta = {
+  title: "Original White Paper",
+  description:
+    "Learn about our original concept around refundable deposits in communication for better authenticity.",
+    keywords="refundable, deposits, communication, authentication"
+}
+
+
+<Wrapper seo={meta}>
+
+# Original White Paper on Refundable Deposits in Communication
+
+Your introductory text here ...
+
+<CollapsibleSection title="Introduction">
+The rise of technology has outpaced the wisdom of generations, leading to a drastic increase in robocalls and malicious spam calls. With 5.6 billion calls placed in October 2019, it's clear that the efforts to control bad actors, or "spammers," through regulations have fallen short. This proposal introduces a mobile application, RoboCash, which uses refundable NanoDeposits to economically disincentivize high volumes of malicious phone calls. Contacts are automatically whitelisted, while unknown numbers must send a NanoDeposit to ring through. NanoDeposits are instantly refundable to good faith parties but forfeited by malicious spammers.
+
+(Further details about the rise in phone scams, estimated losses to Americans, and the failure of anti-spam applications and laws are elaborated here.)
+</CollapsibleSection>
+
+<CollapsibleSection title="The Method">
+Bob wishes to call Alice, who uses RoboCash. If Bob is not in Alice's contacts, he must send a NanoDeposit through RoboCash to initiate the call. If Alice does not answer, or the call lasts longer than 25 seconds, Bob's NanoDeposit is refunded. If the call is shorter than 25 seconds, Alice keeps 80% of the NanoDeposit as a deterrent against scam calls. The time and NanoDeposit amount are configurable, enabling adjustments to maximize effectiveness against phone spam farms.
+
+Bob will forfeit his NanoDeposit if:
+a. Alice answers the call and the call time is less than 25 seconds. In this case Alice gets 80% of Bob's NanoDeposit and RoboCash keeps the rest.
+
+The time should be long enough that Alice has a chance to determine whether Bob is a bad actor or not, yet short enough that users are not forced to change typical phone call behavior. This paper estimates that time to be 25 seconds. It should be noted that if Bob is on Alice's contact list the phone call proceeds as normal and the RoboCash escrow protocol is not needed. Furthermore, the NanoDeposit value and call time are tunable thus can be adjusted. The app is merely a deterrent against bad actors. Any phone spam farms that attempt to work around this protocol will quickly find that this is not profitable as the high volume of hang-ups per day each costing a NanoDeposit will eat into any fraud-derived profits.
+
+(Figure 3. Logic flow chart of a time-based refundable escrow as an economic deterrent against spam calls is referenced here.)
+</CollapsibleSection>
+
+<CollapsibleSection title="Discussion">
+Installation of the KarmaCall mobile application promotes awareness and education of these types of scams. The network effect is imperative in order to make this app work on a meaningful scale. (Figure 4 shows the expected outcome on fraud-derived profits.) As the KarmaCall network grows to include more and more users who do not pick up calls from unknown numbers (unless paid a NanoDeposit), the pool of available devices for malicious parties to harass becomes smaller and smaller. In order to reach the threshold for the network effect and drive adoption, the app will be ad-free and free of cost for all users. There is no “buy-in” needed to use the app to block unknown calls or accept NanoDeposits. No identifying information besides a phone number is needed. KarmaCall is designed to be as nonintrusive as possible in its role as an escrow wallet between Bob and Alice.
+
+KarmaCall takes care of all the work for the users in an intuitive way. For example, when a user signs up with their phone number, KarmaCall creates a unique wallet ID and attaches it to the phone number. When a balance is present, NanoDeposits are sent out for every call made through the KarmaCall app’s dialer. If no callee wallet is found, deposits are immediately refunded so no loss ever occurs. This necessitates a social push for users who wish to call each other to trade contact information and save the contacts to their phones, thus forgoing the chance of “false positives” (e.g., blocking legitimate callers). However, the FynCom protocol is unlike any other spam solution in existence; when used in apps like KarmaCall, false positives get a chance to bypass the filter using refundable NanoDeposits.
+
+The only users that need to “pay-in” are those that plan to make cold calls. These entities can be primitively generalized as businesses. Paying NanoDeposits to reach users will become part of the customer acquisition cost of these businesses. This app promotes itself in two ways:
+
+1. Indiscriminately prevent all robocalls, spam calls, and unknown numbers, solving the “false positive” problem by giving genuine unknown calls a filter bypass protocol.
+2. If an unknown call gets through, the user knows they are being paid for it and thus are incentivized to answer their phone. If it is a robodial, spam call, or someone that does not immediately identify themselves, the user can simply hang up and pocket the NanoDeposit to punish the bad actor.
+
+(An interesting discussion point is that over time, users will begin to associate incoming “unknown calls” with “NanoDeposits”; that is, they begin to associate unknown calls with money. This changes the dynamics of the existing relationship between callers and receivers.)
+</CollapsibleSection>
+
+
+<CollapsibleSection title="Requirements">
+The primary requirements for a payment platform that can provide KarmaCall with refundable NanoDeposits as an anti-spam mechanism are the following:
+1. Fee-free to ensure that the use of NanoDeposits remains cost-effective.
+2. Real-time settlement to facilitate immediate refunds.
+3. No fees to open new wallets to simplify the user adoption process.
+4. Scalable to support a vast number of transactions as the user base grows.
+5. Lightweight implementation to prevent draining battery life and consuming excessive resources on users' smartphones.
+6. Attempts to be decentralized to distribute control and reduce the likelihood of a single point of failure.
+
+These requirements are crucial for an application intended to handle the volume of transactions associated with call-based interactions between smartphones. KarmaCall can operate with a "pure currency" distributed ledger, providing a lightweight framework that allows it to function efficiently on a user's smartphone without unnecessary drain on battery life. Furthermore, a distributed ledger that strives for decentralization is more likely to align with user interests by increasing the number of honest nodes routing transactions.
+
+Additionally, this strategy removes regulatory pressure from common carriers by empowering users to determine what constitutes "spam." If performed effectively, this approach not only heightens awareness of the spam problem but also leads to a significant reduction in phone spam volume. Ultimately, if this venture is executed successfully, it will demonstrate the practicality of using fee-free, real-time, and refundable NanoDeposits to transform societal interactions—a solution initiated by technology to address a problem technology itself has caused.
+</CollapsibleSection>
+
+
+<CollapsibleSection title="Conclusions">
+While previous anti-spam solutions have focused on detecting spam calls as symptoms of the problem, KarmaCall targets the primary cause: economic incentives. These incentives are placed in favor of the users (i.e., get paid to be part of the solution) and against the callers (i.e., spend money on spamming, get refunds for honesty) through a free mobile application. This innovation necessitates a shift in how we permit others to contact us, allowing us to value our time properly and giving us financial control over our own data. Technology began this issue, and it shall also end it.
+</CollapsibleSection>
+
+<CollapsibleSection title="Acknowledgements">
+Special thanks go to Dan Jenkins, an early advisor who recognized the potential of this application and was instrumental in accelerating the pace of this endeavor.
+</CollapsibleSection>
+
+
+
+<CollapsibleSection title="References">
+[1] [Robocalls are overwhelming hospitals and patients](https://www.nytimes.com/2018/05/06/your-money/robocalls-rise-illegal.html)
+[2] [Google's Pixel phones will soon be able to automatically ignore spam calls](https://www.theverge.com/2018/4/11/17223904/google-pixel-phone-app-spam-call-voicemail-update-android)
+[3] [The Nigerian Prince: Old Scam, New Twist](https://www.bbb.org/new-york-city/get-consumer-help/articles/the-nigerian-prince-old-scam-new-twist/)
+... and so on for each reference in the white paper.
+</CollapsibleSection>
+
+<Wrapper>
