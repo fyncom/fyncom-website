@@ -1,0 +1,38 @@
+.legal-container {
+  display: flex;
+  flex-direction: column;
+}
+.legal-container p, .legal-container li {
+  align-self: start;
+  max-width: 1000px;
+}
+.legal-container ol {
+  margin-bottom: 0rem; 
+  margin-top: 0;
+}
+.legal-text-container-table {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+.legal-text-container {
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+.legal-text-container > ol > li > strong {
+  font-size: 20px;
+  /* color: blue; */
+}
+/* .legal-text-container > ol > li { */
+  /* font-size: 9px; */
+  /* color: red; */
+/* } */
+/* .legal-text-container > ol > li {
+  font-size: 1px;
+  color: purple;
+} */
+
+/* .website-change-title {
+  font-size: 80px;
+  color: blue;
+} */

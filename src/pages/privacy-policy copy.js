@@ -2,26 +2,29 @@ import React from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/white-paper.css"
-import termsOfService from "../../static/pdfs/FynCom- Platform Terms of Service _CLEAN_ - 20220117.pdf"
+import privacyPolicy from "../../static/pdfs/FynCom- Privacy Policy - 20211221.pdf"
 import Seo from "../components/seo"
 import PdfContent from "../components/PdfContent"
 
-const TermsOfService = () => {
+const PrivacyPolicy = () => {
   return (
     <div>
-      <Seo title="Terms of Service" description="FynComs Terms of Service are listed here." />
+      <Seo
+        title="Privacy Policy"
+        description="FynCom's Privacy Policy is designed with you in mind. For a better future where our privacy is respected and enforced through personal paywalls!"
+      />
       <Header />
       {/* <div className="content-container">
-        <h1>FynCom's Terms of Service</h1>
-        <PdfContent file={termsOfService} />
+        <h1>FynCom's Privacy Policy</h1>
+        <PdfContent file={privacyPolicy} />
       </div> */}
       <div className="AppText">
         <div className="legal-container">
-          <h1>KarmaCall Privacy Policy</h1>
+          <h1>FynCom Privacy Policy</h1>
           <p>
             <strong>
               <br />
-              Last updated November 25, 2023
+              Last updated February 21th, 2023
             </strong>
             <br />
             <br />
@@ -447,4 +450,4 @@ const TermsOfService = () => {
   )
 }
 
-export default TermsOfService
+export default PrivacyPolicy
