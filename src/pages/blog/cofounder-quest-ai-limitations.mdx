@@ -1,0 +1,112 @@
+---
+title: "The Co-Founder Quest: Why AI Can't Replace Human Partnership"
+description: "After months of frustration with my iOS call forwarding app built with Kotlin Multiplatform, I discovered the issue was embarrassingly simple: one line of code that took months to find—and multiple advanced AI models failed to identify it."
+date: "2023-11-21"
+featuredImage: "../../images/blog/stick-angry.jpg"
+---
+
+import { Link } from "gatsby"
+import readingDocs from "../../images/blog/stick-angry.jpg"
+import foundBug from "../../images/blog/stick-done-with-it.jpg"
+import { Wrapper } from "../../components/Markdown-Wrapper"
+
+export const meta = {
+  title: "The Co-Founder Quest: Why AI Can't Replace Human Partnership",
+  description:
+    "After months of frustration with my iOS call forwarding app built with Kotlin Multiplatform, I discovered the issue was embarrassingly simple: one line of code that took months to find—and multiple advanced AI models failed to identify it.",
+}
+
+<Wrapper seo={meta}>
+
+# The Co-Founder Quest: Why AI Can't Replace Human Partnership
+
+## The One-Line Bug That Changed My Perspective
+
+After months of frustration with my iOS call forwarding app built with Kotlin Multiplatform, I discovered the issue was embarrassingly simple:
+
+
+```swift
+TwilioVoiceSDK.register(accessToken, deviceToken)
+```
+
+
+That's it. One line of code was all I needed, but it took me months to find it—and multiple advanced AI models failed to identify it.
+
+## The Technical Challenge: A Complex Refactoring Project
+
+{" "}
+<img className="float-left large" src={readingDocs} alt="Frustration with debugging" />
+
+What made this bug particularly elusive was the ambitious scope of what I was attempting:
+
+I was simultaneously refactoring two separate native codebases—Swift for iOS and Java/XML for Android (not using Jetpack Compose)—into a unified Kotlin Multiplatform solution. This meant:
+
+- Working across three different languages simultaneously
+- Managing the subtle differences in how each platform handles VoIP functionality
+- Translating native implementations to cross-platform alternatives
+- Maintaining feature parity during the transition
+
+When you're juggling this level of complexity, even a single missing line of code can be incredibly difficult to spot—especially when you're deep in the conversion process and dealing with multiple implementation paradigms.
+
+## The AI Gauntlet: Every Model Failed
+
+I put this problem through a gauntlet of the most advanced AI systems available. Each got a question and a 32,000 token file with the context: 
+
+- **Gemini Models** (2.0 Flash Thinking Experimental, Pro 2.0 Experimental)
+  - [2.0 Flash Thinking Experimental 01-21](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%2210r3evurFt8XyDwBfw3CIx9Ghvp9_hIiW%22%5D,%22action%22:%22open%22,%22userId%22:%22104555768638028513806%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
+  - [Pro 2.0 Experimental 02-05](https://aistudio.google.com/app/prompts?state=%7B%22ids%22:%5B%221g7L6bCSw_f-7W-ipkVGHoCK_FrqmCx9E%22%5D,%22action%22:%22open%22,%22userId%22:%22104555768638028513806%22,%22resourceKeys%22:%7B%7D%7D&usp=sharing)
+- **Claude Models** (Claude 3.5, Claude 3.7, Claude 3.7 with thinking enabled)
+  - [Claude 3.7 conversation](https://claude.ai/share/d322a0bc-46f7-46cc-82a5-08c662867eca)
+  - [Claude 3.7 with thinking mode](https://claude.ai/share/71a822e9-b7c3-4ff6-8d8d-fd8c2b1f12af)
+- **Grok Models** (Grok 3 beta with Deep thinking)
+  - [First attempt](https://x.com/i/grok/share/ceIDCsr7RyFQq6Jw3PElblET9) - Missed it and led me down irrelevant changes
+  - [Second attempt](https://x.com/i/grok/share/7shoP1UGXieOLXvlgEPLCEnbu) - Got it, but possibly only because I "trained it" with previous chat
+- **Perplexity** (with DeepSeek R1, O3 mini, Deep Research)
+  - [With DeepSeek R1](https://www.perplexity.ai/search/why-doesn-t-my-my-ios-app-work-M0_XEcCaTjWj73cbbPMafw)
+  - [With O3 mini](https://www.perplexity.ai/search/why-doesn-t-my-my-ios-app-work-c_h.RSo8QF61b9GQ.giW4g)
+  - [With Deep Research](https://www.perplexity.ai/search/why-doesn-t-my-my-ios-app-work-Jt27mKQFSLCaqw4oO9UZ1A)
+
+Despite feeding these models between 180,000-300,000 tokens of context from my codebase, none could identify that I simply hadn't registered the device token with Twilio.
+
+## The Hard Truth I Learned
+
+"[READ THE DOCS](https://www.twilio.com/docs/voice/sdks/ios/get-started#7-receive-an-incoming-call), PEOPLE! AIs won't always do this."
+
+{" "}
+<img src={foundBug} alt="The moment of realization after finding the bug" />
+
+If I had spent just five minutes reading the Twilio iOS VoIP SDK documentation, I would have avoided months of pain.
+
+## Why Human Partnership Matters
+
+This experience highlighted a critical insight: Some problems require the human touch of someone who is fully committed to your vision.
+
+A true co-founder—someone equally motivated and "all in"—would have:
+
+- Read the documentation when you didn't
+- Brought a fresh perspective to obvious oversights
+- Persisted through the frustration until finding a solution
+- Recognized when to step back from refactoring and verify the fundamentals
+- Potentially spotted inconsistencies between the original implementations and the KMP version
+
+## The Co-Founder Decision
+
+Finding the right co-founder isn't easy. As I noted:
+
+"If you're like me, you're like 'NOPE!'"
+
+But I've come to believe that finding this person is worth significant sacrifice:
+
+"If you're really all in on whatever you're working on, you won't hesitate at the thought of uprooting your life to find that good co-founder. Even if it takes years = it's worth the lost opportunity costs."
+
+## The Broader Lesson
+
+This isn't just about coding or bug fixes—it's about building something meaningful with the right people. As AI capabilities advance, the uniquely human qualities of partnership become even more valuable: intuition, persistence, emotional investment, and the willingness to do the unglamorous work of reading documentation.
+
+The journey to find that partner is itself a transformative process that shapes both you and your venture.
+
+{" "}
+<Link to={"/contact"}>Get in touch</Link> with us to learn how we can help you build your team
+and technology solutions.
+
+</Wrapper> 
