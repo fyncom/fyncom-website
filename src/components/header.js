@@ -5,6 +5,7 @@ import { helpItems } from "../../static/help-items"
 import { FaBars } from "react-icons/fa"
 import Img from "gatsby-image"
 import { useCombinedQuery } from "./useCombinedQuery"
+import { logEvent } from "../utils/analytics"
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -13,6 +14,7 @@ const Header = () => {
   const toggleMenu = event => {
     event.stopPropagation()
     setMenuOpen(!isMenuOpen)
+    logEvent("Navigation", "Mobile Menu Toggle", isMenuOpen ? "Close" : "Open")
   }
   const { fyncomLogoLight, fyncomLogoDark } = useCombinedQuery()
   // State to hold which logo to show
@@ -23,27 +25,18 @@ const Header = () => {
     if (typeof window !== "undefined") {
       const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
       const handleChange = e => {
-        setLogoData(
-          e.matches
-            ? fyncomLogoDark
-            : fyncomLogoLight
-        )
+        setLogoData(e.matches ? fyncomLogoDark : fyncomLogoLight)
       }
       handleChange(mediaQuery) // Initial check
       mediaQuery.addListener(handleChange) // Listen for changes
       return () => mediaQuery.removeListener(handleChange)
     }
-  }, [fyncomLogoLight, fyncomLogoDark,])
+  }, [fyncomLogoLight, fyncomLogoDark])
 
   useEffect(() => {
     const closeMenu = event => {
       // Verify if the menu is open and if the click target is not within the menu
-      if (
-        isMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        !hamburgerRef.current.contains(event.target)
-      ) {
+      if (isMenuOpen && menuRef.current && !menuRef.current.contains(event.target) && !hamburgerRef.current.contains(event.target)) {
         setMenuOpen(false) // Close the mobile menu
       }
     }
@@ -67,18 +60,11 @@ const Header = () => {
             <Img fixed={logoData} alt="FynCom Logo" />
           </div>
         </Link>
-        <div
-          ref={hamburgerRef}
-          className="mobile-menu-icon"
-          onClick={toggleMenu}
-        >
+        <div ref={hamburgerRef} className="mobile-menu-icon" onClick={toggleMenu}>
           <FaBars />
         </div>
         {/* Mobile Menu Panel */}
-        <nav
-          ref={menuRef}
-          className={isMenuOpen ? "mobile-menu open" : "mobile-menu"}
-        >
+        <nav ref={menuRef} className={isMenuOpen ? "mobile-menu open" : "mobile-menu"}>
           <ul>
             <li className="mobile-menu-item dropdown">
               <span className="mobile-dropbtn">
@@ -87,9 +73,7 @@ const Header = () => {
               <ul className="mobile-dropdown-content">
                 <Link to="/marketing-use-cases">Marketing</Link>
                 <Link to="/sales-use-cases">Sales</Link>
-                <Link to="/understanding-customers-use-cases">
-                  Understanding Customers
-                </Link>
+                <Link to="/understanding-customers-use-cases">Understanding Customers</Link>
               </ul>
             </li>
             <li className="mobile-menu-item">
@@ -107,12 +91,7 @@ const Header = () => {
               </span>
               <ul className="mobile-dropdown-content">
                 {helpItems.map(item => (
-                  <Link
-                    to={`/help-center/${
-                      item.topicUrl
-                    }?contentUrl=${encodeURIComponent(item.url)}`}
-                    key={item.title}
-                  >
+                  <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`} key={item.title}>
                     {item.title}
                   </Link>
                 ))}
@@ -129,9 +108,7 @@ const Header = () => {
             <div className="dropdown-content">
               <Link to="/marketing-use-cases">Marketing</Link>
               <Link to="/sales-use-cases">Sales</Link>
-              <Link to="/understanding-customers-use-cases">
-                Understanding Customers
-              </Link>
+              <Link to="/understanding-customers-use-cases">Understanding Customers</Link>
             </div>
           </li>
           <li>
@@ -149,12 +126,7 @@ const Header = () => {
             </Link>
             <div className="dropdown-content">
               {helpItems.map(item => (
-                <Link
-                  to={`/help-center/${
-                    item.topicUrl
-                  }?contentUrl=${encodeURIComponent(item.url)}`}
-                  key={item.title}
-                >
+                <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`} key={item.title}>
                   {item.title}
                 </Link>
               ))}

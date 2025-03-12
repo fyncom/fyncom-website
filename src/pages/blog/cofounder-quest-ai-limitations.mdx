@@ -9,6 +9,9 @@ import { Link } from "gatsby"
 import readingDocs from "../../images/blog/stick-angry.jpg"
 import foundBug from "../../images/blog/stick-done-with-it.jpg"
 import { Wrapper } from "../../components/Markdown-Wrapper"
+import { KarmacallAppStoreModal } from "../../components/Modal"
+import { useState } from "react"
+import "../../components/blog.css"
 
 export const meta = {
   title: "The Co-Founder Quest: Why AI Can't Replace Human Partnership",
@@ -67,7 +70,7 @@ I put this problem through a gauntlet of the most advanced AI systems available.
   - [With O3 mini](https://www.perplexity.ai/search/why-doesn-t-my-my-ios-app-work-c_h.RSo8QF61b9GQ.giW4g)
   - [With Deep Research](https://www.perplexity.ai/search/why-doesn-t-my-my-ios-app-work-Jt27mKQFSLCaqw4oO9UZ1A)
 
-Despite feeding these models between 180,000-300,000 tokens of context from my codebase, none could identify that I simply hadn't registered the device token with Twilio.
+Despite feeding these models between hundreds of thousand of tokens of context from my codebase (...even millions with Gemini models!), none could identify that I simply hadn't registered the device token with Twilio.
 
 ## The Hard Truth I Learned
 
@@ -107,7 +110,16 @@ This isn't just about coding or bug fixes—it's about building something meanin
 The journey to find that partner is itself a transformative process that shapes both you and your venture.
 
 {" "}
-<Link to={"/contact"}>Get in touch</Link> with us to learn how we can help you build your team
-and technology solutions.
+export const KarmaCallCTA = () => {
+  const [showModal, setShowModal] = useState(false);
+  return (
+    <div className="download-app-cta">
+      <p>Oh, and if you're curious to try out the "cash back for spam" app we built - <button onClick={() => setShowModal(true)} className="text-link-button">check it out here</button></p>
+      {showModal && <KarmacallAppStoreModal onClose={() => setShowModal(false)} />}
+    </div>
+  );
+};
+
+<KarmaCallCTA />
 
 </Wrapper> 

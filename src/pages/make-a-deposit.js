@@ -3,21 +3,26 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/white-paper.css"
 import "../components/blocked-email.css"
+import "../components/contact.css"
+import "../components/unicorner.css"
 import { useLocation } from "@reach/router"
 import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf"
 import Seo from "../components/seo"
 import PdfContent from "../components/PdfContent"
 import { MakeADepositModal } from "../components/Modal"
+import { logEvent } from "../utils/analytics"
 
 const MakeADeposit = () => {
   const [blockedEmailDetails, setBlockedEmailDetails] = useState(null)
   const location = useLocation()
-  const [dynamicMessage, setDynamicMessage] = useState(
-    "You're seeing this because you've gotten a \"PayCation\" email."
-  )
-  const [isModalOpen, setModalOpen] = useState(false)
+  const [dynamicMessage, setDynamicMessage] = useState("You're seeing this because you've gotten a \"PayCation\" email.")
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [urlToExecute, setUrlToExecute] = useState(null)
+  const [stripeUrl, setStripeUrl] = useState("")
+
   const toggleModal = () => {
-    setModalOpen(!isModalOpen)
+    setIsModalOpen(!isModalOpen)
+    logEvent("Deposit", "Toggle Nano Deposit Modal", isModalOpen ? "Close" : "Open")
   }
 
   useEffect(() => {
@@ -28,6 +33,12 @@ const MakeADeposit = () => {
       getBlockedEmailDetails(blockedEmailId)
     }
   }, [location])
+
+  useEffect(() => {
+    if (urlToExecute) {
+      window.location.href = urlToExecute
+    }
+  }, [urlToExecute])
 
   const getBlockedEmailDetails = async blockedEmailId => {
     let newUrl = `${process.env.GATSBY_API_URL}email/blocked/${blockedEmailId}`
@@ -86,6 +97,7 @@ const MakeADeposit = () => {
             className="learn-more-btn cash"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => logEvent("Deposit", "Click", "Stripe Deposit")}
           >
             Deposit cash
           </a>
@@ -111,33 +123,21 @@ const MakeADeposit = () => {
       <div className="content-container">
         <h1>Get Your Email Noticed. Make a Deposit. </h1>
         <sub>
-          Pay a small, refundable deposit to get your email to my main inbox &
-          get my immediate attention. If I respond, you get your deposit back.
-          Simple!
+          Pay a small, refundable deposit to get your email to my main inbox & get my immediate attention. If I respond, you get your deposit back. Simple!
         </sub>
-        <div
-          className="html-dynamic"
-          dangerouslySetInnerHTML={{ __html: dynamicMessage }}
-        ></div>
+        <div className="html-dynamic" dangerouslySetInnerHTML={{ __html: dynamicMessage }}></div>
         {renderPaymentButton()}
         <p>
-          Still here? Why not read something interesting? Ever get annoying
-          calls? Emails? DMs? Read below to find out how we're helping fix that
-          problem by getting people paid to block scam / spam and respond to
-          good messages.
+          Still here? Why not read something interesting? Ever get annoying calls? Emails? DMs? Read below to find out how we're helping fix that problem by
+          getting people paid to block scam / spam and respond to good messages.
         </p>
         <h2>Why Do Spam Calls Still Exist?</h2>
         <p>...and how can I stop scams, but get useful outreach?</p>
         <p>
-          That's the thought that started FynCom on a journey of exploring an
-          emerging market based in "communications + currency" to create trust
-          between strangers with shared interests. Here's our paper we wrote to
-          record our thought process - it later became{" "}
-          <a href="https://patents.google.com/patent/US11310368B2">
-            our 1st patent
-          </a>
-          , <a href="https://karmacall.com/">app</a>, and is the basis for how
-          we came to be. Thanks for reading! <br />
+          That's the thought that started FynCom on a journey of exploring an emerging market based in "communications + currency" to create trust between
+          strangers with shared interests. Here's our paper we wrote to record our thought process - it later became{" "}
+          <a href="https://patents.google.com/patent/US11310368B2">our 1st patent</a>, <a href="https://karmacall.com/">app</a>, and is the basis for how we
+          came to be. Thanks for reading! <br />
           <i>- Team FynCom</i>
         </p>
         <PdfContent file={whitePaper} />
