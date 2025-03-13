@@ -18,6 +18,19 @@ img {
 .float-left.large {
   max-width: 400px;
 }
+.float-left.larger {
+  max-width: 500px;
+}
+.float-left.largest {
+  max-width: 600px;
+}
+.float-right.larger {
+  max-width: 500px;
+}
+.list-container {
+  display: block;
+  clear: right;
+}
 a {
   color: var(--fyncom-light-blue);
 }
