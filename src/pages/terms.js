@@ -11,7 +11,7 @@ const Terms = () => {
     <div>
       <Seo
         title="Terms of Use"
-        description="Stay compliant with FynCom by ensuing you follow our Terms of Use dicussed here."
+        description="Stay compliant with FynCom by ensuring you follow our Terms of Use discussed here."
       />
       <Header />
       <div className="content-container">

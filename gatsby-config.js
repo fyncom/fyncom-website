@@ -15,6 +15,7 @@ module.exports = {
     siteUrl: `https://www.fyncom.com`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
