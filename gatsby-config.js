@@ -8,13 +8,22 @@ module.exports = {
     // todo: get 2 titles / descriptions based on whether someone is on the spam track or the rewards track.;
     // block spam calls/emails. My life goal is to make calls, emails, texts, DMs safe & enjoyable again.
     title: `Anti AI, Pro Human, Anti Spam Cash Back, CRM Rewards, Interactive Marketing | FynCom`,
-    description: `Get more conversations by instantly rewarding prospects when they respond to emails or book meetings.
-      Break sales funnel bottlenecks with automated rewards. Get FynCom set up in minutes & enhance your tech stack.
-      Improve customer experience & max your chances of gaining & retaining customers.`,
+    titleTemplate: `%s | FynCom`,
+    description: `Get more conversations by instantly rewarding prospects when they respond to emails or book meetings. Break sales funnel bottlenecks with automated rewards. Get FynCom set up in minutes & enhance your tech stack. Improve customer experience & max your chances of gaining & retaining customers.`,
+    image: '/images/fyncom-social-card.jpg',
+    twitterUsername: '@adrianegraphene',
     author: `@adrianegraphene`,
     siteUrl: `https://www.fyncom.com`,
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.fyncom.com',
+        sitemap: 'https://www.fyncom.com/sitemap-index.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-web-font-loader`,
