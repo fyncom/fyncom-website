@@ -24,7 +24,13 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: '/sitemap',
+        createLinkInHead: true
+      }
+    },
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
