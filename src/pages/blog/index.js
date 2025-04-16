@@ -28,27 +28,36 @@ export default function BlogIndex({ data }) {
           gap: "20px",
         }}
       >
-        {data.allMdx.nodes.map(({ id, excerpt, frontmatter, fields }) => (
-          <div className="blog-item" key={id}>
-            <Link className={"blog-link"} to={`${fields.slug}`}>
-              <h2>
-                <Link to={`${fields.slug}`}>{frontmatter.title}</Link>
-              </h2>
-              <small>{frontmatter.date}</small>
-              <p>{shortenText(frontmatter.description, 100)}</p>{" "}
-              {/* Truncate to 100 characters */}
-              {frontmatter.featuredImage?.childImageSharp ? (
-                <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
-              ) : (
-                <img
-                  className={"gif-image"}
-                  src={frontmatter.featuredImage?.publicURL}
-                  alt={frontmatter.title}
-                />
-              )}
-            </Link>
-          </div>
-        ))}
+        {data.allMdx.nodes
+          .filter(({ frontmatter }) => {
+            // Filter out posts without required content
+            return (
+              frontmatter.title && 
+              frontmatter.description && 
+              frontmatter.date
+            );
+          })
+          .map(({ id, excerpt, frontmatter, fields }) => (
+            <div className="blog-item" key={id}>
+              <Link className={"blog-link"} to={`${fields.slug}`}>
+                <h2>
+                  <Link to={`${fields.slug}`}>{frontmatter.title}</Link>
+                </h2>
+                <small>{frontmatter.date}</small>
+                <p>{shortenText(frontmatter.description || excerpt, 100)}</p>{" "}
+                {/* Truncate to 100 characters */}
+                {frontmatter.featuredImage?.childImageSharp ? (
+                  <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
+                ) : frontmatter.featuredImage?.publicURL ? (
+                  <img
+                    className={"gif-image"}
+                    src={frontmatter.featuredImage.publicURL}
+                    alt={frontmatter.title}
+                  />
+                ) : null}
+              </Link>
+            </div>
+          ))}
       </div>
     </Wrapper>
   )
