@@ -72,7 +72,7 @@ const Footer = () => {
               <Link to="/terms-of-service">Terms of Use</Link>
             </li>
             <li>
-              <Link to="/sitemap">Sitemap</Link>
+              <Link to="/sitemap-index.xml">Sitemap</Link>
             </li>
             <li>
               <Link to="/privacy-policy">Privacy Policy</Link>
