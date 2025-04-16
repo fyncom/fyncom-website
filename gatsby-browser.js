@@ -20,4 +20,12 @@ export const onRouteUpdate = () => {
   }
 }
 
+export const onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm("This website has been updated. Would you like to reload to display the latest version?")
+
+  if (answer === true) {
+    window.location.reload()
+  }
+}
+
 // You can delete this file if you're not using it
