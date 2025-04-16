@@ -87,13 +87,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-clearbit",
-      options: {
-        publishableKey: process.env.GATSBY_CLEARBIT_ID,
-        enableOnDevMode: true, // if 'false', clearbit will be fired on NODE_ENV=production only
-      },
-    },
-    {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
         pixelId: process.env.GATSBY_FACEBOOK_PIXEL,
