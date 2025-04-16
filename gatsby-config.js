@@ -27,8 +27,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: '/sitemap',
-        createLinkInHead: true
+        excludes: ["/subscribe/"],
+        output: "/"
       }
     },
     {
