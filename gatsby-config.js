@@ -24,7 +24,13 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }]
       }
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        excludes: ["/subscribe/"],
+        output: "/"
+      }
+    },
     {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
@@ -50,17 +56,19 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `FynCom - Anti-Spam Cash Back & CRM Rewards`,
+        short_name: `FynCom`,
         start_url: `/`,
-        background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/fyncom-icon.png`, // This path is relative to the root of the site.
+        background_color: `#ffffff`,
+        theme_color: `#0066FF`,
+        display: `standalone`,
+        icon: `src/images/fyncom-icon.png`,
+        icon_options: {
+          purpose: `any maskable`
+        }
       },
     },
+    `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
