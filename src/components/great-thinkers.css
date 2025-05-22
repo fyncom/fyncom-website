@@ -1,0 +1,192 @@
+/* Great Thinkers Page Styles */
+.great-thinkers-hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../images/team-meeting.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  margin-bottom: 40px;
+}
+
+.great-thinkers-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.great-thinkers-hero .subtitle {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.thinkers-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.thinkers-intro h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.thinkers-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.thinkers-grid {
+  margin-bottom: 60px;
+}
+
+.thinker-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .thinker-card {
+    flex-direction: row;
+  }
+}
+
+.thinker-image {
+  flex: 1;
+  min-height: 250px;
+}
+
+.placeholder-image {
+  background-color: #ddd;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-weight: bold;
+}
+
+.thinker-content {
+  flex: 2;
+  padding: 25px;
+}
+
+.thinker-content h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.thinker-quote {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding-left: 15px;
+  border-left: 3px solid #ff5c5c;
+}
+
+.thinker-description {
+  line-height: 1.6;
+}
+
+.connection-section {
+  background-color: #f2f2f2;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.connection-section h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.connection-section p {
+  max-width: 800px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff5c5c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #e54545;
+}
+
+.btn-secondary {
+  background-color: #333;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #222;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .thinker-card {
+    background-color: #2a2a2a;
+  }
+  
+  .thinker-content h3 {
+    color: #fff;
+  }
+  
+  .thinker-quote {
+    color: #ddd;
+  }
+  
+  .thinker-description {
+    color: #ccc;
+  }
+  
+  .connection-section {
+    background-color: #222;
+  }
+  
+  .connection-section h2 {
+    color: #fff;
+  }
+  
+  .connection-section p {
+    color: #ddd;
+  }
+  
+  .thinkers-intro h2 {
+    color: #fff;
+  }
+  
+  .thinkers-intro p {
+    color: #ddd;
+  }
+}
