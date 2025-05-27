@@ -2,6 +2,7 @@ import React from "react"
 import "../components/blog.css"
 import "../components/markdown.css"
 import { Wrapper } from "../components/Markdown-Wrapper"
+import MarkdownContent from "../components/MarkdownContent"
 
 const mentions = [
   {
@@ -146,54 +147,56 @@ const Mentions = () => {
       </section>
       <div style={{ marginTop: 20 }}>
         {mentions.map((item, idx) => (
-          <div className="blog-item" key={idx} style={{ marginBottom: 24 }}>
-            <h2>{item.title}</h2>
-            {item.highlights ? (
-              item.highlights.map((hl, i) => (
-                <div key={i} style={{ marginBottom: 12 }}>
-                  <a href={`${item.url}?t=${hl.start}`} target="_blank" rel="noopener noreferrer" className="text-link-button">
-                    {hl.label} ({new Date(hl.start * 1000).toISOString().substr(11, 8)})
+          <div className="blog-item" key={idx} style={{ marginBottom: 24, padding: 16 }}>
+            <h2 style={{ marginBottom: 8 }}>{item.title}</h2>
+            <ul style={{ marginLeft: 24, marginBottom: 8 }}>
+              {item.highlights ? (
+                item.highlights.map((hl, i) => (
+                  <li key={i} style={{ marginBottom: 8 }}>
+                    <a href={`${item.url}?t=${hl.start}`} target="_blank" rel="noopener noreferrer" className="text-link-button">
+                      <b>{hl.label}</b> ({new Date(hl.start * 1000).toISOString().substr(11, 8)})
+                    </a>
+                    <div style={{ marginLeft: 12 }}>{hl.summary}</div>
+                    <div className="video" style={{ maxWidth: 560, marginTop: 8, marginLeft: 12 }}>
+                      <iframe
+                        className="video"
+                        src={getYouTubeEmbedUrl(item.videoId, hl.start)}
+                        title={item.title}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                  </li>
+                ))
+              ) : (
+                <li>
+                  <a href={`${item.url}?t=${item.start}`} target="_blank" rel="noopener noreferrer" className="text-link-button">
+                    <b>Watch from {new Date(item.start * 1000).toISOString().substr(11, 8)}</b>
                   </a>
-                  <div>{hl.summary}</div>
-                  <div className="video" style={{ maxWidth: 560, marginTop: 8 }}>
+                  <div style={{ marginLeft: 12 }}>{item.summary}</div>
+                  <div className="video" style={{ maxWidth: 560, marginTop: 8, marginLeft: 12 }}>
                     <iframe
                       className="video"
-                      src={getYouTubeEmbedUrl(item.videoId, hl.start)}
+                      src={getYouTubeEmbedUrl(item.videoId, item.start)}
                       title={item.title}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
                   </div>
-                </div>
-              ))
-            ) : (
-              <>
-                <a href={`${item.url}?t=${item.start}`} target="_blank" rel="noopener noreferrer" className="text-link-button">
-                  Watch from {new Date(item.start * 1000).toISOString().substr(11, 8)}
-                </a>
-                <div>{item.summary}</div>
-                <div className="video" style={{ maxWidth: 560, marginTop: 8 }}>
-                  <iframe
-                    className="video"
-                    src={getYouTubeEmbedUrl(item.videoId, item.start)}
-                    title={item.title}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </>
-            )}
-            {item.quotes && item.quotes.length > 0 && (
-              <div style={{ marginTop: 8 }}>
-                {item.quotes.map((q, qi) => (
-                  <blockquote key={qi} style={{ marginLeft: 16 }}>
-                    <em>"{q.q}"</em> <span>- {q.by}</span>
-                  </blockquote>
-                ))}
-              </div>
-            )}
+                </li>
+              )}
+              {item.quotes && item.quotes.length > 0 && (
+                <ul style={{ marginLeft: 24, marginTop: 8 }}>
+                  {item.quotes.map((q, qi) => (
+                    <li key={qi}>
+                      <MarkdownContent content={`**Q:** ${q.q}\n**A:** _${q.by}_`} />
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </ul>
           </div>
         ))}
       </div>
