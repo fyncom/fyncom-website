@@ -1,0 +1,165 @@
+.mentions-header {
+  text-align: center;
+  padding: 3rem 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mentions-header h1 {
+  color: var(--fyncom-blue);
+  font-size: 48px;
+  margin-bottom: 1rem;
+}
+
+.mentions-header p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mentions-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 3rem;
+}
+
+.mention-section {
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.mention-section:last-child {
+  border-bottom: none;
+}
+
+.mention-section h2 {
+  color: var(--fyncom-blue);
+  font-size: 32px;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mention-content h3 {
+  color: var(--fyncom-blue);
+  font-size: 24px;
+  margin-bottom: 0.5rem;
+}
+
+.timestamp {
+  color: var(--fyncom-red);
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 1rem;
+}
+
+.highlight-text {
+  background-color: var(--highlight-bg, #f8f9fa);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--fyncom-blue);
+  margin-top: 1rem;
+}
+
+.highlight-text p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.highlight-text p:last-child {
+  margin-bottom: 0;
+}
+
+.conversation-format {
+  background-color: var(--highlight-bg, #f8f9fa);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--fyncom-red);
+  margin-top: 1rem;
+}
+
+.exchange {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color, #e0e0e0);
+}
+
+.exchange:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.exchange h4 {
+  color: var(--fyncom-blue);
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+.exchange p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.exchange p strong {
+  color: var(--fyncom-red);
+}
+
+@media (max-width: 768px) {
+  .mentions-header {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .mentions-header h1 {
+    font-size: 36px;
+  }
+  
+  .mentions-container {
+    padding: 0 1rem 2rem;
+  }
+  
+  .mention-section {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  }
+  
+  .mention-section h2 {
+    font-size: 24px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mention-content h3 {
+    font-size: 20px;
+  }
+  
+  .highlight-text,
+  .conversation-format {
+    padding: 1rem;
+  }
+  
+  .exchange h4 {
+    font-size: 16px;
+  }
+} 
