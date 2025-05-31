@@ -14,7 +14,7 @@ export const useCombinedQuery = () => {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
-      increaseResponseRates: file( relativePath: { eq: "increase-response=rates-across-any platform-and-channel.png" }) {
+      increaseResponseRates: file(relativePath: { eq: "increase-response=rates-across-any platform-and-channel.png" }) {
         childImageSharp {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
@@ -303,6 +303,26 @@ export const useCombinedQuery = () => {
           gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
+      foundersNetwork: file(relativePath: { eq: "logos/founders network.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      gasseeConsulting: file(relativePath: { eq: "logos/Gassée-Consulting-logo-transparent.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      nanoFoundation: file(relativePath: { eq: "logos/nano foundation.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      titaniusBots: file(relativePath: { eq: "logos/titanius bots.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
       evonexus: file(relativePath: { eq: "karmacall-site/evonexus-logo_dark.svg" }) {
         publicURL
       }
@@ -390,5 +410,9 @@ export const useCombinedQuery = () => {
     linkedInlogo: data.linkedInlogo.childImageSharp.fixed,
     fbLogo: data.fbLogo.childImageSharp.fixed,
     xLogo: data.xLogo.childImageSharp.fixed,
+    foundersNetwork: getImage(data.foundersNetwork.childImageSharp.gatsbyImageData),
+    gasseeConsulting: getImage(data.gasseeConsulting.childImageSharp.gatsbyImageData),
+    nanoFoundation: getImage(data.nanoFoundation.childImageSharp.gatsbyImageData),
+    titaniusBots: getImage(data.titaniusBots.childImageSharp.gatsbyImageData),
   }
 }
