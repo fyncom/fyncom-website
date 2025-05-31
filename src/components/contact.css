@@ -74,12 +74,12 @@
   max-height: 50px;
   max-width: 120px;
   object-fit: contain;
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
+  filter: none;
+  transition: opacity 0.3s ease;
 }
 
 .supporter-logo:hover img {
-  filter: grayscale(0%);
+  opacity: 0.8;
 }
 
 .contact-right {
@@ -158,6 +158,55 @@
   color: var(--color-text);
 }
 
+/* Styling for the FynCom Filters logo section */
+.contact-additional-content .centered {
+  text-align: center;
+  margin: 2rem 0;
+}
+.contact-additional-content h1.centered {
+  font-size: 2.5rem;
+  margin: 1.5rem 0 1rem;
+  color: var(--color-text);
+}
+.contact-additional-content h2.centered {
+  font-size: 1.5rem;
+  margin: 1rem 0 2rem;
+  color: var(--color-text-secondary, #666);
+  font-weight: 400;
+}
+/* FynCom Filters image container */
+.contact-additional-content > a {
+  display: block;
+  max-width: 600px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.contact-additional-content > a:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+/* Ensure the Gatsby image inside the link is properly sized */
+.contact-additional-content > a .gatsby-image-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+/* Reset app store styling to not be affected by FynCom Filters styling */
+.contact-additional-content .store-badges {
+  display: inline-block;
+  margin: 0 0.5rem;
+  max-width: 150px;
+  transition: none;
+}
+.contact-additional-content .store-badges:hover {
+  transform: none;
+  opacity: 1;
+}
+.contact-additional-content .app-img {
+  max-width: 150px;
+  height: auto;
+}
+
 .modal-failure {
   position: fixed;
   z-index: 1;
@@ -185,69 +234,82 @@
   .contact-container {
     padding: 0 1.5rem;
   }
-  
   .contact-layout {
     gap: 3rem;
   }
-  
   .contact-left {
     padding-right: 1rem;
   }
-  
   .contact-right {
     padding-left: 1rem;
   }
+  .contact-additional-content > a {
+    max-width: 500px;
+  }
 }
-
 @media (max-width: 768px) {
   .contact-container {
     padding: 0 1rem;
   }
-  
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
   .contact-left {
     padding-right: 0;
     text-align: center;
   }
-  
   .contact-left h1 {
     font-size: 2rem;
   }
-  
   .contact-right {
     padding-left: 0;
   }
-  
   .supporters-logos {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
   .supporter-logo {
     height: 50px;
   }
-  
   .supporter-logo img {
     max-height: 40px;
     max-width: 100px;
   }
+  .contact-additional-content h1.centered {
+    font-size: 2rem;
+  }
+  .contact-additional-content h2.centered {
+    font-size: 1.3rem;
+  }
+  .contact-additional-content > a {
+    max-width: 400px;
+  }
+  .contact-additional-content .app-img {
+    max-width: 130px;
+  }
 }
-
 @media (max-width: 480px) {
   .contact-left h1 {
     font-size: 1.8rem;
   }
-  
   .supporters-logos {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
   .contact-form {
     padding: 1.5rem;
+  }
+  .contact-additional-content h1.centered {
+    font-size: 1.8rem;
+  }
+  .contact-additional-content h2.centered {
+    font-size: 1.2rem;
+  }
+  .contact-additional-content > a {
+    max-width: 350px;
+  }
+  .contact-additional-content .app-img {
+    max-width: 120px;
   }
 }
