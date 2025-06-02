@@ -140,6 +140,8 @@ const Mentions = () => {
               title: "The Truth About AI: Sam Lessin's Contrarian Take",
               timestamp: "Watch ~3 minutes starting at 10:15",
               embedUrl: "https://www.youtube.com/watch?v=R_aHzJGrBN0&t=615s",
+              directUrl: "https://www.youtube.com/watch?v=R_aHzJGrBN0&t=615s",
+              isEmbeddable: false,
             }}
           />
           <div className="mention-content">
@@ -171,6 +173,8 @@ const Mentions = () => {
               title: "Bootstrapping an AI Company to $5M ARR - Whippy CEO David Daneshgar",
               timestamp: "Watch 3.5 minutes starting at 26:47 for 40s",
               embedUrl: "https://www.youtube.com/watch?v=OWNppXSQOlA&t=1607s",
+              directUrl: "https://www.youtube.com/watch?v=OWNppXSQOlA&t=1607s",
+              isEmbeddable: false,
             }}
           />
           <div className="mention-content">
