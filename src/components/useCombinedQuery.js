@@ -14,7 +14,7 @@ export const useCombinedQuery = () => {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
-      increaseResponseRates: file( relativePath: { eq: "increase-response=rates-across-any platform-and-channel.png" }) {
+      increaseResponseRates: file(relativePath: { eq: "increase-response=rates-across-any platform-and-channel.png" }) {
         childImageSharp {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
         }
@@ -295,10 +295,30 @@ export const useCombinedQuery = () => {
       }
       disruptionBanking: file(relativePath: { eq: "karmacall-site/disruption-banking-logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED, backgroundColor: "#FFFFFF")
         }
       }
       disruptionBankingDark: file(relativePath: { eq: "karmacall-site/disruption-banking-logo-white.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED, backgroundColor: "#FFFFFF")
+        }
+      }
+      foundersNetwork: file(relativePath: { eq: "logos/founders network.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      gasseeConsulting: file(relativePath: { eq: "logos/Gassée-Consulting-logo-transparent.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      nanoFoundation: file(relativePath: { eq: "logos/nano foundation.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      titaniusBots: file(relativePath: { eq: "logos/titanius bots.png" }) {
         childImageSharp {
           gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
         }
@@ -322,6 +342,24 @@ export const useCombinedQuery = () => {
       happyLady: file(relativePath: { eq: "karmacall-site/smiling-lady-on-phone.jpg" }) {
         childImageSharp {
           gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      goaheadVentures: file(relativePath: { eq: "logos/goahead-ventures-logo.svg" }) {
+        publicURL
+      }
+      title3funds: file(relativePath: { eq: "logos/title-3-funds-logo-512pxH.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      westcliffUniversity: file(relativePath: { eq: "logos/westcliff-university-logo.webp" }) {
+        childImageSharp {
+          gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+      westcliffUniversityDark: file(relativePath: { eq: "logos/westcliff-blue-white-logo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 200, layout: CONSTRAINED, placeholder: BLURRED)
         }
       }
     }
@@ -390,5 +428,13 @@ export const useCombinedQuery = () => {
     linkedInlogo: data.linkedInlogo.childImageSharp.fixed,
     fbLogo: data.fbLogo.childImageSharp.fixed,
     xLogo: data.xLogo.childImageSharp.fixed,
+    foundersNetwork: getImage(data.foundersNetwork.childImageSharp.gatsbyImageData),
+    gasseeConsulting: getImage(data.gasseeConsulting.childImageSharp.gatsbyImageData),
+    nanoFoundation: getImage(data.nanoFoundation.childImageSharp.gatsbyImageData),
+    titaniusBots: getImage(data.titaniusBots.childImageSharp.gatsbyImageData),
+    goaheadVentures: data.goaheadVentures.publicURL,
+    title3funds: getImage(data.title3funds.childImageSharp.gatsbyImageData),
+    westcliffUniversity: getImage(data.westcliffUniversity.childImageSharp.gatsbyImageData),
+    westcliffUniversityDark: getImage(data.westcliffUniversityDark.childImageSharp.gatsbyImageData),
   }
 }
