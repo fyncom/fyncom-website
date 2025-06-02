@@ -17,17 +17,31 @@ const Mentions = () => {
     document.body.style.overflow = "unset" // Restore scrolling
   }
 
-  const VideoTrigger = ({ videoData, children }) => (
-    <button className="video-trigger" onClick={() => openModal(videoData)}>
-      <div className="video-trigger-content">
-        <div>
-          <h3>{videoData.title}</h3>
-          <p className="timestamp">{videoData.timestamp}</p>
+  const VideoTrigger = ({ videoData, children }) => {
+    // Check if video is embeddable or should open directly
+    const isEmbeddable = videoData.isEmbeddable !== false
+
+    const handleClick = () => {
+      if (isEmbeddable) {
+        openModal(videoData)
+      } else {
+        // Open YouTube video directly in new tab
+        window.open(videoData.directUrl || videoData.embedUrl, "_blank")
+      }
+    }
+
+    return (
+      <button className="video-trigger" onClick={handleClick}>
+        <div className="video-trigger-content">
+          <div>
+            <h3>{videoData.title}</h3>
+            <p className="timestamp">{videoData.timestamp}</p>
+          </div>
+          <span className="play-icon">▶</span>
         </div>
-        <span className="play-icon">▶</span>
-      </div>
-    </button>
-  )
+      </button>
+    )
+  }
 
   const VideoModal = ({ video, isOpen, onClose }) => {
     if (!video) return null
@@ -80,6 +94,8 @@ const Mentions = () => {
               title: "Stanford ECON295/CS323 - Business of AI, Reid Hoffman",
               timestamp: "Watch 1.5 minutes starting at 39:48-41:10 again at 48:10-49:30",
               embedUrl: "https://www.youtube.com/embed/RXjLGn14Jo4?start=2880",
+              directUrl: "https://www.youtube.com/watch?v=RXjLGn14Jo4&t=2880s",
+              isEmbeddable: false,
             }}
           />
           <div className="mention-content">
@@ -120,7 +136,7 @@ const Mentions = () => {
           <h2>On Digital Identity and Trust</h2>
           <VideoTrigger
             videoData={{
-              title: "The Truth About AI: Sam Lessin’s Contrarian Take",
+              title: "The Truth About AI: Sam Lessin's Contrarian Take",
               timestamp: "Watch ~3 minutes starting at 10:15",
               embedUrl: "https://www.youtube.com/watch?v=R_aHzJGrBN0&t=615s",
             }}
@@ -219,7 +235,6 @@ const Mentions = () => {
               embedUrl: "https://www.youtube.com/embed/H90HY-lGraw?start=1100",
             }}
           />
-          =
           <div className="mention-content">
             <div className="highlight-text">
               <p>
