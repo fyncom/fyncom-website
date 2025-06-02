@@ -132,7 +132,6 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* // this one may not be embeddble? - so maybe link directly to the youtube video online */}
         <section className="mention-section">
           <h2>On Digital Identity and Trust</h2>
           <VideoTrigger
@@ -165,18 +164,19 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* // this one may not be embeddble? - so maybe link directly to the youtube video online */}
         <section className="mention-section">
           <h2>On Communication Protocols</h2>
           <VideoTrigger
             videoData={{
               title: "Bootstrapping an AI Company to $5M ARR - Whippy CEO David Daneshgar",
-              timestamp: "Watch 3.5 minutes starting at 26:47 for 40s",
+              timestamp: "Watch 40s starting at 26:47",
               embedUrl: "https://www.youtube.com/watch?v=OWNppXSQOlA&t=1607s",
               directUrl: "https://www.youtube.com/watch?v=OWNppXSQOlA&t=1607s",
               isEmbeddable: false,
             }}
           />
+          {/* todo fix the discussion here. David talks about how he uses AI on a daily basis, and mentions how his sales teams might use it too. He then, offhand mentions,
+          cases where he, himself is subject to this kind of personalized automation so often that he is starting to get jaded. */}
           <div className="mention-content">
             <div className="highlight-text">
               <p>
