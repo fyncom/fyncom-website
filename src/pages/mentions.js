@@ -71,188 +71,14 @@ const Mentions = () => {
         </p>
       </section>
 
+      {/* // this video is not embeddble - so maybe link directly to the youtube video online */}
       <div className="mentions-container">
-        <section className="mention-section">
-          <h2>On Digital Identity and Trust</h2>
-          <VideoTrigger
-            videoData={{
-              title: "Day One Solana Investor: Why AI is Overhyped - Joe Sam Lesin & Joe Lonsdale",
-              timestamp: "15:00 - 18:00",
-              embedUrl: "https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID?start=900",
-            }}
-          />
-          <div className="mention-content">
-            <div className="highlight-text">
-              <p>
-                <strong>The Identity Crisis of the Open Internet:</strong> Joe starts by asking Sam about Sam's role in online identity, leading to a discussion
-                about a friend working on anti-fraud in Africa. This conversation reveals a fundamental truth: the open internet brought unprecedented
-                connectivity, but at the cost of identity verification and trust.
-              </p>
-              <p>
-                <strong>The Trust Deficit:</strong> The discussion centers on how the lack of identity verification mechanisms has created a trust vacuum in
-                digital communications. This is precisely the problem FynCom's refundable deposits technology addresses - creating economic incentives that
-                restore trust between unknown parties.
-              </p>
-              <p>
-                <strong>Real-World Impact:</strong> The anti-fraud work in Africa mentioned in the conversation highlights how identity and trust issues aren't
-                just theoretical - they have real economic and social consequences, particularly in developing markets where digital trust is crucial for
-                economic participation.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mention-section">
-          <h2>On Communication Protocols</h2>
-          <VideoTrigger
-            videoData={{
-              title: "Bootstrapping an AI Company to $5M ARR - Whippy CEO David Daneshgar",
-              timestamp: "23:34 - 27:10",
-              embedUrl: "https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID?start=1414",
-            }}
-          />
-          <div className="mention-content">
-            <div className="highlight-text">
-              <p>
-                <strong>The Future of Communication Protocols:</strong> Whippy CEO David Daneshgar discusses communication protocols at a higher level that
-                perfectly aligns with future expectations for seamless, trusted digital interactions. This is considered the best video out of all the examples
-                for its clarity and vision.
-              </p>
-              <p>
-                <strong>Protocol Evolution:</strong> Daneshgar's insights reveal how communication protocols must evolve beyond simple message delivery to
-                include trust verification, spam prevention, and value exchange - exactly what FynCom's technology enables through refundable deposits.
-              </p>
-              <p>
-                <strong>Business Applications:</strong> The discussion shows how advanced communication protocols can transform business operations, customer
-                engagement, and digital trust - making this highly relevant for companies looking to implement FynCom's solutions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mention-section">
-          <h2>On Agent Communication and Trust Transfer</h2>
-          <VideoTrigger
-            videoData={{
-              title: "AI's Trillion Dollar Opportunity: Sequoia AI Ascent 2025",
-              timestamp: "Multiple segments: 21:46-22:46, 23:51-24:35, 24:30-25:05",
-              embedUrl: "https://www.youtube.com/embed/v9JBMnxuPX8?start=1431",
-            }}
-          />
-          <div className="mention-content">
-            <div className="highlight-text">
-              <p>
-                <strong>Seamless Communications Protocols (23:51-24:35):</strong> The discussion of seamless communication protocols is remarkably close to what
-                FynCom is building. The speakers recognize that future AI systems will need robust communication frameworks that can handle trust, verification,
-                and value transfer.
-              </p>
-              <p>
-                <strong>Transfer of Trust (24:30-25:05):</strong> This segment introduces the critical concept of "Transfer of Trust" between AI agents. As AI
-                systems become more autonomous, they'll need mechanisms to establish and transfer trust - exactly what FynCom's refundable deposits enable in
-                digital communications.
-              </p>
-              <p>
-                <strong>Agent Swarms and Trust Networks (21:46-22:46):</strong> The discussion of agent swarms reveals the complexity of maintaining trust in
-                automated systems. When multiple AI agents interact, traditional security measures become insufficient, requiring economic incentives like those
-                provided by FynCom's technology.
-              </p>
-              <p>
-                <strong>Stochastic Challenges:</strong> The speakers note that the stochastic approach of agents creates additional challenges for typical spam
-                prevention techniques, highlighting the need for more sophisticated solutions like financial filtering.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mention-section">
-          <h2>On AI-Powered Social Engineering</h2>
-          <VideoTrigger
-            videoData={{
-              title: "Jeffrey Katzenberg on 2024 Election, Cybersecurity and New Health Venture",
-              timestamp: "18:13 - 19:00",
-              embedUrl: "https://www.youtube.com/embed/H90HY-lGraw?start=1093",
-            }}
-          />
-          <div className="mention-content">
-            <div className="highlight-text">
-              <p>
-                <strong>AI Voice and Email Impersonation:</strong> Katzenberg discusses sophisticated AI systems that can imitate tone of voice and writing
-                style in emails, specifically targeting vulnerable populations like elderly individuals. This represents a new frontier in social engineering
-                attacks.
-              </p>
-              <p>
-                <strong>The "Door" Analogy:</strong> Katzenberg emphasizes that "once attackers get through the door, it's over," making a compelling case for
-                preventive measures. This perfectly illustrates why FynCom's approach of creating a financial barrier at the communication entry point is so
-                crucial.
-              </p>
-              <p>
-                <strong>Delegation and Filtering:</strong> The discussion touches on delegation strategies where younger people handle unknown communications
-                for elderly relatives. FynCom's financial filters provide a more systematic and scalable solution to this problem.
-              </p>
-              <p>
-                <strong>Economic Defense:</strong> The conversation implicitly supports the idea that financial barriers are among the most effective defenses
-                against automated attacks, as they make mass targeting economically unfeasible for attackers.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mention-section">
-          <h2>On AI Manipulation and Phishing</h2>
-          <VideoTrigger
-            videoData={{
-              title: "Yudkowsky and Wolfram on AI Risks",
-              timestamp: "59:20 - 60:30",
-              embedUrl: "https://www.youtube.com/embed/xjH2B_sE_RQ?start=3560",
-            }}
-          />
-          <div className="mention-content">
-            <div className="conversation-format">
-              <div className="exchange">
-                <h4>On the General Concern of LLMs "Hacking Humans"</h4>
-                <p>
-                  <strong>Stephen Wolfram:</strong> "Doing things which are hacking humans to get humans to believe all kinds of things."
-                </p>
-                <p>
-                  <strong>Eli Yudkowsky:</strong> "Yeah, I'd say it's kind of borderline. It's not clear that the large language models are getting better at it
-                  than average humans or better at it than the best humans."
-                </p>
-              </div>
-
-              <div className="exchange">
-                <h4>On LLM Capabilities in Phishing and Scalable Exploitation</h4>
-                <p>
-                  <strong>Stephen Wolfram:</strong> "Doing things which are hacking humans to get humans to believe all kinds of things."
-                </p>
-                <p>
-                  <strong>Eli Yudkowsky:</strong> "I mean, they're good at phishing, unfortunately. And humans are not very good at not being phished. What they
-                  are is they're cheaper at phishing. They can phish everyone and see who's most vulnerable. Much more cheaply than you can get a human to call
-                  up everyone on the planet."
-                </p>
-              </div>
-
-              <div className="exchange">
-                <h4>Key Insight: Scale vs. Sophistication</h4>
-                <p>
-                  The critical insight from this exchange is that AI's advantage in phishing isn't necessarily sophistication - it's{" "}
-                  <strong>scale and cost-effectiveness</strong>. AI can attempt to phish everyone simultaneously and identify the most vulnerable targets,
-                  something impossible for human attackers due to cost constraints.
-                </p>
-                <p>
-                  This perfectly validates FynCom's approach: by introducing economic friction through refundable deposits, we make mass automated attacks
-                  economically unfeasible while allowing legitimate communications to proceed.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="mention-section">
           <h2>On AI Agents and Economic Models</h2>
           <VideoTrigger
             videoData={{
               title: "Stanford ECON295/CS323 - Business of AI, Reid Hoffman",
-              timestamp: "Multiple segments: 39:48-41:10, 48:10-49:30",
+              timestamp: "Watch 1.5 minutes starting at 39:48-41:10 again at 48:10-49:30",
               embedUrl: "https://www.youtube.com/embed/RXjLGn14Jo4?start=2880",
             }}
           />
@@ -289,12 +115,191 @@ const Mentions = () => {
           </div>
         </section>
 
+        {/* // this one may not be embeddble? - so maybe link directly to the youtube video online */}
+        <section className="mention-section">
+          <h2>On Digital Identity and Trust</h2>
+          <VideoTrigger
+            videoData={{
+              title: "The Truth About AI: Sam Lessin’s Contrarian Take",
+              timestamp: "Watch ~3 minutes starting at 10:15",
+              embedUrl: "https://www.youtube.com/watch?v=R_aHzJGrBN0&t=615s",
+            }}
+          />
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>The Identity Crisis of the Open Internet:</strong> Joe starts by asking Sam about Sam's role in online identity, leading to a discussion
+                about a friend working on anti-fraud in Africa. This conversation reveals a fundamental truth: the open internet brought unprecedented
+                connectivity, but at the cost of identity verification and trust.
+              </p>
+              <p>
+                <strong>The Trust Deficit:</strong> The discussion centers on how the lack of identity verification mechanisms has created a trust vacuum in
+                digital communications. This is precisely the problem FynCom's refundable deposits technology addresses - creating economic incentives that
+                restore trust between unknown parties.
+              </p>
+              <p>
+                <strong>Real-World Impact:</strong> The anti-fraud work in Africa mentioned in the conversation highlights how identity and trust issues aren't
+                just theoretical - they have real economic and social consequences, particularly in developing markets where digital trust is crucial for
+                economic participation.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* // this one may not be embeddble? - so maybe link directly to the youtube video online */}
+        <section className="mention-section">
+          <h2>On Communication Protocols</h2>
+          <VideoTrigger
+            videoData={{
+              title: "Bootstrapping an AI Company to $5M ARR - Whippy CEO David Daneshgar",
+              timestamp: "Watch 3.5 minutes starting at 26:47 for 40s",
+              embedUrl: "https://www.youtube.com/watch?v=OWNppXSQOlA&t=1607s",
+            }}
+          />
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>The Future of Communication Protocols:</strong> Whippy CEO David Daneshgar discusses communication protocols at a higher level that
+                perfectly aligns with future expectations for seamless, trusted digital interactions. This is considered the best video out of all the examples
+                for its clarity and vision.
+              </p>
+              <p>
+                <strong>Protocol Evolution:</strong> Daneshgar's insights reveal how communication protocols must evolve beyond simple message delivery to
+                include trust verification, spam prevention, and value exchange - exactly what FynCom's technology enables through refundable deposits.
+              </p>
+              <p>
+                <strong>Business Applications:</strong> The discussion shows how advanced communication protocols can transform business operations, customer
+                engagement, and digital trust - making this highly relevant for companies looking to implement FynCom's solutions.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mention-section">
+          <h2>On Agent Communication and Trust Transfer</h2>
+          <VideoTrigger
+            videoData={{
+              title: "AI's Trillion Dollar Opportunity: Sequoia AI Ascent 2025",
+              timestamp: "Watch 4.5 minutes starting at 21:46",
+              embedUrl: "https://www.youtube.com/embed/v9JBMnxuPX8?start=1431",
+            }}
+          />
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>Seamless Communications Protocols (23:51-24:35):</strong> The discussion of seamless communication protocols is remarkably close to what
+                FynCom is building. The speakers recognize that future AI systems will need robust communication frameworks that can handle trust, verification,
+                and value transfer.
+              </p>
+              <p>
+                <strong>Transfer of Trust (24:30-25:05):</strong> This segment introduces the critical concept of "Transfer of Trust" between AI agents. As AI
+                systems become more autonomous, they'll need mechanisms to establish and transfer trust - exactly what FynCom's refundable deposits enable in
+                digital communications.
+              </p>
+              <p>
+                <strong>Agent Swarms and Trust Networks (21:46-22:46):</strong> The discussion of agent swarms reveals the complexity of maintaining trust in
+                automated systems. When multiple AI agents interact, traditional security measures become insufficient, requiring economic incentives like those
+                provided by FynCom's technology.
+              </p>
+              <p>
+                <strong>Stochastic Challenges:</strong> The speakers note that the stochastic approach of agents creates additional challenges for typical spam
+                prevention techniques, highlighting the need for solutions insensitive to content analysis and pattern detection. A financial filter that uses
+                zero-fee currency
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mention-section">
+          <h2>On AI-Powered Social Engineering</h2>
+          <VideoTrigger
+            videoData={{
+              title: "Jeffrey Katzenberg on 2024 Election, Cybersecurity and New Health Venture",
+              timestamp: "Watch 1 minute starting at 18:13",
+              embedUrl: "https://www.youtube.com/embed/H90HY-lGraw?start=1100",
+            }}
+          />
+          =
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>AI Voice and Email Impersonation:</strong> Katzenberg discusses sophisticated AI systems that can imitate tone of voice and writing
+                style in emails, specifically targeting vulnerable populations like elderly individuals. This represents a new frontier in social engineering
+                attacks.
+              </p>
+              <p>
+                <strong>The "Door" Analogy:</strong> Katzenberg emphasizes that "once attackers get through the door, it's over," making a compelling case for
+                preventive measures. This perfectly illustrates why FynCom's approach of creating a financial barrier at the communication entry point is so
+                crucial.
+              </p>
+              <p>
+                <strong>Delegation and Filtering:</strong> The discussion touches on delegation strategies where younger people handle unknown communications
+                for elderly relatives. FynCom's financial filters provide a more systematic and scalable solution to this problem. Honestly, could you imagine
+                having to handle your parents and grandprent's emails / texts / calls / socil DMs on top of your own? FynCom Filters are the solution.
+              </p>
+              <p>
+                <strong>Economic Defense:</strong> The conversation implicitly supports the idea that financial barriers are among the most effective defenses
+                against automated attacks, as they make mass targeting economically unfeasible for attackers.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mention-section">
+          <h2>On AI Manipulation and Phishing</h2>
+          <VideoTrigger
+            videoData={{
+              title: "Yudkowsky and Wolfram on AI Risks",
+              timestamp: "Watch 1 minute starting at 59:20",
+              embedUrl: "https://www.youtube.com/embed/xjH2B_sE_RQ?start=3560",
+            }}
+          />
+          <div className="mention-content">
+            <div className="conversation-format">
+              <div className="exchange">
+                <h4>On the General Concern of LLMs "Hacking Humans"</h4>
+                <p>
+                  <strong>Stephen Wolfram:</strong> "Doing things which are hacking humans to get humans to believe all kinds of things."
+                </p>
+                <p>
+                  <strong>Eli Yudkowsky:</strong> "Yeah, I'd say it's kind of borderline. It's not clear that the large language models are getting better at it
+                  than average humans or better at it than the best humans."
+                </p>
+              </div>
+
+              <div className="exchange">
+                <h4>On LLM Capabilities in Phishing and Scalable Exploitation</h4>
+                <p>
+                  <strong>Stephen Wolfram:</strong> "They're good at phising, unfortunately; and humans are not very good at not being phished."
+                </p>
+                <p>
+                  <strong>Eli Yudkowsky:</strong> "What they are is they're cheaper at phishing. They can phish everyone and see who's most vulnerable. Much
+                  more cheaply than you can get a human to call up everyone on the planet."
+                </p>
+              </div>
+
+              <div className="exchange">
+                <h4>Key Insight: Scale vs. Sophistication</h4>
+                <p>
+                  The critical insight from this exchange is that AI's advantage in phishing isn't necessarily sophistication - it's{" "}
+                  <strong>scale and cost-effectiveness</strong>. AI can attempt to phish everyone simultaneously and identify the most vulnerable targets,
+                  something impossible for human attackers due to cost constraints.
+                </p>
+                <p>
+                  This perfectly validates FynCom's approach: by introducing economic friction through refundable deposits, we make mass automated attacks
+                  economically unfeasible while allowing legitimate communications to proceed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="mention-section">
           <h2>On Infinite Spam and Hyperpersonalization</h2>
           <VideoTrigger
             videoData={{
               title: "Great VC Debate: Slow Ventures vs Greylock",
-              timestamp: "30:05 - 30:50",
+              timestamp: "Watch 45 seconds starting at 30:05",
               embedUrl: "https://www.youtube.com/embed/YcObLyRM15U?start=1805",
             }}
           />
@@ -326,7 +331,7 @@ const Mentions = () => {
           <VideoTrigger
             videoData={{
               title: "The Government Knows AGI is Coming | The Ezra Klein Show",
-              timestamp: "09:18 - 11:22",
+              timestamp: "Watch 2 minutes starting at 09:18",
               embedUrl: "https://www.youtube.com/embed/Btos-LEYQ30?start=558",
             }}
           />
@@ -357,7 +362,7 @@ const Mentions = () => {
           <VideoTrigger
             videoData={{
               title: "Next 3 years in Crypto - TOKEN 2049",
-              timestamp: "11:46 - 15:10",
+              timestamp: "Watch 3.5 minutes starting at 11:46",
               embedUrl: "https://www.youtube.com/embed/WCqzvo4bxJY?start=706",
             }}
           />

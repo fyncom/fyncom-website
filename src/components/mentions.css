@@ -14,7 +14,7 @@
 .mentions-header p {
   font-size: 18px;
   line-height: 1.6;
-  color: var(--text-color);
+  color: var(--color-text);
   max-width: 800px;
   margin: 0 auto;
 }
@@ -109,11 +109,13 @@
   border-radius: 8px;
   border-left: 4px solid var(--fyncom-blue);
   margin-top: 1rem;
+  color: var(--color-text);
 }
 
 .highlight-text p {
   margin-bottom: 1rem;
   line-height: 1.6;
+  color: var(--color-text);
 }
 
 .highlight-text p:last-child {
@@ -126,6 +128,7 @@
   border-radius: 8px;
   border-left: 4px solid var(--fyncom-red);
   margin-top: 1rem;
+  color: var(--color-text);
 }
 
 .exchange {
@@ -149,6 +152,7 @@
 .exchange p {
   margin-bottom: 0.8rem;
   line-height: 1.6;
+  color: var(--color-text);
 }
 
 .exchange p strong {
@@ -181,7 +185,7 @@
   position: relative;
   width: 90%;
   max-width: 800px;
-  background: white;
+  background: var(--color-background);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -242,6 +246,58 @@
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --highlight-bg: #2c2c2c;
+    --border-color: #444;
+    --text-color: var(--color-text);
+  }
+  
+  .highlight-text {
+    background-color: var(--highlight-bg);
+    color: var(--color-text);
+  }
+  
+  .conversation-format {
+    background-color: var(--highlight-bg);
+    color: var(--color-text);
+  }
+  
+  .exchange {
+    border-bottom-color: var(--border-color);
+  }
+  
+  .mention-section {
+    border-bottom-color: var(--border-color);
+  }
+}
+
+/* Manual dark mode support */
+:root[data-theme="dark"] {
+  --highlight-bg: #2c2c2c;
+  --border-color: #444;
+  --text-color: var(--color-text);
+}
+
+:root[data-theme="dark"] .highlight-text {
+  background-color: var(--highlight-bg);
+  color: var(--color-text);
+}
+
+:root[data-theme="dark"] .conversation-format {
+  background-color: var(--highlight-bg);
+  color: var(--color-text);
+}
+
+:root[data-theme="dark"] .exchange {
+  border-bottom-color: var(--border-color);
+}
+
+:root[data-theme="dark"] .mention-section {
+  border-bottom-color: var(--border-color);
 }
 
 @media (max-width: 768px) {
