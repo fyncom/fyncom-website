@@ -85,8 +85,84 @@ const Mentions = () => {
         </p>
       </section>
 
-      {/* // this video is not embeddble - so maybe link directly to the youtube video online */}
       <div className="mentions-container">
+        <section className="mention-section">
+          <h2>On Agent Communication and Trust Transfer</h2>
+          <VideoTrigger
+            videoData={{
+              title: "AI's Trillion Dollar Opportunity: Sequoia AI Ascent 2025",
+              timestamp: "Watch 4.5 minutes starting at 21:46",
+              embedUrl: "https://www.youtube.com/embed/v9JBMnxuPX8?start=1431",
+            }}
+          />
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>
+                  <span
+                    style={{ cursor: "pointer", textDecoration: "underline", color: "var(--fyncom-blue)" }}
+                    onClick={() =>
+                      openModal({
+                        title: "Seamless Communications Protocols (23:51-24:35)",
+                        timestamp: "Watch from 23:51",
+                        embedUrl: "https://www.youtube.com/embed/v9JBMnxuPX8?start=1431",
+                      })
+                    }
+                  >
+                    Seamless Communications Protocols (23:51-24:35)
+                  </span>
+                  :
+                </strong>{" "}
+                The discussion of seamless communication protocols is remarkably close to what FynCom is building. The speakers recognize that future AI systems
+                will need robust communication frameworks that can handle trust, verification, and value transfer.
+              </p>
+              <p>
+                <strong>
+                  <span
+                    style={{ cursor: "pointer", textDecoration: "underline", color: "var(--fyncom-blue)" }}
+                    onClick={() =>
+                      openModal({
+                        title: "Transfer of Trust (24:30-25:05)",
+                        timestamp: "Watch from 24:30",
+                        embedUrl: "https://www.youtube.com/embed/v9JBMnxuPX8?start=1470",
+                      })
+                    }
+                  >
+                    Transfer of Trust (24:30-25:05)
+                  </span>
+                  :
+                </strong>{" "}
+                This segment introduces the critical concept of "Transfer of Trust" between AI agents. As AI systems become more autonomous, they'll need
+                mechanisms to establish and transfer trust - exactly what FynCom's refundable deposits enable in digital communications.
+              </p>
+              <p>
+                <strong>
+                  <span
+                    style={{ cursor: "pointer", textDecoration: "underline", color: "var(--fyncom-blue)" }}
+                    onClick={() =>
+                      openModal({
+                        title: "Agent Swarms and Trust Networks (21:46-22:46)",
+                        timestamp: "Watch from 21:46",
+                        embedUrl: "https://www.youtube.com/embed/v9JBMnxuPX8?start=1306",
+                      })
+                    }
+                  >
+                    Agent Swarms and Trust Networks (21:46-22:46)
+                  </span>
+                  :
+                </strong>{" "}
+                The discussion of agent swarms reveals the complexity of maintaining trust in automated systems. When multiple AI agents interact, traditional
+                security measures become insufficient, requiring economic incentives like those provided by FynCom's technology.
+              </p>
+              <p>
+                <strong>Stochastic Challenges:</strong> The speakers note that the stochastic approach of agents creates additional challenges for typical spam
+                prevention techniques, highlighting the need for solutions insensitive to content analysis and pattern detection. A financial filter that uses
+                zero-fee currency
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="mention-section">
           <h2>On AI Agents and Economic Models</h2>
           <VideoTrigger
@@ -175,57 +251,25 @@ const Mentions = () => {
               isEmbeddable: false,
             }}
           />
-          {/* todo fix the discussion here. David talks about how he uses AI on a daily basis, and mentions how his sales teams might use it too. He then, offhand mentions,
-          cases where he, himself is subject to this kind of personalized automation so often that he is starting to get jaded. */}
           <div className="mention-content">
             <div className="highlight-text">
               <p>
-                <strong>The Future of Communication Protocols:</strong> Whippy CEO David Daneshgar discusses communication protocols at a higher level that
-                perfectly aligns with future expectations for seamless, trusted digital interactions. This is considered the best video out of all the examples
-                for its clarity and vision.
+                <strong>AI as Daily Business Tool:</strong> Daneshgar discusses how he uses AI on a daily basis for business operations, and mentions how his
+                sales teams leverage AI automation for their outreach and customer engagement processes.
               </p>
               <p>
-                <strong>Protocol Evolution:</strong> Daneshgar's insights reveal how communication protocols must evolve beyond simple message delivery to
-                include trust verification, spam prevention, and value exchange - exactly what FynCom's technology enables through refundable deposits.
+                <strong>The Personal Experience of Being Targeted:</strong> In an offhand but revealing comment, Daneshgar shares his personal experience of
+                being on the receiving end of this same personalized automation technology. He's becoming increasingly jaded by the constant stream of
+                AI-generated, personalized messages he receives.
               </p>
               <p>
-                <strong>Business Applications:</strong> The discussion shows how advanced communication protocols can transform business operations, customer
-                engagement, and digital trust - making this highly relevant for companies looking to implement FynCom's solutions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mention-section">
-          <h2>On Agent Communication and Trust Transfer</h2>
-          <VideoTrigger
-            videoData={{
-              title: "AI's Trillion Dollar Opportunity: Sequoia AI Ascent 2025",
-              timestamp: "Watch 4.5 minutes starting at 21:46",
-              embedUrl: "https://www.youtube.com/embed/v9JBMnxuPX8?start=1431",
-            }}
-          />
-          <div className="mention-content">
-            <div className="highlight-text">
-              <p>
-                <strong>Seamless Communications Protocols (23:51-24:35):</strong> The discussion of seamless communication protocols is remarkably close to what
-                FynCom is building. The speakers recognize that future AI systems will need robust communication frameworks that can handle trust, verification,
-                and value transfer.
+                <strong>The Irony of Automation:</strong> This creates a fascinating irony - the same CEO who uses AI to automate customer communications is
+                himself growing tired of receiving automated communications, even when they're personalized. This validates the fundamental problem FynCom
+                solves: when everyone uses AI for outreach, the value of communication itself degrades.
               </p>
               <p>
-                <strong>Transfer of Trust (24:30-25:05):</strong> This segment introduces the critical concept of "Transfer of Trust" between AI agents. As AI
-                systems become more autonomous, they'll need mechanisms to establish and transfer trust - exactly what FynCom's refundable deposits enable in
-                digital communications.
-              </p>
-              <p>
-                <strong>Agent Swarms and Trust Networks (21:46-22:46):</strong> The discussion of agent swarms reveals the complexity of maintaining trust in
-                automated systems. When multiple AI agents interact, traditional security measures become insufficient, requiring economic incentives like those
-                provided by FynCom's technology.
-              </p>
-              <p>
-                <strong>Stochastic Challenges:</strong> The speakers note that the stochastic approach of agents creates additional challenges for typical spam
-                prevention techniques, highlighting the need for solutions insensitive to content analysis and pattern detection. A financial filter that uses
-                zero-fee currency
+                <strong>Scaling the Problem:</strong> Daneshgar's experience highlights how AI doesn't just enable better communication - it enables infinite
+                communication, which paradoxically makes each individual message less valuable and more tiresome, regardless of personalization.
               </p>
             </div>
           </div>
