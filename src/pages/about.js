@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/about.css"
@@ -19,11 +19,27 @@ const About = () => {
     disruptionBanking,
     evonexus,
     evonexusDark,
-    foundersNetwork,
-    gasseeConsulting,
     nanoFoundation,
-    titaniusBots,
+    goaheadVentures,
+    title3funds,
+    westcliffUniversity,
+    westcliffUniversityDark,
   } = useCombinedQuery()
+
+  const [westcliffLogo, setWestcliffLogo] = useState(westcliffUniversity)
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+      const handleChange = e => {
+        setWestcliffLogo(e.matches ? westcliffUniversityDark : westcliffUniversity)
+      }
+      handleChange(mediaQuery) // Initial check
+      mediaQuery.addListener(handleChange)
+      return () => mediaQuery.removeListener(handleChange)
+    }
+  }, [westcliffUniversity, westcliffUniversityDark])
+
   return (
     <div>
       <Seo
@@ -104,22 +120,27 @@ const About = () => {
         </p>
         <div className="supporters-logos">
           <div className="supporter-logo">
+            <GatsbyImage image={nanoFoundation} alt="Nano Foundation" />
+          </div>
+          <div className="supporter-logo">
+            <img src={goaheadVentures} alt="GoAHead Ventures" />
+          </div>
+          <div className="supporter-logo">
             <img src={evonexus} alt="EvoNexus" />
           </div>
           <div className="supporter-logo">
+            <GatsbyImage image={title3funds} alt="Title3Funds" />
+          </div>
+          <div className="supporter-logo">
+            <GatsbyImage image={westcliffLogo} alt="Westcliff University" />
+          </div>
+          <div className="supporter-logo">
+            <a href="https://www.youtube.com/watch?v=LCnwIAdYJD4" target="_blank" rel="noopener noreferrer">
+              <GatsbyImage image={disruptionBanking} alt="Disruption Banking" />
+            </a>
+          </div>
+          <div className="supporter-logo">
             <GatsbyImage image={oneMillionCups} alt="1 Million Cups" />
-          </div>
-          <div className="supporter-logo">
-            <GatsbyImage image={disruptionBanking} alt="Disruption Banking" />
-          </div>
-          <div className="supporter-logo">
-            <GatsbyImage image={foundersNetwork} alt="Founders Network" />
-          </div>
-          <div className="supporter-logo">
-            <GatsbyImage image={gasseeConsulting} alt="Gassée Consulting" />
-          </div>
-          <div className="supporter-logo">
-            <GatsbyImage image={nanoFoundation} alt="Nano Foundation" />
           </div>
         </div>
       </section>

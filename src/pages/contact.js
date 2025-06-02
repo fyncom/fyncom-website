@@ -11,13 +11,24 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { useCombinedQuery } from "../components/useCombinedQuery"
 
 const Contact = () => {
-  const { fyncomFiltersWords, fyncomFiltersWordsDark, oneMillionCups, disruptionBanking, evonexus, foundersNetwork, gasseeConsulting, nanoFoundation } =
-    useCombinedQuery()
+  const {
+    fyncomFiltersWords,
+    fyncomFiltersWordsDark,
+    oneMillionCups,
+    disruptionBanking,
+    evonexus,
+    nanoFoundation,
+    goaheadVentures,
+    title3funds,
+    westcliffUniversity,
+    westcliffUniversityDark,
+  } = useCombinedQuery()
   const [isSuccessModalOpen, setSuccessModalOpen] = useState(false)
   const [isFailureModalOpen, setFailureModalOpen] = useState(false)
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [modalMessage, setModalMessage] = useState("")
   const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords)
+  const [westcliffLogo, setWestcliffLogo] = useState(westcliffUniversity)
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -32,12 +43,13 @@ const Contact = () => {
       const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
       const handleChange = e => {
         setFilterLogo(e.matches ? fyncomFiltersWordsDark : fyncomFiltersWords)
+        setWestcliffLogo(e.matches ? westcliffUniversityDark : westcliffUniversity)
       }
       handleChange(mediaQuery) // Initial check
       mediaQuery.addListener(handleChange)
       return () => mediaQuery.removeListener(handleChange)
     }
-  }, [fyncomFiltersWords, fyncomFiltersWordsDark])
+  }, [fyncomFiltersWords, fyncomFiltersWordsDark, westcliffUniversity, westcliffUniversityDark])
 
   // Function to handle form submission
   const handleSubmit = async e => {
@@ -84,22 +96,27 @@ const Contact = () => {
             <div className="contact-supporters">
               <div className="supporters-logos">
                 <div className="supporter-logo">
+                  <GatsbyImage image={nanoFoundation} alt="Nano Foundation" />
+                </div>
+                <div className="supporter-logo">
+                  <img src={goaheadVentures} alt="GoAHead Ventures" />
+                </div>
+                <div className="supporter-logo">
                   <img src={evonexus} alt="EvoNexus" />
                 </div>
                 <div className="supporter-logo">
+                  <GatsbyImage image={title3funds} alt="Title3Funds" />
+                </div>
+                <div className="supporter-logo">
+                  <GatsbyImage image={westcliffLogo} alt="Westcliff University" />
+                </div>
+                <div className="supporter-logo">
+                  <a href="https://www.youtube.com/watch?v=LCnwIAdYJD4" target="_blank" rel="noopener noreferrer">
+                    <GatsbyImage image={disruptionBanking} alt="Disruption Banking" />
+                  </a>
+                </div>
+                <div className="supporter-logo">
                   <GatsbyImage image={oneMillionCups} alt="1 Million Cups" />
-                </div>
-                <div className="supporter-logo">
-                  <GatsbyImage image={disruptionBanking} alt="Disruption Banking" />
-                </div>
-                <div className="supporter-logo">
-                  <GatsbyImage image={foundersNetwork} alt="Founders Network" />
-                </div>
-                <div className="supporter-logo">
-                  <GatsbyImage image={gasseeConsulting} alt="Gassée Consulting" />
-                </div>
-                <div className="supporter-logo">
-                  <GatsbyImage image={nanoFoundation} alt="Nano Foundation" />
                 </div>
               </div>
             </div>
