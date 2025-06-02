@@ -103,8 +103,9 @@ const Mentions = () => {
               <div className="exchange">
                 <h4>On Communication Vulnerabilities (48:10-49:30)</h4>
                 <p>
-                  <strong>Reid Hoffman:</strong> Discusses how communications become increasingly vulnerable due to LLM spear-phishing capabilities. The
-                  sophistication of AI-generated personalized attacks makes traditional security measures insufficient.
+                  <strong>Reid Hoffman:</strong> Discusses an example of AI creating harm at a societal scale. Discusses how communications become increasingly
+                  vulnerable due to LLM spear-phishing capabilities. The sophistication of AI-generated personalized attacks makes traditional security measures
+                  insufficient.
                 </p>
               </div>
 
