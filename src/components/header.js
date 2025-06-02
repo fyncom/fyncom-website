@@ -85,6 +85,9 @@ const Header = () => {
             <li className="mobile-menu-item">
               <Link to="/blog">Blog</Link>
             </li>
+            <li className="mobile-menu-item">
+              <Link to="/mentions">Mentions</Link>
+            </li>
             <li className="mobile-menu-item dropdown">
               <span className="mobile-dropbtn">
                 <Link to="/help-center">Help</Link>
@@ -119,6 +122,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/blog">Blog</Link>
+          </li>
+          <li>
+            <Link to="/mentions">Mentions</Link>
           </li>
           <li className="dropdown">
             <Link to="/help-center" className="dropbtn">
