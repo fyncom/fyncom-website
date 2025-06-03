@@ -29,6 +29,7 @@ const Contact = () => {
   const [modalMessage, setModalMessage] = useState("")
   const [filterLogo, setFilterLogo] = useState(fyncomFiltersWords)
   const [westcliffLogo, setWestcliffLogo] = useState(westcliffUniversity)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = e => {
     const { name, value } = e.target
@@ -55,6 +56,7 @@ const Contact = () => {
   const handleSubmit = async e => {
     let newUrl = `${process.env.GATSBY_API_URL}api/public/contact`
     e.preventDefault()
+    setIsLoading(true)
     try {
       // You can send the data to your backend API endpoint
       const response = await fetch(newUrl, {
@@ -76,6 +78,10 @@ const Contact = () => {
       }
     } catch (error) {
       console.error("Error submitting form", error)
+      setModalMessage("An error occurred while sending your message. Please try again.")
+      setFailureModalOpen(true)
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -86,13 +92,13 @@ const Contact = () => {
       <main className="contact-container">
         <div className="contact-layout">
           <div className="contact-left">
-            <h1>Contact our experts! We love hearing from you and keep things </h1>
-            <h4>We're backed by GoAhead Ventures and other leading organizations.</h4>
+            <h1>Contact our experts!</h1>
             <p className="contact-description">FynCom simplifies the response generation process for businesses and individuals.</p>
             <p className="contact-description">Drive real engagement in a fraction of the time, with our curated, high-integrity incentive portfolios.</p>
             <p className="contact-reach-out">
               Reach out to us directly at <Link to="mailto:support@fyncom.com">support@fyncom.com</Link>
             </p>
+            <h4> We're backed by GoAHead Ventures and other leading organizations.</h4>
 
             <div className="contact-supporters">
               <div className="supporters-logos">
@@ -127,18 +133,25 @@ const Contact = () => {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="form-group">
                 <label htmlFor="name">First Name*</label>
-                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+                <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required disabled={isLoading} />
               </div>
               <div className="form-group">
                 <label htmlFor="email">Business Email*</label>
-                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required />
+                <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required disabled={isLoading} />
               </div>
               <div className="form-group">
                 <label htmlFor="message">How can we help?</label>
-                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" required />
+                <textarea id="message" name="message" value={formData.message} onChange={handleChange} rows="4" required disabled={isLoading} />
               </div>
-              <button type="submit" className="submit-btn">
-                Submit
+              <button type="submit" className="submit-btn" disabled={isLoading}>
+                {isLoading ? (
+                  <>
+                    <span className="spinner"></span>
+                    Sending...
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </button>
             </form>
           </div>
