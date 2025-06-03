@@ -86,7 +86,8 @@ const Contact = () => {
       <main className="contact-container">
         <div className="contact-layout">
           <div className="contact-left">
-            <h1>Contact our experts</h1>
+            <h1>Contact our experts! We love hearing from you and keep things </h1>
+            <h4>We're backed by GoAhead Ventures and other leading organizations.</h4>
             <p className="contact-description">FynCom simplifies the response generation process for businesses and individuals.</p>
             <p className="contact-description">Drive real engagement in a fraction of the time, with our curated, high-integrity incentive portfolios.</p>
             <p className="contact-reach-out">

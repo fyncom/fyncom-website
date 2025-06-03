@@ -113,7 +113,10 @@ const About = () => {
       </section>
       <section className="supporters-section">
         <h2>Backed by leading organizations</h2>
-        <p>FynCom simplifies the response generation process for businesses and individuals.</p>
+        <p>
+          FynCom simplifies the response generation process for businesses and individuals by allowing consumers to set prenegotiated minimum "bond" unknown
+          contacts must deposit with FynCom.
+        </p>
         <p>Drive real engagement in a fraction of the time, with our curated, high-integrity incentive portfolios.</p>
         <p>
           Reach out to us directly at <Link to="/contact">support@fyncom.com</Link>.
