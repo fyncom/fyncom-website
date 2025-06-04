@@ -86,7 +86,8 @@ const Mentions = () => {
       </section>
 
       <div className="mentions-container">
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#agent-communication-trust */}
+        <section className="mention-section" id="agent-communication-trust">
           <h2>On Agent Communication and Trust Transfer</h2>
           <VideoTrigger
             videoData={{
@@ -163,7 +164,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#ai-agents-economic-models */}
+        <section className="mention-section" id="ai-agents-economic-models">
           <h2>On AI Agents and Economic Models</h2>
           <VideoTrigger
             videoData={{
@@ -208,7 +210,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#digital-identity-trust */}
+        <section className="mention-section" id="digital-identity-trust">
           <h2>On Digital Identity and Trust</h2>
           <VideoTrigger
             videoData={{
@@ -240,7 +243,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#communication-protocols */}
+        <section className="mention-section" id="communication-protocols">
           <h2>On Communication Protocols</h2>
           <VideoTrigger
             videoData={{
@@ -275,7 +279,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#ai-powered-social-engineering */}
+        <section className="mention-section" id="ai-powered-social-engineering">
           <h2>On AI-Powered Social Engineering</h2>
           <VideoTrigger
             videoData={{
@@ -309,7 +314,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#ai-manipulation-phishing */}
+        <section className="mention-section" id="ai-manipulation-phishing">
           <h2>On AI Manipulation and Phishing</h2>
           <VideoTrigger
             videoData={{
@@ -358,7 +364,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#infinite-spam-hyperpersonalization */}
+        <section className="mention-section" id="infinite-spam-hyperpersonalization">
           <h2>On Infinite Spam and Hyperpersonalization</h2>
           <VideoTrigger
             videoData={{
@@ -390,7 +397,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#digital-vs-human-hackers */}
+        <section className="mention-section" id="digital-vs-human-hackers">
           <h2>On Digital vs Human Hackers</h2>
           <VideoTrigger
             videoData={{
@@ -421,7 +429,8 @@ const Mentions = () => {
           </div>
         </section>
 
-        <section className="mention-section">
+        {/* Link: http://localhost:8000/mentions#crypto-economic-prosperity */}
+        <section className="mention-section" id="crypto-economic-prosperity">
           <h2>On Crypto and Economic Prosperity</h2>
           <VideoTrigger
             videoData={{
