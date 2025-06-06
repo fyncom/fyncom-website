@@ -42,11 +42,30 @@ Here's the core problem: **sending texts costs virtually nothing**. Scammers can
 
 The volume of spam texts has exploded in recent years, creating an unprecedented crisis:
 
-| Year | Estimated Spam Texts Sent in the US |
-|------|-------------------------------------|
-| 2021 | 87.8 billion |
-| 2022 | 225.7 billion (2.5x increase) |
-| 2024 | ~200–300 billion (estimated) |
+<div style={{ overflowX: 'auto', margin: '20px 0' }}>
+  <div style={{ display: 'table', width: '100%', borderCollapse: 'collapse', border: '1px solid var(--border-color, #ddd)' }}>
+    <div style={{ display: 'table-header-group', backgroundColor: 'var(--table-header-bg, rgba(0,0,0,0.1))', fontWeight: 'bold' }}>
+      <div style={{ display: 'table-row' }}>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)', textAlign: 'left' }}>Year</div>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)', textAlign: 'left' }}>Estimated Spam Texts Sent in the US</div>
+      </div>
+    </div>
+    <div style={{ display: 'table-row-group' }}>
+      <div style={{ display: 'table-row' }}>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)' }}><strong>2021</strong></div>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)' }}>87.8 billion</div>
+      </div>
+      <div style={{ display: 'table-row', backgroundColor: 'var(--table-alt-bg, rgba(128,128,128,0.1))' }}>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)' }}><strong>2022</strong></div>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)' }}>225.7 billion (2.5x increase)</div>
+      </div>
+      <div style={{ display: 'table-row' }}>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)' }}><strong>2024</strong></div>
+        <div style={{ display: 'table-cell', padding: '12px', border: '1px solid var(--border-color, #ddd)' }}>~200–300 billion (estimated)</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 **Recent monthly data**: February 2025 alone saw 19.2 billion spam texts, which extrapolates to over 230 billion annually. 
 
@@ -83,19 +102,22 @@ FynCom's approach is fundamentally different. Instead of trying to identify scam
 
 ### How It Works:
 
-1. **Legitimate Communication**: Real recruiters and employers can afford a microscopic refundable deposit per message
-2. **Refund on Response**: When the recipient responds or marks as legitimate, the deposit is refunded
-3. **Cost for Spam**: Non-responders keep the deposit, making mass texting economically impossible
-4. **Network Effect**: As adoption grows, scammers are systematically priced out
+1. **Legitimate Communication**: Real recruiters and employers can afford a tiny refundable nanoDeposit per message
+2. **Refund on Engagement**: When the recipient responds **three or more times**, we consider this legitimate communication, so the deposit is refunded
+3. **Penalty for Low Engagement**: If there are only **1-2 responses**, the sender loses the deposit (indicating likely unwanted communication)
+4. **No Penalty for No Response**: **Zero responses** result in no penalty - people are busy and non-response doesn't indicate spam
+5. **Network Effect**: As adoption grows, this system naturally filters out mass unwanted messaging
 
-### The Math That Scares Scammers - Microscopic Deposits, Massive Impact:
+**User Control**: The response threshold (default: 3 responses) is adjustable by each user based on their communication preferences.
+
+### The Math That Scares Scammers - NanoDeposits, Massive Impact:
 
 **Current Reality (No Deposits):**
 - **Service Cost**: ~$0.001 per text
 - **Scammer Cost**: $10,000 to spam 10 million people
 - **Success Rate Needed**: Just 0.1% to break even
 
-**How Microscopic Deposits Change Everything:**
+**How NanoDeposits Change Everything:**
 
 <div style={{ overflowX: 'auto', margin: '20px 0' }}>
   <div style={{ display: 'table', width: '100%', borderCollapse: 'collapse', border: '1px solid var(--border-color, #ddd)' }}>
@@ -138,10 +160,10 @@ FynCom's approach is fundamentally different. Instead of trying to identify scam
 **The Magic**: Even at amounts too small to notice, scammers face 1-10x cost increases because they are unlikely to get their deposits back*, while legitimate users get fully refunded.
 
 **Real-World Perspective**: 
-- A job recruiter sending 50 personalized messages: Risks $0.005-0.50 (fully refundable)
-- A scammer sending 10 million scam texts: Risks $1,000-100,000 (mostly non-refundable)
+- A job recruiter sending 50 personalized messages: Risks $0.005-0.50 (gets refunded when recipients engage)
+- A scammer sending 10 million scam texts: Risks $1,000-100,000 (rarely gets 3+ responses per conversation)
 
-The beauty is that **any** deposit amount - no matter how small - breaks the scammer business model because legitimate users get refunded while spammers don't.
+The beauty is that **any** nanoDeposit amount - no matter how small - breaks the scammer business model because legitimate communications generate real engagement (3+ responses) while spam rarely does.
 
 ## Real-World Impact: The Stories Behind the Statistics
 
