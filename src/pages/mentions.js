@@ -86,7 +86,7 @@ const Mentions = () => {
       </section>
 
       <div className="mentions-container">
-        {/* Link: http://localhost:8000/mentions#agent-communication-trust */}
+        {/* Link: https://fyncom.com/mentions#agent-communication-trust */}
         <section className="mention-section" id="agent-communication-trust">
           <h2>On Agent Communication and Trust Transfer</h2>
           <VideoTrigger
@@ -164,7 +164,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#ai-agents-economic-models */}
+        {/* Link: https://fyncom.com/mentions#ai-agents-economic-models */}
         <section className="mention-section" id="ai-agents-economic-models">
           <h2>On AI Agents and Economic Models</h2>
           <VideoTrigger
@@ -210,7 +210,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#digital-identity-trust */}
+        {/* Link: https://fyncom.com/mentions#digital-identity-trust */}
         <section className="mention-section" id="digital-identity-trust">
           <h2>On Digital Identity and Trust</h2>
           <VideoTrigger
@@ -243,7 +243,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#communication-protocols */}
+        {/* Link: https://fyncom.com/mentions#communication-protocols */}
         <section className="mention-section" id="communication-protocols">
           <h2>On Communication Protocols</h2>
           <VideoTrigger
@@ -279,7 +279,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#ai-powered-social-engineering */}
+        {/* Link: https://fyncom.com/mentions#ai-powered-social-engineering */}
         <section className="mention-section" id="ai-powered-social-engineering">
           <h2>On AI-Powered Social Engineering</h2>
           <VideoTrigger
@@ -314,7 +314,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#ai-manipulation-phishing */}
+        {/* Link: https://fyncom.com/mentions#ai-manipulation-phishing */}
         <section className="mention-section" id="ai-manipulation-phishing">
           <h2>On AI Manipulation and Phishing</h2>
           <VideoTrigger
@@ -364,7 +364,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#infinite-spam-hyperpersonalization */}
+        {/* Link: https://fyncom.com/mentions#infinite-spam-hyperpersonalization */}
         <section className="mention-section" id="infinite-spam-hyperpersonalization">
           <h2>On Infinite Spam and Hyperpersonalization</h2>
           <VideoTrigger
@@ -397,7 +397,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#digital-vs-human-hackers */}
+        {/* Link: https://fyncom.com/mentions#digital-vs-human-hackers */}
         <section className="mention-section" id="digital-vs-human-hackers">
           <h2>On Digital vs Human Hackers</h2>
           <VideoTrigger
@@ -429,7 +429,7 @@ const Mentions = () => {
           </div>
         </section>
 
-        {/* Link: http://localhost:8000/mentions#crypto-economic-prosperity */}
+        {/* Link: https://fyncom.com/mentions#crypto-economic-prosperity */}
         <section className="mention-section" id="crypto-economic-prosperity">
           <h2>On Crypto and Economic Prosperity</h2>
           <VideoTrigger
@@ -456,6 +456,50 @@ const Mentions = () => {
               <p>
                 <strong>The Next Phase:</strong> Just as zero-cost communication enabled global connectivity but created trust problems, zero-cost value
                 transfer enables new economic models but requires new trust mechanisms - exactly what FynCom provides.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Link: https://fyncom.com/mentions#job-scam-surge-2024 */}
+        <section className="mention-section" id="job-scam-surge-2024">
+          <h2>On the 2024 Job Scam Text Surge</h2>
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>The Predictions Come True:</strong> In January 2025, the{" "}
+                <a href="https://www.linkedin.com/news/story/scam-job-texts-poised-to-multiply-7392058/" target="_blank" rel="noopener noreferrer">
+                  Federal Trade Commission and LinkedIn reported
+                </a>{" "}
+                that Americans lost <strong>$470 million</strong> to text scams in 2024, with job scam texts ranking as the{" "}
+                <strong>second most common type of hoax</strong>. This validates every prediction made by the industry leaders featured above.
+              </p>
+              <p>
+                <strong>AI-Powered Scale:</strong> Just as Yudkowsky predicted, AI isn't necessarily better at phishing than humans—it's simply "cheaper at
+                phishing" and can "phish everyone and see who's most vulnerable" at unprecedented scale. Job scammers are now using AI to send millions of
+                personalized fake job offers for pennies.
+              </p>
+              <p>
+                <strong>The Infinite Spam Reality:</strong> Sam Lessin's concept of "infinite spam" has materialized exactly as described. AI enables unlimited
+                personalized job scam texts that appear custom but are actually automated, making each victim feel specially targeted while the scammer blasts
+                millions simultaneously.
+              </p>
+              <p>
+                <strong>Economic Desperation Exploitation:</strong> The combination of a rocky labor market and sophisticated AI targeting has created the
+                perfect storm. Gen Z job seekers—despite being digital natives—are particularly vulnerable to these AI-generated, hyper-personalized scams.
+              </p>
+              <p>
+                <strong>The Solution Was Always Economic:</strong> Traditional security measures (content filtering, number blocking, user education) continue
+                to fail because they don't address the root cause: zero marginal cost of communication. FynCom's refundable deposit approach makes mass scamming
+                economically impossible—exactly what this crisis demands.
+              </p>
+              <p>
+                <strong>
+                  Read our detailed analysis:{" "}
+                  <a href="/blog/job-scam-texts-surge-2024" style={{ textDecoration: "underline", color: "var(--fyncom-blue)" }}>
+                    "Job Scam Texts Cost Americans $470M in 2024 - Here's the Economic Solution"
+                  </a>
+                </strong>
               </p>
             </div>
           </div>
