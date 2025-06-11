@@ -149,7 +149,7 @@ const BlockSpamEarnCash = () => {
             Our company is built around refundable deposits as a tool to create trust between unknown parties in digital communications. Protect yourself from
             unwanted communications & get the power to put a monetary value to your time & data. <br />
             <a href="https://calendly.com/adrian-fyncom/30min">
-              <button className="learn-more-btn">Sieze The Day!</button>
+              <button className="learn-more-btn">Seize The Day!</button>
             </a>
           </p>
         </section>
