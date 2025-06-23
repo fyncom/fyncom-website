@@ -8,26 +8,19 @@ import Seo from "../components/seo"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useCombinedQuery } from "../components/useCombinedQuery"
 
+// TODO: Add SMS Shield Video, remove placeholder logo gif
+//import smsSheildMp4 from "../images/sms-shield-demo.mp4"
+import fyncomWebm from "../images/fyncom-GIF-expanding-logo-cropped.webm"
+import fyncomMp4 from "../images/fyncom-GIF-expanding-logo-cropped.mp4"
+
 // Functional component for the SMS Shield page
 const SMSShield = () => {
 
     // Destructuring data/images from the custom hook useCombinedQuery
+    // TODO: Add SMS Shield Video, and logos
     const {
-        innovation,
-        collaboration,
-        transparency,
-        teamMeeting,
-        customerFocus,
-        continuousImprovement,
-        oneMillionCups,
-        disruptionBanking,
-        evonexus,
-        evonexusDark,
-        nanoFoundation,
-        goaheadVentures,
-        title3funds,
-        westcliffUniversity,
-        westcliffUniversityDark,
+        filterImage,
+        filterImageDark,
     } = useCombinedQuery()
 
     // Render the page content
@@ -44,10 +37,15 @@ const SMSShield = () => {
           <Header />
           <section className="mission-section">
           <h1>SMS Shield</h1>
-            <sub>
-              SMS Shield is a service that protects your phone number from unwanted texts.
-            </sub>
           </section>
+          {/* TODO: Add video, autoplay? */}
+          <div className="sms-shield-video-container" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+            <video className="sms-shield-video" autoPlay loop muted playsInline>
+                <source src={fyncomWebm} type="video/webm" />
+                <source src={fyncomMp4} type="video/mp4" />
+                Sorry, your browser doesn't support embedded videos.
+            </video>
+          </div>
         </div>
     )
 
