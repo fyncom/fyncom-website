@@ -12,6 +12,7 @@ import { useCombinedQuery } from "../components/useCombinedQuery"
 // import smsSheildMp4 from "../images/sms-shield-demo.mp4"
 import fyncomWebm from "../images/fyncom-GIF-expanding-logo-cropped.webm"
 import fyncomMp4 from "../images/fyncom-GIF-expanding-logo-cropped.mp4"
+import smsShieldLogo from "../images/logos/SMSShield-logo-placeholder-white.png"
 
 // Functional component for the SMS Shield page
 const SMSShield = () => {
@@ -32,12 +33,16 @@ const SMSShield = () => {
         description="SMS Shield is a service that protects your phone number from unwanted texts."
       />
       <Header />
-      <section className="header">
-        <h1 style={{ textAlign: "center" }}>SMS Shield</h1>
+      <section className="header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+        {/* Logo placeholder - replace src with your logo path or GatsbyImage if available */}
+        {/* Example with GatsbyImage if you have logoImage from useCombinedQuery:
+            {logoImage && <GatsbyImage image={logoImage} alt="SMS Shield Logo" style={{ height: 80 }} />} 
+        */}
+        <img src={smsShieldLogo} alt="SMS Shield Logo" style={{ maxWidth: "25%", minWidth: "200px", height: "auto", margin: '0 auto', display: 'block' }} />
       </section>
       <div
         className="sms-shield-container"
-        style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 24px", marginTop: "32px" }}
+        style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 24px", marginTop: "16px" }}
       >
         {/* Video Section */}
         {/* TODO: Add video */}
