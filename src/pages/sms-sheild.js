@@ -5,12 +5,9 @@ import Footer from "../components/footer"
 import { Link } from "gatsby"
 import Seo from "../components/seo"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { useCombinedQuery } from "../components/useCombinedQuery"
 
 // TODO: Add SMS Shield Video, remove placeholder logo gif
 // import smsSheildMp4 from "../images/sms-shield-demo.mp4"
-import fyncomWebm from "../images/fyncom-GIF-expanding-logo-cropped.webm"
-import fyncomMp4 from "../images/fyncom-GIF-expanding-logo-cropped.mp4"
 import smsShieldLogoDark from "../images/logos/SMSShield-logo-placeholder-white.png"
 import smsShieldLogo from "../images/logos/SMSShield-logo-placeholder-black.png"
 
@@ -18,10 +15,6 @@ import smsShieldLogo from "../images/logos/SMSShield-logo-placeholder-black.png"
 const SMSShield = () => {
   // Destructuring data/images from the custom hook useCombinedQuery
   // TODO: Add SMS Shield Video, and logos
-  const {
-    filterImage,
-    filterImageDark,
-  } = useCombinedQuery()
 
   // State for dark mode detection
   const [isDarkMode, setIsDarkMode] = useState(false);
