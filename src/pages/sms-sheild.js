@@ -1,5 +1,5 @@
 // Importing necessary libraries and components
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Header from "../components/header"
 import Footer from "../components/footer"
 import "../components/about.css"
@@ -12,7 +12,8 @@ import { useCombinedQuery } from "../components/useCombinedQuery"
 // import smsSheildMp4 from "../images/sms-shield-demo.mp4"
 import fyncomWebm from "../images/fyncom-GIF-expanding-logo-cropped.webm"
 import fyncomMp4 from "../images/fyncom-GIF-expanding-logo-cropped.mp4"
-import smsShieldLogo from "../images/logos/SMSShield-logo-placeholder-white.png"
+import smsShieldLogoDark from "../images/logos/SMSShield-logo-placeholder-white.png"
+import smsShieldLogo from "../images/logos/SMSShield-logo-placeholder-black.png"
 
 // Functional component for the SMS Shield page
 const SMSShield = () => {
@@ -22,6 +23,27 @@ const SMSShield = () => {
     filterImage,
     filterImageDark,
   } = useCombinedQuery()
+
+  // State for dark mode detection
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    // Function to update dark mode state
+    const checkDarkMode = () => {
+      setIsDarkMode(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    };
+
+    checkDarkMode(); // Initial check
+
+    // Listen for changes
+    const matcher = window.matchMedia('(prefers-color-scheme: dark)');
+    matcher.addEventListener('change', checkDarkMode);
+
+    // Cleanup
+    return () => {
+      matcher.removeEventListener('change', checkDarkMode);
+    };
+  }, []);
 
   // Render the page content
   return (
@@ -34,11 +56,12 @@ const SMSShield = () => {
       />
       <Header />
       <section className="header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        {/* Logo placeholder - replace src with your logo path or GatsbyImage if available */}
-        {/* Example with GatsbyImage if you have logoImage from useCombinedQuery:
-            {logoImage && <GatsbyImage image={logoImage} alt="SMS Shield Logo" style={{ height: 80 }} />} 
-        */}
-        <img src={smsShieldLogo} alt="SMS Shield Logo" style={{ maxWidth: "25%", minWidth: "200px", height: "auto", margin: '0 auto', display: 'block' }} />
+        {/* Dynamically switch logo based on color scheme */}
+        <img
+          src={isDarkMode ? smsShieldLogoDark : smsShieldLogo}
+          alt="SMS Shield Logo"
+          style={{ maxWidth: "25%", minWidth: "200px", height: "auto", margin: '0 auto', display: 'block' }}
+        />
       </section>
       <div
         className="sms-shield-container"
