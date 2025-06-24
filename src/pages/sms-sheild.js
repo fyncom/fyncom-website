@@ -52,7 +52,7 @@ const SMSShield = () => {
       <Seo
         title="SMS Shield"
         // TODO: Add description
-        description="SMS Shield is a service that protects your phone number from unwanted texts."
+        description="SMS Shield protects your phone from spam and unwanted texts. Contacts can message freely; unknown numbers must pay a refundable deposit. Keep your inbox clean and under your control. Shield is a service that protects your phone number from unwanted texts."
       />
       <Header />
       <section className="header" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
