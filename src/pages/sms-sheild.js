@@ -37,7 +37,7 @@ const SMSShield = () => {
       </section>
       <div
         className="sms-shield-container"
-        style={{ display: "flex", justifyContent: "center", alignItems: "center", padding: "0 24px", marginTop: "32px" }}
+        style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", padding: "0 24px", marginTop: "32px" }}
       >
         {/* Video Section */}
         {/* TODO: Add video */}
@@ -54,6 +54,22 @@ const SMSShield = () => {
             style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
           ></iframe>
         </div>
+
+        <div className="sms-shield-text-container" style={{ maxWidth: 640, marginTop: 16, textAlign: 'center' }}>
+            <p style={{ textAlign: 'center' }}>
+            SMS Shield is your phone's first line of defense against unwanted texts. It lets your contacts message you as usual, while keeping unknown numbers in check with a smart, pay-to-message system.
+            </p>
+            <p style={{ textAlign: 'center' }}>
+            Here's how it works: If someone who's not in your contacts wants to text you, they'll need to send a small, refundable deposit. If you respond to them at least three times, the deposit is returned. But if it's spam or unwanted outreach and you ignore it, you keep the deposit.
+            </p>
+            <p style={{ textAlign: 'center' }}>
+            This simple system makes it expensive and unprofitable for scammers, spammers, and AI-generated junk to reach you. Whether you're tired of marketing texts, phishing scams, or just too many unknown numbers, SMS Shield helps you filter the noise and keep your messages clean.
+            </p>
+            <b style={{ textAlign: 'center' }}>
+            No more spam. No more stress. Just texts that matter.
+            </b>
+        </div>
+
       </div>
     </div>
   )
