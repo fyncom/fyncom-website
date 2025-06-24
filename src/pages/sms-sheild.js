@@ -83,6 +83,45 @@ const SMSShield = () => {
           ></iframe>
         </div>
 
+        {/* Placeholder section with heading, square image, and text */}
+        <div
+          className="sms-shield-feature-placeholder"
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '32px 0',
+            width: '100%',
+          }}
+        >
+          <h2 style={{ textAlign: 'center', marginBottom: 20 }}>How SMS Shield Works</h2>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 32,
+              width: '100%',
+              flexWrap: 'wrap',
+            }}
+          >
+            <div style={{ flex: '0 0 200px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img
+                src={smsShieldLogo}
+                alt="Feature Placeholder"
+                style={{ width: 200, height: 200, objectFit: 'cover', borderRadius: 16, background: '#eee' }}
+              />
+            </div>
+            <div style={{ flex: '1 1 300px', minWidth: 220, maxWidth: 400 }}>
+              <p style={{ textAlign: 'left', margin: 0 }}>
+                SMS Shield uses a unique pay-to-message system to keep your inbox clean. Unknown senders must send a refundable deposit to contact you, making it costly for spammers and bots. If you reply, the deposit is returned—if not, you keep it. This ensures only real, wanted messages reach you.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div className="sms-shield-text-container" style={{ maxWidth: 640, marginTop: 16, textAlign: 'center' }}>
             <p style={{ textAlign: 'center' }}>
             SMS Shield is your phone's first line of defense against unwanted texts. It lets your contacts message you as usual, while keeping unknown numbers in check with a smart, pay-to-message system.
