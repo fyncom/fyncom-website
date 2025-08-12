@@ -3,7 +3,7 @@ import "./header.css"
 import { Link } from "gatsby"
 import { helpItems } from "../../static/help-items"
 import { FaBars } from "react-icons/fa"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { useCombinedQuery } from "./useCombinedQuery"
 import { logEvent } from "../utils/analytics"
 
@@ -57,7 +57,7 @@ const Header = () => {
       <div className="header-container">
         <Link to="/">
           <div className="fyncom-logo-header">
-            <Img fixed={logoData} alt="FynCom Logo" />
+            <GatsbyImage image={logoData} alt="FynCom Logo" />
           </div>
         </Link>
         <div ref={hamburgerRef} className="mobile-menu-icon" onClick={toggleMenu}>

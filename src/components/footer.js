@@ -2,7 +2,6 @@ import React from "react"
 import "./footer.css"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import Img from "gatsby-image"
 import { useCombinedQuery } from "./useCombinedQuery"
 
 const Footer = () => {
@@ -12,35 +11,26 @@ const Footer = () => {
       <footer>
         <div className="footer-header">
           <a href="https://www.linkedin.com/company/fyncom">
-            <GatsbyImage
-              image={fyncomLogoWhite}
-              alt="FynCom Logo and LinkedIn Profile"
-            />
+            <GatsbyImage image={fyncomLogoWhite} alt="FynCom Logo and LinkedIn Profile" />
           </a>
           <div className="info-container">
             <p>
               <a href="mailto:info@fyncom.com">info@fyncom.com</a>
             </p>
-            <p>
-              We are located in Merced, CA, focused in the USA & operate
-              globally.
-            </p>
+            <p>We are located in Merced, CA, focused in the USA & operate globally.</p>
           </div>
         </div>
 
         <div className="footer-links-container">
           <div className="footer-socials">
             <a href="https://www.linkedin.com/company/fyncom">
-              <Img fixed={linkedInlogo} alt="FynCom's Linkedin Page" />
+              <GatsbyImage image={linkedInlogo} alt="FynCom's Linkedin Page" />
             </a>
             <a href="https://twitter.com/Fyn_Com">
-              <Img
-                fixed={xLogo}
-                alt="FynCom's X (formally known as Twitter) logo"
-              />
+              <GatsbyImage image={xLogo} alt="FynCom's X (formally known as Twitter) logo" />
             </a>
             <a href="https://www.facebook.com/FynCom/">
-              <Img fixed={fbLogo} alt="FynCom's Facebook page" />
+              <GatsbyImage image={fbLogo} alt="FynCom's Facebook page" />
             </a>
           </div>
           <ul className="footer-links left">
