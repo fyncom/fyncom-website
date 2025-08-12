@@ -106,14 +106,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blogs`,
-        path: `${__dirname}/src/pages`, // change the path according to your file structure
+        path: `${__dirname}/src/pages`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        // If you have remark plugins you want to use, or gatsby-remark-images for handling images, you can add them here
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
