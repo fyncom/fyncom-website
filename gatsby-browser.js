@@ -1,3 +1,4 @@
+import React from "react"
 /**
  * Implement Gatsby's Browser APIs in this file.
  *
@@ -5,6 +6,7 @@
  */
 
 import { initGA, logPageView } from "./src/utils/analytics"
+import { PostHogProvider } from "posthog-js/react"
 
 // Initialize Google Analytics
 export const onClientEntry = () => {
@@ -20,4 +22,19 @@ export const onRouteUpdate = () => {
   }
 }
 
-// You can delete this file if you're not using it
+// Wrap root element with PostHogProvider
+export const wrapRootElement = ({ element }) => {
+  return (
+    <PostHogProvider
+      apiKey={process.env.GATSBY_POSTHOG_API_KEY}
+      options={{
+        api_host: (typeof window !== "undefined" ? window.location.origin : "") + "/ph",
+        defaults: "2025-05-24",
+        capture_exceptions: true,
+        debug: process.env.NODE_ENV === "development",
+      }}
+    >
+      {element}
+    </PostHogProvider>
+  )
+}
