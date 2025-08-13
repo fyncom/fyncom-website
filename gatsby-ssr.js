@@ -1,5 +1,4 @@
-import React from "react"
-import { PostHogProvider } from "posthog-js/react"
+const React = require("react")
 
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
@@ -19,4 +18,3 @@ exports.wrapRootElement = ({ element }) => {
 exports.onRenderBody = ({ setHtmlAttributes }) => {
   setHtmlAttributes({ lang: `en` })
 }
-
