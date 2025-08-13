@@ -6,8 +6,8 @@
         Access-Control-Allow-Methods = "GET, POST, OPTIONS"
         Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept"
 
-[build.environment]
-  NODE_VERSION = "18"
+#[build.environment]
+#  NODE_VERSION = "18"
 
 # Reverse proxy for PostHog to reduce ad-blocker interference
 [[redirects]]
