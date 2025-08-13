@@ -16,6 +16,12 @@
   status = 200
   force = true
 
+[[redirects]]
+  from = "/start"
+  to = "/"
+  status = 301
+  force = true
+
 # Speed up Gatsby builds by caching .cache/ and public/ between builds
 [[plugins]]
 package = "@netlify/plugin-gatsby"
