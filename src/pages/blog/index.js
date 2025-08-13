@@ -2,15 +2,14 @@ import React from "react"
 import "../../components/help-center.css"
 import { graphql, Link } from "gatsby"
 import { Wrapper } from "../../components/Markdown-Wrapper"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import truncate from "lodash/truncate" // You may need to install lodash if not already installed
 import "../../components/blog.css"
 
 export default function BlogIndex({ data }) {
   const seo = {
     title: "Blog FynCom",
-    description:
-      "Read the latest on how to stay innovative in this evolving digital world",
+    description: "Read the latest on how to stay innovative in this evolving digital world",
   }
   // A function to truncate text to a specific length
   const shortenText = (text, length) => {
@@ -31,11 +30,7 @@ export default function BlogIndex({ data }) {
         {data.allMdx.nodes
           .filter(({ frontmatter }) => {
             // Filter out posts without required content
-            return (
-              frontmatter.title && 
-              frontmatter.description && 
-              frontmatter.date
-            );
+            return frontmatter.title && frontmatter.description && frontmatter.date
           })
           .map(({ id, excerpt, frontmatter, fields }) => (
             <div className="blog-item" key={id}>
@@ -44,16 +39,11 @@ export default function BlogIndex({ data }) {
                   <Link to={`${fields.slug}`}>{frontmatter.title}</Link>
                 </h2>
                 <small>{frontmatter.date}</small>
-                <p>{shortenText(frontmatter.description || excerpt, 100)}</p>{" "}
-                {/* Truncate to 100 characters */}
+                <p>{shortenText(frontmatter.description || excerpt, 100)}</p> {/* Truncate to 100 characters */}
                 {frontmatter.featuredImage?.childImageSharp ? (
-                  <Img fluid={frontmatter.featuredImage.childImageSharp.fluid} />
+                  <GatsbyImage image={getImage(frontmatter.featuredImage.childImageSharp)} alt={frontmatter.title} />
                 ) : frontmatter.featuredImage?.publicURL ? (
-                  <img
-                    className={"gif-image"}
-                    src={frontmatter.featuredImage.publicURL}
-                    alt={frontmatter.title}
-                  />
+                  <img className={"gif-image"} src={frontmatter.featuredImage.publicURL} alt={frontmatter.title} />
                 ) : null}
               </Link>
             </div>
@@ -75,9 +65,7 @@ export const pageQuery = graphql`
           featuredImage {
             publicURL
             childImageSharp {
-              fluid(maxWidth: 800) {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData(width: 800, layout: CONSTRAINED, placeholder: BLURRED)
             }
           }
         }

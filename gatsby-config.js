@@ -10,26 +10,26 @@ module.exports = {
     title: `Anti AI, Pro Human, Anti Spam Cash Back, CRM Rewards, Interactive Marketing | FynCom`,
     titleTemplate: `%s | FynCom`,
     description: `Get more conversations by instantly rewarding prospects when they respond to emails or book meetings. Break sales funnel bottlenecks with automated rewards. Get FynCom set up in minutes & enhance your tech stack. Improve customer experience & max your chances of gaining & retaining customers.`,
-    image: '/images/fyncom-social-card.jpg',
-    twitterUsername: '@adrianegraphene',
+    image: "/images/fyncom-social-card.jpg",
+    twitterUsername: "@adrianegraphene",
     author: `@adrianegraphene`,
     siteUrl: `https://www.fyncom.com`,
   },
   plugins: [
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: 'https://www.fyncom.com',
-        sitemap: 'https://www.fyncom.com/sitemap-index.xml',
-        policy: [{ userAgent: '*', allow: '/' }]
-      }
+        host: "https://www.fyncom.com",
+        sitemap: "https://www.fyncom.com/sitemap-index.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
     },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         excludes: ["/subscribe/"],
-        output: "/"
-      }
+        output: "/",
+      },
     },
     {
       resolve: `gatsby-plugin-web-font-loader`,
@@ -52,7 +52,17 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ["auto", "webp"],
+          quality: 60,
+          placeholder: "dominantColor",
+          breakpoints: [640, 960, 1280],
+        },
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -64,8 +74,8 @@ module.exports = {
         display: `standalone`,
         icon: `src/images/fyncom-icon.png`,
         icon_options: {
-          purpose: `any maskable`
-        }
+          purpose: `any maskable`,
+        },
       },
     },
     `gatsby-plugin-offline`,
@@ -96,23 +106,26 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blogs`,
-        path: `${__dirname}/src/pages`, // change the path according to your file structure
+        path: `${__dirname}/src/pages`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: [`.mdx`, `.md`],
-        // If you have remark plugins you want to use, or gatsby-remark-images for handling images, you can add them here
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
             options: {
-              // to see where this pops up.
-              maxWidth: 593, // Example option for gatsby-remark-images
+              maxWidth: 800,
+              quality: 60,
+              withWebp: true,
+              withAvif: false,
+              linkImagesToOriginal: false,
+              showCaptions: false,
+              srcSetBreakpoints: [640, 960, 1280],
             },
           },
-          // other plugins here
         ],
       },
     },
