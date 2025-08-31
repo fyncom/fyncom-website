@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FynCom Athlete Direct | Business Plan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals with Blue Accent -->
+    <!-- Application Structure Plan: The application is designed as a persuasive, single-page interactive pitch deck. It guides the user through a narrative flow: identifying the massive market opportunity created by NCAA NIL rule changes, highlighting the compliance complexities athletes face, presenting "FynCom Athlete Direct" as the definitive solution, and outlining a clear strategy for market entry and growth. This structure was chosen over a static report to make the business case more engaging and understandable. Key interactions, such as toggling between user-persona views (Athlete, Fan, University) and changing financial projection scenarios, allow stakeholders to actively explore the product's value proposition and market potential, fostering deeper buy-in. -->
+    <!-- Visualization & Content Choices: 
+        1. NIL Market Size (Report Info) -> Goal: Compare opportunity across sports -> Viz: Donut Chart -> Interaction: Hover for details -> Justification: Instantly conveys market share and key target areas -> Library: Chart.js.
+        2. Go-to-Market Plan (Report Info) -> Goal: Organize rollout strategy -> Presentation: Phased Timeline -> Interaction: Hover to highlight stage details -> Justification: Clearly visualizes strategic steps over time -> Method: Styled HTML/Tailwind.
+        3. Revenue Projections (Report Info) -> Goal: Show potential financial outcomes -> Viz: Bar Chart -> Interaction: Buttons to switch between 'Conservative', 'Moderate', 'Aggressive' growth scenarios -> Justification: Provides a dynamic, interactive way to explore financial possibilities -> Library: Chart.js.
+        4. Product Features (Report Info) -> Goal: Inform about the platform's functionality for all stakeholders -> Presentation: Tabbed Interface -> Interaction: Click tabs for 'Athlete', 'Fan', and 'University' views -> Justification: A highly effective method to demonstrate a multi-faceted product in a compact space -> Method: HTML/Tailwind/JS.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFDFB;
+            color: #1a202c;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .bar-chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        .nav-link {
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #2563eb;
+        }
+        .active-tab {
+            border-bottom-color: #2563eb;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        .tab-content {
+            display: none;
+        }
+        .active-content {
+            display: block;
+        }
+        .kpi-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-primary {
+            background-color: #2563eb;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+        .btn-secondary.active {
+            background-color: #2563eb;
+            color: white;
+            border-color: #2563eb;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-gray-800">FynCom</span>
+                    <span class="ml-2 text-2xl font-light text-blue-600">Athlete Direct</span>
+                </div>
+                <div class="hidden md:flex md:space-x-8">
+                    <a href="#opportunity" class="nav-link text-gray-600">The Opportunity</a>
+                    <a href="#solution" class="nav-link text-gray-600">The Solution</a>
+                    <a href="#strategy" class="nav-link text-gray-600">Market Strategy</a>
+                    <a href="#financials" class="nav-link text-gray-600">Financials</a>
+                    <a href="#next-steps" class="nav-link text-gray-600">Next Steps</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-gray-900">Monetizing Moments in College Sports</h1>
+                <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-gray-600">A proposal to leverage FynCom's patented technology to create a new, compliant revenue stream for NCAA athletes, empowering them to connect directly with fans.</p>
+                <div class="mt-10">
+                    <a href="#opportunity" class="btn-primary">Explore the Plan</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="opportunity" class="py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">A New Frontier: The NIL Opportunity</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">The NCAA's Name, Image, and Likeness (NIL) rules have unlocked a multi-billion dollar market. Student-athletes can now monetize their personal brand, but they face a complex and fragmented landscape of rules, creating a critical need for safe, simple, and compliant tools.</p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="kpi-card">
+                        <div class="text-4xl font-bold text-blue-600">$1.5B+</div>
+                        <p class="mt-2 text-gray-700 font-semibold">Projected 2025 NIL Market Size</p>
+                        <p class="mt-1 text-sm text-gray-500">A massive, untapped market is growing exponentially year over year.</p>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="text-4xl font-bold text-blue-600">480,000+</div>
+                        <p class="mt-2 text-gray-700 font-semibold">Student-Athletes</p>
+                        <p class="mt-1 text-sm text-gray-500">A large, addressable user base in need of effective monetization tools.</p>
+                    </div>
+                    <div class="kpi-card">
+                         <div class="text-4xl font-bold text-blue-600">Complex</div>
+                        <p class="mt-2 text-gray-700 font-semibold">Regulatory Landscape</p>
+                        <p class="mt-1 text-sm text-gray-500">A patchwork of state laws and school policies creates a high barrier to entry and a need for compliance-focused solutions.</p>
+                    </div>
+                </div>
+
+                <div class="mt-20">
+                    <h3 class="text-2xl font-semibold text-center text-gray-800">Navigating the Compliance Maze</h3>
+                    <p class="mt-3 text-center text-gray-600">Any successful platform must be built on a foundation of compliance. Here are the core principles:</p>
+                    <div class="max-w-4xl mx-auto mt-8 space-y-4">
+                        <div class="border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-medium text-gray-700 hover:bg-gray-50">
+                                <span>No "Pay-for-Play"</span>
+                                <span class="accordion-icon text-xl">+</span>
+                            </button>
+                            <div class="accordion-content p-5 border-t border-gray-200 hidden">
+                                <p class="text-gray-600">This is the cardinal rule. Compensation cannot be tied to athletic performance, used as an inducement to attend a specific school, or for just being on a team. All earnings must be for legitimate work or services rendered, such as an appearance, a social media post, or, in our model, for providing direct access and time for communication.</p>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-medium text-gray-700 hover:bg-gray-50">
+                                <span>Mandatory Disclosure</span>
+                                <span class="accordion-icon text-xl">+</span>
+                            </button>
+                            <div class="accordion-content p-5 border-t border-gray-200 hidden">
+                                <p class="text-gray-600">Athletes are required to disclose NIL activities to their university's compliance office. Deals over $600 must be reported to a national clearinghouse. A platform must facilitate this reporting to be a viable partner for both athletes and institutions.</p>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg">
+                            <button class="accordion-header w-full flex justify-between items-center p-5 text-left font-medium text-gray-700 hover:bg-gray-50">
+                                <span>Restricted Categories & Conflicts</span>
+                                 <span class="accordion-icon text-xl">+</span>
+                            </button>
+                            <div class="accordion-content p-5 border-t border-gray-200 hidden">
+                                <p class="text-gray-600">Many schools and states prohibit deals involving gambling, alcohol, tobacco, and adult entertainment. Furthermore, an athlete's personal deal cannot conflict with their school's exclusive contracts (e.g., an athlete at a Nike school cannot wear Adidas during team activities). The platform must respect these limitations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">The Solution: FynCom Athlete Direct</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">A premium, university-friendly platform that empowers athletes to monetize direct fan engagement safely and compliantly. We leverage FynCom's core "payment-for-attention" technology to create a filter and a revenue stream, turning fan outreach from a distraction into an opportunity.</p>
+                </div>
+
+                <div class="max-w-5xl mx-auto mt-16">
+                    <div class="border-b border-gray-200">
+                        <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                            <button class="tab-btn active-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-tab="athlete">For the Athlete</button>
+                            <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 font-medium text-sm" data-tab="fan">For the Fan</button>
+                            <button class="tab-btn whitespace-nowrap py-4 px-1 border-b-2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 font-medium text-sm" data-tab="university">For the University</button>
+                        </nav>
+                    </div>
+
+                    <div class="mt-8">
+                        <div id="athlete" class="tab-content active-content">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h3 class="text-2xl font-semibold text-gray-800">Total Control, Effortless Monetization</h3>
+                                    <p class="mt-3 text-gray-600">The athlete dashboard is the control center. Athletes set their own prices, manage their availability with a single toggle, and track earnings in real-time. This isn't about creating more work; it's about adding value to interactions that are already happening.</p>
+                                    <ul class="mt-6 space-y-4 text-gray-600">
+                                        <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">✓</span><span><strong>Set Your Price:</strong> Define the value of your time for texts, video messages, and even "peak moment" post-game calls.</span></li>
+                                        <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">✓</span><span><strong>Control Your Time:</strong> Toggle "Available" or "Unavailable" status at any time. Only receive paid requests when you're ready.</span></li>
+                                        <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">✓</span><span><strong>Compliance Built-In:</strong> Automatically generate disclosure reports for your school's compliance office.</span></li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-100 p-6 rounded-lg shadow-md">
+                                    <div class="flex items-center justify-between mb-4">
+                                        <h4 class="font-bold text-lg">Alex Jordan's Dashboard</h4>
+                                        <div class="flex items-center space-x-2">
+                                            <span class="text-sm font-medium text-gray-600">Availability</span>
+                                            <div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+                                                <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer" checked/>
+                                                <label for="toggle" class="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-md mb-4">
+                                        <p class="text-sm text-gray-500">Total Earnings (Month)</p>
+                                        <p class="text-2xl font-bold text-gray-800">$1,250.00</p>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold mb-2">Set Your Rates</h5>
+                                        <div class="space-y-2">
+                                            <div class="flex justify-between items-center bg-white p-3 rounded-md"><span>Fan Text Message</span><span class="font-bold text-blue-600">$5</span></div>
+                                            <div class="flex justify-between items-center bg-white p-3 rounded-md"><span>1-Min Video Shoutout</span><span class="font-bold text-blue-600">$50</span></div>
+                                            <div class="flex justify-between items-center bg-white p-3 rounded-md"><span>Post-Game Call (Auction)</span><span class="font-bold text-blue-600">Starting Bid: $100</span></div>
+                                        </div>
+                                    </div>
+                                    <button class="w-full mt-4 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700">Generate Compliance Report</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="fan" class="tab-content">
+                            <h3 class="text-2xl font-semibold text-gray-800">Get Closer to the Game</h3>
+                            <p class="mt-3 text-gray-600">For fans, Athlete Direct offers a legitimate, direct line to the athletes they admire. It's a chance to connect beyond a social media like, especially during the most exciting moments of the season. All payments directly support the student-athlete.</p>
+                             <div class="mt-6 bg-gray-50 p-8 rounded-lg shadow-inner text-center">
+                                <p class="text-lg font-medium">"Get a 'Happy Birthday' video from the star quarterback, or bid for a chance to congratulate the point guard right after a buzzer-beater. This is the next level of fan engagement."</p>
+                            </div>
+                        </div>
+                        <div id="university" class="tab-content">
+                            <h3 class="text-2xl font-semibold text-gray-800">A Partner in Compliance</h3>
+                            <p class="mt-3 text-gray-600">We position ourselves as a partner to athletic departments, not a disruption. Our university portal provides the tools to protect the institution and support student-athletes, making us a solution they can proudly endorse.</p>
+                             <ul class="mt-6 space-y-4 text-gray-600">
+                                <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">✓</span><span><strong>Compliance Oversight:</strong> View aggregated, anonymized data on NIL activities happening on the platform.</span></li>
+                                <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">✓</span><span><strong>Simplified Reporting:</strong> Athletes can submit perfectly formatted disclosure reports with one click, saving your office time and effort.</span></li>
+                                <li class="flex items-start"><span class="text-blue-500 font-bold mr-2">✓</span><span><strong>Brand Safety:</strong> Our platform is a closed, monitored environment, preventing the brand-damaging interactions common on public social media.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="strategy" class="py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Go-to-Market Strategy</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Our strategy focuses on building trust and demonstrating value through strategic partnerships, starting with a targeted, phased approach.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 items-center">
+                    <div class="chart-container">
+                        <canvas id="marketShareChart"></canvas>
+                        <p class="text-center text-sm text-gray-500 mt-2">NIL Compensation Distribution by Sport</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-gray-800">Targeted Market Entry</h3>
+                        <p class="mt-3 text-gray-600">While Football and Men's Basketball represent the largest share of the NIL market, our initial targets are sports with high fan engagement and less saturated media coverage. This allows us to build a strong user base and prove our model effectively.</p>
+                        <ul class="mt-4 space-y-2 text-gray-600">
+                           <li><strong>Primary Targets:</strong> Women's Basketball, College Baseball/Softball, Wrestling.</li>
+                           <li><strong>Secondary Targets:</strong> Gymnastics, Volleyball, and other high-engagement Olympic sports.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-20">
+                    <h3 class="text-2xl font-semibold text-center text-gray-800">Phased Rollout Plan</h3>
+                    <div class="max-w-4xl mx-auto mt-8 relative">
+                        <div class="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-dashed border-gray-300"></div>
+                        <div class="space-y-12">
+                            <div class="flex items-center w-full">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <div class="font-bold text-blue-600">Phase 1 (Q1 2026)</div>
+                                    <h4 class="font-semibold text-lg">Pilot Program</h4>
+                                    <p class="text-gray-600">Partner with 1-2 mid-major universities. Leverage founder connections to onboard their athletic departments and a select group of 20-30 athletes. Focus on product refinement and gathering case studies.</p>
+                                </div>
+                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold z-10">1</div>
+                            </div>
+                             <div class="flex items-center w-full">
+                                <div class="w-1/2 pl-8 text-left ml-auto">
+                                    <div class="font-bold text-blue-600">Phase 2 (Q2-Q3 2026)</div>
+                                    <h4 class="font-semibold text-lg">Conference Expansion</h4>
+                                    <p class="text-gray-600">Use pilot success stories to expand to all schools within the pilot conferences. Initiate conversations with Power Five conference schools. Begin targeted athlete marketing.</p>
+                                </div>
+                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold z-10 ml-auto">2</div>
+                            </div>
+                            <div class="flex items-center w-full">
+                                <div class="w-1/2 pr-8 text-right">
+                                    <div class="font-bold text-blue-600">Phase 3 (Q4 2026 & Beyond)</div>
+                                    <h4 class="font-semibold text-lg">National Scale</h4>
+                                    <p class="text-gray-600">Full-scale national rollout. Onboard major Power Five programs and high-profile athletes. Launch a national fan-facing marketing campaign ahead of major NCAA tournaments.</p>
+                                </div>
+                                <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold z-10">3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="financials" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Business Model & Financials</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Our model is simple and transparent. We succeed when athletes succeed. We take a 20% platform fee on all transactions, which covers payment processing, platform maintenance, compliance tools, and support.</p>
+                </div>
+                <div class="mt-12 text-center">
+                    <div class="inline-flex rounded-md shadow-sm" role="group">
+                        <button type="button" id="conservativeBtn" class="projection-btn btn-secondary active px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100">Conservative</button>
+                        <button type="button" id="moderateBtn" class="projection-btn btn-secondary px-4 py-2 text-sm font-medium text-gray-900 bg-white border-t border-b border-gray-200 hover:bg-gray-100">Moderate</button>
+                        <button type="button" id="aggressiveBtn" class="projection-btn btn-secondary px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-r-md hover:bg-gray-100">Aggressive</button>
+                    </div>
+                </div>
+                <div class="bar-chart-container mt-8">
+                    <canvas id="revenueProjectionChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="next-steps" class="py-20 md:py-28">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Next Steps: Seizing the Moment</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">The time to act is now. The NIL landscape is solidifying, and the first platform to build trust with universities and athletes will become the market leader.</p>
+                </div>
+                <div class="max-w-4xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Seed Funding</h3>
+                        <p class="mt-2 text-gray-600">Secure a $750k seed round to fund product development for the athlete/university portals and hire key personnel for university outreach.</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">Product Development</h3>
+                        <p class="mt-2 text-gray-600">Finalize the MVP of the Athlete Direct platform with a focus on a seamless onboarding experience and robust compliance reporting features.</p>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold">University Outreach</h3>
+                        <p class="mt-2 text-gray-600">Immediately begin conversations with target universities for the pilot program, aiming for formal commitments by the end of 2025.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center">
+            <p>&copy; 2025 FynCom Corporation. This is an internal business proposal.</p>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const marketShareData = {
+        labels: ['Football', 'Men\'s Basketball', 'Women\'s Basketball', 'Other'],
+        datasets: [{
+            label: 'NIL Market Share',
+            data: [45, 25, 15, 15],
+            backgroundColor: [
+                'rgba(37, 99, 235, 0.8)',
+                'rgba(59, 130, 246, 0.8)',
+                'rgba(96, 165, 250, 0.8)',
+                'rgba(147, 197, 253, 0.8)',
+            ],
+            borderColor: [
+                'rgba(37, 99, 235, 1)',
+                'rgba(59, 130, 246, 1)',
+                'rgba(96, 165, 250, 1)',
+                'rgba(147, 197, 253, 1)',
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
+    new Chart(marketShareCtx, {
+        type: 'doughnut',
+        data: marketShareData,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: false,
+                }
+            }
+        }
+    });
+
+    const revenueProjectionData = {
+        labels: ['Year 1 (2026)', 'Year 2 (2027)', 'Year 3 (2028)'],
+        conservative: [0.5, 2.5, 8], 
+        moderate: [0.8, 5, 15],
+        aggressive: [1.2, 8, 25],
+    };
+
+    let revenueChart;
+    const revenueCtx = document.getElementById('revenueProjectionChart').getContext('2d');
+
+    function createOrUpdateChart(scenario) {
+        if (revenueChart) {
+            revenueChart.destroy();
+        }
+        revenueChart = new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: revenueProjectionData.labels,
+                datasets: [{
+                    label: 'Projected Revenue (in Millions)',
+                    data: revenueProjectionData[scenario],
+                    backgroundColor: 'rgba(37, 99, 235, 0.7)',
+                    borderColor: 'rgba(37, 99, 235, 1)',
+                    borderWidth: 1,
+                    borderRadius: 5,
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value + 'M';
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false,
+                    },
+                    title: {
+                        display: true,
+                        text: `Revenue Projections: ${scenario.charAt(0).toUpperCase() + scenario.slice(1)} Scenario`,
+                        font: {
+                            size: 16
+                        }
+                    }
+                }
+            }
+        });
+    }
+
+    createOrUpdateChart('conservative');
+
+    const projectionButtons = document.querySelectorAll('.projection-btn');
+    projectionButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            projectionButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            let scenario = 'conservative';
+            if (button.id === 'moderateBtn') scenario = 'moderate';
+            if (button.id === 'aggressiveBtn') scenario = 'aggressive';
+            createOrUpdateChart(scenario);
+        });
+    });
+
+    const accordions = document.querySelectorAll('.accordion-header');
+    accordions.forEach(accordion => {
+        accordion.addEventListener('click', () => {
+            const content = accordion.nextElementSibling;
+            const icon = accordion.querySelector('.accordion-icon');
+            content.classList.toggle('hidden');
+            if(content.classList.contains('hidden')) {
+                icon.textContent = '+';
+            } else {
+                icon.textContent = '-';
+            }
+        });
+    });
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(item => item.classList.remove('active-tab'));
+            tab.classList.add('active-tab');
+
+            const target = tab.getAttribute('data-tab');
+            tabContents.forEach(content => {
+                content.classList.remove('active-content');
+                if (content.id === target) {
+                    content.classList.add('active-content');
+                }
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>
