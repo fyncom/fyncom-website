@@ -131,17 +131,24 @@ const NcaaPage = () => {
       >
         <script src="https://cdn.tailwindcss.com"></script>
         <style>{`
-          body { background-color: #FDFDFB; color: #1a202c; }
           .chart-container { position: relative; width: 100%; max-width: 450px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
           .bar-chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 400px; max-height: 500px; }
           .nav-link { transition: color 0.3s ease; }
-          .nav-link:hover { color: #2563eb; }
-          .active-tab { border-bottom-color: #2563eb; color: #2563eb; font-weight: 600; }
-          .kpi-card { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1.5rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+          .nav-link:hover { color: var(--fyncom-blue); }
+          .active-tab { border-bottom-color: var(--fyncom-blue); color: var(--fyncom-blue); font-weight: 600; }
+          .kpi-card { background-color: var(--help-box); border: 1px solid var(--navigation); border-radius: 0.75rem; padding: 1.5rem; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
           .kpi-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-          .btn-primary { background-color: #2563eb; color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: background-color 0.3s ease; }
-          .btn-primary:hover { background-color: #1d4ed8; }
-          .btn-secondary.active { background-color: #2563eb; color: white; border-color: #2563eb; }
+          .btn-primary { background-color: var(--fyncom-blue); color: white; padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600; transition: background-color 0.3s ease; }
+          .btn-primary:hover { background-color: var(--fyncom-dark-cyan); }
+          .btn-secondary.active { background-color: var(--fyncom-blue); color: white; border-color: var(--fyncom-blue); }
+          .ncaa-page a { color: var(--color-link); }
+          .ncaa-page .bg-white { background-color: var(--color-background) !important; }
+          .ncaa-page .bg-gray-100, .ncaa-page .bg-gray-50 { background-color: var(--help-box) !important; }
+          .ncaa-page .border-gray-200 { border-color: var(--navigation) !important; }
+          .ncaa-page .text-gray-900, .ncaa-page .text-gray-800, .ncaa-page .text-gray-700, .ncaa-page .text-gray-600, .ncaa-page .text-gray-500 { color: var(--color-text) !important; }
+          .ncaa-page .text-blue-600, .ncaa-page .text-blue-500 { color: var(--fyncom-blue) !important; }
+          .ncaa-page .bg-blue-600 { background-color: var(--fyncom-blue) !important; }
+          .ncaa-page .hover\\:bg-blue-700:hover { background-color: var(--fyncom-dark-cyan) !important; }
         `}</style>
       </Seo>
       <Header />
@@ -548,7 +555,7 @@ const NcaaPage = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold">Seed Funding</h3>
                 <p className="mt-2 text-gray-600">
-                  Secure a $10m seed round to fund product development for the athlete/university portals and hire key personnel for university outreach.
+                  Secure a $750k seed round to fund product development for the athlete/university portals and hire key personnel for university outreach.
                 </p>
               </div>
               <div className="p-6">
