@@ -158,6 +158,18 @@
 .exchange p strong {
   color: var(--fyncom-red);
 }
+/* enforce deterministic color scheme */
+.mention-section:nth-of-type(odd) .highlight-text,
+.mention-section:nth-of-type(odd) .conversation-format { border-left-color: var(--fyncom-blue); }
+.mention-section:nth-of-type(even) .highlight-text,
+.mention-section:nth-of-type(even) .conversation-format { border-left-color: var(--fyncom-red); }
+.mention-section:nth-of-type(odd) .video-trigger { background: linear-gradient(135deg, var(--fyncom-blue), #4a90e2); }
+.mention-section:nth-of-type(odd) .video-trigger:hover { background: linear-gradient(135deg, #4a90e2, var(--fyncom-blue)); }
+.mention-section:nth-of-type(even) .video-trigger { background: linear-gradient(135deg, var(--fyncom-red), #ff7a7e); }
+.mention-section:nth-of-type(even) .video-trigger:hover { background: linear-gradient(135deg, #ff7a7e, var(--fyncom-red)); }
+/* standardize emphasis: speaker names blue, other strong text inherit */
+.exchange p strong { color: inherit; }
+.exchange p > strong:first-child { color: var(--fyncom-blue); }
 
 /* Modal Styles */
 .video-modal {
