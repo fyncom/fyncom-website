@@ -123,6 +123,47 @@ const Mentions = () => {
           </div>
         </section>
 
+        {/* NEW SECTION: Andrej Karpathy on Spam Filter Failure */}
+        <section className="mention-section" id="spam-filters-failure">
+          <h2>On the Failure of Modern Spam Filters</h2>
+          {/* This is a styled link to the tweet, not a video trigger */}
+          <a
+            href="https://x.com/karpathy/status/1957574489358873054?lang=en"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tweet-trigger" // You can style this class to look like your video triggers
+          >
+            <div className="tweet-trigger-content">
+              <div>
+                <h3>Andrej Karpathy (OpenAI Co-founder) on Spam</h3>
+                <p className="timestamp">Read the X Post from May 2024</p>
+              </div>
+              <span className="play-icon">🔗</span>
+            </div>
+          </a>
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>An Expert's Frustration:</strong> Andrej Karpathy, a co-founder of OpenAI and one of the world's leading AI experts, publicly shared his
+                inability to stop a daily barrage of spam calls and texts. He highlights a critical failure: despite using every tool available, like
+                carrier-level blockers (AT&T Active Armor), government lists (Do Not Call), and OS features (iOS "Silence Unknown Callers"); the unwanted
+                communications still get through.
+              </p>
+              <p>
+                <strong>Why Existing Systems Fail:</strong> Karpathy points out the core technical problem: spammers use new, unique numbers for every attempt,
+                making the strategy of "blocking" completely obsolete. His experience proves that the current approach of filtering by identity or reputation is
+                a fundamentally broken game of cat-and-mouse.
+              </p>
+              <p>
+                <strong>The FynCom Solution: An Economic Firewall:</strong> This is a powerful, real-world validation of FynCom's mission. Karpathy's problem
+                isn't a lack of technical savvy; it's a systemic failure that can't be solved with more of the same technology. The only effective solution is
+                to change the economics. FynCom's refundable deposit system creates a financial barrier that makes the high-volume, low-margin business of spam
+                economically impossible, solving the problem at its root.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* NEW SECTION: Shadow Economy and Digital Scams */}
         <section className="mention-section" id="shadow-economy-digital-scams">
           <h2>On the Scale of the Shadow Economy and Digital Scams</h2>
@@ -176,7 +217,7 @@ const Mentions = () => {
                 <h4>AI as a Productivity Tool, Not a Replacement</h4>
                 <p>
                   He refutes the utopian notion that AI will lead to a world where everyone is "sitting around doing poetry." Instead, he argues AI's primary
-                  role is to make existing jobs more productive. Schmidt stresses that technology changes, but human nature does not—there will always be "evil
+                  role is to make existing jobs more productive. Schmidt stresses that technology changes, but human nature does not; there will always be "evil
                   people" using tools for malicious purposes and "good people" trying to stop them.
                 </p>
               </div>
@@ -210,7 +251,7 @@ const Mentions = () => {
                 <p>
                   <strong>Balaji Srinivasan:</strong> Defines legacy media as the <strong>"non-consensual invasion of privacy for profit."</strong> He argues to
                   a16z's Erik Torenberg, that individuals cannot opt out of being targeted and equates modern journalistic tactics with spamming, stalking, and
-                  scamming—actions for which we have legal protections in other contexts.
+                  scamming; actions for which we have legal protections in other contexts.
                 </p>
               </div>
               <div className="exchange">
@@ -692,7 +733,7 @@ const Mentions = () => {
                 <strong>second most common type of hoax</strong>. This validates every prediction made by the industry leaders featured above.
               </p>
               <p>
-                <strong>AI-Powered Scale:</strong> Just as Yudkowsky predicted, AI isn't necessarily better at phishing than humans—it's simply "cheaper at
+                <strong>AI-Powered Scale:</strong> Just as Yudkowsky predicted, AI isn't necessarily better at phishing than humans; it's simply "cheaper at
                 phishing" and can "phish everyone and see who's most vulnerable" at unprecedented scale. Job scammers are now using AI to send millions of
                 personalized fake job offers for pennies.
               </p>
@@ -703,12 +744,12 @@ const Mentions = () => {
               </p>
               <p>
                 <strong>Economic Desperation Exploitation:</strong> The combination of a rocky labor market and sophisticated AI targeting has created the
-                perfect storm. Gen Z job seekers—despite being digital natives—are particularly vulnerable to these AI-generated, hyper-personalized scams.
+                perfect storm. Gen Z job seekers; despite being digital natives, are particularly vulnerable to these AI-generated, hyper-personalized scams.
               </p>
               <p>
                 <strong>The Solution Was Always Economic:</strong> Traditional security measures (content filtering, number blocking, user education) continue
                 to fail because they don't address the root cause: zero marginal cost of communication. FynCom's refundable deposit approach makes mass scamming
-                economically impossible—exactly what this crisis demands.
+                economically impossible, exactly what this crisis demands.
               </p>
               <p>
                 <strong>
