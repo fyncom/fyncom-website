@@ -86,6 +86,154 @@ const Mentions = () => {
       </section>
 
       <div className="mentions-container">
+        {/* NEW SECTION: AI Cybercrime and Vibe Hacking */}
+        <section className="mention-section" id="ai-cybercrime-vibe-hacking">
+          <h2>Anthropic On AI Cybercrime and "Vibe Hacking"</h2>
+          <VideoTrigger
+            videoData={{
+              title: "August 27th, 2025 - AI Cybercrime: Vibe Hacking",
+              timestamp: "Watch ~2 minutes starting at 0:17",
+              embedUrl: "https://www.youtube.com/embed/EsCNkDrIGCw?start=17",
+            }}
+          />
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>Lowering the Bar for Cybercrime:</strong> The concept of "vibe hacking" is introduced, describing how individuals no longer need
+                technical skills to commit sophisticated cybercrime. Instead, they can use natural language prompts to direct AI to write malware, conduct
+                social engineering, and execute complex hacks.
+              </p>
+              <p>
+                <strong>Explosive Scale and Speed:</strong> The discussion highlights a case where a single actor using "vibe hacking" accomplished in weeks
+                what would normally take a skilled team of cybercriminals months. This individual successfully targeted 17 organizations with data extortion,
+                demonstrating a massive increase in the scale and speed of cyber threats.
+              </p>
+              <p>
+                <strong>The Inevitability of AI-Powered Attacks:</strong> This scenario is a real-world example of the threats discussed by other leaders on
+                this page. When AI makes it easy and cheap to "phish everyone," as Yudkowsky warned (see{" "}
+                <a href="#ai-manipulation-phishing">ai-manipulation-phishing</a>), the volume of sophisticated attacks will skyrocket.
+              </p>
+              <p>
+                <strong>FynCom's Economic Defense:</strong> This new reality proves that technical defenses and user education are not enough. The only way to
+                counter a threat that operates at this scale is to disrupt its economic model. FynCom's refundable deposits create a necessary financial
+                barrier, making it prohibitively expensive for "vibe hackers" to launch mass-scale attacks while ensuring that legitimate and important
+                communications are prioritized.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* NEW SECTION: Shadow Economy and Digital Scams */}
+        <section className="mention-section" id="shadow-economy-digital-scams">
+          <h2>On the Scale of the Shadow Economy and Digital Scams</h2>
+          <VideoTrigger
+            videoData={{
+              title: "Mariana Van Zeller on the Global Black & Gray Markets",
+              timestamp: "Watch 1.5 minutes starting at 51:06",
+              embedUrl: "https://www.youtube.com/embed/6J4U3R5dRik?start=3066",
+            }}
+          />
+          <div className="mention-content">
+            <div className="highlight-text">
+              <p>
+                <strong>The Staggering Scale:</strong> Mariana Van Zeller reveals a shocking statistic: <strong>38% of the global economy</strong> comprises
+                black and gray markets. This "hidden third" includes everything from illegal drug trades to unregulated street vendors.
+              </p>
+              <p>
+                <strong>The Exploding Scam Industry:</strong> Within this shadow economy, scams are a rapidly growing sector. Van Zeller notes that last year
+                alone, Americans lost **$12.5 billion** to scams, an industry that has been "doubling and doubling" each year. This highlights the immense
+                financial incentive for scammers.
+              </p>
+              <p>
+                <strong>The FynCom Solution:</strong> This discussion powerfully underscores the need for FynCom. The digital scam industry thrives because of
+                the low cost of communication. By introducing a financial cost to initiate contact, FynCom directly attacks the business model of scammers,
+                making mass-scale fraud economically unsustainable and protecting consumers from this massive, growing threat.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* NEW SECTION: Eric Schmidt on AI and Attention */}
+        <section className="mention-section" id="ai-attention-economy">
+          <h2>On AI, the Attention Economy, and Human Purpose</h2>
+          <VideoTrigger
+            videoData={{
+              title: "Eric Schmidt on AI's Role in a World of Misinformation",
+              timestamp: "Watch ~1.5 minutes starting at 1:19:20",
+              embedUrl: "https://www.youtube.com/embed/qaPHK1fJL5s?start=4760",
+            }}
+          />
+          <div className="mention-content">
+            <div className="conversation-format">
+              <div className="exchange">
+                <h4>Managing Attention as a "Full-Time Job"</h4>
+                <p>
+                  <strong>Eric Schmidt:</strong> Predicts that in the near future, simply "managing the world around you" will become a purposeful, full-time
+                  job. This is due to a constant barrage of misinformation, scams, and deceptive actors all competing for your attention and money.
+                </p>
+              </div>
+              <div className="exchange">
+                <h4>AI as a Productivity Tool, Not a Replacement</h4>
+                <p>
+                  He refutes the utopian notion that AI will lead to a world where everyone is "sitting around doing poetry." Instead, he argues AI's primary
+                  role is to make existing jobs more productive. Schmidt stresses that technology changes, but human nature does not—there will always be "evil
+                  people" using tools for malicious purposes and "good people" trying to stop them.
+                </p>
+              </div>
+              <div className="exchange">
+                <h4>The FynCom Connection: Automating the Attention Filter</h4>
+                <p>
+                  Schmidt's vision perfectly articulates the problem FynCom solves. His "full-time job" of managing attention is precisely what FynCom's
+                  economic filter automates. It acts as a powerful deterrent against the "evil people" and their attempts to deceive, as they are economically
+                  disincentivized from sending mass unsolicited messages. This ensures that only legitimate, important communications from the "good people" can
+                  get through, preserving the user's most valuable asset: their attention.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* NEW SECTION: Media Manipulation (Corrected) */}
+        <section className="mention-section" id="media-manipulation-unreliable-narrators">
+          <h2>On Media Manipulation and Unreliable Narrators</h2>
+          <VideoTrigger
+            videoData={{
+              title: "Balaji Srinivasan on Media as Unreliable Narrators",
+              timestamp: "Watch ~2.5 minutes starting at 16:53",
+              embedUrl: "https://www.youtube.com/embed/cBFbXRjTVLc?start=1013",
+            }}
+          />
+          <div className="mention-content">
+            <div className="conversation-format">
+              <div className="exchange">
+                <h4>Journalism as a Non-Consensual Act</h4>
+                <p>
+                  <strong>Balaji Srinivasan:</strong> Defines legacy media as the <strong>"non-consensual invasion of privacy for profit."</strong> He argues to
+                  a16z's Erik Torenberg, that individuals cannot opt out of being targeted and equates modern journalistic tactics with spamming, stalking, and
+                  scamming—actions for which we have legal protections in other contexts.
+                </p>
+              </div>
+              <div className="exchange">
+                <h4>Media as Untrustworthy "Con Men"</h4>
+                <p>
+                  He describes journalists as "con men" who feign trust and goodwill to extract a quote, only to twist the words to "stab you in the article."
+                  This refutes the notion that media corporations are neutral "referees," recasting them as profit-driven entities that manipulate narratives.
+                </p>
+              </div>
+              <div className="exchange">
+                <h4>The FynCom Connection: Restoring Consent Through Economics</h4>
+                <p>
+                  This perspective perfectly frames the problem FynCom solves. When communication channels are filled with manipulative actors, trust collapses.
+                  Inspired by pioneers in financial communications like Balaji himself (whose company Earn.com validated this model), FynCom restores trust and
+                  consent. By requiring a refundable financial stake to initiate contact - AND true to earn.com's original spirit - allows a form of continued
+                  payment per minute or per response. FynCom's tech provides an objective, economic signal of a communication's importance, allowing people to
+                  instantly differentiate genuine outreach from the "stalkers, spammers, the scammers" that Balaji describes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Link: https://fyncom.com/mentions#ai-agents-automated-calling */}
         <section className="mention-section" id="ai-agents-automated-calling">
           <h2>On AI Agents and Automated Calling</h2>
