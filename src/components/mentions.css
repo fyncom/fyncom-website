@@ -170,6 +170,15 @@
 /* standardize emphasis: speaker names blue, other strong text inherit */
 .exchange p strong { color: inherit; }
 .exchange p > strong:first-child { color: var(--fyncom-blue); }
+/* allow text to use full box width on mentions page */
+/* .mentions-container .highlight-text p, */
+/* .mentions-container .conversation-format p { max-width: none; } */
+@media (min-width: 1024px) {
+  .mentions-container .highlight-text,
+  .mentions-container .conversation-format { max-width: none; width: 100%; margin-left: 0; margin-right: 0; }
+  .mentions-container .highlight-text p,
+  .mentions-container .conversation-format p { max-width: none; }
+}
 
 /* Modal Styles */
 .video-modal {
