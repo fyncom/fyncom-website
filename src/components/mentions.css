@@ -18,6 +18,13 @@
   max-width: 800px;
   margin: 0 auto;
 }
+/* index list */
+.mentions-index { margin-top: 1.5rem; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto; }
+.mentions-index h3 { margin: 0 0 0.5rem 0; color: var(--fyncom-blue); font-size: 20px; }
+.mentions-index ul { list-style: none; padding: 0; margin: 0; }
+.mentions-index li { margin: 0.25rem 0; }
+.mentions-index a { color: var(--color-link); text-decoration: underline; text-underline-offset: 2px; }
+.mentions-index .date { color: var(--color-text); opacity: 0.8; }
 
 .mentions-container {
   max-width: 1200px;
