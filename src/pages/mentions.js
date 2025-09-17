@@ -11,7 +11,7 @@ const Mentions = () => {
       id: "ai-cybercrime-vibe-hacking",
       speaker: "Stuart Ritchie",
       co: "Jacob Klein, Alex Moix",
-      label: 'Anthropic - AI Cybercrime: "Vibe Hacking"',
+      topic: 'Anthropic - AI Cybercrime: "Vibe Hacking"',
       date: "Aug 27, 2025",
     },
     { id: "spam-filters-failure", speaker: "Andrej Karpathy", co: "", label: "Spam filters failure", date: "Aug 18, 2025" },
@@ -21,32 +21,31 @@ const Mentions = () => {
       id: "media-manipulation-unreliable-narrators",
       speaker: "Balaji Srinivasan",
       co: "Erik Torenberg, a16z",
-      label: "Media manipulation",
+      topic: "Media manipulation",
       date: "July 17, 2025",
     },
-
-    { id: "ai-agents-automated-calling", speaker: "Jack Altman", co: "Mamoon Hamid", label: "AI agents and automated calling", date: "July 9, 2025" },
+    { id: "ai-agents-automated-calling", speaker: "Jack Altman", co: "Mamoon Hamid", topic: "AI agents and automated calling", date: "July 9, 2025" },
+    { id: "digital-identity-trust", speaker: "Sam Lessin", co: "Joe Lonsdale", topic: "Digital identity & trust", date: "May 16, 2025" },
+    { id: "communication-protocols", speaker: "David Daneshgar", co: "Higher Levels", topic: "Communication protocols", date: "May 12, 2025" },
     {
       id: "agent-communication-trust",
       speaker: "Konstantine Buhler",
       co: "Sequoia AI Ascent",
-      label: "Agent communication & trust transfer",
-      date: "May 7,2025",
+      topic: "Agent communication & trust transfer",
+      date: "May 7, 2025",
     },
+    { id: "infinite-spam-hyperpersonalization", speaker: "Sam Lessin", co: "TBPN", topic: "Infinite spam & hyperpersonalization", date: "Mar 17, 2025" },
+    { id: "digital-vs-human-hackers", speaker: "Ezra Klein", co: "Ben Buchanan", topic: "Digital vs. human hackers", date: "Mar 4, 2025" },
+    { id: "ai-manipulation-phishing", speaker: "Eli Yudkowsky", co: "Stephen Wolfram", topic: "AI manipulation & phishing", date: "Nov 11, 2024" },
+    { id: "crypto-economic-prosperity", speaker: "Jeremy Allaire", co: "TOKEN 2049", topic: "Crypto & economic prosperity", date: "Sept 27, 2024" },
+    { id: "ai-agents-economic-models", speaker: "Reid Hoffman", co: "Erik Brynjolfsson", topic: "AI agents and economic models", date: "Sept 5, 2024" },
     {
       id: "ai-powered-social-engineering",
       speaker: "Jeffrey Katzenberg",
       co: "WSJ's Emma Tucker, Sujay Jaswa",
-      label: "AI-powered social engineering",
+      topic: "AI-powered social engineering",
       date: "Sept 25, 2023",
     },
-    { id: "ai-agents-economic-models", speaker: "Reid Hoffman", co: "Erik Brynjolfsson", topic: "AI agents and economic models", date: "Sept 5, 2024" },
-    { id: "digital-identity-trust", speaker: "Sam Lessin", co: "Joe Lonsdale", label: "Digital identity & trust", date: "May 16, 2025" },
-    { id: "communication-protocols", speaker: "David Daneshgar", co: "Higher Levels", label: "Communication protocols", date: "May 12, 2025" },
-    { id: "infinite-spam-hyperpersonalization", speaker: "Sam Lessin", co: "TBPN", label: "Infinite spam & hyperpersonalization", date: "Mar 17, 2025" },
-    { id: "digital-vs-human-hackers", speaker: "Ezra Klein", co: "Ben Buchanan", label: "Digital vs. human hackers", date: "Mar 4, 2025" },
-    { id: "ai-manipulation-phishing", speaker: "Eli Yudkowsky", co: "Stephen Wolfram", label: "AI manipulation & phishing", date: "Nov 11, 2024" },
-    { id: "crypto-economic-prosperity", speaker: "Jeremy Allaire", co: "TOKEN 2049", label: "Crypto & economic prosperity", date: "Sept 27, 2024" },
   ]
 
   const openModal = videoData => {
@@ -131,14 +130,14 @@ const Mentions = () => {
             <ul>
               {MENTION_INDEX.map(item => (
                 <li key={item.id}>
+                  {item.date ? <span className="date">{item.date} - </span> : null}
                   {item.speaker ? (
                     <span className="name">
                       {item.speaker}
-                      {item.co ? ` - ${item.co}` : ""} -
+                      {item.co ? ` - ${item.co} - ` : " - "}
                     </span>
                   ) : null}
                   <a href={`#${item.id}`}>{item.topic || item.label}</a>
-                  {item.date ? <span className="date"> - {item.date}</span> : null}
                 </li>
               ))}
             </ul>
