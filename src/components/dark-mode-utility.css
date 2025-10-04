@@ -1,0 +1,107 @@
+/* 
+ * Dark Mode Utility Classes
+ * Use these classes to ensure consistent dark mode support
+ */
+
+/* Base utility classes that automatically support dark mode */
+.dm-bg {
+  background: var(--color-background);
+}
+
+.dm-text {
+  color: var(--color-text);
+}
+
+.dm-text-muted {
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.dm-border {
+  border-color: var(--color-bar);
+}
+
+.dm-card {
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 1px solid var(--color-bar);
+}
+
+.dm-success {
+  background: var(--fyncom-darkest-cyan);
+  color: var(--color-text);
+  border-color: var(--karmacall-green);
+}
+
+.dm-info {
+  background: var(--fyncom-darkest-cyan);
+  color: var(--color-text);
+  border-color: var(--fyncom-blue);
+}
+
+/* Development helper - shows elements that might have dark mode issues */
+.debug-dark-mode * {
+  outline: 1px solid red !important;
+}
+
+/* Add this class to body during development to highlight potential issues */
+.debug-dark-mode [style*="color: #"],
+.debug-dark-mode [style*="background: #"],
+.debug-dark-mode [style*="background-color: #"] {
+  outline: 3px solid red !important;
+}
+
+/* 
+ * CSS Custom Properties for common patterns
+ * Use these instead of hardcoded values
+ */
+:root {
+  --dm-success-bg: var(--fyncom-darkest-cyan);
+  --dm-success-border: var(--karmacall-green);
+  --dm-success-text: var(--karmacall-green);
+  
+  --dm-info-bg: var(--fyncom-darkest-cyan);
+  --dm-info-border: var(--fyncom-blue);
+  --dm-info-text: var(--fyncom-blue);
+  
+  --dm-warning-bg: var(--fyncom-darkest-cyan);
+  --dm-warning-border: var(--fyncom-yellow);
+  --dm-warning-text: var(--fyncom-yellow);
+  
+  --dm-card-bg: var(--color-background);
+  --dm-card-text: var(--color-text);
+  --dm-card-border: var(--color-bar);
+}
+
+/* Example usage patterns */
+.example-card {
+  background: var(--dm-card-bg);
+  color: var(--dm-card-text);
+  border: 1px solid var(--dm-card-border);
+}
+
+.example-success {
+  background: var(--dm-success-bg);
+  color: var(--dm-success-text);
+  border: 2px solid var(--dm-success-border);
+}
+
+/* 
+ * Automatic dark mode detection for debugging
+ * This will log to console when dark mode is active
+ */
+@media (prefers-color-scheme: dark) {
+  body::before {
+    content: "🌙 Dark mode active - check all text visibility";
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: var(--fyncom-red);
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.8;
+  }
+}
