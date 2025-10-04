@@ -440,29 +440,63 @@
     background: linear-gradient(180deg, rgba(0, 53, 84, 0.65) 0%, rgba(0, 0, 0, 0.85) 100%);
   }
 
-  .deposit-section header p {
+  .hero-title,
+  .deposit-section header h2,
+  .hero-card h3,
+  .deposit-info-card h3,
+  .deposit-step-card h3 {
+    color: rgba(var(--fyncom-red-rgb), 0.9);
+  }
+
+  .hero-subtitle,
+  .deposit-assurance,
+  .deposit-info-card,
+  .deposit-info-card p,
+  .deposit-step-card,
+  .deposit-step-card p,
+  .hero-checklist li {
+    color: rgba(255, 255, 255, 0.78);
+  }
+
+  .deposit-section header p,
+  .deposit-whitepaper p {
     color: rgba(255, 255, 255, 0.75);
+  }
+
+  .hero-card .html-dynamic,
+  .hero-card .html-dynamic p {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .deposit-trust-badge {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.18);
   }
 
   .deposit-info-card {
     background: linear-gradient(155deg, rgba(255, 255, 255, 0.08) 0%, rgba(19, 220, 236, 0.05) 100%);
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.5);
   }
 
   .deposit-step-card {
     background: rgba(0, 0, 0, 0.55);
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.55);
   }
 
   .deposit-testimonial {
     background: linear-gradient(140deg, rgba(255, 255, 255, 0.05) 0%, rgba(0, 0, 0, 0.65) 100%);
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
     box-shadow: 0 18px 35px rgba(0, 0, 0, 0.65);
   }
 
-  .deposit-whitepaper p {
-    color: rgba(255, 255, 255, 0.75);
+  .deposit-testimonial blockquote,
+  .deposit-testimonial cite {
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .deposit-cta-card p {
+    color: rgba(255, 255, 255, 0.88);
   }
 }
