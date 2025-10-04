@@ -434,6 +434,10 @@
   .deposit-hero {
     padding: 2rem;
     border-radius: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    overflow: visible;
   }
 
   .hero-title {
@@ -452,6 +456,17 @@
   .deposit-trust-bar {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .hero-personalization {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .hero-pill {
+    width: 100%;
+    justify-content: center;
   }
 }
 
