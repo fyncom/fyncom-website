@@ -4,6 +4,7 @@ import Footer from "../components/footer"
 import "../components/white-paper.css"
 import "../components/blocked-email.css"
 import "../components/contact.css"
+import "../components/make-a-deposit.css"
 import { useLocation } from "@reach/router"
 import whitePaper from "../../static/pdfs/fyncom-Original-White-Paper-For-KarmaCall-Update.pdf"
 import Seo from "../components/seo"
@@ -93,15 +94,17 @@ const MakeADeposit = () => {
         <>
           <a
             href={stripeUrl}
-            className="learn-more-btn cash"
+            className="payment-btn cash"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => logEvent("Deposit", "Click", "Stripe Deposit")}
           >
-            Deposit cash
+            <span className="payment-btn-icon">💳</span>
+            Deposit with Card
           </a>
-          <button className="learn-more-btn xno" onClick={toggleModal}>
-            Deposit nano
+          <button className="payment-btn xno" onClick={toggleModal}>
+            <span className="payment-btn-icon">Ӿ</span>
+            Deposit with Nano
           </button>
           {isModalOpen && <MakeADepositModal onClose={toggleModal} />}
         </>
@@ -112,35 +115,99 @@ const MakeADeposit = () => {
   }
 
   return (
-    <div>
+    <div className="deposit-page">
       <Seo
-        title="Deposits Refundable"
-        description="Looks like you got a PayCation email from FynCom. Pay a small, refundable deposit to get your email to the top of your recipient's inbox
-         & get their immediate attention. If they respond, you get your deposit back. Simple!"
+        title="Make a Deposit - Get Your Email Noticed"
+        description="Pay a small, refundable deposit to get your email to the top of your recipient's inbox & get their immediate attention. If they respond, you get your deposit back. Simple, secure, and revolutionary!"
       />
       <Header />
-      <div className="content-container">
-        <h1>Get Your Email Noticed. Make a Deposit. </h1>
-        <sub>
-          Pay a small, refundable deposit to get your email to my main inbox & get my immediate attention. If I respond, you get your deposit back. Simple!
-        </sub>
-        <div className="html-dynamic" dangerouslySetInnerHTML={{ __html: dynamicMessage }}></div>
-        {renderPaymentButton()}
-        <p>
-          Still here? Why not read something interesting? Ever get annoying calls? Emails? DMs? Read below to find out how we're helping fix that problem by
-          getting people paid to block scam / spam and respond to good messages.
+
+      {/* Hero Section */}
+      <div className="deposit-hero">
+        <h1>💌 Get Your Email Noticed</h1>
+        <p className="deposit-hero-subtitle">
+          Your message deserves attention. Make a small, refundable deposit to reach the top of their inbox instantly.
         </p>
-        <h2>Why Do Spam Calls Still Exist?</h2>
-        <p>...and how can I stop scams, but get useful outreach?</p>
-        <p>
-          That's the thought that started FynCom on a journey of exploring an emerging market based in "communications + currency" to create trust between
-          strangers with shared interests. Here's our paper we wrote to record our thought process - it later became{" "}
-          <a href="https://patents.google.com/patent/US11310368B2">our 1st patent</a>, <a href="https://karmacall.com/">app</a>, and is the basis for how we
-          came to be. Thanks for reading! <br />
-          <i>- Team FynCom</i>
-        </p>
+      </div>
+
+      {/* Dynamic Status Card */}
+      {blockedEmailDetails ? (
+        <div className="deposit-status-card">
+          <div className="status-header">
+            <div className="status-icon">📧</div>
+            <h2>Your Email Status</h2>
+          </div>
+          <div className="deposit-message" dangerouslySetInnerHTML={{ __html: dynamicMessage }}></div>
+          <div className="payment-options">
+            {renderPaymentButton()}
+          </div>
+        </div>
+      ) : (
+        <div className="loading-skeleton"></div>
+      )}
+
+      {/* How It Works */}
+      <div className="how-it-works">
+        <h2>How It Works</h2>
+        <div className="steps-container">
+          <div className="step-card">
+            <div className="step-number">1</div>
+            <h3>Make a Deposit</h3>
+            <p>Choose your preferred payment method (cash or nano cryptocurrency) and make a small, refundable deposit.</p>
+          </div>
+          <div className="step-card">
+            <div className="step-number">2</div>
+            <h3>Email Gets Priority</h3>
+            <p>Your email instantly moves to their main inbox with a FynMail badge, ensuring they see your message immediately.</p>
+          </div>
+          <div className="step-card">
+            <div className="step-number">3</div>
+            <h3>Get Refunded</h3>
+            <p>If they respond within the deadline, your deposit is automatically refunded. It's risk-free communication!</p>
+          </div>
+        </div>
+      </div>
+
+      {/* Trust Section */}
+      <div className="trust-section">
+        <div className="trust-badges">
+          <div className="trust-badge">
+            <div className="trust-badge-icon">🔒</div>
+            <h4>100% Refundable</h4>
+            <p>Get your deposit back when they respond. No risk, all reward.</p>
+          </div>
+          <div className="trust-badge">
+            <div className="trust-badge-icon">⚡</div>
+            <h4>Instant Priority</h4>
+            <p>Your email moves to their main inbox immediately after deposit.</p>
+          </div>
+          <div className="trust-badge">
+            <div className="trust-badge-icon">🛡️</div>
+            <h4>Secure & Private</h4>
+            <p>Bank-level encryption and data protection for all transactions.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* White Paper Section */}
+      <div className="whitepaper-section">
+        <div className="whitepaper-intro">
+          <h2>The Technology Behind Trust</h2>
+          <p>
+            Ever wonder why spam still exists? We asked the same question. Our solution combines communications with
+            micropayments to create trust between strangers with shared interests.
+          </p>
+          <p>
+            This idea became <a href="https://patents.google.com/patent/US11310368B2" target="_blank" rel="noopener noreferrer">our first patent</a>,
+            our <a href="https://karmacall.com/" target="_blank" rel="noopener noreferrer">KarmaCall app</a>, and the foundation of FynCom.
+          </p>
+          <p style={{ marginTop: '1.5rem', fontStyle: 'italic', fontSize: '1rem' }}>
+            - Team FynCom
+          </p>
+        </div>
         <PdfContent file={whitePaper} />
       </div>
+
       <Footer />
     </div>
   )
