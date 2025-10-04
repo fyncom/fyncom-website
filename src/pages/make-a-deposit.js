@@ -128,6 +128,10 @@ const MakeADeposit = () => {
 
   const recipientDisplay = blockedEmailDetails?.recipientEmail || "the recipient"
   const recipientPossessive = blockedEmailDetails ? "their" : "the recipient's"
+  const senderDisplay = blockedEmailDetails?.senderEmail || blockedEmailDetails?.senderEmailRaw || "you"
+  const heroSubtitleText = blockedEmailDetails
+    ? `You're emailing ${recipientDisplay} from ${senderDisplay}. They ask new contacts to post ${depositAmountDisplay} so serious conversations rise above the noise.`
+    : `Use ${depositAmountDisplay} to move your message to ${recipientInboxLabel} and prove you value their time. Get every cent back the moment they reply.`
 
   return (
     <div className="deposit-page">
@@ -141,19 +145,23 @@ const MakeADeposit = () => {
           <div className="hero-copy">
             <p className="hero-eyebrow">Refundable deposits powered by FynCom</p>
             <h1 className="hero-title">{heroTitle}</h1>
-            <p className="hero-subtitle">
-              Use {depositAmountDisplay} to move your message to {recipientInboxLabel} and prove you value their time. Get every cent back the moment they
-              reply.
-            </p>
+            <p className="hero-subtitle">{heroSubtitleText}</p>
+            {blockedEmailDetails && (
+              <div className="hero-personalization">
+                <span className="hero-pill">Recipient: {recipientDisplay}</span>
+                <span className="hero-pill">You: {senderDisplay}</span>
+                <span className="hero-pill">Deposit: {depositAmountDisplay}</span>
+                <span className="hero-pill">Refund window: {responseDeadlineText}</span>
+              </div>
+            )}
             {renderPaymentButton()}
             <p className="deposit-assurance">
-              Deposits stay in secure escrow until the conversation moves forward. No reply? You decide what happens next inside{" "}
-              <a href="https://app.fyncom.com">app.fyncom.com</a>.
+              Deposits stay in secure escrow until the conversation moves forward. No reply? You decide what happens next inside <a href="https://app.fyncom.com">app.fyncom.com</a>.
             </p>
             <div className="deposit-trust-bar">
               <span className="deposit-trust-badge">Backed by U.S. Patent 11,310,368</span>
               <span className="deposit-trust-badge">Automatic refunds when your recipient responds</span>
-              <span className="deposit-trust-badge">Built for founders, owners, and elite teams</span>
+              <span className="deposit-trust-badge">Built for founders, investors, and elite teams</span>
             </div>
           </div>
           <div className="hero-card">
@@ -228,17 +236,12 @@ const MakeADeposit = () => {
             <article className="deposit-step-card">
               <span className="deposit-step-number">2</span>
               <h3>We elevate your email</h3>
-              <p>
-                Your note leaps to the top of {recipientPossessive} inbox, and we notify {recipientDisplay} that a serious sender is waiting.
-              </p>
+              <p>Your note leaps to the top of {recipientPossessive} inbox, and we notify {recipientDisplay} that a serious sender is waiting.</p>
             </article>
             <article className="deposit-step-card">
               <span className="deposit-step-number">3</span>
               <h3>Get refunded on reply</h3>
-              <p>
-                If they respond within {responseDeadlineText}, the deposit returns to you instantly. Manage every step from{" "}
-                <a href="https://app.fyncom.com">app.fyncom.com</a>.
-              </p>
+              <p>If they respond within {responseDeadlineText}, the deposit returns to you instantly. Manage every step from <a href="https://app.fyncom.com">app.fyncom.com</a>.</p>
             </article>
           </div>
         </section>
@@ -252,7 +255,9 @@ const MakeADeposit = () => {
 
         <section className="deposit-cta-card">
           <h2>Want refundable deposits inside your product?</h2>
-          <p>Use the same trust engine to protect your community, marketplace, or sales outreach program. We'll help you launch in days, not months.</p>
+          <p>
+            Use the same trust engine to protect your community, marketplace, or sales outreach program. We'll help you launch in days, not months.
+          </p>
           <div className="deposit-cta-actions">
             <a
               className="learn-more-btn"
