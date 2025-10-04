@@ -1,0 +1,429 @@
+/* Make A Deposit Page Styles */
+
+.deposit-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg,
+    var(--color-background) 0%,
+    var(--color-background) 60%,
+    rgba(74, 144, 226, 0.05) 100%
+  );
+}
+
+/* Hero Section */
+.deposit-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+
+.deposit-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--fyncom-blue) 0%, var(--fyncom-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.deposit-hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* Status Card */
+.deposit-status-card {
+  background: var(--color-background-alt, #f8f9fa);
+  border: 1px solid var(--color-border, #eee);
+  border-radius: 16px;
+  padding: 2.5rem;
+  margin: 2rem auto;
+  max-width: 800px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.deposit-status-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.deposit-status-card .status-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.deposit-status-card .status-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--fyncom-blue), var(--fyncom-cyan));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.deposit-status-card h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.deposit-message {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.deposit-message .emphasis {
+  font-weight: 600;
+  color: var(--fyncom-blue);
+  padding: 0 0.2rem;
+}
+
+/* How It Works Section */
+.how-it-works {
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: var(--color-text);
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.step-card {
+  background: var(--color-background-alt, #f8f9fa);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  border: 1px solid var(--color-border, #eee);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(74, 144, 226, 0.15);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--fyncom-blue), var(--fyncom-cyan));
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 auto 1.5rem;
+}
+
+.step-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+  max-width: none;
+}
+
+/* Payment Options */
+.payment-options {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.payment-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.payment-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.payment-btn:hover::before {
+  left: 100%;
+}
+
+.payment-btn.cash {
+  background: linear-gradient(135deg, var(--fyncom-red) 0%, #e63946 100%);
+  color: white;
+}
+
+.payment-btn.cash:hover {
+  background: linear-gradient(135deg, #e63946 0%, var(--robocash-green) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 90, 95, 0.4);
+}
+
+.payment-btn.xno {
+  background: linear-gradient(135deg, var(--fyncom-blue) 0%, var(--fyncom-cyan) 100%);
+  color: white;
+}
+
+.payment-btn.xno:hover {
+  background: linear-gradient(135deg, var(--fyncom-cyan) 0%, var(--karmacall-green) 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4);
+}
+
+.payment-btn-icon {
+  font-size: 1.3rem;
+}
+
+/* Trust Indicators */
+.trust-section {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 3rem 2rem;
+  background: var(--color-background-alt, #f8f9fa);
+  border-radius: 16px;
+  border: 1px solid var(--color-border, #eee);
+}
+
+.trust-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.trust-badge {
+  padding: 1.5rem;
+}
+
+.trust-badge-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--fyncom-blue);
+}
+
+.trust-badge h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+  text-align: center;
+  font-weight: 600;
+}
+
+.trust-badge p {
+  font-size: 0.95rem;
+  color: var(--color-text);
+  opacity: 0.7;
+  margin: 0;
+  text-align: center;
+  max-width: none;
+}
+
+/* White Paper Section */
+.whitepaper-section {
+  max-width: 1200px;
+  margin: 5rem auto 3rem;
+  padding: 0 2rem;
+}
+
+.whitepaper-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.whitepaper-intro h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  text-align: center;
+}
+
+.whitepaper-intro p {
+  font-size: 1.1rem;
+  color: var(--color-text);
+  opacity: 0.8;
+  max-width: 700px;
+  margin: 0 auto 1rem;
+  text-align: center;
+}
+
+/* Loading State */
+.loading-skeleton {
+  animation: pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(90deg,
+    var(--color-background-alt) 25%,
+    rgba(74, 144, 226, 0.1) 50%,
+    var(--color-background-alt) 75%
+  );
+  background-size: 200% 100%;
+  border-radius: 12px;
+  height: 200px;
+  margin: 2rem auto;
+  max-width: 800px;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .deposit-page {
+    background: linear-gradient(135deg,
+      var(--color-background) 0%,
+      var(--color-background) 60%,
+      rgba(74, 144, 226, 0.1) 100%
+    );
+  }
+
+  .deposit-status-card,
+  .step-card,
+  .trust-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .deposit-message .emphasis {
+    color: var(--fyncom-light-blue);
+  }
+}
+
+:root[data-theme="dark"] {
+  .deposit-page {
+    background: linear-gradient(135deg,
+      var(--color-background) 0%,
+      var(--color-background) 60%,
+      rgba(74, 144, 226, 0.1) 100%
+    );
+  }
+
+  .deposit-status-card,
+  .step-card,
+  .trust-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .deposit-message .emphasis {
+    color: var(--fyncom-light-blue);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .deposit-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .deposit-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .deposit-status-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .how-it-works h2 {
+    font-size: 2rem;
+  }
+
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-options {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .payment-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .whitepaper-intro h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .deposit-hero h1 {
+    font-size: 2rem;
+  }
+
+  .deposit-hero {
+    padding: 3rem 1.5rem 2rem;
+  }
+
+  .how-it-works {
+    margin: 3rem auto;
+  }
+
+  .trust-badges {
+    grid-template-columns: 1fr;
+  }
+}
