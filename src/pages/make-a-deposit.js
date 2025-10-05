@@ -191,11 +191,20 @@ inbox.</p>
       />
       <Header />
       <div className="content-container deposit-page">
-        <div className="hero-section">
-          <h1>🎯 Get Your Email to the Top of Their Inbox</h1>
-          <p className="hero-subtitle">
-            Make a tiny deposit. Get immediate attention. <strong>Pay nothing if they respond.</strong>
-          </p>
+        <div className="hero-section" style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "1rem" }}>
+          <div style={{ flex: 1 }}>
+            <h1>🎯 Get Your Email to the Top of Their Inbox</h1>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            <p className="hero-subtitle" style={{ margin: 0, marginBottom: "0.5rem", textAlign: "right" }}>
+              Make a tiny deposit. Get immediate attention. <strong>Pay nothing if they respond.</strong>
+            </p>
+            <div style={{ display: "flex", alignItems: "flex-center", gap: "0.75rem", flexWrap: "wrap" }}>
+              <span className="badge">🛡️ Patent-backed</span>
+              <span className="badge">⏱️ Time-based escrow</span>
+              <span className="badge">💰 User‑rewarded</span>
+            </div>
+          </div>
         </div>
 
         {dynamicMessage ? (
