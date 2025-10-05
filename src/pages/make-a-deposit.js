@@ -105,7 +105,7 @@ const MakeADeposit = () => {
           >
             Deposit cash
           </a>
-          <button className="learn-more-btn xno" onClick={toggleModal}>
+          <button className="learn-more-btn xno" onClick={toggleModal} style={{ whiteSpace: "nowrap" }}>
             Deposit nano
           </button>
         </div>
@@ -130,7 +130,7 @@ const MakeADeposit = () => {
   const recipientPossessive = blockedEmailDetails ? "their" : "the recipient's"
   const senderDisplay = blockedEmailDetails?.senderEmail || blockedEmailDetails?.senderEmailRaw || "you"
   const heroSubtitleText = blockedEmailDetails
-    ? `You're emailing ${recipientDisplay} from ${senderDisplay}. They ask new contacts to post ${depositAmountDisplay} so serious conversations rise above the noise.`
+    ? `You're emailing ${recipientDisplay} from ${senderDisplay}. They ask new email contacts to post ${depositAmountDisplay} so serious conversations rise above the noise.`
     : `Use ${depositAmountDisplay} to move your message to ${recipientInboxLabel} and prove you value their time. Get every cent back the moment they reply.`
 
   return (
@@ -156,7 +156,8 @@ const MakeADeposit = () => {
             )}
             {renderPaymentButton()}
             <p className="deposit-assurance">
-              Deposits stay in secure escrow until the conversation moves forward. No reply? You decide what happens next inside <a href="https://app.fyncom.com">app.fyncom.com</a>.
+              Deposits stay in secure escrow until the conversation moves forward. No reply? You decide what happens next inside{" "}
+              <a href="https://app.fyncom.com">app.fyncom.com</a>.
             </p>
             <div className="deposit-trust-bar">
               <span className="deposit-trust-badge">Backed by U.S. Patent 11,310,368</span>
@@ -236,12 +237,20 @@ const MakeADeposit = () => {
             <article className="deposit-step-card">
               <span className="deposit-step-number">2</span>
               <h3>We elevate your email</h3>
-              <p>Your note leaps to the top of {recipientPossessive} inbox, and we notify {recipientDisplay} that a serious sender is waiting.</p>
+              <p>
+                Your note leaps to the top of {recipientPossessive} inbox, and we notify {recipientDisplay} that a serious sender is waiting.
+              </p>
             </article>
             <article className="deposit-step-card">
               <span className="deposit-step-number">3</span>
               <h3>Get refunded on reply</h3>
-              <p>If they respond within {responseDeadlineText}, the deposit returns to you instantly. Manage every step from <a href="https://app.fyncom.com">app.fyncom.com</a>.</p>
+              <p>
+                If they respond within {responseDeadlineText}, the deposit returns to you instantly. Manage every step from{" "}
+                <a href="https://app.fyncom.com" style={{ color: "#fff" }}>
+                  app.fyncom.com
+                </a>
+                .
+              </p>
             </article>
           </div>
         </section>
@@ -255,9 +264,7 @@ const MakeADeposit = () => {
 
         <section className="deposit-cta-card">
           <h2>Want refundable deposits inside your product?</h2>
-          <p>
-            Use the same trust engine to protect your community, marketplace, or sales outreach program. We'll help you launch in days, not months.
-          </p>
+          <p>Use the same trust engine to protect your community, marketplace, or sales outreach program. We'll help you launch in days, not months.</p>
           <div className="deposit-cta-actions">
             <a
               className="learn-more-btn"
