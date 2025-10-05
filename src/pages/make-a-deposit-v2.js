@@ -167,7 +167,7 @@ export default function MakeADepositV2() {
                   className="learn-more-btn cash primary"
                   target="_blank"
                   rel="noreferrer"
-                  onClick={() => logEvent("Deposit", "Click", "Stripe Deposit")}
+                  onClick={() => logEvent("Deposit", "Click", "Stripe Deposit - Variant B")}
                 >
                   💳 Deposit cash
                 </a>
