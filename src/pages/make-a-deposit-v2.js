@@ -58,7 +58,11 @@ export default function MakeADepositV2() {
     return `https://buy.stripe.com/fZe5obgilbJa5lm001?prefilled_email=${email}&client_reference_id=${ref}`
   }, [details])
 
-  const minDeposit = details?.recipientMin ? Number(details.recipientMin).toFixed(2) : "0.00"
+  const minDeposit = details?.recipientMin
+    ? Number(details.recipientMin) >= 0.01
+      ? Number(details.recipientMin).toFixed(2)
+      : Number(details.recipientMin).toFixed(5)
+    : "0.00"
   const deadlineDays = details?.daysDeadline ?? 30
   const labelName = details?.labelName || "INBOX"
   const secondaryLabel = details?.emailLabel || "FynFiltered"
@@ -284,24 +288,22 @@ export default function MakeADepositV2() {
           </p>
         </div>
 
-        <div style={{ marginTop: "2rem", padding: "1.5rem", background: "#f8f9fa", borderRadius: "8px" }}>
+        <div className="faq-section">
           <h3>FAQ</h3>
-          <div style={{ marginTop: "1rem" }}>
-            <details style={{ marginBottom: "1rem" }}>
-              <summary style={{ fontWeight: "bold", cursor: "pointer" }}>Do I lose money if they never read it?</summary>
-              <p style={{ marginTop: "0.5rem", paddingLeft: "1rem" }}>
+          <div className="faq-content">
+            <details className="faq-item">
+              <summary className="faq-question">Do I lose money if they never read it?</summary>
+              <p className="faq-answer">
                 If there's no response in the refund window, the recipient keeps a portion of the deposit as a reward for their time.
               </p>
             </details>
-            <details style={{ marginBottom: "1rem" }}>
-              <summary style={{ fontWeight: "bold", cursor: "pointer" }}>What if I'm an approved contact?</summary>
-              <p style={{ marginTop: "0.5rem", paddingLeft: "1rem" }}>Known contacts are automatically whitelisted—no deposit needed.</p>
+            <details className="faq-item">
+              <summary className="faq-question">What if I'm an approved contact?</summary>
+              <p className="faq-answer">Known contacts are automatically whitelisted—no deposit needed.</p>
             </details>
-            <details style={{ marginBottom: "1rem" }}>
-              <summary style={{ fontWeight: "bold", cursor: "pointer" }}>Is this secure?</summary>
-              <p style={{ marginTop: "0.5rem", paddingLeft: "1rem" }}>
-                Deposits are processed through trusted providers, and refunds are automatic based on recipient engagement.
-              </p>
+            <details className="faq-item">
+              <summary className="faq-question">Is this secure?</summary>
+              <p className="faq-answer">Deposits are processed through trusted providers, and refunds are automatic based on recipient engagement.</p>
             </details>
           </div>
         </div>
