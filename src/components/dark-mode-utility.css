@@ -87,15 +87,15 @@
   --dm-success-bg: var(--help-box);
   --dm-success-border: var(--karmacall-green);
   --dm-success-text: var(--color-text);
-
+  
   --dm-info-bg: var(--help-box);
   --dm-info-border: var(--fyncom-blue);
   --dm-info-text: var(--color-text);
-
+  
   --dm-warning-bg: var(--help-box);
   --dm-warning-border: var(--karmacall-gold);
   --dm-warning-text: var(--color-text);
-
+  
   --dm-card-bg: var(--help-box);
   --dm-card-text: var(--color-text);
   --dm-card-border: var(--color-bar);
