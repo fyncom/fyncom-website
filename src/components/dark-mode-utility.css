@@ -1,6 +1,28 @@
 /* 
- * Dark Mode Utility Classes
+ * Dark Mode Utility Classes for fyncom-website
  * Use these classes to ensure consistent dark mode support
+ * 
+ * ⚠️ IMPORTANT: This repo uses DIFFERENT variables than karmacall-website!
+ * 
+ * Quick Reference for inline styles:
+ * ✅ CORRECT (works in both light & dark mode):
+ *    background: "var(--help-box)"
+ *    color: "var(--color-text)"
+ *    border: "1px solid var(--color-bar)"
+ * 
+ * ❌ WRONG (will break in dark mode):
+ *    background: "var(--color-background-alt, #f8fafc)"  <- variable doesn't exist!
+ *    border: "1px solid var(--border-color, #e2e8f0)"    <- variable doesn't exist!
+ *    color: "#333"                                        <- hardcoded light color
+ * 
+ * Available CSS Variables (see layout.css):
+ * - var(--help-box)         → Background (white in light, black in dark)
+ * - var(--color-background) → Page background
+ * - var(--color-text)       → Text color (#333 in light, #eaeaea in dark)
+ * - var(--color-bar)        → Borders (black in light, white in dark)
+ * - var(--karmacall-green)  → Green accent (#008080)
+ * - var(--karmacall-gold)   → Gold/orange accent (#ff8c00)
+ * - var(--fyncom-blue)      → Blue accent (#4a90e2)
  */
 
 /* Base utility classes that automatically support dark mode */
@@ -54,21 +76,27 @@
 /* 
  * CSS Custom Properties for common patterns
  * Use these instead of hardcoded values
+ * 
+ * IMPORTANT: For this fyncom-website repo, use these existing variables:
+ * - Background: var(--help-box) or var(--color-background)
+ * - Text: var(--color-text)
+ * - Border: var(--color-bar)
+ * - These automatically switch between light/dark modes
  */
 :root {
-  --dm-success-bg: var(--fyncom-darkest-cyan);
+  --dm-success-bg: var(--help-box);
   --dm-success-border: var(--karmacall-green);
-  --dm-success-text: var(--karmacall-green);
+  --dm-success-text: var(--color-text);
 
-  --dm-info-bg: var(--fyncom-darkest-cyan);
+  --dm-info-bg: var(--help-box);
   --dm-info-border: var(--fyncom-blue);
-  --dm-info-text: var(--fyncom-blue);
+  --dm-info-text: var(--color-text);
 
-  --dm-warning-bg: var(--fyncom-darkest-cyan);
-  --dm-warning-border: var(--fyncom-yellow);
-  --dm-warning-text: var(--fyncom-yellow);
+  --dm-warning-bg: var(--help-box);
+  --dm-warning-border: var(--karmacall-gold);
+  --dm-warning-text: var(--color-text);
 
-  --dm-card-bg: var(--color-background);
+  --dm-card-bg: var(--help-box);
   --dm-card-text: var(--color-text);
   --dm-card-border: var(--color-bar);
 }
