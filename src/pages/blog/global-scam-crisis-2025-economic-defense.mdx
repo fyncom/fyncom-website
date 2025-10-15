@@ -472,9 +472,9 @@ export const DownloadKarmaCallCTA = () => {
       <div className="button-container" style={{ marginTop: "1.5rem" }}>
         <button onClick={() => setShowModal(true)} className="learn-more-btn cash">Download KarmaCall</button>
       </div>
-      <div style={{ marginTop: "1rem" }}>
+      {/* <div style={{ marginTop: "1rem" }}>
         <Link to="/pricing">View Pricing & Features →</Link>
-      </div>
+      </div> */}
       {showModal && <KarmacallAppStoreModal onClose={() => setShowModal(false)} />}
     </div>
   );
