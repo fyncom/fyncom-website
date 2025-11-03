@@ -89,14 +89,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-hotjar`,
-      options: {
-        includeInDevelopment: true,
-        id: process.env.GATSBY_HOTJAR_ID,
-        sv: 6,
-      },
-    },
-    {
       resolve: `gatsby-plugin-facebook-pixel`,
       options: {
         pixelId: process.env.GATSBY_FACEBOOK_PIXEL,
