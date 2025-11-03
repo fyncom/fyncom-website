@@ -13,14 +13,14 @@ module.exports = {
     image: "/images/fyncom-social-card.jpg",
     twitterUsername: "@adrianegraphene",
     author: `@adrianegraphene`,
-    siteUrl: `https://www.fyncom.com`,
+    siteUrl: `https://fyncom.com`,
   },
   plugins: [
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.fyncom.com",
-        sitemap: "https://www.fyncom.com/sitemap-index.xml",
+        host: "https://fyncom.com",
+        sitemap: "https://fyncom.com/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
@@ -66,7 +66,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `FynCom - Anti-Spam Cash Back & CRM Rewards`,
+        name: `FynCom | Anti-Spam Cash Back & CRM Rewards`,
         short_name: `FynCom`,
         start_url: `/`,
         background_color: `#ffffff`,
@@ -131,3 +131,4 @@ module.exports = {
     },
   ],
 }
+
