@@ -84,7 +84,8 @@ module.exports = {
       options: {
         trackingIds: [process.env.GATSBY_GOOGLE_TAG_ID],
         pluginConfig: {
-          head: true,
+          head: false,
+          respectDNT: true,
         },
       },
     },

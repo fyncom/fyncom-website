@@ -6,12 +6,12 @@ export const useCombinedQuery = () => {
     query CombinedStaticQuery {
       fyncomFilterGmail: file(relativePath: { eq: "fyncom_filters_gmail_edition_no_logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [44, 88, 132, 176, 220, 264, 300])
         }
       }
       fyncomFilterGmailDark: file(relativePath: { eq: "fyncom_filters_gmail_edition_no_logo-white.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [44, 88, 132, 176, 220, 264, 300])
         }
       }
       increaseResponseRates: file(relativePath: { eq: "increase-response=rates-across-any platform-and-channel.png" }) {
@@ -21,17 +21,17 @@ export const useCombinedQuery = () => {
       }
       tinderLogo: file(relativePath: { eq: "logos/tinder-logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 320, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 320, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [96, 160, 240, 320])
         }
       }
       discordLogo: file(relativePath: { eq: "logos/Discord-logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [44, 88, 132, 176, 220, 264, 300])
         }
       }
       telegramLogo: file(relativePath: { eq: "logos/telegram-logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 135, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 135, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [48, 72, 96, 120, 135])
         }
       }
       appStoreBadge: file(relativePath: { eq: "apple-en.png" }) {
@@ -211,7 +211,7 @@ export const useCombinedQuery = () => {
       }
       fyncomLogoWhite: file(relativePath: { eq: "fyncom-logo-white-blank.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 80, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 80, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [32, 44, 64, 80])
         }
       }
       linkedInlogo: file(relativePath: { eq: "logos/linkedin-white-96.png" }) {
@@ -251,12 +251,12 @@ export const useCombinedQuery = () => {
       }
       karmaCall: file(relativePath: { eq: "karmacall-logo.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [44, 88, 132, 176, 220, 264, 300])
         }
       }
       karmaCallDark: file(relativePath: { eq: "karmacall-logo-white.png" }) {
         childImageSharp {
-          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED)
+          gatsbyImageData(width: 300, layout: CONSTRAINED, placeholder: BLURRED, breakpoints: [44, 88, 132, 176, 220, 264, 300])
         }
       }
       heroKarmaCallImage: file(relativePath: { eq: "karmacall-site/calling_phone.svg" }) {

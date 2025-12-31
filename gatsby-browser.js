@@ -5,22 +5,7 @@ import React from "react"
  * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-browser/
  */
 
-import { initGA, logPageView } from "./src/utils/analytics"
 import { PostHogProvider } from "posthog-js/react"
-
-// Initialize Google Analytics
-export const onClientEntry = () => {
-  if (typeof window !== "undefined") {
-    initGA(process.env.GATSBY_GOOGLE_TAG_ID)
-  }
-}
-
-// Track page views
-export const onRouteUpdate = () => {
-  if (typeof window !== "undefined") {
-    logPageView()
-  }
-}
 
 // Wrap root element with PostHogProvider
 export const wrapRootElement = ({ element }) => {
@@ -31,6 +16,9 @@ export const wrapRootElement = ({ element }) => {
         api_host: (typeof window !== "undefined" ? window.location.origin : "") + "/ph",
         defaults: "2025-05-24",
         capture_exceptions: true,
+        disable_session_recording: true,
+        disable_surveys: true,
+        disable_surveys_automatic_display: true,
         debug: process.env.NODE_ENV === "development",
       }}
     >

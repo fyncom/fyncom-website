@@ -1,27 +1,25 @@
-import ReactGA from "react-ga"
+const canUseGtag = () => typeof window !== "undefined" && typeof window.gtag === "function"
 
-// Initialize Google Analytics
+// Initialize Google Analytics (gtag handles config when available).
 export const initGA = trackingId => {
-  if (trackingId && typeof window !== "undefined") {
-    ReactGA.initialize(trackingId)
+  if (trackingId && canUseGtag()) {
+    window.gtag("config", trackingId)
   }
 }
 
 // Log page views
 export const logPageView = () => {
-  if (typeof window !== "undefined") {
-    ReactGA.set({ page: window.location.pathname })
-    ReactGA.pageview(window.location.pathname)
+  if (canUseGtag()) {
+    window.gtag("event", "page_view", { page_path: window.location.pathname })
   }
 }
 
 // Event tracking
 export const logEvent = (category, action, label) => {
-  if (typeof window !== "undefined") {
-    ReactGA.event({
-      category,
-      action,
-      label,
+  if (canUseGtag()) {
+    window.gtag("event", action, {
+      event_category: category,
+      event_label: label,
     })
   }
 }

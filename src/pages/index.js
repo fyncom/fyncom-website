@@ -79,10 +79,10 @@ const BlockSpamEarnCash = () => {
             <div className="logo-container">
               <div className="top-logos-left">
                 <Link to="/fyncom-filters-email-edition" className="index-links">
-                  <GatsbyImage image={filterLogo} alt="block bad emails automatically & get paid." />
+                  <GatsbyImage image={filterLogo} alt="block bad emails automatically & get paid." sizes="(min-width: 768px) 200px, 90px" />
                 </Link>
                 <a href="https://www.karmacall.com" className="index-links">
-                  <GatsbyImage image={karmacallLogo} alt="Get paid to block scam calls!" />
+                  <GatsbyImage image={karmacallLogo} alt="Get paid to block scam calls!" sizes="(min-width: 768px) 200px, 90px" />
                 </a>
               </div>
             </div>
@@ -93,11 +93,11 @@ const BlockSpamEarnCash = () => {
           <div className="social-media-container communities">
             <div className="logo-container">
               <div className="top-logos communities">
-                <GatsbyImage image={discordLogo} alt="Discord" />
-                <GatsbyImage image={telegramLogo} alt="Telegram" />
+                <GatsbyImage image={discordLogo} alt="Discord" sizes="(min-width: 768px) 140px, 90px" />
+                <GatsbyImage image={telegramLogo} alt="Telegram" sizes="(min-width: 768px) 140px, 90px" />
               </div>
               <div className="bottom-logo community">
-                <GatsbyImage image={tinderLogo} alt="Tinder" />
+                <GatsbyImage image={tinderLogo} alt="Tinder" sizes="(min-width: 768px) 320px, 90vw" />
               </div>
             </div>
             <div className="text-block">
@@ -121,7 +121,7 @@ const BlockSpamEarnCash = () => {
           <p>
             Our company is built around refundable deposits as a tool to create trust between unknown parties in digital communications. Protect yourself from
             unwanted communications & get the power to put a monetary value to your time & data. <br />
-            <Link to="/white-paper-original-scam-calls">Read More</Link>
+            <Link to="/white-paper-original-scam-calls">Read the scam calls white paper</Link>
           </p>
         </section>
 
@@ -130,9 +130,9 @@ const BlockSpamEarnCash = () => {
             <div className="text-block-left">
               <h2 className="text-wrapper-2">A scam blocking tool for some...</h2>
               <p>
-                <p2 className="underline-red">...and a rewards engine for all.</p2> FynCom creates trust in online communications with its Refundable Deposits
-                API. Any platform with communication between users can give cash-back to users for blocking scams. Bring a modern approach to cybersecurity that
-                your customers will love & your revenue teams will love more.
+                <span className="underline-red">...and a rewards engine for all.</span>{" "}
+                FynCom creates trust in online communications with its Refundable Deposits API. Any platform with communication between users can give cash-back
+                to users for blocking scams. Bring a modern approach to cybersecurity that your customers will love & your revenue teams will love more.
               </p>
             </div>
             <div className="logo-container">

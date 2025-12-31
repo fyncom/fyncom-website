@@ -46,6 +46,7 @@
     "slugify": "^1.6.6"
   },
   "devDependencies": {
+    "lighthouse": "^12.8.2",
     "node-loader": "^2.0.0",
     "prettier": "^2.8.8"
   },

@@ -11,7 +11,7 @@ const Footer = () => {
       <footer>
         <div className="footer-header">
           <a href="https://www.linkedin.com/company/fyncom">
-            <GatsbyImage image={fyncomLogoWhite} alt="FynCom Logo and LinkedIn Profile" />
+            <GatsbyImage image={fyncomLogoWhite} alt="FynCom Logo and LinkedIn Profile" sizes="(min-width: 768px) 80px, 44px" />
           </a>
           <div className="info-container">
             <p>

@@ -3,7 +3,7 @@
   --border-radius: 4px;
   --color-text: #333;
   --color-primary: #7026b9;
-  --color-link: #007bff;
+  --color-link: #0056b3;
   --color-link-custom: var(--color-link);
   --color-code-bg: #fff4db;
   --color-code: #8a6534;
@@ -35,6 +35,9 @@
   --fyncom-lightest-blue: #80ded9;
   --fyncom-red: #ff5a5f;
   --fyncom-red-rgb: 255, 90, 95;
+  --fyncom-red-text: #d73a3f;
+  --fyncom-red-button: #d73a3f;
+  --fyncom-blue-button: #3b6fb5;
   --fyncom-cyan: #408a97;
   --fyncom-dark-cyan: #206076;
   --fyncom-darkest-cyan: #003554;
@@ -92,9 +95,13 @@
     --mobile-menu-text-color: white;
     --mobile-menu-bg-color: var(--fyncom-darkest-cyan);
     --color-text: #eaeaea;
+    --color-link: #4d9fff;
     --color-link-custom: var(--color-link-custom);
     --color-background: #121212;
     --color-primary: #bb86fc;
+    --fyncom-red-text: #ff5a5f;
+    --fyncom-red-button: #d73a3f;
+    --fyncom-blue-button: #3b6fb5;
     --sub-color: var(--fyncom-light-blue);
     --color-bar: #fff;
     --help-box: #000;
@@ -128,6 +135,10 @@
   --color-text: #eaeaea;
   --color-background: #121212;
   --color-primary: #bb86fc;
+  --color-link: #4d9fff;
+  --fyncom-red-text: #ff5a5f;
+  --fyncom-red-button: #d73a3f;
+  --fyncom-blue-button: #3b6fb5;
   --sub-color: var(--fyncom-red);
   --color-bar: #fff;
   --help-box: #000;
