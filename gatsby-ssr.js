@@ -1,4 +1,5 @@
 const React = require("react")
+const ConsentRoot = require("./src/components/ConsentRoot").default
 
 /**
  * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
@@ -7,11 +8,9 @@ const React = require("react")
  */
 
 /**
- * Wrap the root element with PostHogProvider for SSR
+ * Wrap the root element with consent + analytics providers for SSR
  */
-exports.wrapRootElement = ({ element }) => {
-  return element
-}
+exports.wrapRootElement = ConsentRoot
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */

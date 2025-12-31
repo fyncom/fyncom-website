@@ -3,9 +3,11 @@ import "./footer.css"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useCombinedQuery } from "./useCombinedQuery"
+import { useCookieConsent } from "./CookieConsent"
 
 const Footer = () => {
   const { fyncomLogoWhite, linkedInlogo, fbLogo, xLogo } = useCombinedQuery()
+  const { openPreferences } = useCookieConsent()
   return (
     <div>
       <footer>
@@ -60,6 +62,11 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/terms-of-service">Terms of Use</Link>
+            </li>
+            <li>
+              <button type="button" className="cookie-preferences-link" onClick={openPreferences}>
+                Cookie Preferences
+              </button>
             </li>
             <li>
               <Link to="/sitemap-index.xml">Sitemap</Link>

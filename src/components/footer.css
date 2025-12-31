@@ -51,6 +51,20 @@ footer {
   color: #fff;
   text-decoration: none;
 }
+.cookie-preferences-link {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-decoration: underline;
+  width: auto;
+  margin: 0;
+}
+.cookie-preferences-link:hover {
+  text-decoration: none;
+}
 .footer-links a:hover {
   text-decoration: underline;
 }
