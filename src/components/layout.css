@@ -29,6 +29,11 @@
   --size-gap: var(--space-6);
   --color-background-light: #fff;
   --color-background: #fff;
+  --cookie-surface: #ffffff;
+  --cookie-toggle-bg: #f9fafb;
+  --cookie-border: #e1e5ea;
+  --cookie-text: #111827;
+  --cookie-text-muted: #4b5563;
   --fyncom-blue: #4a90e2;
   --fyncom-blue-rgb: 74, 144, 226; /* The RGB equivalent of #4A90E2 */
   --fyncom-light-blue: #13dcec;
@@ -98,6 +103,11 @@
     --color-link: #4d9fff;
     --color-link-custom: var(--color-link-custom);
     --color-background: #121212;
+    --cookie-surface: #101822;
+    --cookie-toggle-bg: #1f2a37;
+    --cookie-border: #2d3b4f;
+    --cookie-text: #f9fafb;
+    --cookie-text-muted: #cbd5e1;
     --color-primary: #bb86fc;
     --fyncom-red-text: #ff5a5f;
     --fyncom-red-button: #d73a3f;
@@ -134,6 +144,11 @@
   --mobile-menu-bg-color: var(--fyncom-darkest-cyan);
   --color-text: #eaeaea;
   --color-background: #121212;
+  --cookie-surface: #101822;
+  --cookie-toggle-bg: #1f2a37;
+  --cookie-border: #2d3b4f;
+  --cookie-text: #f9fafb;
+  --cookie-text-muted: #cbd5e1;
   --color-primary: #bb86fc;
   --color-link: #4d9fff;
   --fyncom-red-text: #ff5a5f;
