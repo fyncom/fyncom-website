@@ -28,13 +28,11 @@ const BlockSpamEarnCash = () => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-      // const handleChange = () => setIsDarkMode(mediaQuery.matches);
       const handleChange = e => {
         setFilterLogo(e.matches ? filterImageDark : filterImage)
         setKarmacallLogo(e.matches ? karmacallImageDark : karmacallImage)
       }
-      // setIsDarkMode(mediaQuery.matches);
-      handleChange(mediaQuery) // Initial check
+      handleChange(mediaQuery)
       mediaQuery.addListener(handleChange)
       return () => mediaQuery.removeListener(handleChange)
     }
@@ -57,9 +55,9 @@ const BlockSpamEarnCash = () => {
               </div>
             </div>
             <div className="text-block">
-              <h1>Profit from Scam Blocking</h1>
-              <h2>Cash in effortlessly</h2>
-              <p>Emails, direct messages, calls - we do it all!</p>
+              <h1>Refundable Payments for Digital Trust</h1>
+              <h2>Build trust with micro-commitments</h2>
+              <p>Our MCP (Model Context Parameter) enables secure, refundable payments for any digital interaction</p>
             </div>
           </div>
         </div>
@@ -68,12 +66,11 @@ const BlockSpamEarnCash = () => {
           <div className="social-media-container">
             <div className="text-block-left">
               <h2 className="text-wrapper-2">
-                Are your customers getting <span className="underline-red">phished</span>?
+                Transform your platform with <span className="underline-red">refundable deposits</span>
               </h2>
               <p>
-                {" "}
-                Stop scams with refundable deposits. Our tech asks unknown senders to risk losing money to your audience before they can reach them. Click the
-                images to learn more.
+                Our Model Context Parameter technology allows you to implement refundable deposits in your platform. Users can set micro-commitments for
+                interactions, creating trust while maintaining flexibility. Perfect for any service requiring user verification or interaction quality.
               </p>
             </div>
             <div className="logo-container">
@@ -102,14 +99,13 @@ const BlockSpamEarnCash = () => {
             </div>
             <div className="text-block">
               <h2 className="text-wrapper-2">
-                Too many <span className="underline-red">abusive DMs</span> in your communities?
+                One solution, <span className="underline-red">endless applications</span>
               </h2>
               <p>
-                {" "}
-                Your community loves making connections, but not with scammers &amp; imposters. Help mods by adding FynCom&#39;s Direct Message tech into your
-                Discord, Telegram, or other chat-based community. Bonus - your users make $$ for every blocked spam DM!{" "}
+                From scam prevention to community management, our Model Context Parameter can be integrated into any platform. Users earn rewards for
+                maintaining quality interactions, while platforms benefit from reduced abuse and increased engagement. Ready to implement?{" "}
                 <span className="span">
-                  <a href="mailto:support@fyncom.com?subject=FynCom DMs">Contact us</a>
+                  <a href="mailto:support@fyncom.com?subject=MCP Integration">Contact us</a>
                 </span>
               </p>
             </div>
@@ -117,22 +113,22 @@ const BlockSpamEarnCash = () => {
         </div>
 
         <section className="why-fyncom">
-          <h2 className="text-wrapper-2">Why FynCom?</h2>
+          <h2 className="text-wrapper-2">Why Choose FynCom's Model Context Parameter?</h2>
           <p>
-            Our company is built around refundable deposits as a tool to create trust between unknown parties in digital communications. Protect yourself from
-            unwanted communications & get the power to put a monetary value to your time & data. <br />
-            <Link to="/white-paper-original-scam-calls">Read More</Link>
+            Our Model Context Parameter revolutionizes digital trust by making every interaction valuable. Users can set their own terms for engagement,
+            creating a self-regulating ecosystem where quality interactions are rewarded. <br />
+            <Link to="/white-paper-original-scam-calls">Learn More About MCP</Link>
           </p>
         </section>
 
         <div className="AppText">
           <div className="social-media-container">
             <div className="text-block-left">
-              <h2 className="text-wrapper-2">A scam blocking tool for some...</h2>
+              <h2 className="text-wrapper-2">Ready to implement Model Context Parameter?</h2>
               <p>
-                <p2 className="underline-red">...and a rewards engine for all.</p2> FynCom creates trust in online communications with its Refundable Deposits
-                API. Any platform with communication between users can give cash-back to users for blocking scams. Bring a modern approach to cybersecurity that
-                your customers will love & your revenue teams will love more.
+                <p2 className="underline-red">Transform your platform today.</p2> Whether you're building a community, managing communications, or creating a
+                marketplace, our Model Context Parameter can be integrated into your existing infrastructure. We provide the tools, support, and expertise to
+                make implementation seamless.
               </p>
             </div>
             <div className="logo-container">
@@ -144,12 +140,12 @@ const BlockSpamEarnCash = () => {
         </div>
 
         <section className="why-fyncom">
-          <h2 className="underline">Give the Gift of Cash-Back for Scam Blocking</h2>
+          <h2 className="underline">Start Building Trust with Model Context Parameter</h2>
           <p>
-            Our company is built around refundable deposits as a tool to create trust between unknown parties in digital communications. Protect yourself from
-            unwanted communications & get the power to put a monetary value to your time & data. <br />
+            Join the growing number of platforms using FynCom's Model Context Parameter to create more valuable, trustworthy digital interactions. Our team is
+            ready to help you implement and customize the solution for your specific needs. <br />
             <a href="https://calendly.com/adrian-fyncom/30min">
-              <button className="learn-more-btn">Seize The Day!</button>
+              <button className="learn-more-btn">Schedule a Demo</button>
             </a>
           </p>
         </section>
