@@ -80,21 +80,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`,
     {
-      resolve: "gatsby-plugin-google-gtag",
-      options: {
-        trackingIds: [process.env.GATSBY_GOOGLE_TAG_ID],
-        pluginConfig: {
-          head: true,
-        },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-facebook-pixel`,
-      options: {
-        pixelId: process.env.GATSBY_FACEBOOK_PIXEL,
-      },
-    },
-    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blogs`,

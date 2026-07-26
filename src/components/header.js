@@ -71,9 +71,15 @@ const Header = () => {
                 <Link to="/use-cases">Use Cases</Link>
               </span>
               <ul className="mobile-dropdown-content">
-                <Link to="/marketing-use-cases">Marketing</Link>
-                <Link to="/sales-use-cases">Sales</Link>
-                <Link to="/understanding-customers-use-cases">Understanding Customers</Link>
+                <li>
+                  <Link to="/marketing-use-cases">Marketing</Link>
+                </li>
+                <li>
+                  <Link to="/sales-use-cases">Sales</Link>
+                </li>
+                <li>
+                  <Link to="/understanding-customers-use-cases">Understanding Customers</Link>
+                </li>
               </ul>
             </li>
             <li className="mobile-menu-item">
@@ -94,9 +100,9 @@ const Header = () => {
               </span>
               <ul className="mobile-dropdown-content">
                 {helpItems.map(item => (
-                  <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`} key={item.title}>
-                    {item.title}
-                  </Link>
+                  <li key={item.title}>
+                    <Link to={`/help-center/${item.topicUrl}?contentUrl=${encodeURIComponent(item.url)}`}>{item.title}</Link>
+                  </li>
                 ))}
               </ul>
             </li>

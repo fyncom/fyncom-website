@@ -1,27 +1,14 @@
-import ReactGA from "react-ga"
-
-// Initialize Google Analytics
-export const initGA = trackingId => {
-  if (trackingId && typeof window !== "undefined") {
-    ReactGA.initialize(trackingId)
-  }
-}
+import { trackGoogleEvent, trackGooglePageView } from "./tracking"
 
 // Log page views
 export const logPageView = () => {
-  if (typeof window !== "undefined") {
-    ReactGA.set({ page: window.location.pathname })
-    ReactGA.pageview(window.location.pathname)
-  }
+  trackGooglePageView()
 }
 
 // Event tracking
 export const logEvent = (category, action, label) => {
-  if (typeof window !== "undefined") {
-    ReactGA.event({
-      category,
-      action,
-      label,
-    })
-  }
+  trackGoogleEvent(action, {
+    event_category: category,
+    event_label: label,
+  })
 }

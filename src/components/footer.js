@@ -3,15 +3,17 @@ import "./footer.css"
 import { Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { useCombinedQuery } from "./useCombinedQuery"
+import { useCookieConsent } from "./CookieConsent"
 
 const Footer = () => {
   const { fyncomLogoWhite, linkedInlogo, fbLogo, xLogo } = useCombinedQuery()
+  const { openPreferences } = useCookieConsent()
   return (
     <div>
       <footer>
         <div className="footer-header">
           <a href="https://www.linkedin.com/company/fyncom">
-            <GatsbyImage image={fyncomLogoWhite} alt="FynCom Logo and LinkedIn Profile" />
+            <GatsbyImage image={fyncomLogoWhite} alt="FynCom Logo and LinkedIn Profile" sizes="(min-width: 768px) 80px, 44px" />
           </a>
           <div className="info-container">
             <p>
@@ -60,6 +62,11 @@ const Footer = () => {
             </li>
             <li>
               <Link to="/terms-of-service">Terms of Use</Link>
+            </li>
+            <li>
+              <button type="button" className="cookie-preferences-link" onClick={openPreferences}>
+                Cookie Preferences
+              </button>
             </li>
             <li>
               <Link to="/sitemap-index.xml">Sitemap</Link>

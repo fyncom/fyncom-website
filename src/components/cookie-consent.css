@@ -1,0 +1,135 @@
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  background: #0b1d2a;
+  color: #fff;
+  padding: 16px;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.cookie-banner__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cookie-banner__copy {
+  flex: 1 1 320px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: auto;
+  margin: 0;
+  min-height: auto;
+}
+
+.cookie-button.primary {
+  background: #d73a3f;
+  border-color: #d73a3f;
+  color: #fff;
+}
+
+.cookie-button.secondary {
+  background: #fff;
+  border-color: #fff;
+  color: #0b1d2a;
+}
+
+.cookie-button.ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.6);
+  color: #fff;
+}
+
+.cookie-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2100;
+  padding: 20px;
+}
+
+.cookie-modal {
+  background: var(--cookie-surface, #ffffff);
+  color: var(--cookie-text, #111827);
+  border-radius: 12px;
+  max-width: 640px;
+  width: 100%;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+.cookie-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.cookie-modal__description {
+  color: var(--cookie-text-muted, #4b5563);
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.cookie-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--cookie-border, #e1e5ea);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: var(--cookie-toggle-bg, #f9fafb);
+  color: var(--cookie-text, #111827);
+}
+
+.cookie-toggle p {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--cookie-text-muted, #4b5563);
+}
+
+.cookie-modal__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+@media (max-width: 768px) {
+  .cookie-banner__inner {
+    align-items: flex-start;
+  }
+  .cookie-modal {
+    padding: 20px;
+  }
+  .cookie-toggle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
